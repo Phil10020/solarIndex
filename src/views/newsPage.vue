@@ -285,6 +285,7 @@ export default {
     // 列表篩選
     filterCategory: function (type) {
       this.setPage(1)
+      this.currentFilter = type
       if (type === 'all') {
         this.typeFilter = this.product
       } else {

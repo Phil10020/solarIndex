@@ -17,9 +17,9 @@
       <i class="bi bi-chevron-double-right"></i>
       <a href="/news.aspx">太陽人快報</a>
       <i class="bi bi-chevron-double-right"></i>
-      <a :class="{ 'active': product.type === 'green' }" v-if="typeFilter.type === 'green'">綠能轉型行不行</a>
-      <a :class="{ 'active': product.type === 'news' }" v-else-if="typeFilter.type === 'news'">太陽人最新消息</a>
-      <a :class="{ 'active':isActive }" v-else>全部</a>
+      <a :class="{ 'active': currentFilter === 'green' }" v-if="currentFilter === 'green'">綠能轉型行不行</a>
+      <a :class="{ 'active': currentFilter === 'news' }" v-else-if="currentFilter === 'news'">太陽人最新消息</a>
+      <a :class="{ 'active':currentFilter === '' }" v-else>全部</a>
     </div>
   </section>
   <!-- [End]Breadcrumb  -->
@@ -30,21 +30,21 @@
       <ul class="tab-block">
         <li
           :class="{ 'active': currentFilter === '' }"
-          @click="filterCategory('all')"
+          @click.prevent="filterCategory('all')"
         >
           全部
         </li>
         <span class="line">|</span>
         <li
           :class="{ 'active': currentFilter === 'news' }"
-          @click="filterCategory('news')"
+          @click.prevent="filterCategory('news')"
         >
           太陽人最新消息
         </li>
         <span class="line">|</span>
         <li
           :class="{ 'active': currentFilter === 'green' }"
-          @click="filterCategory('green')"
+          @click.prevent="filterCategory('green')"
         >
           綠能轉型行不行
         </li>
@@ -138,140 +138,141 @@ export default {
         {
           testImg: require('../../public/images/news/news-background.jpg'),
           category: '太陽人最新消息',
-          title: 'test123',
+          title: 'test11',
           date: '2022/07/01',
           type: 'news'
         },
         {
           testImg: require('../../public/images/news/news-background.jpg'),
           category: '綠能轉型行不行',
-          title: 'test456',
+          title: 'test12',
           date: '2022/07/01',
           type: 'green'
         },
         {
           testImg: require('../../public/images/news/news-background.jpg'),
           category: '太陽人最新消息',
-          title: 'test789',
+          title: 'test13',
           date: '2022/07/01',
           type: 'news'
         },
         {
           testImg: require('../../public/images/news/news-background.jpg'),
           category: '綠能轉型行不行',
-          title: 'test987',
+          title: 'test14',
           date: '2022/07/01',
           type: 'green'
         },
         {
           testImg: require('../../public/images/news/news-background.jpg'),
           category: '太陽人最新消息',
-          title: 'test654',
+          title: 'test15',
           date: '2022/07/01',
           type: 'news'
         },
         {
           testImg: require('../../public/images/news/news-background.jpg'),
           category: '綠能轉型行不行',
-          title: 'test321',
+          title: 'test16',
           date: '2022/07/01',
           type: 'green'
         },
         {
           testImg: require('../../public/images/news/news-background.jpg'),
           category: '太陽人最新消息',
-          title: 'test111',
+          title: 'test17',
           date: '2022/07/01',
           type: 'news'
         },
         {
           testImg: require('../../public/images/news/news-background.jpg'),
           category: '綠能轉型行不行',
-          title: 'test222',
+          title: 'test18',
           date: '2022/07/01',
           type: 'green'
         },
         {
           testImg: require('../../public/images/news/news-background.jpg'),
           category: '太陽人最新消息',
-          title: 'test333',
+          title: 'test19',
           date: '2022/07/01',
           type: 'news'
         },
         {
           testImg: require('../../public/images/news/news-background.jpg'),
           category: '綠能轉型行不行',
-          title: 'test444',
+          title: 'test20',
+          date: '2022/07/01',
+          type: 'green'
+        },
+        // test dadta
+        {
+          testImg: require('../../public/images/news/news-background.jpg'),
+          category: '太陽人最新消息',
+          title: 'test21',
+          date: '2022/07/01',
+          type: 'news'
+        },
+        {
+          testImg: require('../../public/images/news/news-background.jpg'),
+          category: '綠能轉型行不行',
+          title: 'test22',
           date: '2022/07/01',
           type: 'green'
         },
         {
           testImg: require('../../public/images/news/news-background.jpg'),
           category: '太陽人最新消息',
-          title: 'test123',
+          title: 'test23',
           date: '2022/07/01',
           type: 'news'
         },
         {
           testImg: require('../../public/images/news/news-background.jpg'),
           category: '綠能轉型行不行',
-          title: 'test456',
+          title: 'test24',
           date: '2022/07/01',
           type: 'green'
         },
         {
           testImg: require('../../public/images/news/news-background.jpg'),
           category: '太陽人最新消息',
-          title: 'test789',
+          title: 'test25',
           date: '2022/07/01',
           type: 'news'
         },
         {
           testImg: require('../../public/images/news/news-background.jpg'),
           category: '綠能轉型行不行',
-          title: 'test987',
+          title: 'test26',
           date: '2022/07/01',
           type: 'green'
         },
         {
           testImg: require('../../public/images/news/news-background.jpg'),
           category: '太陽人最新消息',
-          title: 'test654',
+          title: 'test27',
           date: '2022/07/01',
           type: 'news'
         },
         {
           testImg: require('../../public/images/news/news-background.jpg'),
           category: '綠能轉型行不行',
-          title: 'test321',
+          title: 'test28',
           date: '2022/07/01',
           type: 'green'
         },
         {
           testImg: require('../../public/images/news/news-background.jpg'),
           category: '太陽人最新消息',
-          title: 'test111',
+          title: 'test29',
           date: '2022/07/01',
           type: 'news'
         },
         {
           testImg: require('../../public/images/news/news-background.jpg'),
           category: '綠能轉型行不行',
-          title: 'test222',
-          date: '2022/07/01',
-          type: 'green'
-        },
-        {
-          testImg: require('../../public/images/news/news-background.jpg'),
-          category: '太陽人最新消息',
-          title: 'test333',
-          date: '2022/07/01',
-          type: 'news'
-        },
-        {
-          testImg: require('../../public/images/news/news-background.jpg'),
-          category: '綠能轉型行不行',
-          title: 'test444',
+          title: 'test30',
           date: '2022/07/01',
           type: 'green'
         }
@@ -282,12 +283,13 @@ export default {
     }
   },
   methods: {
-    // 列表篩選
+    // 列表篩選，利用if else判斷product.type的類型，並使用this.currentFilter = type or ''來改變active的啟動條件
     filterCategory: function (type) {
       this.setPage(1)
       this.currentFilter = type
       if (type === 'all') {
         this.typeFilter = this.product
+        this.currentFilter = ''
       } else {
         this.typeFilter = this.product.filter((item) => {
           // 使用includes判斷true or false 篩選 type (news & green)

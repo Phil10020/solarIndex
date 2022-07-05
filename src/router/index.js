@@ -16,6 +16,11 @@ const routes = [
     path: '/coupon',
     name: 'couponView',
     component: () => import('../views/couponSharing.vue')
+  },
+  {
+    path: '/poblic',
+    name: 'poblicWelfare',
+    component: () => import('../views/poblicWelfare.vue')
   }
 ]
 

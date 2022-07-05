@@ -1,0 +1,139 @@
+.publicWelfare_section{
+    padding: 65px 16.66% 65px 16.66%;
+    .welfare-type {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-flow: wrap;
+
+        li {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+
+            &:not(:first-child) {
+                &:before {
+                    content: "";
+                    width: 1px;
+                    height: 10px;
+                    background-color: rgba(0,0,0,0.3);
+                    margin: 0 20px;
+                }
+            }
+
+            &.active {
+                font-weight: bold;
+                color: $primary;
+            }
+        }
+    }
+
+    .welfare-list {
+        padding: 40px 0px 0px 0px;
+
+        .welfare-card {
+            display: flex;
+            margin-bottom: 30px;
+            cursor: pointer;
+
+            .img-block {
+                padding-bottom: 20%;
+                width: 35%;
+                position: relative;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                }
+            }
+
+            .content-block {
+                background-color: rgba(0,0,0,0.05);
+                width: 65%;
+                position: relative;
+
+                .title {
+                    display: flex;
+                    margin: 30px 20px 10px 20px;
+
+                    .welfare-name {
+                        font-size: 16px;
+                        font-weight: bold;
+                    }
+                }
+
+                @media only screen and (max-width : 800px) {
+                    .title {
+                        display: flex;
+                        margin: 15px 20px 20px 20px;
+                    }
+                }
+
+                .content {
+                    margin: 0 20px 20px 20px;
+                    font-size: 12px;
+                }
+
+
+                .money {
+                    width: 100%;
+                    /*background-color: #fff;*/
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: flex-end;
+                    /*margin-bottom: 20px;*/
+                    /*padding: 5px 20px;*/
+                    position: absolute;
+                    right: 20px;
+                    color: $primary;
+
+                    > div:nth-child(1) {
+                        font-size: 16px;
+                        font-weight: bold;
+                    }
+
+                    > div:nth-child(2) {
+                        margin: 0 5px;
+                        color: $primary;
+                        font-weight: bold;
+                    }
+
+                    > div:nth-child(3) {
+                        font-size: 12px;
+                    }
+                }
+                /* typical phone screen resolution */
+                @media only screen and (max-width : 800px) {
+                    .money {
+                        width: 100%;
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: flex-end;
+                        position: absolute;
+                        right: -20px;
+                        margin-top: 20px;
+                    }
+                }
+            }
+
+
+            @media(max-width:768px) {
+                flex-direction: column;
+
+                .img-block {
+                    width: 100%;
+                    padding-bottom: 60%;
+                }
+
+                .content-block {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

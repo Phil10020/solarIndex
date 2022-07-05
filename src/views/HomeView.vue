@@ -7,6 +7,9 @@
   <div>
     <h1><router-link to="news">News</router-link></h1>
   </div>
+  <div>
+    <h1><router-link to="poblic">poblic</router-link></h1>
+  </div>
 </template>
 
 <script>

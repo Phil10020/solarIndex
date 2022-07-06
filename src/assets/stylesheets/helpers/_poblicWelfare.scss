@@ -1,5 +1,8 @@
 .publicWelfare_section{
     padding: 65px 16.66% 65px 16.66%;
+    @media screen and (max-width:767px) {
+        padding: 0 8.33%;
+      }
     .welfare-type {
         list-style: none;
         padding: 0;
@@ -28,6 +31,8 @@
             }
         }
     }
+
+    
 
     .welfare-list {
         padding: 40px 0px 0px 0px;
@@ -82,7 +87,7 @@
 
                 .money {
                     width: 100%;
-                    /*background-color: #fff;*/
+                    /*background-color:ation #fff;*/
                     display: flex;
                     justify-content: flex-end;
                     align-items: flex-end;
@@ -90,7 +95,6 @@
                     /*padding: 5px 20px;*/
                     position: absolute;
                     right: 20px;
-                    color: $primary;
 
                     > div:nth-child(1) {
                         font-size: 16px;

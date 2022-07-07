@@ -23,7 +23,9 @@
 
   <!-- [Start]Content  -->
   <section class="publicWelfare_section">
-    <ul class="welfare-type">
+    <!-- [Start]Select & Search-Bar  -->
+    <div class="d-flex justify-content-between">
+          <ul class="welfare-type">
 			<li :class="{'active':currentFilter === ''}"  @click.prevent="filterCategory('all')">全部</li>
 			<li :class="{'active':currentFilter === 'I'}" @click.prevent="filterCategory('I')">國際救援</li>
 			<li :class="{'active':currentFilter === 'G'}" @click.prevent="filterCategory('G')">老人服務</li>
@@ -32,8 +34,29 @@
 			<li :class="{'active':currentFilter === 'E'}" @click.prevent="filterCategory('E')">環保動保</li>
 			<li :class="{'active':currentFilter === 'O'}" @click.prevent="filterCategory('O')">其他</li>
 		</ul>
+    <div class="search-block ">
+        <div class="input-group mb-3">
+          <input
+            v-model="search"
+            type="text"
+            class="form-control"
+            placeholder="請輸入關鍵字"
+          />
+          <div class="input-group-append">
+            <button
+              id="btn_search"
+              class="btn btn-outline-secondary"
+              type="button" disabled
+            >
+              <i class="bi bi-search"></i>
+            </button>
+          </div>
+        </div>
+    </div>
+    </div>
+    <!-- [End]Select & Search-Bar  -->
     <div class="welfare-list">
-      <div class="card-wrap" v-for="item in filterProduct" :key="item.type">
+      <div class="card-wrap" v-for="item in filterProduct.slice(pageStart, pageStart + countOfPage)" :key="item.title">
       <div class="welfare-card">
         <div class="img-block">
           <a href="">
@@ -58,7 +81,7 @@
   <!-- [End]Content  -->
 
   <!-- [Start]Pagination  -->
-  <!-- <section>
+  <section>
     <div class="pagination-block d-flex justify-content-center mt-5 mb-5">
       <nav aria-label="Page navigation example">
         <ul class="pagination">
@@ -81,7 +104,7 @@
         </ul>
     </nav>
     </div>
-  </section> -->
+  </section>
 </template>
 
 <script>
@@ -158,7 +181,7 @@ export default {
   methods: {
     // 列表篩選，利用if else判斷product.type的類型，並使用this.currentFilter = type or ''來改變active的啟動條件
     filterCategory: function (type) {
-      // this.setPage(1)
+      this.setPage(1)
       this.currentFilter = type
       if (type === 'all') {
         this.typeFilter = this.product
@@ -166,7 +189,7 @@ export default {
       } else {
         this.typeFilter = this.product.filter((item) => {
           // 使用includes判斷true or false 篩選 type (news & green)
-          return item.type.toLowerCase().includes(type)
+          return item.type.includes(type)
         })
       } ;
       console.log(this.typeFilter)
@@ -186,7 +209,7 @@ export default {
       return this.typeFilter.filter((item) => {
         return (
           item.title.toLowerCase().includes(this.search.toLowerCase()) ||
-          item.category.toLowerCase().includes(this.search.toLowerCase())
+          item.content.toLowerCase().includes(this.search.toLowerCase())
         )
       })
     },
@@ -199,10 +222,15 @@ export default {
       return Math.ceil(this.filterProduct.length / this.countOfPage)
     }
   },
-
   mounted () {
     // 渲染全部product資料
     this.typeFilter = this.product
+  },
+  watch: {
+    // 監聽事件並將更動後的currentPage，設定回原本預設值
+    search: function () {
+      this.currentPage = 1
+    }
   }
 }
 </script>

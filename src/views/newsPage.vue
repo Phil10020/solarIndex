@@ -332,6 +332,12 @@ export default {
   },
   created () {
     this.paginate_total = this.typeFilter.length / this.paginate
+  },
+  watch: {
+    // 監聽事件並將更動後的currentPage，設定回原本預設值 
+    search: function () {
+      this.currentPage = 1
+    }
   }
 }
 </script>

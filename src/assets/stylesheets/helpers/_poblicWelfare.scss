@@ -9,6 +9,9 @@
         margin: 0;
         display: flex;
         flex-flow: wrap;
+        @media screen and (max-width:767px) {
+            display: none;
+          }
 
         li {
             display: flex;
@@ -32,10 +35,18 @@
         }
     }
 
+    .search-block {
+        @media screen and (max-width:767px) {
+          margin-top: 1rem ;
+        }
+      }
     
 
     .welfare-list {
         padding: 40px 0px 0px 0px;
+        // @media screen and(max-width:767px) {
+        //     padding: 0;
+        // }
 
         .welfare-card {
             display: flex;
@@ -81,7 +92,7 @@
 
                 .content {
                     margin: 0 20px 20px 20px;
-                    font-size: 12px;
+                    font-size: 16px;
                 }
 
 
@@ -126,7 +137,7 @@
             }
 
 
-            @media(max-width:768px) {
+            @media(max-width:767px) {
                 flex-direction: column;
 
                 .img-block {
@@ -136,6 +147,11 @@
 
                 .content-block {
                     width: 100%;
+                    .content {
+                        height: 100px;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
                 }
             }
         }

@@ -2,6 +2,9 @@
   "name": "project-sun",
   "version": "0.1.0",
   "private": true,
+  "overrides": {
+    "autoprefixer": "10.4.5"
+  },
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -46,7 +49,7 @@
       "parser": "@babel/eslint-parser"
     },
     "rules": {
-      "no-tabs":"off"
+      "no-tabs": "off"
     }
   },
   "browserslist": [

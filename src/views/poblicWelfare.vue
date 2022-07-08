@@ -12,8 +12,8 @@
   <!-- [End]Banner  -->
 
   <!-- [Start]breadcrumbs-list  -->
-  <section id="breadcrumbs-navigation">
-    <div class="breadcrumbs">
+  <section>
+    <div class="navigation-item">
       <a href="index.aspx">首頁</a>
       <i class="bi bi-chevron-double-right"></i>
       <a href="#" class="active">太陽人公益</a>

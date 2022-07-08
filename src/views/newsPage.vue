@@ -12,7 +12,7 @@
   <!-- [End]Banner  -->
   <!-- [Start]Breadcrumb  -->
   <section>
-    <div class="breadcrumbs">
+    <nav class="navigation-item">
       <a href="/index.aspx">首頁</a>
       <i class="bi bi-chevron-double-right"></i>
       <a href="/news.aspx">太陽人快報</a>
@@ -20,7 +20,7 @@
       <a :class="{ 'active': currentFilter === 'green' }" v-if="currentFilter === 'green'">綠能轉型行不行</a>
       <a :class="{ 'active': currentFilter === 'news' }" v-else-if="currentFilter === 'news'">太陽人最新消息</a>
       <a :class="{ 'active':currentFilter === '' }" v-else>全部</a>
-    </div>
+    </nav>
   </section>
   <!-- [End]Breadcrumb  -->
 
@@ -334,7 +334,7 @@ export default {
     this.paginate_total = this.typeFilter.length / this.paginate
   },
   watch: {
-    // 監聽事件並將更動後的currentPage，設定回原本預設值 
+    // 監聽事件並將更動後的currentPage，設定回原本預設值
     search: function () {
       this.currentPage = 1
     }

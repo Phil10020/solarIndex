@@ -1,0 +1,50 @@
+// navigation 
+.navigation-item{
+    background-color: #eeeeee;
+    width: 100%;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    padding: 0 16.66%;
+    @media screen and (max-width:767px) {
+      padding: 0 5% ;
+      justify-content: center;
+    }
+    .active{
+      color:#15181D ;
+    }
+  
+    li{
+      color: #999999;
+      text-decoration: none;
+    }
+    a {
+      color: #999999;
+    }
+}
+
+// banner
+.subpage-banner-image{
+    height: 360px;
+    overflow: hidden;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: 50% 50% !important;
+    position: relative;
+    padding: 0 16.66%;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    justify-content: center;
+    @media(max-width: 768px) {
+        padding-left: 8.33%;
+        padding-right: 8.33%;
+    }
+}
+
+//pagination a-link
+.pagination {
+    a {
+      color: $secondary;
+    }
+  }

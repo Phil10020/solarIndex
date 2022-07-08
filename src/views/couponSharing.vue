@@ -8,15 +8,15 @@
       <h1>邀請好友拿獎勵</h1>
     </div>
   </section>
-  <section class="navigation-item">
-    <nav style="--bs-breadcrumb-divider: '>'" aria-label="breadcrumb">
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item">首頁</li>
-        <li class="breadcrumb-item" aria-current="page">其它</li>
-        <li class="breadcrumb-item active" aria-current="page">
-          邀請好友拿獎勵
-        </li>
-      </ol>
+  <section>
+    <nav class="navigation-item">
+      <a href="/index.aspx">首頁</a>
+      <i class="bi bi-chevron-double-right"></i>
+      <a href="">其他</a>
+      <i class="bi bi-chevron-double-right"></i>
+      <!-- <a :class="{ 'active': currentFilter === 'green' }" v-if="currentFilter === 'green'">綠能轉型行不行</a>
+      <a :class="{ 'active': currentFilter === 'news' }" v-else-if="currentFilter === 'news'">太陽人最新消息</a> -->
+      <a class="active">邀請好友拿獎勵</a>
     </nav>
   </section>
   <section id="couponSharing">

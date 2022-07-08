@@ -192,15 +192,12 @@ export default {
           return item.type.includes(type)
         })
       } ;
-      console.log(this.typeFilter)
     },
     // 將參數帶入預設頁面currentPage
     setPage: function (idx) {
       if (idx >= 0 || idx < this.totalPage) {
         this.currentPage = idx
       }
-      console.log(this.currentPage)
-      console.log(this.totalPage)
     }
   },
   computed: {

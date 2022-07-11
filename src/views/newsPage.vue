@@ -75,8 +75,8 @@
   <!-- [Start]Main  -->
   <section class="news-section-papers">
     <!-- [Start]Content (slice取得第開始，與結尾資料並與頁數關聯) -->
-    <div class="d-flex flex-wrap  px-0">
-      <div class="d-flex me-md-5 px-0 mb-3 card-width" v-for="item in filterProduct.slice(pageStart, pageStart + countOfPage)"
+    <div class="d-flex flex-wrap px-0" :class="{ 'justify-content-between': isActive ,'justify-content-start': error }">
+      <div class="d-flex px-0 mb-3 card-width" :class="{ 'me-md-5': error }" v-for="item in filterProduct.slice(pageStart, pageStart + countOfPage)"
         :key="item.title">
       <div class="card mb-3 mb-lg-0">
           <img :src="item.testImg" class="card-img-top" alt="" />
@@ -279,7 +279,9 @@ export default {
       ],
       currentFilter: '',
       countOfPage: 6,
-      currentPage: 1
+      currentPage: 1,
+      isActive: true,
+      error: false
     }
   },
   methods: {
@@ -303,8 +305,6 @@ export default {
       if (idx >= 0 || idx < this.totalPage) {
         this.currentPage = idx
       }
-      console.log(this.currentPage)
-      console.log(this.totalPage)
     }
   },
   computed: {
@@ -337,6 +337,16 @@ export default {
     // 監聽事件並將更動後的currentPage，設定回原本預設值
     search: function () {
       this.currentPage = 1
+    },
+    currentPage: function () {
+      // 判斷物件長度是否為2(若為2則啟用v-bind屬性，將它改成justify-content-start狀態)，以及是否在頁尾(currentPage===totalPage)
+      if (this.typeFilter.length % this.countOfPage === 2 && this.currentPage === this.totalPage) {
+        this.error = true
+        this.isActive = false
+      } else {
+        this.error = false
+        this.isActive = true
+      }
     }
   }
 }

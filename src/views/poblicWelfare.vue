@@ -72,7 +72,16 @@
             <div>(TWD)</div>
           </div>
         </div>
-        <div class="content">{{item.content}}</div>
+        <!-- <div class="content">{{item.content}}</div> -->
+        <div class="content">
+          <div class="wrapper">
+          <input id="exp1" class="exp"  type="checkbox">
+          <div class="text">
+          <label class="btn" for="exp1"></label>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia laborum nisi totam sit quod iusto magnam quibusdam officia nemo reiciendis, optio dignissimos repudiandae possimus quis incidunt, voluptatum consequatur vitae molestias voluptas iste exercitationem veritatis. Earum doloribus amet veniam dolorem perspiciatis!
+          </div>
+          </div>
+        </div>
         </div>
       </div>
     </div>

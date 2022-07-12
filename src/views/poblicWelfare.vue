@@ -56,8 +56,9 @@
     </div>
     <!-- [End]Select & Search-Bar  -->
     <div class="welfare-list">
+      <div>{{ product }}</div>
       <div class="card-wrap" v-for="item in filterProduct.slice(pageStart, pageStart + countOfPage)" :key="item.title">
-      <div class="welfare-card">
+      <router-link :to="'/poblic/'+item.post_id" class="welfare-card">
         <div class="img-block">
           <a href="">
             <img :src="item.testImg" alt=""/>
@@ -72,8 +73,8 @@
             <div>(TWD)</div>
           </div>
         </div>
-        <!-- <div class="content">{{item.content}}</div> -->
-        <div class="content">
+        <div class="content">{{item.content}}</div>
+        <!-- <div class="content">
           <div class="wrapper">
           <input id="exp1" class="exp"  type="checkbox">
           <div class="text">
@@ -81,9 +82,9 @@
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia laborum nisi totam sit quod iusto magnam quibusdam officia nemo reiciendis, optio dignissimos repudiandae possimus quis incidunt, voluptatum consequatur vitae molestias voluptas iste exercitationem veritatis. Earum doloribus amet veniam dolorem perspiciatis!
           </div>
           </div>
+        </div> -->
         </div>
-        </div>
-      </div>
+      </router-link>
     </div>
     </div>
   </section>
@@ -122,64 +123,7 @@ export default {
   data () {
     return {
       imgSrc: require('../../public/images/title/page_here_section_2.jpg'),
-      product: [
-        {
-          testImg: 'https://www.hellosolarman.com/assets/welfare/80326560-d31e-4cad-b0a6-fdf68d34c496/imgs/imgCharity.jpg',
-          title: '台灣關愛基金會',
-          price: 15000,
-          content: '透過經濟部能源局與台電的20年再生能源躉購制度，我們可以集合眾人之力，建置起一座日光循環電廠，在銷售電力獲得穩健收益的同時，也能夠為台灣的能源轉型、環境永續提供一份助力。',
-          type: 'I'
-        },
-        {
-          testImg: 'https://www.hellosolarman.com/assets/welfare/34454346-697f-41a5-874d-5894e7b219e1/imgs/imgCharity.jpg',
-          title: 'ARTT台灣動物緊急救援小組',
-          price: 15900,
-          content: '台灣動物緊急救援小組於民國八十四年成立於高雄市，當時是全台灣第一個仿效歐美專為傷病受虐流浪動物提供緊急救援與醫療的民間組織；組織開始之初，只有少數幾名志工自發性參與流浪貓狗救援，並自掏腰包向國外進口專業的動物救援器材。逐漸地，因為理念與行動受到大眾肯定，越來越多的支持者陸續加入捐助行列，投入動物救援任務；台灣動物緊急救援小組亦於民國九十六年向內政部申請立案，正式成為全國性公益非營利組織「台灣動物緊急救援推廣協會」，也是全台灣第一個經政府同意，准許對外合法勸募的動物救援組織。',
-          type: 'G'
-        },
-        {
-          testImg: 'https://www.hellosolarman.com/assets/welfare/b0140b9c-4a7b-490b-883f-ada34388f5ff/imgs/imgCharity.jpg',
-          title: '迦南身心障礙養護院',
-          price: 15100,
-          content: '迦南愛心電廠專案中每一片太陽能板被認購時，太陽人團隊都會率先捐贈500元善款來幫助身心障礙養護院的運營。每位專案參與者除了會獲得長期的收益之外，也可選擇提撥未來售電收益的部分比例，在未來20年持續提供迦南養護院中憨兒及身心障礙者的照顧費用及次期電廠準備金。',
-          type: 'W'
-        },
-        {
-          testImg: 'https://www.hellosolarman.com/assets/welfare/106ae4f6-8af7-4ffd-a32c-1a8dffd9101a/imgs/imgCharity.jpg',
-          title: '讓浪吃飽-浪浪糧食平台',
-          price: 15700,
-          content: '太陽人全民電廠這次將透過日光循環公益專案，與讓浪吃飽集食計畫平台合作，藉由綠能電廠20年持續產出收益的特性來長期提供浪浪園區糧食援助，並與園區合作幫助改善環境不良、糧食短缺、醫療設備等問題，讓我們一起為浪浪們打造一座持續創造溫暖的浪浪愛心電廠。',
-          type: 'B'
-        },
-        {
-          testImg: 'https://www.hellosolarman.com/assets/welfare/b25b1fea-7fe9-4981-985c-995fb79b3091/imgs/imgCharity.jpeg',
-          title: '勵馨基金會',
-          price: 15900,
-          content: '當勵馨基金會-日光循環公益專案中的每一片太陽能板被認購時，太陽人團隊都會率先捐贈500元善款來支持勵馨基金會的營運，您也可在認購太陽能板時自由決定往後售電收益的提撥比例（0~100%），讓更多婦幼可以獲得長達20年的溫暖。',
-          type: 'E'
-        },
-        {
-          testImg: 'https://www.hellosolarman.com/assets/welfare/80326560-d31e-4cad-b0a6-fdf68d34c496/imgs/imgCharity.jpg',
-          title: '唐氏症關愛者協會',
-          price: 14000,
-          content: '透過太陽人全民電廠日光循環公益專案，參與者在認購每一片太陽能板時，太陽人團隊都會率先捐贈500元善款來幫助唐氏症關愛者協會的運營；而參與者除了可獲得來自台電至少20年的穩健收益之外，也能夠自由選擇捐贈提撥比例，將部分售電收益透過太陽人團隊持續幫助唐氏症關愛者協會及次期公益電廠準備金，讓一塊錢不只是一塊錢，愛心無限放大。',
-          type: 'O'
-        },
-        {
-          testImg: 'https://www.hellosolarman.com/assets/welfare/b14e9466-8c4b-4f13-8b7f-bece5b6aae8e/imgs/imgCharity.jpg',
-          title: '勵馨基金會1',
-          price: 18000,
-          content: '當勵馨基金會-日光循環公益專案中的每一片太陽能板被認購時，太陽人團隊都會率先捐贈500元善款來支持勵馨基金會的營運，您也可在認購太陽能板時自由決定往後售電收益的提撥比例（0~100%），讓更多婦幼可以獲得長達20年的溫暖。',
-          type: 'I'
-        },
-        {
-          testImg: 'https://www.hellosolarman.com/assets/welfare/80326560-d31e-4cad-b0a6-fdf68d34c496/imgs/imgCharity.jpg',
-          title: '唐氏症關愛者協會',
-          price: 11000,
-          content: '透過太陽人全民電廠日光循環公益專案，參與者在認購每一片太陽能板時，太陽人團隊都會率先捐贈500元善款來幫助唐氏症關愛者協會的運營；而參與者除了可獲得來自台電至少20年的穩健收益之外，也能夠自由選擇捐贈提撥比例，將部分售電收益透過太陽人團隊持續幫助唐氏症關愛者協會及次期公益電廠準備金，讓一塊錢不只是一塊錢，愛心無限放大。',
-          type: 'G'
-        }
-      ],
+      product: [],
       currentFilter: '',
       countOfPage: 3,
       currentPage: 1,
@@ -207,6 +151,15 @@ export default {
       if (idx >= 0 || idx < this.totalPage) {
         this.currentPage = idx
       }
+    },
+    getData () {
+      this.$http.get('/test.json/').then((res) => {
+        console.log(res.data.data)
+        this.product = res.data.data
+      }).catch((err) => {
+        console.log(err, 'error123')
+      })
+      console.log(this.product)
     }
   },
   computed: {
@@ -227,6 +180,9 @@ export default {
     totalPage: function () {
       return Math.ceil(this.filterProduct.length / this.countOfPage)
     }
+  },
+  created () {
+    this.getData()
   },
   mounted () {
     // 渲染全部product資料

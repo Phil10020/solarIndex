@@ -18,15 +18,36 @@
       flex-direction: column;
     }
 
-    .tab-block {
-      display:flex ;
-      padding-left: 0;
-      @media screen and (max-width:767px) {
-        display: none;
-      }
-      .active{
-        color: $primary;
-      }
+    .welfare-type {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-flow: wrap;
+        @media screen and (max-width:767px) {
+            display: none;
+          }
+
+        li {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+
+            &:not(:first-child) {
+                &:before {
+                    content: "";
+                    width: 1px;
+                    height: 10px;
+                    background-color: rgba(0,0,0,0.3);
+                    margin: 0 20px;
+                }
+            }
+
+            &.active {
+                font-weight: bold;
+                color: $primary;
+            }
+        }
     }
 
     .search-block {

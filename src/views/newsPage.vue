@@ -27,21 +27,19 @@
   <!-- [Start]Page & Search  -->
   <section class="section-operation">
     <div class="operation-block">
-      <ul class="tab-block">
+      <ul class="welfare-type">
         <li
           :class="{ 'active': currentFilter === '' }"
           @click.prevent="filterCategory('all')"
         >
           全部
         </li>
-        <span class="line">|</span>
         <li
           :class="{ 'active': currentFilter === 'news' }"
           @click.prevent="filterCategory('news')"
         >
           太陽人最新消息
         </li>
-        <span class="line">|</span>
         <li
           :class="{ 'active': currentFilter === 'green' }"
           @click.prevent="filterCategory('green')"

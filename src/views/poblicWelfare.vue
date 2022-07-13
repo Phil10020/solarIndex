@@ -56,7 +56,6 @@
     </div>
     <!-- [End]Select & Search-Bar  -->
     <div class="welfare-list">
-      <div>{{ product }}</div>
       <div class="card-wrap" v-for="item in filterProduct.slice(pageStart, pageStart + countOfPage)" :key="item.title">
       <router-link :to="'/poblic/'+item.post_id" class="welfare-card">
         <div class="img-block">
@@ -152,14 +151,15 @@ export default {
         this.currentPage = idx
       }
     },
+    // 取得json資料，將res賦予到data和常變動的data內
     getData () {
       this.$http.get('/test.json/').then((res) => {
-        console.log(res.data.data)
+        console.log(res.data.data, 'sucess')
         this.product = res.data.data
+        this.typeFilter = res.data.data
       }).catch((err) => {
-        console.log(err, 'error123')
+        console.log(err, 'error')
       })
-      console.log(this.product)
     }
   },
   computed: {
@@ -181,12 +181,9 @@ export default {
       return Math.ceil(this.filterProduct.length / this.countOfPage)
     }
   },
-  created () {
-    this.getData()
-  },
+  // 掛載axios 更改DOM元素
   mounted () {
-    // 渲染全部product資料
-    this.typeFilter = this.product
+    this.getData()
   },
   watch: {
     // 監聽事件並將更動後的currentPage，設定回原本預設值

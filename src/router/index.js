@@ -23,7 +23,7 @@ const routes = [
     component: () => import('../views/poblicWelfare.vue')
   },
   {
-    path: '/poblic/:id',
+    path: '/poblic/:post_id',
     name: 'poblicWelfareId',
     component: () => import('../views/poblicWelfareId.vue')
   }

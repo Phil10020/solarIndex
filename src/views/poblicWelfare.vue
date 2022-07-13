@@ -57,7 +57,7 @@
     <!-- [End]Select & Search-Bar  -->
     <div class="welfare-list">
       <div class="card-wrap" v-for="item in filterProduct.slice(pageStart, pageStart + countOfPage)" :key="item.title">
-      <router-link :to="'/poblic/'+item.post_id" class="welfare-card">
+      <router-link :to="`/poblic/${item.post_id}`" class="welfare-card">
         <div class="img-block">
           <a href="">
             <img :src="item.testImg" alt=""/>

@@ -24,12 +24,34 @@
     </div>
   </section>
   <!-- [End]breadcrumbs-list  -->
-
-  <!-- test  -->
-  <div>
-  {{ typeFilter }}
-  </div>
-
+  <!-- [Start]Content  -->
+  <section class="content">
+    <div class="content-common">
+      <div class="content-product">
+        <div class="img-block">
+          <a href="">
+            <img :src="typeFilter.testImg"/>
+          </a>
+        </div>
+        <div class="content-block">
+          <h6>高雄市小港區</h6>
+          <h5>台灣關愛基金會-日光循環公益專案 (高雄大港28號)</h5>
+          <div class="hr"></div>
+          <p class="description"></p>
+          <div class="icons-link">
+            <div class="share">
+              分享至:
+              <a href=""><i></i></a>
+              <a href=""><i></i></a>
+              <a href=""><i></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="content-detail"></div>
+  </section>
+  <!-- [End]  -->
 </template>
 <script>
 export default {
@@ -48,9 +70,9 @@ export default {
   methods: {
     getData () {
       this.$http.get('/singleData.json/').then((res) => {
-        console.log(res, 'sucess')
-        this.product = res.data.data
-        this.typeFilter = res.data.data
+        console.log(res, 'success')
+        this.product = res.data.data[0]
+        this.typeFilter = res.data.data[0]
       }).catch((err) => {
         console.log(err, 'error')
       })

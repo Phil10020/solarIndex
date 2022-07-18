@@ -1,6 +1,6 @@
 .img-block {
     padding-bottom: 20%;
-    width: 35%;
+    width: 45%;
     position: relative;
 
     img {
@@ -13,9 +13,49 @@
     }
 }
 
-.content {
+#poduct-detail-content {
     padding: 65px 16.66% 65px 16.66%;
     @media screen and (max-width:767px) {
     padding: 0 8.33%;
+    }
+    .content-block {
+        h5 {
+            font-weight: 900;
+        }
+        .share {
+            .facebook-color {
+                color: #4267B2;
+            }
+            .line-color {
+                color: #00b900;
+            }
+            .twitter-color {
+                color: #00acee;
+            }
+        }
+    }
+    .hr {
+        display: block;
+        width: 40px;
+        border-bottom: solid 5px $primary;
+        margin: 20px 0 ;
+    }
+    .info-content {
+        .item {
+            position: relative;
+            width: 20%;
+            border-right: solid 1px #ddd;
+            padding: 10px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            &:nth-last-child(1) {
+                border-right:none ;
+            }
+            p {
+                margin-bottom: 0;
+            }
+        }
     }
 }

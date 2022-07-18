@@ -25,29 +25,84 @@
   </section>
   <!-- [End]breadcrumbs-list  -->
   <!-- [Start]Content  -->
-  <section class="content">
+  <section id="poduct-detail-content">
     <div class="content-common">
-      <div class="content-product">
+      <div class="content-product d-flex mb-5">
         <div class="img-block">
           <a href="">
-            <img :src="typeFilter.testImg"/>
+            <img :src="typeFilter.testImg" />
           </a>
         </div>
-        <div class="content-block">
-          <h6>高雄市小港區</h6>
-          <h5>台灣關愛基金會-日光循環公益專案 (高雄大港28號)</h5>
-          <div class="hr"></div>
-          <p class="description"></p>
+        <div class="content-block ps-md-4 d-flex flex-wrap">
+          <div>
+            <h6>高雄市小港區</h6>
+            <h5>{{ typeFilter.title }}</h5>
+            <div class="hr"></div>
+            <p class="description">
+              {{ typeFilter.content }}
+            </p>
+          </div>
           <div class="icons-link">
             <div class="share">
               分享至:
-              <a href=""><i></i></a>
-              <a href=""><i></i></a>
-              <a href=""><i></i></a>
+              <a href="#"><i class="bi bi-facebook facebook-color mx-1"></i></a>
+              <a href="#"><i class="bi bi-line line-color mx-1"></i></a>
+              <a href="#"><i class="bi bi-twitter twitter-color mx-1"></i></a>
             </div>
           </div>
         </div>
       </div>
+      <ul class="info-content d-flex py-5 justify-content-around">
+        <li class="item">
+          <p>投報率</p>
+          <p><strong>8.69</strong>%</p>
+          <p>(IRR <strong>6.05</strong>%)</p>
+          <div class="icon-block">
+            <i class="icon icon-ml icon_320"></i>
+          </div>
+        </li>
+        <li class="item">
+          <p>
+            平均有效<br />
+            日照時間
+          </p>
+          <p>
+            <strong>3.5</strong>
+            kwh
+          </p>
+          <div class="icon-block">
+            <i class="icon icon-ml icon_330"></i>
+          </div>
+        </li>
+        <li class="item">
+          <p>售電單價</p>
+          <p>
+            <strong>6.3079</strong>
+            TWD
+          </p>
+          <div class="icon-block">
+            <i class="fas fa-bolt"></i>
+          </div>
+        </li>
+
+        <li class="item">
+          <p>售電期間</p>
+          <p>
+            <strong>20</strong>
+            年
+          </p>
+          <div class="icon-block">
+            <i class="far fa-calendar-check"></i>
+          </div>
+        </li>
+        <li class="item">
+          <div class="icon-block">
+            <i class="icon icon-ml icon_340"></i>
+          </div>
+          <p>單片售價</p>
+          <p><strong>23235</strong> TWD</p>
+        </li>
+      </ul>
     </div>
     <div class="content-detail"></div>
   </section>
@@ -69,13 +124,16 @@ export default {
   },
   methods: {
     getData () {
-      this.$http.get('/singleData.json/').then((res) => {
-        console.log(res, 'success')
-        this.product = res.data.data[0]
-        this.typeFilter = res.data.data[0]
-      }).catch((err) => {
-        console.log(err, 'error')
-      })
+      this.$http
+        .get('/singleData.json/')
+        .then((res) => {
+          console.log(res, 'success')
+          this.product = res.data.data[0]
+          this.typeFilter = res.data.data[0]
+        })
+        .catch((err) => {
+          console.log(err, 'error')
+        })
     }
   },
   computed: {

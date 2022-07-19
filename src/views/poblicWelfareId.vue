@@ -27,7 +27,7 @@
   <!-- [Start]Content  -->
   <section id="poduct-detail-content">
     <div class="content-common">
-      <div class="content-product d-flex mb-5">
+      <div class="content-product d-flex">
         <div class="img-block">
           <a href="">
             <img :src="typeFilter.testImg" />
@@ -52,13 +52,13 @@
           </div>
         </div>
       </div>
-      <ul class="info-content d-flex py-5 justify-content-around">
+      <ul class="info-content d-flex   justify-content-around">
         <li class="item">
           <p>投報率</p>
           <p><strong>8.69</strong>%</p>
           <p>(IRR <strong>6.05</strong>%)</p>
           <div class="icon-block">
-            <i class="icon icon-ml icon_320"></i>
+            <i class="icon icon-ml bi bi-laptop"></i>
           </div>
         </li>
         <li class="item">
@@ -71,7 +71,7 @@
             kwh
           </p>
           <div class="icon-block">
-            <i class="icon icon-ml icon_330"></i>
+            <i class="icon icon-ml icon-sun"></i>
           </div>
         </li>
         <li class="item">
@@ -81,7 +81,7 @@
             TWD
           </p>
           <div class="icon-block">
-            <i class="fas fa-bolt"></i>
+            <i class="bi bi-lightning-fill"></i>
           </div>
         </li>
 
@@ -92,12 +92,12 @@
             年
           </p>
           <div class="icon-block">
-            <i class="far fa-calendar-check"></i>
+            <i class="bi bi-calendar2-check"></i>
           </div>
         </li>
         <li class="item">
           <div class="icon-block">
-            <i class="icon icon-ml icon_340"></i>
+            <i class="icon icon-ml icon-money"></i>
           </div>
           <p>單片售價</p>
           <p><strong>23235</strong> TWD</p>

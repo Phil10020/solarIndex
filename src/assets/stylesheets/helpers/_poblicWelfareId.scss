@@ -1,23 +1,22 @@
-.img-block {
-    padding-bottom: 20%;
-    width: 45%;
-    position: relative;
-
-    img {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-    }
-}
 
 #poduct-detail-content {
     padding: 65px 16.66% 65px 16.66%;
     @media screen and (max-width:767px) {
     padding: 0 8.33%;
     }
+
+    .img-block {
+        padding-bottom: 20%;
+        width: 100%;
+        position: relative;
+    
+        img {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
+    }
+
     .content-block {
         h5 {
             font-weight: 900;
@@ -34,13 +33,16 @@
             }
         }
     }
+
     .hr {
         display: block;
         width: 40px;
         border-bottom: solid 5px $primary;
         margin: 20px 0 ;
     }
+
     .info-content {
+    padding: 20px 0;
         .item {
             position: relative;
             width: 20%;
@@ -56,6 +58,49 @@
             p {
                 margin-bottom: 0;
             }
+
+            .icon-block {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translateX(-50%) translateY(-50%);
+                width: 100%;
+                height: 100%;
+                z-index: -1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .icon {
+                    display: inline-block;
+                    margin-left: 3px;
+                    margin-right: 3px;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    background-position: bottom;
+                    font-size: 25px;
+                }
+
+                i {
+                    width: 65%;
+                    height: 65%;
+                    color: #f0f0f0;
+                    margin-left: -10px;
+                    text-align: center;
+                    font-size: 4rem;
+                    
+                }
+                
+            }
         }
     }
 }
+.icon-money {
+    background-image: url('/public/images/productWelfareId/icon_money.svg');
+}
+
+.icon-sun {
+    background-image: url('/public/images/productWelfareId/icon_sun.svg');
+}
+
+

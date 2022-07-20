@@ -119,26 +119,23 @@
       </ul>
       <div class="tab-content" id="myTabContent">
         <!-- charity  -->
-        <div
-          class="tab-pane fade active show"
-          id="charity"
-          role="tabpanel"
-          aria-labelledby="charity-tab"
-          v-show="num == 0"
-        >
+        <div v-show="num == 0">
           <div>
             <div class="title">
-              <i class="fas fa-angle-right"></i>
+              <i class="bi bi-chevron-right"></i>
               <span>公益專案介紹</span>
             </div>
             <div class="charity-info">
-              <a href="https://www.twhhf.org/">
+              <!-- <a href="https://www.twhhf.org/">
                 <div
                   class="charity-logo"
                   style="
                     background-image: url(/assets/welfare/80326560-d31e-4cad-b0a6-fdf68d34c496/imgs/imgLogo.png);
                   "
                 ></div>
+              </a> -->
+              <a href="https://www.twhhf.org/">
+                <div class="charity-logo" :style="{ background: 'url(' + charityLogo + ')' }">111</div>
               </a>
               <div class="charity-intro">
                 <span>台灣關愛基金會</span>
@@ -310,13 +307,7 @@
         </div>
         <!-- charity  -->
         <!-- location  -->
-        <div
-          class="tab-pane fade"
-          id="location"
-          role="tabpanel"
-          aria-labelledby="home-tab"
-          v-show="num == 1"
-        >
+        <div v-show="num == 1">
           <label class="mb-2 mt-2">
             <i class="fas fa-angle-right" style="color: #a8253c"></i>&nbsp;
             &nbsp;電廠實景空拍
@@ -2491,13 +2482,7 @@
         </div>
         <!-- location  -->
         <!-- progress  -->
-        <div
-          class="tab-pane fade"
-          id="progress"
-          role="tabpanel"
-          aria-labelledby="contact-tab"
-          v-show="num == 2"
-        >
+        <div v-show="num == 2">
           <div class="row">
             <div class="col-md-12 d-flex d-sm-none">
               <div class="schedule-timeline">
@@ -2640,13 +2625,7 @@
         </div>
         <!-- progress  -->
         <!-- buildSystem  -->
-        <div
-          class="tab-pane fade"
-          id="buildSystem"
-          role="tabpanel"
-          aria-labelledby="buildSystem-tab"
-          v-show="num == 3"
-        >
+        <div v-show="num == 3">
           <div class="contract-list">
             <div
               class="item"
@@ -2668,13 +2647,7 @@
         </div>
         <!-- buildSystem  -->
         <!-- caculator  -->
-        <div
-          class="tab-pane fade"
-          id="caculator"
-          role="tabpanel"
-          aria-labelledby="caculator-tab"
-          v-show="num == 4"
-        >
+        <div v-show="num == 4">
           <h5 class="mb-2 mt-2">
             <i class="fas fa-angle-right" style="color: #a8253c"></i>&nbsp;
             &nbsp;預估賣電收益計算機
@@ -3205,13 +3178,7 @@
         <input type="hidden" id="hid_pst_rev_rent" value="0.1" />
         <input type="hidden" id="hid_pst_panel_recycle" value="12240" />
         <!-- contract  -->
-        <div
-          class="tab-pane fade"
-          id="contract"
-          role="tabpanel"
-          aria-labelledby="files-tab"
-          v-show="num == 5"
-        >
+        <div v-show="num == 5">
           <div class="contract-list">
             <div
               class="item"
@@ -3280,6 +3247,7 @@ export default {
   data () {
     return {
       imgSrc: require('../../public/images/banner/product_banner.jpg'),
+      charityLogo: require('../../public/images/productWelfareId/imgLogo.png'),
       product: [],
       currentFilter: '',
       countOfPage: 3,

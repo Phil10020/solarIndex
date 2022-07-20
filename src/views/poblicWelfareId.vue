@@ -126,19 +126,11 @@
               <span>公益專案介紹</span>
             </div>
             <div class="charity-info">
-              <!-- <a href="https://www.twhhf.org/">
-                <div
-                  class="charity-logo"
-                  style="
-                    background-image: url(/assets/welfare/80326560-d31e-4cad-b0a6-fdf68d34c496/imgs/imgLogo.png);
-                  "
-                ></div>
-              </a> -->
               <a href="https://www.twhhf.org/">
-                <div class="charity-logo" :style="{ background: 'url(' + charityLogo + ')' }">111</div>
+                <div class="charity-logo" :style="{ background: 'url(' + charityLogo + ')' }"></div>
               </a>
               <div class="charity-intro">
-                <span>台灣關愛基金會</span>
+                <h5>台灣關愛基金會</h5>
                 <span
                   ><p>
                     跨越族群藩籬的愛心&nbsp;<br />財團法人台灣關愛基金會（關愛之家）<br />黑戶寶寶、失聯移工，是台灣長久以來難解的議題。<br />我們很難想像，在台灣仍有許多非本國籍兒童、孕婦移工婦女、落難外籍人士，在台灣無法獲得妥善基本的生活和人權保障。
@@ -161,8 +153,7 @@
             </div>
             <div class="col-md-12 mb-3">
               <img
-                src="/assets/welfare/80326560-d31e-4cad-b0a6-fdf68d34c496/imgs/imgCharity.jpg"
-                alt=""
+                :src="typeFilter.testImg"
                 class="img-fluid w-100"
               />
             </div>
@@ -178,7 +169,7 @@
           </div>
           <div>
             <div class="title">
-              <i class="fas fa-angle-right"></i>
+              <i class="bi bi-chevron-right"></i>
               <span>公益流程</span>
             </div>
             <div class="mt-30">
@@ -191,9 +182,11 @@
                       <span>決定拿出20%收益做公益。</span>
                     </div>
                   </div>
-                  <div class="step1 img"></div>
+                  <div class="step1">
+                    <img :src="stepImg.step1" alt="step1">
+                  </div>
                 </div>
-                <div class="step-block ml-3">
+                <div class="step-block ms-3">
                   <div>
                     <span class="step-num">2</span>
                     <div class="step-info">
@@ -201,7 +194,9 @@
                       <span>發現獲得總收益100塊！</span>
                     </div>
                   </div>
-                  <div class="step2 img"></div>
+                  <div class="step2">
+                    <img :src="stepImg.step2" alt="step2">
+                  </div>
                 </div>
               </div>
               <div class="step mt-30">
@@ -221,7 +216,9 @@
                       >
                     </div>
                   </div>
-                  <div class="step3 img"></div>
+                  <div class="step3">
+                    <img :src="stepImg.step3" alt="step3">
+                  </div>
                 </div>
               </div>
               <div class="step mt-30">
@@ -242,15 +239,19 @@
                     </div>
                   </div>
                   <div class="step4-5 d-flex">
-                    <div class="step4 img"></div>
-                    <div class="step5 img"></div>
+                    <div class="step4">
+                      <img :src="stepImg.step4" alt="step4">
+                    </div>
+                    <div class="step5">
+                      <img :src="stepImg.step5" alt="step5">
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <div class="d-flex flex-column align-items-center">
-            <div class="font-weight-bold font-color-primary mt-30">
+            <div class="font-weight-bold text-primary mt-30">
               跟著太陽人一起循環公益，愛心不斷!
             </div>
             <div class="btn btn-redwine mt-30">
@@ -261,10 +262,10 @@
           </div>
           <div class="mt-30">
             <div class="title">
-              <i class="fas fa-angle-right"></i>
+              <i class="bi bi-chevron-right"></i>
               <span>購買三步驟</span>
             </div>
-            <div class="buy-setp">
+            <div class="d-flex justify-content-center align-items-center">
               <div>
                 <div class="icon">
                   <i class="icon icon-ml icon_150"></i>
@@ -3248,6 +3249,18 @@ export default {
     return {
       imgSrc: require('../../public/images/banner/product_banner.jpg'),
       charityLogo: require('../../public/images/productWelfareId/imgLogo.png'),
+      stepImg: {
+        step1: require('../../public/images/productWelfareId/step1.jpg'),
+        step2: require('../../public/images/productWelfareId/step2.jpg'),
+        step3: require('../../public/images/productWelfareId/step3.jpg'),
+        step4: require('../../public/images/productWelfareId/step4.jpg'),
+        step5: require('../../public/images/productWelfareId/step5.jpg')
+      },
+      iconImg: {
+        icon1: require('../../public/images/productWelfareId/icon_mobil.svg'),
+        icon2: require('../../public/images/productWelfareId/icon_persent.png'),
+        icon3: require('../../public/images/productWelfareId/icon_pay.svg')
+      },
       product: [],
       currentFilter: '',
       countOfPage: 3,

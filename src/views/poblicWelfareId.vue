@@ -25,7 +25,7 @@
   </section>
   <!-- [End]breadcrumbs-list  -->
   <!-- [Start]Content  -->
-  <section id="poduct-detail-content">
+  <section id="product-detail-content">
     <div class="content-common">
       <div class="content-product d-flex">
         <div class="img-block">
@@ -315,7 +315,7 @@
         <!-- location  -->
         <div v-show="num == 1">
           <label class="mb-2 mt-2">
-            <i class="fas fa-angle-right" style="color: #a8253c"></i>&nbsp;
+            <i class="bi bi-chevron-right"></i>&nbsp;
             &nbsp;電廠實景空拍
           </label>
           <div
@@ -2466,21 +2466,21 @@
           />
 
           <label class="mb-2 mt-2">
-            <i class="fas fa-angle-right" style="color: #a8253c"></i>&nbsp;
+            <i class="bi bi-chevron-right"></i>&nbsp;
             &nbsp; 電廠實景空拍
           </label>
           <div class="row">
             <div class="col-md-12 mb-3">
               <img
-                src="/assets/product/6b14ea6f-de6b-4897-a2dc-12de69a32751/imgs/pst_aerial_pic1.jpg"
-                alt=""
+                :src="locationImg.location1"
+                alt="location1"
                 class="img-fluid w-100"
               />
             </div>
             <div class="col-md-12 mb-3">
               <img
-                src="/assets/product/6b14ea6f-de6b-4897-a2dc-12de69a32751/imgs/pst_aerial_pic2.jpg"
-                alt=""
+                :src="locationImg.location2"
+                alt="location2"
                 class="img-fluid w-100"
               />
             </div>
@@ -3246,6 +3246,93 @@
     </div>
   </section>
   <!-- [End]  -->
+  <!-- [Start]其它專案  -->
+  <section id="product-detail-other-project">
+        <h4 class="title letterSpacing-50">其他專案</h4>
+        <div class="slider-block">
+
+            <div id="slider-btn-left" class="to-left">
+                <i class="bi bi-chevron-left"></i>
+            </div>
+
+            <div id="slider-btn-right" class="to-right">
+                <i class="bi bi-chevron-right"></i>
+            </div>
+
+            <div class="slider-items">
+                <div class="item" style="left: calc(0% - 0px);">
+                    <img class="other-img" :src="otherImg.other1" alt="other1">
+                    <p class="text-center mb-2">太陽人台中晨光29號</p>
+                    <div class="hover">
+                        <a class="link" href="product.aspx?op=detail&amp;id=f9645356-4d22-4ccb-93ce-2c04bc7458df">
+                            <i class="fas fa-link"></i>
+                        </a>
+                        <div class="title">
+                            太陽人台中晨光29號
+                        </div>
+                    </div>
+                </div>
+                <div class="item" style="left: calc(0% - 0px);">
+                    <div style="position: absolute; z-index: 1; left: 10px; bottom: 10px;">
+                        <img src="https://www.hellosolarman.com/images/soldout.png" width="100" height="100">
+                    </div>
+                    <img class="other-img" :src="otherImg.other2" alt="other2">
+                    <p class="text-center mb-2">現代婦女基金會-日光循環公益專案 (雲林朝天19號)</p>
+                    <div class="hover">
+                        <a class="link" href="product.aspx?op=detail&amp;id=c6bd6210-d13c-49d2-81c4-eefa5b76af63">
+                            <i class="fas fa-link"></i>
+                        </a>
+                        <div class="title">
+                            現代婦女基金會-日光循環公益專案 (雲林朝天19號)
+                        </div>
+                    </div>
+                </div>
+                <div class="item" style="left: calc(0% - 0px);">
+                    <div style="position: absolute; z-index: 1; left: 10px; bottom: 10px;">
+                        <img src="https://www.hellosolarman.com/images/soldout.png" width="100" height="100">
+                    </div>
+                    <img class="other-img" :src="otherImg.other3" alt="other3">
+                    <p class="text-center mb-2">太陽人宜蘭蘭陽06號</p>
+                    <div class="hover">
+                        <a class="link" href="product.aspx?op=detail&amp;id=76f95c8d-e0ba-416e-bad0-8eb5c1511a9e">
+                            <i class="fas fa-link"></i>
+                        </a>
+                        <div class="title">
+                            太陽人宜蘭蘭陽06號
+                        </div>
+                    </div>
+                </div>
+                <div class="item" style="left: calc(0% - 0px);">
+                    <img class="other-img" :src="otherImg.other4" alt="other4">
+                    <p class="text-center mb-2">太陽人苗栗石虎05號</p>
+                    <div class="hover">
+                        <a class="link" href="product.aspx?op=detail&amp;id=604cdd20-b4e9-45f4-be14-24209967d3b9">
+                            <i class="fas fa-link"></i>
+                        </a>
+                        <div class="title">
+                            太陽人苗栗石虎05號
+                        </div>
+                    </div>
+                </div>
+                <div class="item" style="left: calc(0% - 0px);">
+                    <div style="position: absolute; z-index: 1; left: 10px; bottom: 10px;">
+                        <img src="https://www.hellosolarman.com/images/soldout.png" width="100" height="100">
+                    </div>
+                    <img class="other-img" :src="otherImg.other5" alt="other5">
+                    <p class="text-center mb-2">太陽人桃園天空45號</p>
+                    <div class="hover">
+                        <a class="link" href="product.aspx?op=detail&amp;id=eeddc999-3659-4854-ad31-213f581cfb5c">
+                            <i class="fas fa-link"></i>
+                        </a>
+                        <div class="title">
+                            太陽人桃園天空45號
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+  </section>
+  <!-- [End]其它專案 -->
 </template>
 <script>
 export default {
@@ -3265,6 +3352,17 @@ export default {
         icon1: require('../../public/images/productWelfareId/icon_mobil.svg'),
         icon2: require('../../public/images/productWelfareId/icon_persent.png'),
         icon3: require('../../public/images/productWelfareId/icon_pay.svg')
+      },
+      otherImg: {
+        other1: require('../../public/images/productWelfareId/other1.jpg'),
+        other2: require('../../public/images/productWelfareId/other2.jpg'),
+        other3: require('../../public/images/productWelfareId/other3.jpg'),
+        other4: require('../../public/images/productWelfareId/other4.jpg'),
+        other5: require('../../public/images/productWelfareId/other5.jpg')
+      },
+      locationImg: {
+        location1: require('../../public/images/productWelfareId/pst_aerial_pic1.jpg'),
+        location2: require('../../public/images/productWelfareId/pst_aerial_pic2.jpg')
       },
       product: [],
       currentFilter: '',

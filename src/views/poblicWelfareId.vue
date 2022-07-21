@@ -265,27 +265,32 @@
               <i class="bi bi-chevron-right"></i>
               <span>購買三步驟</span>
             </div>
-            <div class="d-flex justify-content-center align-items-center">
+            <div class="buy-step">
               <div>
                 <div class="icon">
-                  <i class="icon icon-ml icon_150"></i>
+                  <i class="icon icon-ml icon1">
+                  </i>
                 </div>
                 <span>STEP 01</span>
                 <span>選擇購買的電廠與購買片數</span>
               </div>
-              <i class="fas fa-angle-double-right"></i>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-double-right" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708z"/>
+  <path fill-rule="evenodd" d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z"/>
+</svg>
               <div>
                 <div
-                  class="proportion"
-                  style="background-image: url(Images/我的電廠/公益比例.png)"
-                ></div>
+                  class="proportion"></div>
                 <span>STEP 02</span>
                 <span>拉選提撥公益比例</span>
               </div>
-              <i class="fas fa-angle-double-right"></i>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-double-right" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708z"/>
+  <path fill-rule="evenodd" d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z"/>
+</svg>
               <div>
                 <div class="icon">
-                  <i class="icon icon-ml icon_160"></i>
+                  <i class="icon icon-ml icon icon3"></i>
                 </div>
                 <span>STEP 03</span>
                 <span>選擇付款方式並完成購買</span>
@@ -295,7 +300,7 @@
           <div class="d-flex justify-content-center align-items-center">
             <div class="step-notice">
               <span>
-                <span class="font-color-primary">*</span>
+                <span class="text-primary">*</span>
               </span>
               <span
                 >當您購買並完成付款，且該電廠完工並掛表後開始計算電費，未來 20

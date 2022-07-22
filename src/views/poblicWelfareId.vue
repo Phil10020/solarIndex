@@ -2536,12 +2536,7 @@
                     <p>111 年</p>
                   </div>
                   <div class="dates">
-                    <span class="date" style="left: 0%">02/14</span
-                    ><span class="date" style="left: 20%">02/21</span
-                    ><span class="date" style="left: 40%">06/30</span
-                    ><span class="date" style="left: 60%">07/15</span
-                    ><span class="date" style="left: 80%">08/15</span
-                    ><span class="date" style="left: 100%">09/15</span>
+                    <span v-for="(item, i) in progressData" :key="item+123" class="date" :style="{left: (i / (progressData.length - 1))*100 + '%'}">{{ item.date }}</span>
                   </div>
                 </div>
               </div>
@@ -2549,80 +2544,8 @@
               <div class="schedule-item schedule-danger">
                 <p class="title">客戶</p>
                 <div class="time-list">
-                  <div class="items" style="left: 0%">
-                    <label>併聯審查同意書</label>
-
-                    <div class="bubble">
-                      <div class="content">
-                        <div class="baguetteBoxOne gallery">
-                          <a
-                            href="/assets/esprogress/6b14ea6f-de6b-4897-a2dc-12de69a32751/0/pst_schedule_img1.jpg"
-                          >
-                            <img
-                              src="/assets/esprogress/6b14ea6f-de6b-4897-a2dc-12de69a32751/0/pst_schedule_img1.jpg"
-                            />
-                          </a>
-
-                          <a
-                            href="/assets/esprogress/6b14ea6f-de6b-4897-a2dc-12de69a32751/0/pst_schedule_img2.jpg"
-                          >
-                            <img
-                              src="/assets/esprogress/6b14ea6f-de6b-4897-a2dc-12de69a32751/0/pst_schedule_img2.jpg"
-                            />
-                          </a>
-
-                          <a
-                            href="/assets/esprogress/6b14ea6f-de6b-4897-a2dc-12de69a32751/0/pst_schedule_img3.jpg"
-                          >
-                            <img
-                              src="/assets/esprogress/6b14ea6f-de6b-4897-a2dc-12de69a32751/0/pst_schedule_img3.jpg"
-                            />
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="items" style="left: 20%">
-                    <label>能源局同意備案函文</label>
-
-                    <div class="bubble">
-                      <div class="content">
-                        <div class="baguetteBoxOne gallery">
-                          <a
-                            href="/assets/esprogress/6b14ea6f-de6b-4897-a2dc-12de69a32751/20/pst_schedule_img1.jpg"
-                          >
-                            <img
-                              src="/assets/esprogress/6b14ea6f-de6b-4897-a2dc-12de69a32751/20/pst_schedule_img1.jpg"
-                            />
-                          </a>
-
-                          <a
-                            href="/assets/esprogress/6b14ea6f-de6b-4897-a2dc-12de69a32751/20/pst_schedule_img2.jpg"
-                          >
-                            <img
-                              src="/assets/esprogress/6b14ea6f-de6b-4897-a2dc-12de69a32751/20/pst_schedule_img2.jpg"
-                            />
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="items" style="left: 40%">
-                    <label>電廠開工</label>
-                  </div>
-
-                  <div class="items" style="left: 60%">
-                    <label>電廠建置完成/台電掛表</label>
-                  </div>
-
-                  <div class="items" style="left: 80%">
-                    <label>設備登記</label>
-                  </div>
-
-                  <div class="items" style="left: 100%">
-                    <label>台電抄表結算收益</label>
+                  <div class="items" v-for="(item, i) in progressData" :key="item+123" :style="{left: (i / (progressData.length - 1))*100 + '%'}">
+                    <label>{{ item.costomer }}</label>
                   </div>
                 </div>
               </div>
@@ -2632,22 +2555,29 @@
         <!-- progress  -->
         <!-- buildSystem  -->
         <div v-show="num == 3">
-          <div class="contract-list">
-            <div
-              class="item"
-              data-toggle="modal"
-              data-target="#modal_pst_pdf_ptoelectronic"
-            >
-              <i class="fas fa-chevron-right"></i>
-              光電模組
-            </div>
-            <div
-              class="item"
-              data-toggle="modal"
-              data-target="#modal_pst_pdf_converter"
-            >
-              <i class="fas fa-chevron-right"></i>
-              變流器
+          <div class="contract-list d-flex flex-wrap">
+            <!-- test  -->
+            <div class="item" data-bs-toggle="modal" :data-bs-target="'#'+item.name" v-for="item in buildSystem" :key="item.title">
+              <font-awesome-icon icon="fa-solid fa-chevron-right" />&nbsp;{{ item.title }}
+              <!-- [Start]model  -->
+              <div class="modal fade" :id="item.name" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" v-for="item in buildSystem" :key="item.title">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">{{  item.title }}</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <img :src="item.buildImg" alt="" style="width:100%">
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <!-- [End]model  -->
             </div>
           </div>
         </div>
@@ -3364,6 +3294,18 @@ export default {
         location1: require('../../public/images/productWelfareId/pst_aerial_pic1.jpg'),
         location2: require('../../public/images/productWelfareId/pst_aerial_pic2.jpg')
       },
+      progressData: [
+        { year: '111年', date: '02/14', costomer: '併聯審查同意書' },
+        { year: '111年', date: '02/21', costomer: '能源局同意備案函文' },
+        { year: '111年', date: '06/30', costomer: '電廠開工' },
+        { year: '111年', date: '07/15', costomer: '電廠建置完成/台電掛表' },
+        { year: '111年', date: '08/15', costomer: '設備登記' },
+        { year: '111年', date: '09/15', costomer: '台電抄表結算收益' }
+      ],
+      buildSystem: [
+        { title: '光電模組', name: 'a1', buildImg: require('../../public/images/productWelfareId/buildImg1.jpeg') },
+        { title: '變流器', name: 'b2', buildImg: require('../../public/images/productWelfareId/buildImg2.jpg') }
+      ],
       product: [],
       currentFilter: '',
       countOfPage: 3,

@@ -14,8 +14,9 @@
       margin: 0 15px;
     }
     
-    @media screen and (max-width:767px) {
+    @media screen and (max-width:1024px) {
       flex-direction: column;
+      align-items: center;
     }
 
     .welfare-type {
@@ -70,7 +71,17 @@
 
     .card-width {
       //筆電間距問題
-      width: 20rem;
+      width: 25rem;
+      @media screen and (max-width:767px) {
+        width: 20rem;
+      }
+    }
+
+    .item-width {
+      justify-content: space-between;
+      @media screen and (max-width:1024px) {
+        justify-content: center;
+      }
     }
   
 }

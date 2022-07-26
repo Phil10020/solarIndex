@@ -73,7 +73,7 @@
   <!-- [Start]Main  -->
   <section class="news-section-papers">
     <!-- [Start]Content (slice取得第開始，與結尾資料並與頁數關聯) -->
-    <div class="d-flex flex-wrap px-0" :class="{ 'justify-content-between': isActive ,'justify-content-start': error }">
+    <div class="d-flex flex-wrap px-0 item-width" :class="{ 'justify-content-start': error }">
       <div class="d-flex px-0 mb-3 card-width" :class="{ 'me-md-5': error }" v-for="item in filterProduct.slice(pageStart, pageStart + countOfPage)"
         :key="item.title">
       <div class="card mb-3 mb-lg-0">

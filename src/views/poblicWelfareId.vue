@@ -141,10 +141,9 @@
         <!-- caculator  -->
         <div v-show="num == 4">
           <h5 class="mb-2 mt-2">
-            <i class="fas fa-angle-right" style="color: #a8253c"></i>&nbsp;
+            <font-awesome-icon icon="fa-solid fa-angle-right" class="text-primary"/>
             &nbsp;預估賣電收益計算機
           </h5>
-
           <p style="color: #484848" class="letterSpacing-75">
             請輸入您欲購買的太陽能板片數，將顯示電廠20年的財富預估收益
           </p>
@@ -349,48 +348,7 @@
                 </table>
               </div>
               <div class="col-lg-8 p-0">
-                <div
-                  id="trial_chart"
-                  style="
-                    width: 100%;
-                    height: 400px;
-                    background: rgb(255, 255, 255);
-                    -webkit-tap-highlight-color: transparent;
-                    user-select: none;
-                    position: relative;
-                  "
-                  _echarts_instance_="ec_1658197997138"
-                >
-                  <div
-                    style="
-                      position: relative;
-                      width: 619px;
-                      height: 400px;
-                      padding: 0px;
-                      margin: 0px;
-                      border-width: 0px;
-                    "
-                  >
-                    <canvas
-                      data-zr-dom-id="zr_0"
-                      width="773"
-                      height="500"
-                      style="
-                        position: absolute;
-                        left: 0px;
-                        top: 0px;
-                        width: 619px;
-                        height: 400px;
-                        user-select: none;
-                        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-                        padding: 0px;
-                        margin: 0px;
-                        border-width: 0px;
-                      "
-                    ></canvas>
-                  </div>
-                  <div></div>
-                </div>
+                <bar-chart></bar-chart>
               </div>
             </div>
           </div>
@@ -826,6 +784,8 @@ import poblicLocation from './poblicItems/poblicLocation.vue'
 import poblicProgress from './poblicItems/poblicProgress.vue'
 import buildSystem from './poblicItems/poblicBuildSystem.vue'
 
+import BarChart from './poblicItems/barChart.vue'
+
 export default {
   name: 'poblicWelfareId',
   data () {
@@ -864,7 +824,8 @@ export default {
     poblicCharity,
     poblicLocation,
     poblicProgress,
-    buildSystem
+    buildSystem,
+    BarChart
   },
   methods: {
     getData () {

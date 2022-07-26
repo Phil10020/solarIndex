@@ -450,6 +450,28 @@
         color: $primary;
     }
     // caculator 
+    .letterSpacing-75 {
+        letter-spacing: 1.75px;
+    }
+
+    .btn-redwine {
+        color: #fff;
+        background-color: $primary;
+        border-radius: 0;
+    }
+
+    .info-block {
+        background-color: #E9E9E9;
+        padding: 10px 30px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 40px;
+        margin-bottom: 90px;
+        .info-block-item {
+            color: #656565;
+        }
+    }
 }
 
 #product-detail-other-project {

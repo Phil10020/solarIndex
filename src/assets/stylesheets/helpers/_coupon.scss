@@ -86,7 +86,9 @@
     .active{
         color: $primary;
     }
-    li {
+    button {
+        border: none;
+        background: #fff;
         padding: 0 15px;
         &:first-child {
             border-right: 1px solid #c9c9c9;
@@ -127,6 +129,10 @@
             }
         }
     };
+    &-img {
+        display: flex;
+        justify-content: center;
+    }
 }
 
 .share-step-block {

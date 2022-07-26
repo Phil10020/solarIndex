@@ -68,24 +68,24 @@
       </div>
       <hr />
       <div class="share-step-title">連結分享三步驟超簡單</div>
-      <ul class="share-step-shoose">
-        <li
+      <div class="share-step-shoose">
+        <button
           class="share-step-type divider px-3"
           type="computer"
           :class="{ active: !isShowingWeb }"
           @click="toggleTab(false)"
         >
           <i class="bi bi-laptop"></i>網頁分享
-        </li>
-        <li
+        </button>
+        <button
           class="share-step-type px-3"
           type="app"
           :class="{ active: isShowingWeb }"
           @click="toggleTab(true)"
         >
           <i class="bi bi-phone"></i>App分享
-        </li>
-      </ul>
+        </button>
+      </div>
       <div class="share-step app" v-if="isShowingWeb == true">
         <div class="share-step-block">
           <div class="share-step-img">

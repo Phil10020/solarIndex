@@ -472,6 +472,26 @@
             color: #656565;
         }
     }
+
+    .info-chart-block {
+        td {
+            padding: 0.75rem;
+            hr {
+                margin-top: 1rem;
+                margin-bottom: 1rem;
+                border: 0;
+                border-top: 1px solid rgba(0, 0, 0, 0.1);
+            }
+        }
+    }
+
+    .income-list {
+        table {
+            :not(:first-child) {
+                border-top: none ;
+            }
+        }
+    }
 }
 
 #product-detail-other-project {

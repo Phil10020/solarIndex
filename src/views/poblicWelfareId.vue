@@ -112,6 +112,7 @@
         <li class="nav-item product-detail-tab-item" v-for="(item, i) in tabs" :key="item+123">
           <button
             class="nav-link"
+            style="cursor: pointer;"
             :class="{'active':i == num}"
             @click="tab(i)"
             > {{ item }} </button>
@@ -278,7 +279,7 @@
                 </table>
               </div>
               <div class="col-lg-8 p-0">
-                <bar-chart></bar-chart>
+                <bar-chart :width="866" :height="400"></bar-chart>
               </div>
             </div>
           </div>
@@ -291,127 +292,127 @@
                   class="table table-sm table-striped"
                   id="incomeEstimate_1"
                 >
-                  <thead class="background-color-primary text-light">
+                  <thead class="bg-primary text-light">
                     <tr>
                       <td class="text-center">年</td>
-                      <td class="text-right">發電量</td>
-                      <td class="text-right">賣電收入</td>
-                      <td class="text-right">營運維護費</td>
-                      <td class="text-right">保險</td>
-                      <td class="text-right">屋頂租金</td>
-                      <td class="text-right">模組回收費</td>
-                      <td class="text-right">累積收益</td>
+                      <td class="text-end">發電量</td>
+                      <td class="text-end">賣電收入</td>
+                      <td class="text-end">營運維護費</td>
+                      <td class="text-end">保險</td>
+                      <td class="text-end">屋頂租金</td>
+                      <td class="text-end">模組回收費</td>
+                      <td class="text-end">累積收益</td>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
                       <td class="text-center">1</td>
-                      <td class="text-right">434</td>
-                      <td class="text-right">2738</td>
-                      <td class="text-right">-274</td>
-                      <td class="text-right">-56</td>
-                      <td class="text-right">-274</td>
-                      <td class="text-right">-34</td>
-                      <td class="text-right">2,100</td>
+                      <td class="text-end">434</td>
+                      <td class="text-end">2738</td>
+                      <td class="text-end">-274</td>
+                      <td class="text-end">-56</td>
+                      <td class="text-end">-274</td>
+                      <td class="text-end">-34</td>
+                      <td class="text-end">2,100</td>
                     </tr>
 
                     <tr>
                       <td class="text-center">2</td>
-                      <td class="text-right">432</td>
-                      <td class="text-right">2725</td>
-                      <td class="text-right">-273</td>
-                      <td class="text-right">-56</td>
-                      <td class="text-right">-273</td>
-                      <td class="text-right">-34</td>
-                      <td class="text-right">4,189</td>
+                      <td class="text-end">432</td>
+                      <td class="text-end">2725</td>
+                      <td class="text-end">-273</td>
+                      <td class="text-end">-56</td>
+                      <td class="text-end">-273</td>
+                      <td class="text-end">-34</td>
+                      <td class="text-end">4,189</td>
                     </tr>
 
                     <tr>
                       <td class="text-center">3</td>
-                      <td class="text-right">430</td>
-                      <td class="text-right">2712</td>
-                      <td class="text-right">-271</td>
-                      <td class="text-right">-56</td>
-                      <td class="text-right">-271</td>
-                      <td class="text-right">-34</td>
-                      <td class="text-right">6,269</td>
+                      <td class="text-end">430</td>
+                      <td class="text-end">2712</td>
+                      <td class="text-end">-271</td>
+                      <td class="text-end">-56</td>
+                      <td class="text-end">-271</td>
+                      <td class="text-end">-34</td>
+                      <td class="text-end">6,269</td>
                     </tr>
 
                     <tr>
                       <td class="text-center">4</td>
-                      <td class="text-right">428</td>
-                      <td class="text-right">2700</td>
-                      <td class="text-right">-270</td>
-                      <td class="text-right">-56</td>
-                      <td class="text-right">-270</td>
-                      <td class="text-right">-34</td>
-                      <td class="text-right">8,339</td>
+                      <td class="text-end">428</td>
+                      <td class="text-end">2700</td>
+                      <td class="text-end">-270</td>
+                      <td class="text-end">-56</td>
+                      <td class="text-end">-270</td>
+                      <td class="text-end">-34</td>
+                      <td class="text-end">8,339</td>
                     </tr>
 
                     <tr>
                       <td class="text-center">5</td>
-                      <td class="text-right">426</td>
-                      <td class="text-right">2687</td>
-                      <td class="text-right">-269</td>
-                      <td class="text-right">-56</td>
-                      <td class="text-right">-269</td>
-                      <td class="text-right">-34</td>
-                      <td class="text-right">10,398</td>
+                      <td class="text-end">426</td>
+                      <td class="text-end">2687</td>
+                      <td class="text-end">-269</td>
+                      <td class="text-end">-56</td>
+                      <td class="text-end">-269</td>
+                      <td class="text-end">-34</td>
+                      <td class="text-end">10,398</td>
                     </tr>
 
                     <tr>
                       <td class="text-center">6</td>
-                      <td class="text-right">424</td>
-                      <td class="text-right">2675</td>
-                      <td class="text-right">-268</td>
-                      <td class="text-right">-56</td>
-                      <td class="text-right">-268</td>
-                      <td class="text-right">-34</td>
-                      <td class="text-right">12,447</td>
+                      <td class="text-end">424</td>
+                      <td class="text-end">2675</td>
+                      <td class="text-end">-268</td>
+                      <td class="text-end">-56</td>
+                      <td class="text-end">-268</td>
+                      <td class="text-end">-34</td>
+                      <td class="text-end">12,447</td>
                     </tr>
 
                     <tr>
                       <td class="text-center">7</td>
-                      <td class="text-right">422</td>
-                      <td class="text-right">2662</td>
-                      <td class="text-right">-266</td>
-                      <td class="text-right">-56</td>
-                      <td class="text-right">-266</td>
-                      <td class="text-right">-34</td>
-                      <td class="text-right">14,487</td>
+                      <td class="text-end">422</td>
+                      <td class="text-end">2662</td>
+                      <td class="text-end">-266</td>
+                      <td class="text-end">-56</td>
+                      <td class="text-end">-266</td>
+                      <td class="text-end">-34</td>
+                      <td class="text-end">14,487</td>
                     </tr>
 
                     <tr>
                       <td class="text-center">8</td>
-                      <td class="text-right">420</td>
-                      <td class="text-right">2649</td>
-                      <td class="text-right">-265</td>
-                      <td class="text-right">-56</td>
-                      <td class="text-right">-265</td>
-                      <td class="text-right">-34</td>
-                      <td class="text-right">16,516</td>
+                      <td class="text-end">420</td>
+                      <td class="text-end">2649</td>
+                      <td class="text-end">-265</td>
+                      <td class="text-end">-56</td>
+                      <td class="text-end">-265</td>
+                      <td class="text-end">-34</td>
+                      <td class="text-end">16,516</td>
                     </tr>
 
                     <tr>
                       <td class="text-center">9</td>
-                      <td class="text-right">418</td>
-                      <td class="text-right">2637</td>
-                      <td class="text-right">-264</td>
-                      <td class="text-right">-56</td>
-                      <td class="text-right">-264</td>
-                      <td class="text-right">-34</td>
-                      <td class="text-right">18,535</td>
+                      <td class="text-end">418</td>
+                      <td class="text-end">2637</td>
+                      <td class="text-end">-264</td>
+                      <td class="text-end">-56</td>
+                      <td class="text-end">-264</td>
+                      <td class="text-end">-34</td>
+                      <td class="text-end">18,535</td>
                     </tr>
 
                     <tr>
                       <td class="text-center">10</td>
-                      <td class="text-right">416</td>
-                      <td class="text-right">2624</td>
-                      <td class="text-right">-262</td>
-                      <td class="text-right">-56</td>
-                      <td class="text-right">-262</td>
-                      <td class="text-right">-34</td>
-                      <td class="text-right">20,545</td>
+                      <td class="text-end">416</td>
+                      <td class="text-end">2624</td>
+                      <td class="text-end">-262</td>
+                      <td class="text-end">-56</td>
+                      <td class="text-end">-262</td>
+                      <td class="text-end">-34</td>
+                      <td class="text-end">20,545</td>
                     </tr>
                   </tbody>
                 </table>
@@ -421,127 +422,127 @@
                   class="table table-sm table-striped"
                   id="incomeEstimate_2"
                 >
-                  <thead class="background-color-primary text-light">
+                  <thead class="bg-primary text-light">
                     <tr>
                       <td class="text-center">年</td>
-                      <td class="text-right">發電量</td>
-                      <td class="text-right">賣電收入</td>
-                      <td class="text-right">營運維護費</td>
-                      <td class="text-right">保險</td>
-                      <td class="text-right">屋頂租金</td>
-                      <td class="text-right">模組回收費</td>
-                      <td class="text-right">累積收益</td>
+                      <td class="text-end">發電量</td>
+                      <td class="text-end">賣電收入</td>
+                      <td class="text-end">營運維護費</td>
+                      <td class="text-end">保險</td>
+                      <td class="text-end">屋頂租金</td>
+                      <td class="text-end">模組回收費</td>
+                      <td class="text-end">累積收益</td>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
                       <td class="text-center">11</td>
-                      <td class="text-right">414</td>
-                      <td class="text-right">2611</td>
-                      <td class="text-right">-261</td>
-                      <td class="text-right">-56</td>
-                      <td class="text-right">-261</td>
-                      <td class="text-right">-0</td>
-                      <td class="text-right">22,578</td>
+                      <td class="text-end">414</td>
+                      <td class="text-end">2611</td>
+                      <td class="text-end">-261</td>
+                      <td class="text-end">-56</td>
+                      <td class="text-end">-261</td>
+                      <td class="text-end">-0</td>
+                      <td class="text-end">22,578</td>
                     </tr>
 
                     <tr>
                       <td class="text-center">12</td>
-                      <td class="text-right">412</td>
-                      <td class="text-right">2599</td>
-                      <td class="text-right">-260</td>
-                      <td class="text-right">-56</td>
-                      <td class="text-right">-260</td>
-                      <td class="text-right">-0</td>
-                      <td class="text-right">24,601</td>
+                      <td class="text-end">412</td>
+                      <td class="text-end">2599</td>
+                      <td class="text-end">-260</td>
+                      <td class="text-end">-56</td>
+                      <td class="text-end">-260</td>
+                      <td class="text-end">-0</td>
+                      <td class="text-end">24,601</td>
                     </tr>
 
                     <tr>
                       <td class="text-center">13</td>
-                      <td class="text-right">410</td>
-                      <td class="text-right">2586</td>
-                      <td class="text-right">-259</td>
-                      <td class="text-right">-56</td>
-                      <td class="text-right">-259</td>
-                      <td class="text-right">-0</td>
-                      <td class="text-right">26,613</td>
+                      <td class="text-end">410</td>
+                      <td class="text-end">2586</td>
+                      <td class="text-end">-259</td>
+                      <td class="text-end">-56</td>
+                      <td class="text-end">-259</td>
+                      <td class="text-end">-0</td>
+                      <td class="text-end">26,613</td>
                     </tr>
 
                     <tr>
                       <td class="text-center">14</td>
-                      <td class="text-right">408</td>
-                      <td class="text-right">2574</td>
-                      <td class="text-right">-257</td>
-                      <td class="text-right">-56</td>
-                      <td class="text-right">-257</td>
-                      <td class="text-right">-0</td>
-                      <td class="text-right">28,617</td>
+                      <td class="text-end">408</td>
+                      <td class="text-end">2574</td>
+                      <td class="text-end">-257</td>
+                      <td class="text-end">-56</td>
+                      <td class="text-end">-257</td>
+                      <td class="text-end">-0</td>
+                      <td class="text-end">28,617</td>
                     </tr>
 
                     <tr>
                       <td class="text-center">15</td>
-                      <td class="text-right">406</td>
-                      <td class="text-right">2561</td>
-                      <td class="text-right">-256</td>
-                      <td class="text-right">-56</td>
-                      <td class="text-right">-256</td>
-                      <td class="text-right">-0</td>
-                      <td class="text-right">30,610</td>
+                      <td class="text-end">406</td>
+                      <td class="text-end">2561</td>
+                      <td class="text-end">-256</td>
+                      <td class="text-end">-56</td>
+                      <td class="text-end">-256</td>
+                      <td class="text-end">-0</td>
+                      <td class="text-end">30,610</td>
                     </tr>
 
                     <tr>
                       <td class="text-center">16</td>
-                      <td class="text-right">404</td>
-                      <td class="text-right">2548</td>
-                      <td class="text-right">-255</td>
-                      <td class="text-right">-56</td>
-                      <td class="text-right">-255</td>
-                      <td class="text-right">-0</td>
-                      <td class="text-right">32,592</td>
+                      <td class="text-end">404</td>
+                      <td class="text-end">2548</td>
+                      <td class="text-end">-255</td>
+                      <td class="text-end">-56</td>
+                      <td class="text-end">-255</td>
+                      <td class="text-end">-0</td>
+                      <td class="text-end">32,592</td>
                     </tr>
 
                     <tr>
                       <td class="text-center">17</td>
-                      <td class="text-right">402</td>
-                      <td class="text-right">2536</td>
-                      <td class="text-right">-254</td>
-                      <td class="text-right">-56</td>
-                      <td class="text-right">-254</td>
-                      <td class="text-right">-0</td>
-                      <td class="text-right">34,564</td>
+                      <td class="text-end">402</td>
+                      <td class="text-end">2536</td>
+                      <td class="text-end">-254</td>
+                      <td class="text-end">-56</td>
+                      <td class="text-end">-254</td>
+                      <td class="text-end">-0</td>
+                      <td class="text-end">34,564</td>
                     </tr>
 
                     <tr>
                       <td class="text-center">18</td>
-                      <td class="text-right">400</td>
-                      <td class="text-right">2523</td>
-                      <td class="text-right">-252</td>
-                      <td class="text-right">-56</td>
-                      <td class="text-right">-252</td>
-                      <td class="text-right">-0</td>
-                      <td class="text-right">36,527</td>
+                      <td class="text-end">400</td>
+                      <td class="text-end">2523</td>
+                      <td class="text-end">-252</td>
+                      <td class="text-end">-56</td>
+                      <td class="text-end">-252</td>
+                      <td class="text-end">-0</td>
+                      <td class="text-end">36,527</td>
                     </tr>
 
                     <tr>
                       <td class="text-center">19</td>
-                      <td class="text-right">398</td>
-                      <td class="text-right">2511</td>
-                      <td class="text-right">-251</td>
-                      <td class="text-right">-56</td>
-                      <td class="text-right">-251</td>
-                      <td class="text-right">-0</td>
-                      <td class="text-right">38,480</td>
+                      <td class="text-end">398</td>
+                      <td class="text-end">2511</td>
+                      <td class="text-end">-251</td>
+                      <td class="text-end">-56</td>
+                      <td class="text-end">-251</td>
+                      <td class="text-end">-0</td>
+                      <td class="text-end">38,480</td>
                     </tr>
 
                     <tr>
                       <td class="text-center">20</td>
-                      <td class="text-right">396</td>
-                      <td class="text-right">2498</td>
-                      <td class="text-right">-250</td>
-                      <td class="text-right">-56</td>
-                      <td class="text-right">-250</td>
-                      <td class="text-right">-0</td>
-                      <td class="text-right">40,422</td>
+                      <td class="text-end">396</td>
+                      <td class="text-end">2498</td>
+                      <td class="text-end">-250</td>
+                      <td class="text-end">-56</td>
+                      <td class="text-end">-250</td>
+                      <td class="text-end">-0</td>
+                      <td class="text-end">40,422</td>
                     </tr>
                   </tbody>
                 </table>

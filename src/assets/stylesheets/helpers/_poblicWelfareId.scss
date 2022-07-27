@@ -9,6 +9,17 @@
         margin-bottom: 0.5rem;
         font-weight: 500;
         line-height: 1.2;
+    }  
+}
+
+.navigation-item {
+    @media screen and (max-width: 768px) {
+    padding-left: 8.33%;
+    padding-right: 8.33%;
+    }
+    .fa-angles-right {
+        color: #999999;
+        margin: 0 5px;
     }
 }
 
@@ -470,6 +481,12 @@
         margin-bottom: 90px;
         .info-block-item {
             color: #656565;
+            &-mark {
+                margin-left: 10px;
+                font-weight: 600;
+                color: $primary ;
+                margin-bottom: 0;
+            }
         }
     }
 

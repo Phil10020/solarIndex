@@ -12,7 +12,13 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body" style="height: 100vh">
-                  <img :src="item.buildImg" alt="" style="width:100%">
+                  <!-- <img :src="item.buildImg" alt="" style="width:100%"> -->
+                  <vue-image-zoomer
+                      :regular="item.buildImg"
+                      :zoom="item.buildImg"
+                      :zoom-amount="2"
+                      img-class="img-fluid"
+                      alt="Sky" />
               </div>
             </div>
         </div>
@@ -23,6 +29,10 @@
 </template>
 
 <script>
+// Vue Image Zoomer https://www.npmjs.com/package/vue-image-zoomer
+import { VueImageZoomer } from 'vue-image-zoomer'
+import 'vue-image-zoomer/dist/style.css'
+
 export default {
   name: 'poblicContract',
   data () {
@@ -36,6 +46,9 @@ export default {
         { title: '能源局核准文件', name: 'ff', buildImg: require('../../../public/images/productWelfareId/contract/contract6.png') }
       ]
     }
+  },
+  components: {
+    VueImageZoomer
   }
 }
 </script>

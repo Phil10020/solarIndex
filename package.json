@@ -28,6 +28,7 @@
     "vue-axios": "^3.4.1",
     "vue-chartjs": "^4.1.1",
     "vue-ellipsis-component": "^1.0.3",
+    "vue-image-zoomer": "^2.1.0",
     "vue-router": "^4.0.3",
     "webpack": "^5.73.0"
   },

@@ -18,7 +18,7 @@
                       :zoom="item.buildImg"
                       :zoom-amount="2"
                       img-class="img-fluid"
-                      alt="Sky" />
+                      alt="room" />
               </div>
             </div>
         </div>

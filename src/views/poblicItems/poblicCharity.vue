@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="title">
-      <i class="bi bi-chevron-right"></i>
+      <font-awesome-icon icon="fa-solid fa-angle-right" />
       <span>公益專案介紹</span>
     </div>
     <div class="charity-info">
@@ -37,6 +37,7 @@
       />
     </div>
     <div class="col-md-12">
+      <!-- youtube style  -->
       <iframe
         style="width: 100%; height: 450px; border: 0; margin-top: 50px"
         class="youtube-player"
@@ -48,7 +49,7 @@
   </div>
   <div>
     <div class="title">
-      <i class="bi bi-chevron-right"></i>
+      <font-awesome-icon icon="fa-solid fa-angle-right" />
       <span>公益流程</span>
     </div>
     <div class="mt-30">
@@ -62,10 +63,10 @@
             </div>
           </div>
           <div class="step1">
-            <img :src="stepImg.step1" alt="step1">
+            <img class="img-fluid" :src="stepImg.step1" alt="step1">
           </div>
         </div>
-        <div class="step-block ms-3">
+        <div class="step-block ms-md-3">
           <div>
             <span class="step-num">2</span>
             <div class="step-info">
@@ -74,7 +75,7 @@
             </div>
           </div>
           <div class="step2">
-            <img :src="stepImg.step2" alt="step2">
+            <img class="img-fluid" :src="stepImg.step2" alt="step2">
           </div>
         </div>
       </div>
@@ -95,8 +96,8 @@
               >
             </div>
           </div>
-          <div class="step3">
-            <img :src="stepImg.step3" alt="step3">
+          <div class="step3 d-flex justify-content-center">
+            <img class="img-fluid" :src="stepImg.step3" alt="step3">
           </div>
         </div>
       </div>
@@ -117,12 +118,12 @@
               >
             </div>
           </div>
-          <div class="step4-5 d-flex">
+          <div class="step4-5 d-flex justify-content-center">
             <div class="step4">
-              <img :src="stepImg.step4" alt="step4">
+              <img class="img-fluid" :src="stepImg.step4" alt="step4">
             </div>
-            <div class="step5">
-              <img :src="stepImg.step5" alt="step5">
+            <div class="step5 d-flex justify-content-center">
+              <img class="img-fluid" :src="stepImg.step5" alt="step5">
             </div>
           </div>
         </div>
@@ -141,7 +142,7 @@
   </div>
   <div class="mt-30">
     <div class="title">
-      <i class="bi bi-chevron-right"></i>
+      <font-awesome-icon icon="fa-solid fa-angle-right" />
       <span>購買三步驟</span>
     </div>
     <div class="buy-step">
@@ -207,6 +208,23 @@ export default {
       },
       typeFilter: []
     }
+  },
+  methods: {
+    getData () {
+      this.$http
+        .get('/singleData.json/')
+        .then((res) => {
+          console.log(res, 'success')
+          this.product = res.data.data[0]
+          this.typeFilter = res.data.data[0]
+        })
+        .catch((err) => {
+          console.log(err, 'error')
+        })
+    }
+  },
+  mounted () {
+    this.getData()
   }
 }
 

@@ -1,6 +1,6 @@
 <template>
     <label class="mb-2 mt-2">
-            <i class="bi bi-chevron-right"></i>&nbsp;
+            <font-awesome-icon icon="fa-solid fa-angle-right" />&nbsp;
             &nbsp;電廠實景空拍
           </label>
           <div
@@ -2151,7 +2151,7 @@
           />
 
           <label class="mb-2 mt-2">
-            <i class="bi bi-chevron-right"></i>&nbsp;
+            <font-awesome-icon icon="fa-solid fa-angle-right" />&nbsp;
             &nbsp; 電廠實景空拍
           </label>
           <div class="row">

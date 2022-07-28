@@ -2,7 +2,7 @@
 #product-detail-slider, #product-detail-content, #product-detail-operation, #product-detail-other-project {
     padding: 65px 16.66%;
     @media screen and (max-width:767px) {
-        padding: 0 8.33%;
+        padding: 65px 8.33%;
     }
 
     h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
@@ -17,6 +17,10 @@
     padding-left: 8.33%;
     padding-right: 8.33%;
     }
+
+    @media screen and (max-width: 375px) {
+      display: block;
+      }
     .fa-angles-right {
         color: #999999;
         margin: 0 5px;
@@ -24,22 +28,40 @@
 }
 
 #product-detail-content {
+  .content-product {
+    display: flex;
+    margin-bottom: 20px;
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+    }
+  }
     // charity 
     .img-block {
         padding-bottom: 20%;
         width: 100%;
         position: relative;
+        @media screen and (max-width: 768px) {
+          padding-bottom: 0%;
+        }
     
         img {
             width: 100%;
             height: 100%;
             position: absolute;
+            @media screen and (max-width: 768px) {
+              position: relative;
+            }
         }
     }
 
     .content-block {
         h5 {
             font-weight: 900;
+        }
+        .icons-link {
+          text-align: right;
+          margin-bottom: 30px;
+          margin-top: 60px;
         }
         .share {
             .facebook-color {
@@ -51,6 +73,10 @@
             .twitter-color {
                 color: #00acee;
             }
+        }
+
+        @media screen and (max-width: 768px) {
+          padding-top: 15px;
         }
     }
 
@@ -110,12 +136,23 @@
                 }
                 
             }
+
+            @media screen and (max-width: 768px) {
+              width: 100%;
+              border: none;
+              border-bottom: solid 1px #ddd;
+              margin-bottom: 15px;
+            }
         }
+    @media screen and (max-width: 768px) {
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
     }
 
     .content-detail{
         .nav-tabs {
-            border-bottom: 1px solid #dee2e6;
+            border-bottom: 2px solid #dee2e6;
         }
 
         .nav {
@@ -123,7 +160,6 @@
             flex-wrap: wrap;
             padding-left: 0;
             margin-bottom: 0;
-            list-style: none;
         }
 
         .nav-link {
@@ -151,6 +187,9 @@
             }
             .title {
                 margin-bottom: 30px;
+                span {
+                  margin-left: 5px;
+              }
             }
 
             .charity-info {
@@ -166,6 +205,13 @@
                         background-size: contain !important;
                         background-position: right !important;
                         height: 35vh;
+                    }
+                }
+
+                @media (max-width: 768px) {
+                    flex-direction: column;
+                    a {
+                      width: 100%;
                     }
                 }
             }
@@ -212,22 +258,24 @@
 
                     
                     .step1,.step2,.step4,.step5 {
-                        img {
-                            height: 225px;
-                            width: 300px;
-                        }
+                      @media (max-width: 768px) {
+                        height: auto;
+                        width: auto;
+                        padding: 10% 0;
+                      }
                     }
 
                     .step3 {
-                        img {
-                            height: 250px;
-                            width: 600px;
-                        }
+                      height: 250px;
+                      @media (max-width: 768px) {
+                        width: auto;
+                        height: auto;
+                        padding: 10% 0;
+                      }
                     }
-
                     .sm {
                         display: none;
-                        @media screen and (max-width:768px) {
+                        @media screen and (max-width:767px) {
                             display: flex;
                           }
                     }
@@ -238,6 +286,14 @@
                             display: flex;
                           }
                     }
+                }
+
+                @media (max-width: 768px) {
+                  flex-direction: column;
+                  padding: 0 10%;
+                  .step4-5 {
+                    flex-direction: column;
+                  }
                 }
             }
 
@@ -321,6 +377,10 @@
                 max-width: 650px;
             }
         }
+    }
+
+    .fa-angle-right {
+      color: $primary;
     }
 // location 
     .tab-pane {

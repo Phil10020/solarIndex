@@ -214,7 +214,6 @@ export default {
       this.$http
         .get('/singleData.json/')
         .then((res) => {
-          console.log(res, 'success')
           this.product = res.data.data[0]
           this.typeFilter = res.data.data[0]
         })

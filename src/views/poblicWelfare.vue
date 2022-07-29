@@ -154,7 +154,6 @@ export default {
     // 取得json資料，將res賦予到data和常變動的data內
     getData () {
       this.$http.get('/test.json/').then((res) => {
-        console.log(res.data.data, 'sucess')
         this.product = res.data.data
         this.typeFilter = res.data.data
       }).catch((err) => {

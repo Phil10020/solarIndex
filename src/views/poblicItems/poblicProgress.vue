@@ -29,15 +29,12 @@
   <div class="row" v-else>
     <div class="col-md-12">
       <div class="schedule-timeline">
-      <p class="title">期程</p>
-      <div class="timeline-data">
-          <div class="timeline-list" style="width: 100%">
-          <p>111 年</p>
-          </div>
-          <div class="dates">
-          <span v-for="(item, i) in progressData" :key="item+123" class="date" :style="{left: (i / (progressData.length - 1))*100 + '%'}">{{ item.date }}</span>
-          </div>
-      </div>
+      <ul>
+        <li v-for="item in progressData" :key="item.date">
+          <p>{{  item.date }}</p>
+          <p>{{ item.costomer }}</p>
+        </li>
+      </ul>
       </div>
     </div>
   </div>
@@ -63,11 +60,10 @@ export default {
   mounted () {
     this.fullWidth = window.innerWidth
     console.log(this.fullWidth)
-    this.dateFilter = this.progressData.filter(function (item) {
-      console.log(item.date)
-      return item.date = this.dateFilter
-    })
-    console.log(this.dateFilter)
+    // this.dateFilter = this.progressData.filter((item) => {
+    //   return item.date.push(this.dateFilter)
+    // })
+    // console.log(this.dateFilter)
   }
 }
 </script>

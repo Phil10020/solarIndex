@@ -1,0 +1,42 @@
+#social {
+    //[Start] font-size 
+    h6 {
+        font-size: 1rem;
+    }
+    h5 {
+       font-size: 1.125rem; 
+    }
+    h4 {
+        font-size: 1.5rem;
+    }
+    h3 {
+        font-size: 2.25rem;
+    }
+    h2 {
+        font-size: 3rem;
+    }
+    h1 {
+        font-size: 4rem;
+    }
+    //[End] font-size 
+    .banner {
+        height: 360px;
+        overflow: hidden;
+        background-size: cover !important;
+        background-repeat: no-repeat !important;
+        background-position: 50% 50% !important;
+        position: relative;
+        padding: 0 16.66%;
+        display: flex;
+        flex-direction: column;
+        color: #fff;
+        justify-content: center;
+        @media(max-width: 768px) {
+            padding-left: 8.33%;
+            padding-right: 8.33%;
+        }
+    }
+    .intro {
+        height: 349px;
+    }
+}

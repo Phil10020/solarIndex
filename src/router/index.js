@@ -26,6 +26,11 @@ const routes = [
     path: '/poblic/:post_id',
     name: 'poblicWelfareId',
     component: () => import('../views/poblicWelfareId.vue')
+  },
+  {
+    path: '/social',
+    name: 'socialImpact',
+    component: () => import('../views/socialImpact.vue')
   }
 ]
 

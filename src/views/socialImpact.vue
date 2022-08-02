@@ -12,40 +12,51 @@
   <!-- [End]banner  -->
 
   <!-- [Start]intro  -->
-  <section>
-    <div class="intro" :style="{ background: 'url(' + social.intro + ')' }">
-      <div class="d-flex">
-        <div>
-          <div><img :src="social.introLeft" alt=""></div>
-          <div>我們秉持著環境與經濟共贏的精神，以日本職人技術，台<br/>灣在地深耕為念，透過創新的商業模式與多方力量的串聯，<br/>為環境保育及能源轉型帶來正面的影響。<span>—— 太陽人創辦人   陳威丞，2013年</span></div>
-          <div><img :src="social.introRight" alt=""></div>
+  <section class="mb-200">
+    <div class="intro d-flex align-items-end justify-content-center" :style="{ background: 'url(' + social.intro + ')' }">
+      <div class="intro-m174 d-flex justify-content-center">
+        <div class="d-flex justify-content-center">
+          <div class="mr-70"><img :src="social.introLeft" alt=""></div>
+          <div class="d-flex justify-content-center">
+            <div class="mb-3 mt-53">
+              <p class="mb-14 text-success">我們秉持著環境與經濟共贏的精神，以日本職人技術，台<br/>灣在地深耕為念，透過創新的商業模式與多方力量的串聯，<br/>為環境保育及能源轉型帶來正面的影響。<br/></p>
+              <p class="text-end mb-0"><small>—— 太陽人創辦人   陳威丞，2013年</small></p>
+            </div>
+          </div>
+          <div class="ml-70 d-flex align-items-end"><img :src="social.introRight" alt=""></div>
         </div>
-        <div><img :src="social.introText" alt=""></div>
+        <div class="d-flex justify-content-center z-1"><img :src="social.introText" alt=""></div>
       </div>
     </div>
   </section>
   <!-- [End]intro  -->
 
   <!-- [Start]intention  -->
-  <section>
-    <div :style="{ background: 'url(' + intention.intentionBg + ')' }">
-      <div>
-        <h2>Our Original Intention<span>太陽人全民電廠的初心與理念</span></h2>
-        <p>2011 年,311 東日本大地震與福島核災，徹底改寫了我們對能源安全的認知，我們也因此認知到：環境和文明的永續及平衡，是這世代人類都必須面對的共同課題。文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例。</p>
-        <div>
+  <section class="intention">
+    <div class="intention-bg" :style="{ background: 'url(' + intention.intentionBg + ')' }">
+      <div class="d-flex justify-content-end">
+        <div class="intention-width me-224 z-3 pt-30">
+          <h2 class="english-title mb-3">Our Original Intention</h2>
+          <h4 class="mb-35">太陽人全民電廠的初心與理念</h4>
+          <p class="mb-54">2011 年,311 東日本大地震與福島核災，徹底改寫了我們對能源安全的認知，我們也因此認知到：環境和文明的永續及平衡，是這世代人類都必須面對的共同課題。文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例。</p>
           <div>
-            <h4>綠能共享經濟的源起</h4>
-            <p>節能減碳,能源轉型已是世界趨勢，但礙於資金或資訊通路門檻過高，一般社會<br/>大眾的力量無法順暢而有效地參與其中，使得能源轉型之路窒礙難行。</p>
-          </div>
-          <div>
-            <h4>民間力量 能源轉型</h4>
-            <p>太陽人自 2013 年開始提供以太陽能板為單位的電廠分割認購平台服務，以綠能<br/>的共享經濟為主軸，大幅降低了民眾參與的門檻，每一個人都能夠輕鬆地成為<br/>電廠老闆，並成為能源轉型的一道助力。</p>
+            <div class="mb-55">
+              <h4 class="mb-20">綠能共享經濟的源起</h4>
+              <p>節能減碳,能源轉型已是世界趨勢，但礙於資金或資訊通路門檻過高，一般社會<br/>大眾的力量無法順暢而有效地參與其中，使得能源轉型之路窒礙難行。</p>
+            </div>
+            <div>
+              <h4>民間力量 能源轉型</h4>
+              <p>太陽人自 2013 年開始提供以太陽能板為單位的電廠分割認購平台服務，以綠能<br/>的共享經濟為主軸，大幅降低了民眾參與的門檻，每一個人都能夠輕鬆地成為<br/>電廠老闆，並成為能源轉型的一道助力。</p>
+            </div>
           </div>
         </div>
-      </div>
-      <div>
-        <div><img :src="intention.intentionTree" alt=""></div>
-        <div><img :src="intention.intentionSolar" alt=""></div>
+        <div class="z-4">
+          <img :src="intention.intentionText" alt="">
+        </div>
+        <div class="z-5">
+          <div><img class="z-6" :src="intention.intentionTree" style="width:749px ; height:547px ;" alt=""></div>
+          <div><img class="z-7" :src="intention.intentionSolar" style="width:630px ; height:468px ;" alt=""></div>
+        </div>
       </div>
     </div>
   </section>
@@ -53,11 +64,19 @@
 
   <!-- [Start]intro  -->
   <section>
-    <div class="intro">
-      <div class="d-flex">
-        <div><img :src="social.introLeft" alt=""></div>
-        <div>讓民間力量落實於能源轉型,達成環境與經濟的共贏!<br/><span>—— 太陽人的理念來源，創始至今</span></div>
-        <div><img :src="social.introRight" alt=""></div>
+    <div class="intro d-flex align-items-end justify-content-center">
+      <div class="intro-m174 d-flex justify-content-center">
+        <div class="d-flex justify-content-center">
+          <div class="mr-70"><img :src="social.introLeft" alt=""></div>
+          <div class="d-flex justify-content-center">
+            <div class="mb-3 mt-53">
+              <p class="mb-14 text-success">讓民間力量落實於能源轉型,達成環境與經濟的共贏!</p>
+              <p class="text-end mb-0"><small>—— 太陽人的理念來源，創始至今</small></p>
+            </div>
+          </div>
+          <div class="ml-70 d-flex align-items-end"><img :src="social.introRight" alt=""></div>
+        </div>
+        <div class="d-flex justify-content-center z-1"><img :src="social.introYourself" alt=""></div>
       </div>
     </div>
   </section>
@@ -219,9 +238,11 @@ export default {
         intro: require('../../public/images/social/Section_intro.png'),
         introLeft: require('../../public/images/social/intro_outline_left.png'),
         introRight: require('../../public/images/social/intro_outline_right.png'),
-        introText: require('../../public/images/social/Social_Impact.png')
+        introText: require('../../public/images/social/Social_Impact.png'),
+        introYourself: require('../../public/images/social/Yourself.png')
       },
       intention: {
+        intentionText: require('../../public/images/social/Spare.png'),
         intentionBg: require('../../public/images/social/Section_Intention.png'),
         intentionTree: require('../../public/images/social/intention_tree.png'),
         intentionSolar: require('../../public/images/social/intention_solar.png')

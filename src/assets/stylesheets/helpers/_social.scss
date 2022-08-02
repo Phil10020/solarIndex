@@ -1,4 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC&family=Noto+Serif+TC&display=swap');
 #social {
+    font-family: 'Noto Serif TC', serif, 'Noto Sans TC', sans-serif;
     //[Start] font-size 
     h6 {
         font-size: 1rem;
@@ -8,6 +10,7 @@
     }
     h4 {
         font-size: 1.5rem;
+        font-weight: 900;
     }
     h3 {
         font-size: 2.25rem;
@@ -17,7 +20,25 @@
     }
     h1 {
         font-size: 4rem;
+        font-weight: 400;
     }
+    .english {
+        &-title {
+          font-size: 55px;
+          font-family: 'Noto Sans TC', sans-serif;
+        }
+        &-content {
+          font-size: 96px;
+        }
+        &-small {
+          font-size: 40px;
+        }
+    }
+
+    .mb-200 {
+      margin-bottom: 200px;
+    }
+
     //[End] font-size 
     .banner {
         height: 360px;
@@ -38,5 +59,111 @@
     }
     .intro {
         height: 349px;
+        padding-bottom: 20px;
+        margin-top: 4rem;
+        background-repeat: no-repeat;
+        &-m174 {
+            margin-top: 174px;
+            p:first-child:first-letter {
+                font-size: 2rem;
+            }
+        }
+        .z-1 {
+          z-index: -10;
+          position: absolute;
+          margin-left: 48%;
+          img {
+            position: relative;
+            bottom: 40px;
+          }
+        }
+        .mr-70 {
+            margin-right: 70px;
+        }
+        .ml-70 {
+            margin-left: 70px;
+        }
+        small {
+            display: block;
+            font-size: 16px;
+        }
+        p {
+          font-size: 24px;
+        }
+        .mb-14 {
+            margin-bottom: 14px;
+        }
+        .mt-53 {
+            margin-top: 53px;
+        }
+    }
+    //intention
+    .intention {
+      &-bg {
+        background-repeat: no-repeat !important;
+        background-position: left bottom !important;
+      }
+        .z-6{
+            z-index: -10;
+            position: relative;
+        }
+
+        .z-7 {
+            bottom: 52px;
+            position: relative;
+            right: 20%;
+        }
+        &-width {
+            width: 630px;
+        }
+        .me-224 {
+            margin-right: 224px;
+        }
+        .mb-35 {
+          margin-bottom: 35px;
+        }
+        .mb-54 {
+          margin:0 0 54px 0;
+        }
+        p {
+          font-size: 18px;
+          line-height: 32px;
+          color: #515C5C;
+        }
+
+        h4 {
+          color: #515C5C;
+        }
+
+        .mb-55 {
+          margin-bottom: 55px;
+        }
+
+        .mb-20 {
+          margin-bottom: 20px;
+        }
+
+        .pt-30 {
+          padding-top: 30px;
+        }
+        .z {
+          &-3 {
+            z-index: 100;
+            position: relative;
+          }
+          &-4 {
+            z-index: 10;
+            position: absolute;
+            margin-right: 28%;
+            img {
+              position: relative;
+              bottom: 70px;
+            }
+          }
+          &-5 {
+            z-index: 5;
+            position: relative;
+          }
+        }
     }
 }

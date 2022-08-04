@@ -84,7 +84,7 @@
 
   <!-- [Start]tracking  -->
   <section>
-    <div class="tracking" :style="{ background: 'url(' + tracking.trackingBg + ')' }">
+    <div class="tracking tracking-bg" :style="{ background: 'url(' + tracking.trackingBg + ')' }">
       <div class="p-30">
         <div class="d-flex justify-content-center mb-97">
           <div class="z-22">
@@ -144,25 +144,50 @@
   <!-- [End]tracking  -->
 
   <!-- [Start]Goals  -->
-  <section>
-    <div :style="{ background: 'url(' + goals.goalsBg + ')' }">
-      <div>
-        <h2>Our SDGS Goals<span>太陽人的 SDGs 永續發展目標</span></h2>
+  <section class="mb-27">
+    <div class="goals d-flex justify-content-between goals-bg" :style="{ background: 'url(' + goals.goalsBg + ')' }">
+      <div class="z-55 d-flex flex-column justify-content-center ms-16">
+        <h2 class="english-title">Our SDGS Goals</h2>
+        <h4 class="sub-title mb-26">太陽人的 SDGs 永續發展目標</h4>
         <p>太陽人全民電場致力於同步達成：<br/>
 氣候行動、永續城鄉、潔淨能源等多元價值</p>
       </div>
-      <div><img :src="goals.rectangle" alt=""></div>
+      <div class="z-44 d-flex align-items-center justify-content-center img-block"><img class="img-relative" :src="goals.goalsText" alt=""></div>
+      <div class="bg z-33 d-flex flex-column justify-content-center align-items-center" style="width: 950px;height: 873px;" :style="{ background: 'url(' + goals.rectangle + ')' }">
+        <div class="location">
+          <div class="location-eye">
+            <div class="d-flex justify-content-center" style="width:97px; height:97px" :style="{ background: 'url(' + goals.rectangleEye + ')' }">13</div>
+          </div>
+          <div class="location-house">
+            <div class="d-flex justify-content-center" style="width:97px; height:97px" :style="{ background: 'url(' + goals.rectangleHouse + ')' }">11</div>
+          </div>
+          <div class="location-sun">
+            <div class="d-flex justify-content-center" style="width:97px; height:97px" :style="{ background: 'url(' + goals.rectangleSun + ')' }">7</div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
   <!-- [End]Goals  -->
 
   <!-- [Start]Partner  -->
   <section>
-    <div :style="{ background: 'url(' + partner.partnerBg + ')' }">
-      <div><img :src="partner.our"/></div>
+    <div class="d-flex parter partner-relative" :style="{ background: 'url(' + partner.partnerBg + ')' }">
+      <div class="me-53"><img :src="partner.our"/></div>
       <div>
-        <h2>Our Partner<span>影響力夥伴</span></h2>
+        <div class="d-flex">
+          <div>
+            <h2 class="english-title">Our Partner</h2>
+            <h4 class="sub-title mb-26">影響力夥伴</h4>
+          </div>
+        <div>
+          <div>
+            <img :src="partner.partnerText" alt="" srcset="">
+          </div>
+        </div>
+        </div>
         <p>太陽人全民電廠結合來自企業、民間團體及公益 單位夥伴的力量及<br/>特別的商業模式，一齊打造不一樣且 更加多元的綠色架構，加強對<br/>整體社會及世界環境的正 面影響力。</p>
+
         <div>
           <div :style="{ background: 'url(' + partner.circle + ')' }">
             <div>優良企業</div>
@@ -179,6 +204,7 @@
         </div>
       </div>
     </div>
+    <div class="bg-gray partner-absolute"></div>
   </section>
   <!-- [End]Partner  -->
 
@@ -271,13 +297,18 @@ export default {
         trackingBg: require('../../public/images/social/Section_tracking.png')
       },
       goals: {
-        rectangle: require('../../public/images/social/rectangle.png'),
-        goalsBg: require('../../public/images/social/Section_goals.png')
+        rectangle: require('../../public/images/social/goalsWrap/rectangle.png'),
+        rectangleHouse: require('../../public/images/social/goalsWrap/rectangle_house.png'),
+        rectangleEye: require('../../public/images/social/goalsWrap/rectangle_eye.png'),
+        rectangleSun: require('../../public/images/social/goalsWrap/rectangle_sun.png'),
+        goalsBg: require('../../public/images/social/Section_goals.png'),
+        goalsText: require('../../public/images/social/goalsWrap/Our.png')
       },
       partner: {
         our: require('../../public/images/social/our_partner.png'),
         circle: require('../../public/images/social/partner_circle.png'),
-        partnerBg: require('../../public/images/social/Section_partner.png')
+        partnerBg: require('../../public/images/social/Section_partner.png'),
+        partnerText: require('../../public/images/social/text_best.png')
       },
       see: {
         logo: require('../../public/images/social/see_logo.png'),

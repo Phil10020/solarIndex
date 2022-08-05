@@ -171,48 +171,83 @@
   <!-- [End]Goals  -->
 
   <!-- [Start]Partner  -->
-  <section>
-    <div class="d-flex parter partner-relative" :style="{ background: 'url(' + partner.partnerBg + ')' }">
-      <div class="me-53"><img :src="partner.our"/></div>
-      <div>
+  <section class="d-flex partner-relative align-items-end partner-bg mb-21" :style="{ background: 'url(' + partner.partnerBg + ')' }">
+    <div class="d-flex align-items-end partner z-44 mb-176" >
+      <div class="me-53 logo-wrap">
+        <div class="logo-wrap-bg d-flex flex-column justify-content-end pb-84" :style="{ background: 'url(' + partner.our + ')' }" style="height :696.13px;width :738px">
+          <div class="d-flex flex-column mb-173 logo-wrap-height justify-content-between">
+            <h4 class="text-center mb-4 color-g">優良企業</h4>
+            <div class="d-flex align-items-center justify-content-center">
+              <button><font-awesome-icon icon="fa-solid fa-angle-left" /></button>
+              <div class="mx-2"><img :src="partner.partner1" alt=""></div>
+              <button><font-awesome-icon icon="fa-solid fa-angle-right" /></button>
+            </div>
+          </div>
+          <div class="d-flex justify-content-around">
+            <div class="d-flex flex-column logo-wrap-height justify-content-between">
+              <h4 class="text-center mb-4 color-b">民間團體</h4>
+              <div class="d-flex align-items-center justify-content-center">
+                <button><font-awesome-icon icon="fa-solid fa-angle-left" /></button>
+                <div class="mx-2"><img :src="partner.partner2" alt=""></div>
+                <button><font-awesome-icon icon="fa-solid fa-angle-right" /></button>
+              </div>
+            </div>
+            <div class="d-flex flex-column logo-wrap-height justify-content-between">
+              <h4 class="text-center mb-4 color-y">公益夥伴</h4>
+              <div class="d-flex align-items-center justify-content-center">
+                <button><font-awesome-icon icon="fa-solid fa-angle-left" /></button>
+                <div class="mx-2"><img :src="partner.partner3" alt=""></div>
+                <button><font-awesome-icon icon="fa-solid fa-angle-right" /></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mb-74">
         <div class="d-flex">
           <div>
             <h2 class="english-title">Our Partner</h2>
             <h4 class="sub-title mb-26">影響力夥伴</h4>
           </div>
         <div>
-          <div>
-            <img :src="partner.partnerText" alt="" srcset="">
+          <div class="partner-absolute">
+            <img class="partner-relative text-position" :src="partner.partnerText" alt="" srcset="">
           </div>
         </div>
         </div>
         <p>太陽人全民電廠結合來自企業、民間團體及公益 單位夥伴的力量及<br/>特別的商業模式，一齊打造不一樣且 更加多元的綠色架構，加強對<br/>整體社會及世界環境的正 面影響力。</p>
 
-        <div>
-          <div :style="{ background: 'url(' + partner.circle + ')' }">
+        <div class="d-flex justify-content-between">
+          <div class="bg-circle" :style="{ background: 'url(' + partner.circle + ')' }">
             <div>優良企業</div>
             <div>180+</div>
           </div>
-          <div :style="{ background: 'url(' + partner.circle + ')' }">
+          <div class="bg-circle" :style="{ background: 'url(' + partner.circle + ')' }">
             <div>民間團體</div>
             <div>140+</div>
           </div>
-          <div :style="{ background: 'url(' + partner.circle + ')' }">
+          <div class="bg-circle" :style="{ background: 'url(' + partner.circle + ')' }">
             <div>公益夥伴</div>
             <div>15+</div>
           </div>
         </div>
       </div>
     </div>
-    <div class="bg-gray partner-absolute"></div>
+    <div class="bg-gray partner-absolute mb-79 z-33"></div>
   </section>
   <!-- [End]Partner  -->
 
   <!-- [Start]See  -->
-  <section>
-    <div :style="{ background: 'url(' + see.seeBg + ')' }">
-      <h2>More Powerful to See<span>民間力量讓更多人看見</span></h2>
-      <div>
+  <section :style="{ background: 'url(' + see.seeBg + ')' }">
+    <div class="see">
+      <div class="title-wrap d-flex justify-content-center mb-47">
+        <div class="z-44">
+          <h2 class="english-title">More Powerful to See</h2>
+          <h4 class="text-center">民間力量讓更多人看見</h4>
+        </div>
+        <div class="see-relative z-33"><img class="see-absolute" :src="see.seeText" alt=""></div>
+      </div>
+      <div class="d-flex flex-wrap justify-content-between">
         <div class="card">
           <div>
             <div><img :src="see.logo" alt=""></div>
@@ -308,13 +343,17 @@ export default {
         our: require('../../public/images/social/our_partner.png'),
         circle: require('../../public/images/social/partner_circle.png'),
         partnerBg: require('../../public/images/social/Section_partner.png'),
-        partnerText: require('../../public/images/social/text_best.png')
+        partnerText: require('../../public/images/social/text_best.png'),
+        partner1: require('../../public/images/social/partnerImg/partner1.png'),
+        partner2: require('../../public/images/social/partnerImg/partner2.png'),
+        partner3: require('../../public/images/social/partnerImg/partner3.png')
       },
       see: {
         logo: require('../../public/images/social/see_logo.png'),
         seeBg: require('../../public/images/social/Section_see.png'),
         icon: require('../../public/images/social/icon.png'),
-        download: require('../../public/images/social/download_bar.png')
+        download: require('../../public/images/social/download_bar.png'),
+        seeText: require('../../public/images/social/to_see.png')
       },
       power: {
         world: require('../../public/images/social/all_world.png')

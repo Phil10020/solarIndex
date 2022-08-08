@@ -43,11 +43,21 @@
           font-size: 40px;
         }
     }
+    .mb-20 {
+      margin-bottom: 20px;
+    }
+    .mb-25 {
+      margin-bottom: 25px;
+    }
+
     .mb-27 {
       margin-bottom: 27px;
     }
     .mb-47 {
       margin-bottom: 47px;
+    }
+    .mb-100 {
+      margin-bottom: 100px;
     }
     .mb-200 {
       margin-bottom: 200px;
@@ -59,6 +69,12 @@
 
     .mb-79 {
       margin-bottom: 79px;
+    }
+    .me-23 {
+      margin-right: 23px;
+    }
+    .mb-30 {
+      margin-bottom: 30px;
     }
 
     .pb-82 {
@@ -166,10 +182,6 @@
 
         .mb-55 {
           margin-bottom: 55px;
-        }
-
-        .mb-20 {
-          margin-bottom: 20px;
         }
 
         .pt-30 {
@@ -452,7 +464,9 @@
 
     // see 
     .see {
-      padding: 0 16.66%;
+      background-repeat: no-repeat !important;
+      background-position: 0% 50% !important;
+      padding: 0 16.5%;
       &-absolute {
         position: absolute;
       }
@@ -462,16 +476,73 @@
         bottom: 115px;
       }
       .card {
-        width: 413px;
+        background-repeat: no-repeat !important;
+        background-position: 100% 100% !important;
+        font-family: 'Noto Sans TC', sans-serif;
+        width: 31%;
+        &-relative {
+          position: relative;
+        }
+        &-absolute {
+          position: absolute;
+        }
         img {
           width: 110px;
         }
         h4 {
+          font-weight: 500;
+          line-height: 34.75px;
           span {
-            font-size: 20px;
+            font-size: 18px;
+            line-height: 25px;
+            color: #999999;
 
           }
         }
+        .mt-20 {
+          margin-top: 20px;
+        }
+        .me-20 {
+          margin-right: 20px;
+        }
+        .ms-130 {
+          margin-left: 130px;
+        }
+        p {
+          font-weight: 300;
+          line-height: 2rem;
+        }
+
+      }
+      .card-padding {
+        padding: 0 41px 40px 44px;
+      }
+      .circle {
+        height: 80px;
+        width: 80px;
+        background-color: #62CFCA;
+        border-radius: 50%;
+        display: inline-block;
+      }
+      .download-bar {
+        width: 617.59px;
+        p {
+          color: #999999;
+          top: 8px;
+        }
+      }
+      .download {
+        background-repeat: no-repeat !important;
+        background-position: 50% 50% !important;
+        width: 353px;
+        height: 50px;
+      }
+      button {
+        height: 50px;
+        background: #62CFCA;
+        border: none;
+        border-radius: 5%;
+        color: #fff;
       }
     }
 

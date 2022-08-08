@@ -240,8 +240,8 @@
   <!-- [End]Partner  -->
 
   <!-- [Start]See  -->
-  <section :style="{ background: 'url(' + see.seeBg + ')' }">
-    <div class="see">
+  <section class="mb-20">
+    <div class="see"  :style="{ background: 'url(' + see.seeBg + ')' }">
       <div class="title-wrap d-flex justify-content-center mb-47">
         <div class="z-44">
           <h2 class="english-title">More Powerful to See</h2>
@@ -249,56 +249,100 @@
         </div>
         <div class="see-relative z-33"><img class="see-absolute" :src="see.seeText" alt=""></div>
       </div>
-      <div class="d-flex flex-wrap justify-content-between">
-        <div class="card shadow rounded">
-          <div class="d-flex">
-            <div><img :src="see.logo" alt=""></div>
-            <h4>陳小姐<br/><span>ｘｘｘｘ企業高階主管</span></h4>
+      <div class="d-flex flex-wrap mb-100">
+        <div class="card shadow rounded border-0 card-padding me-23 mb-30" :style="{ background: 'url(' + see.cardLogo + ')' }">
+          <div class="d-flex align-items-end">
+            <div class="card-absolute"><img class="card-relative" :src="see.logo" alt=""></div>
+            <h4 class="mb-0 ms-130 mt-20">陳小姐<br/><span>ｘｘｘｘ企業高階主管</span></h4>
           </div>
-          <p>一直以來都非常注重環保議題，太陽人全民電廠的初衷以及理念深深打動著我。期待能有更多人能看到太陽人全民電廠的努力，一起重視地球的未來！</p>
+          <p class="mb-0 mt-20">一直以來都非常注重環保議題，太陽人全民電廠的初衷以及理念深深打動著我。期待能有更多人能看到太陽人全民電廠的努力，一起重視地球的未來！</p>
         </div>
-        <div class="card shadow rounded">
-          <div>
-            <div><img :src="see.logo" alt=""></div>
-            <h4>陳小姐<span>ｘｘｘｘ企業高階主管</span></h4>
+        <div class="card shadow rounded border-0 card-padding me-23 mb-30" :style="{ background: 'url(' + see.cardLogo + ')' }">
+          <div class="d-flex align-items-end">
+            <div class="card-absolute"><img class="card-relative" :src="see.logo" alt=""></div>
+            <h4 class="mb-0 ms-130 mt-20">陳小姐<br/><span>ｘｘｘｘ企業高階主管</span></h4>
           </div>
-          <p>一直以來都非常注重環保議題，太陽人全民電廠的初衷以及理念深深打動著我。期待能有更多人能看到太陽人全民電廠的努力，一起重視地球的未來！</p>
+          <p class="mb-0 mt-20">一直以來都非常注重環保議題，太陽人全民電廠的初衷以及理念深深打動著我。期待能有更多人能看到太陽人全民電廠的努力，一起重視地球的未來！</p>
         </div>
-        <div class="card shadow rounded">
-          <div>
-            <div><img :src="see.logo" alt=""></div>
-            <h4>陳小姐<span>ｘｘｘｘ企業高階主管</span></h4>
+        <div class="card shadow rounded border-0 card-padding me-23 mb-30" :style="{ background: 'url(' + see.cardLogo + ')' }">
+          <div class="d-flex align-items-end">
+            <div class="card-absolute"><img class="card-relative" :src="see.logo" alt=""></div>
+            <h4 class="mb-0 ms-130 mt-20">陳小姐<br/><span>ｘｘｘｘ企業高階主管</span></h4>
           </div>
-          <p>一直以來都非常注重環保議題，太陽人全民電廠的初衷以及理念深深打動著我。期待能有更多人能看到太陽人全民電廠的努力，一起重視地球的未來！</p>
+          <p class="mb-0 mt-20">一直以來都非常注重環保議題，太陽人全民電廠的初衷以及理念深深打動著我。期待能有更多人能看到太陽人全民電廠的努力，一起重視地球的未來！</p>
         </div>
-        <div class="card shadow rounded">
-          <div>
-            <div><img :src="see.logo" alt=""></div>
-            <h4>陳小姐<span>ｘｘｘｘ企業高階主管</span></h4>
+        <div class="card shadow rounded border-0 card-padding me-23 mb-30" :style="{ background: 'url(' + see.cardLogo + ')' }">
+          <div class="d-flex align-items-end">
+            <div class="card-absolute"><img class="card-relative" :src="see.logo" alt=""></div>
+            <h4 class="mb-0 ms-130 mt-20">陳小姐<br/><span>ｘｘｘｘ企業高階主管</span></h4>
           </div>
-          <p>一直以來都非常注重環保議題，太陽人全民電廠的初衷以及理念深深打動著我。期待能有更多人能看到太陽人全民電廠的努力，一起重視地球的未來！</p>
+          <p class="mb-0 mt-20">一直以來都非常注重環保議題，太陽人全民電廠的初衷以及理念深深打動著我。期待能有更多人能看到太陽人全民電廠的努力，一起重視地球的未來！</p>
         </div>
-        <div class="card shadow rounded">
-          <div>
-            <div><img :src="see.logo" alt=""></div>
-            <h4>陳小姐<span>ｘｘｘｘ企業高階主管</span></h4>
+        <div class="card shadow rounded border-0 card-padding me-23 mb-30" :style="{ background: 'url(' + see.cardLogo + ')' }">
+          <div class="d-flex align-items-end">
+            <div class="card-absolute"><img class="card-relative" :src="see.logo" alt=""></div>
+            <h4 class="mb-0 ms-130 mt-20">陳小姐<br/><span>ｘｘｘｘ企業高階主管</span></h4>
           </div>
-          <p>一直以來都非常注重環保議題，太陽人全民電廠的初衷以及理念深深打動著我。期待能有更多人能看到太陽人全民電廠的努力，一起重視地球的未來！</p>
+          <p class="mb-0 mt-20">一直以來都非常注重環保議題，太陽人全民電廠的初衷以及理念深深打動著我。期待能有更多人能看到太陽人全民電廠的努力，一起重視地球的未來！</p>
         </div>
-        <div class="card shadow rounded">
-          <div>
-            <div><img :src="see.logo" alt=""></div>
-            <h4>陳小姐<span>ｘｘｘｘ企業高階主管</span></h4>
+        <div class="card shadow rounded border-0 card-padding me-23 mb-30" :style="{ background: 'url(' + see.cardLogo + ')' }">
+          <div class="d-flex align-items-end">
+            <div class="card-absolute"><img class="card-relative" :src="see.logo" alt=""></div>
+            <h4 class="mb-0 ms-130 mt-20">陳小姐<br/><span>ｘｘｘｘ企業高階主管</span></h4>
           </div>
-          <p>一直以來都非常注重環保議題，太陽人全民電廠的初衷以及理念深深打動著我。期待能有更多人能看到太陽人全民電廠的努力，一起重視地球的未來！</p>
+          <p class="mb-0 mt-20">一直以來都非常注重環保議題，太陽人全民電廠的初衷以及理念深深打動著我。期待能有更多人能看到太陽人全民電廠的努力，一起重視地球的未來！</p>
         </div>
+
       </div>
-      <h4>社會影響力報告書</h4>
-      <div>
-        <div>
-          <div><img :src="see.icon"/></div>
-          <div :style="{ background: 'url(' + see.download + ')' }">pdf 檔案名稱名稱名稱名稱.pdf</div>
-          <button>DOWNLOAD</button>
+      <h4 class="text-center mb-25">社會影響力報告書</h4>
+      <div class="d-flex flex-wrap">
+        <div class="download-bar d-flex flex-column align-items-end mb-25">
+          <p class="text-end mb-0 card-relative ">345KB</p>
+          <div class="d-flex align-items-center">
+            <div class="circle d-flex justify-content-center align-items-center"><img :src="see.icon"/></div>
+            <div class="download d-flex justify-content-center align-items-center" :style="{ background: 'url(' + see.download + ')' }">pdf 檔案名稱名稱名稱名稱.pdf</div>
+            <button class="">DOWNLOAD</button>
+          </div>
+        </div>
+        <div class="download-bar d-flex flex-column align-items-end mb-25">
+          <p class="text-end mb-0 card-relative ">345KB</p>
+          <div class="d-flex align-items-center">
+            <div class="circle d-flex justify-content-center align-items-center"><img :src="see.icon"/></div>
+            <div class="download d-flex justify-content-center align-items-center" :style="{ background: 'url(' + see.download + ')' }">pdf 檔案名稱名稱名稱名稱.pdf</div>
+            <button class="">DOWNLOAD</button>
+          </div>
+        </div>
+        <div class="download-bar d-flex flex-column align-items-end">
+          <p class="text-end mb-0 card-relative ">345KB</p>
+          <div class="d-flex align-items-center">
+            <div class="circle d-flex justify-content-center align-items-center"><img :src="see.icon"/></div>
+            <div class="download d-flex justify-content-center align-items-center" :style="{ background: 'url(' + see.download + ')' }">pdf 檔案名稱名稱名稱名稱.pdf</div>
+            <button class="">DOWNLOAD</button>
+          </div>
+        </div>
+        <div class="download-bar d-flex flex-column align-items-end mb-25">
+          <p class="text-end mb-0 card-relative ">345KB</p>
+          <div class="d-flex align-items-center">
+            <div class="circle d-flex justify-content-center align-items-center"><img :src="see.icon"/></div>
+            <div class="download d-flex justify-content-center align-items-center" :style="{ background: 'url(' + see.download + ')' }">pdf 檔案名稱名稱名稱名稱.pdf</div>
+            <button class="">DOWNLOAD</button>
+          </div>
+        </div>
+        <div class="download-bar d-flex flex-column align-items-end mb-25">
+          <p class="text-end mb-0 card-relative ">345KB</p>
+          <div class="d-flex align-items-center">
+            <div class="circle d-flex justify-content-center align-items-center"><img :src="see.icon"/></div>
+            <div class="download d-flex justify-content-center align-items-center" :style="{ background: 'url(' + see.download + ')' }">pdf 檔案名稱名稱名稱名稱.pdf</div>
+            <button class="">DOWNLOAD</button>
+          </div>
+        </div>
+        <div class="download-bar d-flex flex-column align-items-end">
+          <p class="text-end mb-0 card-relative ">345KB</p>
+          <div class="d-flex align-items-center">
+            <div class="circle d-flex justify-content-center align-items-center"><img :src="see.icon"/></div>
+            <div class="download d-flex justify-content-center align-items-center" :style="{ background: 'url(' + see.download + ')' }">pdf 檔案名稱名稱名稱名稱.pdf</div>
+            <button class="">DOWNLOAD</button>
+          </div>
         </div>
       </div>
     </div>
@@ -445,7 +489,8 @@ export default {
         seeBg: require('../../public/images/social/Section_see.png'),
         icon: require('../../public/images/social/icon.png'),
         download: require('../../public/images/social/download_bar.png'),
-        seeText: require('../../public/images/social/to_see.png')
+        seeText: require('../../public/images/social/to_see.png'),
+        cardLogo: require('../../public/images/social/card_logo.png')
       },
       power: {
         world: require('../../public/images/social/all_world.png')

@@ -92,7 +92,7 @@
             <h4 class="sub-title text-center mb-0">全民電廠足跡</h4>
           </div>
           <div class="z-11">
-            <img :src="power.world" alt="">
+            <img :src="power.world" alt="" class="img-fluid">
           </div>
         </div>
         <div class="card-wrap">
@@ -152,7 +152,7 @@
         <p>太陽人全民電場致力於同步達成：<br/>
 氣候行動、永續城鄉、潔淨能源等多元價值</p>
       </div>
-      <div class="z-44 d-flex align-items-center justify-content-center img-block"><img class="img-relative" :src="goals.goalsText" alt=""></div>
+      <div class="z-44 d-flex align-items-center justify-content-center img-block"><img class="img-relative img-fluid" :src="goals.goalsText" alt=""></div>
       <div class="bg z-33 d-flex flex-column justify-content-center align-items-center" style="width: 950px;height: 873px;" :style="{ background: 'url(' + goals.rectangle + ')' }">
         <div class="location">
           <div class="location-eye">
@@ -171,69 +171,71 @@
   <!-- [End]Goals  -->
 
   <!-- [Start]Partner  -->
-  <section class="d-flex partner-relative align-items-end partner-bg mb-21" :style="{ background: 'url(' + partner.partnerBg + ')' }">
-    <div class="d-flex align-items-end partner z-44 mb-176" >
-      <div class="me-53 logo-wrap">
-        <div class="logo-wrap-bg d-flex flex-column justify-content-end pb-84" :style="{ background: 'url(' + partner.our + ')' }" style="height :696.13px;width :738px">
-          <div class="d-flex flex-column mb-173 logo-wrap-height justify-content-between">
-            <h4 class="text-center mb-4 color-g">優良企業</h4>
-            <div class="d-flex align-items-center justify-content-center">
-              <button><font-awesome-icon icon="fa-solid fa-angle-left" /></button>
-              <div class="mx-2"><img :src="partner.partner1" alt=""></div>
-              <button><font-awesome-icon icon="fa-solid fa-angle-right" /></button>
-            </div>
-          </div>
-          <div class="d-flex justify-content-around">
-            <div class="d-flex flex-column logo-wrap-height justify-content-between">
-              <h4 class="text-center mb-4 color-b">民間團體</h4>
+  <section>
+    <div class="d-flex partner-relative align-items-end partner-bg mb-21" :style="{ background: 'url(' + partner.partnerBg + ')' }">
+      <div class="d-flex align-items-end partner z-44 mb-176" >
+        <div class="me-53 logo-wrap">
+          <div class="logo-wrap-bg d-flex flex-column justify-content-end pb-84" :style="{ background: 'url(' + partner.our + ')' }" style="height :696.13px;width :738px">
+            <div class="d-flex flex-column mb-173 logo-wrap-height justify-content-between">
+              <h4 class="text-center mb-4 color-g">優良企業</h4>
               <div class="d-flex align-items-center justify-content-center">
                 <button><font-awesome-icon icon="fa-solid fa-angle-left" /></button>
-                <div class="mx-2"><img :src="partner.partner2" alt=""></div>
+                <div class="mx-2"><img :src="partner.partner1" alt=""></div>
                 <button><font-awesome-icon icon="fa-solid fa-angle-right" /></button>
               </div>
             </div>
-            <div class="d-flex flex-column logo-wrap-height justify-content-between">
-              <h4 class="text-center mb-4 color-y">公益夥伴</h4>
-              <div class="d-flex align-items-center justify-content-center">
-                <button><font-awesome-icon icon="fa-solid fa-angle-left" /></button>
-                <div class="mx-2"><img :src="partner.partner3" alt=""></div>
-                <button><font-awesome-icon icon="fa-solid fa-angle-right" /></button>
+            <div class="d-flex justify-content-around">
+              <div class="d-flex flex-column logo-wrap-height justify-content-between">
+                <h4 class="text-center mb-4 color-b">民間團體</h4>
+                <div class="d-flex align-items-center justify-content-center">
+                  <button><font-awesome-icon icon="fa-solid fa-angle-left" /></button>
+                  <div class="mx-2"><img :src="partner.partner2" alt=""></div>
+                  <button><font-awesome-icon icon="fa-solid fa-angle-right" /></button>
+                </div>
+              </div>
+              <div class="d-flex flex-column logo-wrap-height justify-content-between">
+                <h4 class="text-center mb-4 color-y">公益夥伴</h4>
+                <div class="d-flex align-items-center justify-content-center">
+                  <button><font-awesome-icon icon="fa-solid fa-angle-left" /></button>
+                  <div class="mx-2"><img :src="partner.partner3" alt=""></div>
+                  <button><font-awesome-icon icon="fa-solid fa-angle-right" /></button>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="mb-74">
-        <div class="d-flex">
-          <div>
-            <h2 class="english-title">Our Partner</h2>
-            <h4 class="sub-title mb-26">影響力夥伴</h4>
+        <div class="mb-74">
+          <div class="d-flex">
+            <div>
+              <h2 class="english-title">Our Partner</h2>
+              <h4 class="sub-title mb-26">影響力夥伴</h4>
+            </div>
+            <div>
+              <div class="partner-absolute">
+                <img class="partner-relative text-position" :src="partner.partnerText" alt="" srcset="">
+              </div>
+            </div>
           </div>
-        <div>
-          <div class="partner-absolute">
-            <img class="partner-relative text-position" :src="partner.partnerText" alt="" srcset="">
-          </div>
-        </div>
-        </div>
-        <p>太陽人全民電廠結合來自企業、民間團體及公益 單位夥伴的力量及<br/>特別的商業模式，一齊打造不一樣且 更加多元的綠色架構，加強對<br/>整體社會及世界環境的正 面影響力。</p>
+          <p>太陽人全民電廠結合來自企業、民間團體及公益 單位夥伴的力量及<br/>特別的商業模式，一齊打造不一樣且 更加多元的綠色架構，加強對<br/>整體社會及世界環境的正 面影響力。</p>
 
-        <div class="d-flex justify-content-between">
-          <div class="bg-circle" :style="{ background: 'url(' + partner.circle + ')' }">
-            <div>優良企業</div>
-            <div>180+</div>
-          </div>
-          <div class="bg-circle" :style="{ background: 'url(' + partner.circle + ')' }">
-            <div>民間團體</div>
-            <div>140+</div>
-          </div>
-          <div class="bg-circle" :style="{ background: 'url(' + partner.circle + ')' }">
-            <div>公益夥伴</div>
-            <div>15+</div>
+          <div class="d-flex justify-content-between">
+            <div class="bg-circle" :style="{ background: 'url(' + partner.circle + ')' }">
+              <div>優良企業</div>
+              <div>180+</div>
+            </div>
+            <div class="bg-circle" :style="{ background: 'url(' + partner.circle + ')' }">
+              <div>民間團體</div>
+              <div>140+</div>
+            </div>
+            <div class="bg-circle" :style="{ background: 'url(' + partner.circle + ')' }">
+              <div>公益夥伴</div>
+              <div>15+</div>
+            </div>
           </div>
         </div>
       </div>
+      <div class="bg-gray partner-absolute mb-79 z-33"></div>
     </div>
-    <div class="bg-gray partner-absolute mb-79 z-33"></div>
   </section>
   <!-- [End]Partner  -->
 
@@ -248,42 +250,42 @@
         <div class="see-relative z-33"><img class="see-absolute" :src="see.seeText" alt=""></div>
       </div>
       <div class="d-flex flex-wrap justify-content-between">
-        <div class="card">
+        <div class="card shadow rounded">
+          <div class="d-flex">
+            <div><img :src="see.logo" alt=""></div>
+            <h4>陳小姐<br/><span>ｘｘｘｘ企業高階主管</span></h4>
+          </div>
+          <p>一直以來都非常注重環保議題，太陽人全民電廠的初衷以及理念深深打動著我。期待能有更多人能看到太陽人全民電廠的努力，一起重視地球的未來！</p>
+        </div>
+        <div class="card shadow rounded">
           <div>
             <div><img :src="see.logo" alt=""></div>
             <h4>陳小姐<span>ｘｘｘｘ企業高階主管</span></h4>
           </div>
           <p>一直以來都非常注重環保議題，太陽人全民電廠的初衷以及理念深深打動著我。期待能有更多人能看到太陽人全民電廠的努力，一起重視地球的未來！</p>
         </div>
-        <div class="card">
+        <div class="card shadow rounded">
           <div>
             <div><img :src="see.logo" alt=""></div>
             <h4>陳小姐<span>ｘｘｘｘ企業高階主管</span></h4>
           </div>
           <p>一直以來都非常注重環保議題，太陽人全民電廠的初衷以及理念深深打動著我。期待能有更多人能看到太陽人全民電廠的努力，一起重視地球的未來！</p>
         </div>
-        <div class="card">
+        <div class="card shadow rounded">
           <div>
             <div><img :src="see.logo" alt=""></div>
             <h4>陳小姐<span>ｘｘｘｘ企業高階主管</span></h4>
           </div>
           <p>一直以來都非常注重環保議題，太陽人全民電廠的初衷以及理念深深打動著我。期待能有更多人能看到太陽人全民電廠的努力，一起重視地球的未來！</p>
         </div>
-        <div class="card">
+        <div class="card shadow rounded">
           <div>
             <div><img :src="see.logo" alt=""></div>
             <h4>陳小姐<span>ｘｘｘｘ企業高階主管</span></h4>
           </div>
           <p>一直以來都非常注重環保議題，太陽人全民電廠的初衷以及理念深深打動著我。期待能有更多人能看到太陽人全民電廠的努力，一起重視地球的未來！</p>
         </div>
-        <div class="card">
-          <div>
-            <div><img :src="see.logo" alt=""></div>
-            <h4>陳小姐<span>ｘｘｘｘ企業高階主管</span></h4>
-          </div>
-          <p>一直以來都非常注重環保議題，太陽人全民電廠的初衷以及理念深深打動著我。期待能有更多人能看到太陽人全民電廠的努力，一起重視地球的未來！</p>
-        </div>
-        <div class="card">
+        <div class="card shadow rounded">
           <div>
             <div><img :src="see.logo" alt=""></div>
             <h4>陳小姐<span>ｘｘｘｘ企業高階主管</span></h4>
@@ -302,6 +304,96 @@
     </div>
   </section>
   <!-- [End]See  -->
+
+  <!-- [Start]footer  -->
+  <section class="pb-82">
+    <footer>
+      <div class="mb-45">
+        <img :src="footer.footerLogo" alt="footer">
+      </div>
+      <!-- 2  -->
+      <div class="d-flex mb-45 justify-content-between" >
+        <div style="width: 50%" class="me-74">
+          <h6>Connect</h6>
+          <div class="d-flex">
+            <div class="me-171">
+              <p><a href="">宏威環球事業股份有限公司</a></p>
+              <p><a href="">02-5574-0007</a></p>
+              <p><a href="">02-2927-3447</a></p>
+            </div>
+            <div>
+              <p><a href="">service@hellosolarman.com</a></p>
+              <p>週一至週五 10:00-19:00</p>
+              <p>新北市永和區中和路345號10樓之2</p>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex justify-content-between" style="width: 50%">
+          <div >
+            <h6>FOLLOW US</h6>
+            <div class="follow">
+              <a href=""><i class="bi bi-facebook"></i><p>hellosolarman</p></a>
+              <a href=""><i class="bi bi-line"></i><p>LINE「@solarman」</p></a>
+              <a href=""><i class="bi bi-instagram"></i><p>hellosolarman</p></a>
+            </div>
+          </div>
+          <div>
+            <h6>邀請好友拿獎勵</h6>
+            <p><a href="">COPYRIGHT© 2021 太陽人全民電廠 All RIGHTS <br/>RESERVED.</a></p>
+          </div>
+        </div>
+      </div>
+      <!-- 3  -->
+      <div>
+        <h6>USEFULL LINKS</h6>
+        <div class="d-flex justify-content-between usefull">
+          <div>
+            <h6>認識太陽人</h6>
+            <p><a href="">公司介紹</a></p>
+            <p><a href="">太陽人實績</a></p>
+            <p><a href="">媒體報導</a></p>
+          </div>
+          <div>
+          <h6>太陽人電廠</h6>
+            <p><a href="">小額購買</a></p>
+            <p><a href="">整場購買</a></p>
+            <p><a href="">體驗電廠</a></p>
+            <p><a href="">賣電廠</a></p>
+            <p><a href="">蓋電廠</a></p>
+            <p><a href="">出租屋頂</a></p>
+            <p><a href="">自己持有</a></p>
+          </div>
+          <div>
+            <h6>太陽人學院</h6>
+            <p><a href="">業務人才</a></p>
+            <p><a href="">更多人才</a></p>
+          </div>
+          <div>
+            <h6>太陽人快報</h6>
+            <p><a href="">太陽人最新消息</a></p>
+            <p><a href="">綠能轉型行不行</a></p>
+          </div>
+          <div>
+            <h6>常見問答</h6>
+            <p><a href="">關於太陽能電廠</a></p>
+            <p><a href="">投資專案</a></p>
+            <p><a href="">合約知識</a></p>
+            <p><a href="">付款相關問題</a></p>
+            <p><a href="">訂單相關問題</a></p>
+            <p><a href="">售電收益</a></p>
+            <p><a href="">關於日光幣</a></p>
+          </div>
+          <div>
+          <h6>太陽人服務</h6>
+            <p><a href="">太陽人會員條款</a></p>
+            <p><a href="">隱私權保護政策</a></p>
+            <p><a href="">交易安全</a></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </section>
+  <!-- [End]footer  -->
 </div>
 </template>
 
@@ -357,6 +449,9 @@ export default {
       },
       power: {
         world: require('../../public/images/social/all_world.png')
+      },
+      footer: {
+        footerLogo: require('../../public/images/social/footerLogo.svg')
       }
     }
   }

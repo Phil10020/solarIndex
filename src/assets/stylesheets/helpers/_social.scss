@@ -4,6 +4,7 @@
     //[Start] font-size 
     h6 {
         font-size: 1rem;
+        color: #515C5C;
     }
     h5 {
        font-size: 1.125rem; 
@@ -58,6 +59,10 @@
 
     .mb-79 {
       margin-bottom: 79px;
+    }
+
+    .pb-82 {
+      padding-bottom: 82px;
     }
     .sub-title {
       color: #333333 ;
@@ -282,7 +287,7 @@
     .goals {
       &-bg {
         background-repeat: no-repeat !important;
-        background-position: 0% 120% !important;
+        background-position:bottom 0% right 0% !important;
       }
       .z{
         &-55 {
@@ -458,6 +463,61 @@
       }
       .card {
         width: 413px;
+        img {
+          width: 110px;
+        }
+        h4 {
+          span {
+            font-size: 20px;
+
+          }
+        }
+      }
+    }
+
+    // footer 
+    footer {
+      background: #FAFAFA;
+      padding: 53px 16.66% 50px 16.66%;
+      font-family: 'Noto Sans TC', sans-serif;
+      a,i,p {
+        color: #9A9999;
+      }
+      p {
+        line-height: 24px;
+        margin-bottom: 10px;
+        font-size: 14px;
+      }
+      h6 {
+        line-height: 1.5;
+        margin-bottom: 12px;
+      }
+
+      i {
+        margin-right: 5.13px;
+      }
+      .mb-45 {
+        margin-bottom: 45px;
+      }
+      .me-74 {
+        margin-right: 74px;
+      }
+      .me-171 {
+        margin-right: 171.19px;
+      }
+      .follow{
+        a {
+          display: flex;
+          flex-wrap: nowrap;
+        }
+      }
+      .usefull {
+        h6 {
+          padding-top: 4px;
+          p {
+            line-height: 37px;
+          }
+        }
       }
     }
 }

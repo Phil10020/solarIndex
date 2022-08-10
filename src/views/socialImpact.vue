@@ -25,7 +25,7 @@
           </div>
           <div class="ml-70 d-flex align-items-end"><img :src="social.introRight" alt=""></div>
         </div>
-        <div class="d-flex justify-content-center z-1"><img :src="social.introText" alt=""></div>
+        <div class="position-absolute intro-right z-1"><img :src="social.introText" alt=""></div>
       </div>
     </div>
   </section>
@@ -50,12 +50,12 @@
             </div>
           </div>
         </div>
-        <div class="z-4 ps-26">
+        <div class="z-4 position-absolute intention-right">
           <img class="" :src="intention.intentionText" alt="">
         </div>
         <div class="z-5">
           <div><img class="z-6 " :src="intention.intentionTree" style="width:749px ; height:547px ;" alt=""></div>
-          <div><img class="z-7 " :src="intention.intentionSolar" style="width:630px ; height:468px ;" alt=""></div>
+          <div><img class="z-7 " :src="intention.intentionSolar" style="width:627px ; height:461px ;" alt=""></div>
         </div>
       </div>
     </div>
@@ -76,7 +76,7 @@
           </div>
           <div class="ml-70 d-flex align-items-end"><img :src="social.introRight" alt=""></div>
         </div>
-        <div class="d-flex justify-content-center z-1"><img :src="social.introYourself" alt=""></div>
+        <div class="z-1 position-absolute intro-r"><img :src="social.introYourself" alt=""></div>
       </div>
     </div>
   </section>
@@ -87,12 +87,14 @@
     <div class="tracking tracking-bg" :style="{ background: 'url(' + tracking.trackingBg + ')' }">
       <div class="p-30">
         <div class="d-flex justify-content-center mb-97">
-          <div class="z-22">
-            <h2 class="english-title">Power Plant Tracking</h2>
-            <h4 class="sub-title text-center mb-0">全民電廠足跡</h4>
-          </div>
-          <div class="z-11">
-            <img :src="power.world" alt="" class="img-fluid">
+          <div class="d-flex justify-content-center flex-column">
+            <div class="z-22 position-relative">
+              <h2 class="english-title">Power Plant Tracking</h2>
+              <h4 class="sub-title text-center mb-0">全民電廠足跡</h4>
+            </div>
+            <div class="z-11 position-absolute tracking-right">
+              <img :src="power.world" alt="" class="">
+            </div>
           </div>
         </div>
         <div class="card-wrap">
@@ -155,16 +157,16 @@
   <!-- [End]tracking  -->
 
   <!-- [Start]Goals  -->
-  <section class="mb-27">
-    <div class="goals d-flex justify-content-between goals-bg" :style="{ background: 'url(' + goals.goalsBg + ')' }">
-      <div class="z-55 d-flex flex-column justify-content-center ms-16">
+  <section class="mb-27" style="height:882px">
+    <div class="goals d-flex justify-content-between goals-bg position-relative" :style="{ background: 'url(' + goals.goalsBg + ')' }">
+      <div class="z-55 d-flex flex-column justify-content-center ms-16 mt-center">
         <h2 class="english-title">Our SDGS Goals</h2>
         <h4 class="sub-title mb-26">太陽人的 SDGs 永續發展目標</h4>
         <p>太陽人全民電場致力於同步達成：<br/>
 氣候行動、永續城鄉、潔淨能源等多元價值</p>
       </div>
-      <div class="z-44 d-flex align-items-center justify-content-center img-block"><img class="img-relative img-fluid" :src="goals.goalsText" alt=""></div>
-      <div class="bg z-33 d-flex flex-column justify-content-center align-items-center" style="width: 950px;height: 873px;" :style="{ background: 'url(' + goals.rectangle + ')' }">
+      <div class="z-44 position-absolute ms-691"><img class="" :src="goals.goalsText" alt=""></div>
+      <div class="bg z-33 d-flex flex-column justify-content-center align-items-center position-absolute end-0" style="width: 950px;height: 873px;" :style="{ background: 'url(' + goals.rectangle + ')' }">
         <div class="location">
           <div class="location-eye">
             <div class="d-flex justify-content-center" style="width:97px; height:97px" :style="{ background: 'url(' + goals.rectangleEye + ')' }">13</div>
@@ -183,8 +185,8 @@
 
   <!-- [Start]Partner  -->
   <section>
-    <div class="d-flex partner-relative align-items-end partner-bg mb-21" :style="{ background: 'url(' + partner.partnerBg + ')' }">
-      <div class="d-flex align-items-end partner z-44 mb-176" >
+    <div class=" position-relative partner-bg mb-21" :style="{ background: 'url(' + partner.partnerBg + ')' }">
+      <div class="d-flex align-items-end partner z-44 mb-176 position-relative" >
         <div class="me-53 logo-wrap">
           <div class="logo-wrap-bg d-flex flex-column justify-content-end pb-84" :style="{ background: 'url(' + partner.our + ')' }" style="height :696.13px;width :738px">
             <div class="d-flex flex-column mb-173 logo-wrap-height justify-content-between">
@@ -215,17 +217,15 @@
             </div>
           </div>
         </div>
-        <div class="mb-74">
-          <div class="d-flex">
+        <div class="mb-74 position-absolute partner-right">
+          <div class="d-flex position-relative">
             <div>
               <h2 class="english-title">Our Partner</h2>
               <h4 class="sub-title mb-26">影響力夥伴</h4>
             </div>
-            <div>
-              <div class="partner-absolute">
-                <img class="partner-relative text-position" :src="partner.partnerText" alt="" srcset="">
+              <div class="position-absolute text-position">
+                <img class="" :src="partner.partnerText" alt="" srcset="">
               </div>
-            </div>
           </div>
           <p>太陽人全民電廠結合來自企業、民間團體及公益 單位夥伴的力量及<br/>特別的商業模式，一齊打造不一樣且 更加多元的綠色架構，加強對<br/>整體社會及世界環境的正 面影響力。</p>
 
@@ -245,7 +245,7 @@
           </div>
         </div>
       </div>
-      <div class="bg-gray partner-absolute mb-79 z-33"></div>
+      <div class="bg-gray position-absolute mb-79 z-33"></div>
     </div>
   </section>
   <!-- [End]Partner  -->
@@ -258,52 +258,55 @@
           <h2 class="english-title">More Powerful to See</h2>
           <h4 class="text-center">民間力量讓更多人看見</h4>
         </div>
-        <div class="see-relative z-33"><img class="see-absolute" :src="see.seeText" alt=""></div>
+        <div class="position-absolute z-33 see-right"><img class="" :src="see.seeText" alt=""></div>
       </div>
-      <div class="d-flex flex-wrap mb-100">
-        <div class="card shadow rounded border-0 card-padding me-23 mb-30" :style="{ background: 'url(' + see.cardLogo + ')' }">
-          <div class="d-flex align-items-end">
-            <div class="card-absolute"><img class="card-relative" :src="see.logo" alt=""></div>
-            <h4 class="mb-0 ms-130 mt-20">陳小姐<br/><span>ｘｘｘｘ企業高階主管</span></h4>
+      <div class=" mb-100">
+        <div class="d-flex justify-content-center">
+          <div class="card shadow rounded border-0 card-padding  mb-30" :style="{ background: 'url(' + see.cardLogo + ')' }">
+            <div class="d-flex align-items-end">
+              <div class="card-absolute"><img class="card-relative" :src="see.logo" alt=""></div>
+              <h4 class="mb-0 ms-130 mt-20">陳小姐<br/><span>ｘｘｘｘ企業高階主管</span></h4>
+            </div>
+            <p class="mb-0 mt-20">一直以來都非常注重環保議題，太陽人全民電廠的初衷以及理念深深打動著我。期待能有更多人能看到太陽人全民電廠的努力，一起重視地球的未來！</p>
           </div>
-          <p class="mb-0 mt-20">一直以來都非常注重環保議題，太陽人全民電廠的初衷以及理念深深打動著我。期待能有更多人能看到太陽人全民電廠的努力，一起重視地球的未來！</p>
-        </div>
-        <div class="card shadow rounded border-0 card-padding me-23 mb-30" :style="{ background: 'url(' + see.cardLogo + ')' }">
-          <div class="d-flex align-items-end">
-            <div class="card-absolute"><img class="card-relative" :src="see.logo" alt=""></div>
-            <h4 class="mb-0 ms-130 mt-20">陳小姐<br/><span>ｘｘｘｘ企業高階主管</span></h4>
+          <div class="card shadow rounded border-0 card-padding  mb-30" :style="{ background: 'url(' + see.cardLogo + ')' }">
+            <div class="d-flex align-items-end">
+              <div class="card-absolute"><img class="card-relative" :src="see.logo" alt=""></div>
+              <h4 class="mb-0 ms-130 mt-20">陳小姐<br/><span>ｘｘｘｘ企業高階主管</span></h4>
+            </div>
+            <p class="mb-0 mt-20">一直以來都非常注重環保議題，太陽人全民電廠的初衷以及理念深深打動著我。期待能有更多人能看到太陽人全民電廠的努力，一起重視地球的未來！</p>
           </div>
-          <p class="mb-0 mt-20">一直以來都非常注重環保議題，太陽人全民電廠的初衷以及理念深深打動著我。期待能有更多人能看到太陽人全民電廠的努力，一起重視地球的未來！</p>
-        </div>
-        <div class="card shadow rounded border-0 card-padding me-23 mb-30" :style="{ background: 'url(' + see.cardLogo + ')' }">
-          <div class="d-flex align-items-end">
-            <div class="card-absolute"><img class="card-relative" :src="see.logo" alt=""></div>
-            <h4 class="mb-0 ms-130 mt-20">陳小姐<br/><span>ｘｘｘｘ企業高階主管</span></h4>
+          <div class="card shadow rounded border-0 card-padding  mb-30" :style="{ background: 'url(' + see.cardLogo + ')' }">
+            <div class="d-flex align-items-end">
+              <div class="card-absolute"><img class="card-relative" :src="see.logo" alt=""></div>
+              <h4 class="mb-0 ms-130 mt-20">陳小姐<br/><span>ｘｘｘｘ企業高階主管</span></h4>
+            </div>
+            <p class="mb-0 mt-20">一直以來都非常注重環保議題，太陽人全民電廠的初衷以及理念深深打動著我。期待能有更多人能看到太陽人全民電廠的努力，一起重視地球的未來！</p>
           </div>
-          <p class="mb-0 mt-20">一直以來都非常注重環保議題，太陽人全民電廠的初衷以及理念深深打動著我。期待能有更多人能看到太陽人全民電廠的努力，一起重視地球的未來！</p>
         </div>
-        <div class="card shadow rounded border-0 card-padding me-23 mb-30" :style="{ background: 'url(' + see.cardLogo + ')' }">
-          <div class="d-flex align-items-end">
-            <div class="card-absolute"><img class="card-relative" :src="see.logo" alt=""></div>
-            <h4 class="mb-0 ms-130 mt-20">陳小姐<br/><span>ｘｘｘｘ企業高階主管</span></h4>
+        <div class="d-flex justify-content-center">
+          <div class="card shadow rounded border-0 card-padding  mb-30" :style="{ background: 'url(' + see.cardLogo + ')' }">
+            <div class="d-flex align-items-end">
+              <div class="card-absolute"><img class="card-relative" :src="see.logo" alt=""></div>
+              <h4 class="mb-0 ms-130 mt-20">陳小姐<br/><span>ｘｘｘｘ企業高階主管</span></h4>
+            </div>
+            <p class="mb-0 mt-20">一直以來都非常注重環保議題，太陽人全民電廠的初衷以及理念深深打動著我。期待能有更多人能看到太陽人全民電廠的努力，一起重視地球的未來！</p>
           </div>
-          <p class="mb-0 mt-20">一直以來都非常注重環保議題，太陽人全民電廠的初衷以及理念深深打動著我。期待能有更多人能看到太陽人全民電廠的努力，一起重視地球的未來！</p>
-        </div>
-        <div class="card shadow rounded border-0 card-padding me-23 mb-30" :style="{ background: 'url(' + see.cardLogo + ')' }">
-          <div class="d-flex align-items-end">
-            <div class="card-absolute"><img class="card-relative" :src="see.logo" alt=""></div>
-            <h4 class="mb-0 ms-130 mt-20">陳小姐<br/><span>ｘｘｘｘ企業高階主管</span></h4>
+          <div class="card shadow rounded border-0 card-padding  mb-30" :style="{ background: 'url(' + see.cardLogo + ')' }">
+            <div class="d-flex align-items-end">
+              <div class="card-absolute"><img class="card-relative" :src="see.logo" alt=""></div>
+              <h4 class="mb-0 ms-130 mt-20">陳小姐<br/><span>ｘｘｘｘ企業高階主管</span></h4>
+            </div>
+            <p class="mb-0 mt-20">一直以來都非常注重環保議題，太陽人全民電廠的初衷以及理念深深打動著我。期待能有更多人能看到太陽人全民電廠的努力，一起重視地球的未來！</p>
           </div>
-          <p class="mb-0 mt-20">一直以來都非常注重環保議題，太陽人全民電廠的初衷以及理念深深打動著我。期待能有更多人能看到太陽人全民電廠的努力，一起重視地球的未來！</p>
-        </div>
-        <div class="card shadow rounded border-0 card-padding me-23 mb-30" :style="{ background: 'url(' + see.cardLogo + ')' }">
-          <div class="d-flex align-items-end">
-            <div class="card-absolute"><img class="card-relative" :src="see.logo" alt=""></div>
-            <h4 class="mb-0 ms-130 mt-20">陳小姐<br/><span>ｘｘｘｘ企業高階主管</span></h4>
+          <div class="card shadow rounded border-0 card-padding  mb-30" :style="{ background: 'url(' + see.cardLogo + ')' }">
+            <div class="d-flex align-items-end">
+              <div class="card-absolute"><img class="card-relative" :src="see.logo" alt=""></div>
+              <h4 class="mb-0 ms-130 mt-20">陳小姐<br/><span>ｘｘｘｘ企業高階主管</span></h4>
+            </div>
+            <p class="mb-0 mt-20">一直以來都非常注重環保議題，太陽人全民電廠的初衷以及理念深深打動著我。期待能有更多人能看到太陽人全民電廠的努力，一起重視地球的未來！</p>
           </div>
-          <p class="mb-0 mt-20">一直以來都非常注重環保議題，太陽人全民電廠的初衷以及理念深深打動著我。期待能有更多人能看到太陽人全民電廠的努力，一起重視地球的未來！</p>
         </div>
-
       </div>
       <h4 class="text-center mb-25">社會影響力報告書</h4>
       <div class="d-flex flex-wrap">

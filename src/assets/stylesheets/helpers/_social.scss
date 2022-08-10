@@ -111,20 +111,28 @@
         padding-bottom: 20px;
         margin-top: 4rem;
         background-repeat: no-repeat;
+        &-r {
+          right: 11%;
+          img {
+            position: relative;
+            bottom: 50px;
+          }
+        }
         &-m174 {
             margin-top: 174px;
             p:first-child:first-letter {
                 font-size: 2rem;
             }
         }
-        .z-1 {
-          z-index: -10;
-          position: absolute;
-          margin-left: 48%;
+        &-right {
+          right: 12%;
           img {
             position: relative;
-            bottom: 40px;
+            bottom: 50px;
           }
+        }
+        .z-1 {
+          z-index: -10;
         }
         .mr-70 {
             margin-right: 70px;
@@ -148,6 +156,9 @@
     }
     //intention
     .intention {
+      &-right {
+        right: 26%;
+      }
       &-bg {
         background-repeat: no-repeat !important;
         background-position: left bottom !important;
@@ -180,9 +191,6 @@
         .mb-54 {
           margin:0 0 54px 0;
         }
-        .ps-26 {
-          padding-left: 26%;
-        }
         p {
           font-size: 18px;
           line-height: 32px;
@@ -203,7 +211,6 @@
           }
           &-4 {
             z-index: 10;
-            position: absolute;
             img {
               position: relative;
               bottom: 70px;
@@ -222,6 +229,9 @@
 
     //tracking
     .tracking {
+      &-right {
+        right: 15%;
+      }
       &-bg {
         background-repeat: no-repeat !important;
         background-position: 0% 50% !important;
@@ -242,12 +252,8 @@
       }
       .z-11 {
         z-index: 11;
-        position: absolute;
-        img {
-          position: relative;
-          bottom: 83px;
-          left: 107%;
-        }
+        margin-left: 27%;
+        margin-bottom: 8%;
       }
       .mb-97 {
         margin-bottom: 97px;
@@ -338,14 +344,6 @@
           z-index: 33;
         }
       }
-      .img-block {
-        position: absolute;
-        .img-relative {
-          position: relative;
-          left: 112%;
-          top: 170px;
-        }
-      }
       .bg {
         background-repeat: no-repeat !important;
       }
@@ -374,8 +372,15 @@
       .ms-16 {
         margin-left: 16.93% ;
       }
+      .ms-691 {
+        margin-left: 36%;
+        margin-top: 8%;
+      }
       .mb-26 {
         margin-bottom: 1.625rem;
+      }
+      .mt-center {
+        margin-top: 16%;
       }
       p {
         font-size: 18px;
@@ -398,20 +403,20 @@
       .me-53 {
         margin-right: 53px;
       }
+      &-right {
+        right: 15%;
+      }
     }
     .partner-bg {
       background-repeat: no-repeat !important;
       background-position: 76% 100% !important;
     }
-
-    .partner-absolute {
-      position: absolute;
-    }
-    .partner-relative {
-      position: relative;
-    }
     .z-33 {
       z-index: -33;
+      img {
+        position: relative;
+        bottom: 110px;
+      }
     }
     .z-44 {
       z-index: 44;
@@ -454,7 +459,7 @@
     }
     .text-position {
       bottom: 80px;
-      right: 10%;
+      right: -25% !important;
     }
     .logo-wrap {
       font-family:'Noto Sans TC', sans-serif;
@@ -492,7 +497,10 @@
     .see {
       background-repeat: no-repeat !important;
       background-position: 0% 50% !important;
-      padding: 0 16.5%;
+      padding: 0 auto ;
+      &-right {
+        right: 5% !important;
+      }
       &-absolute {
         position: absolute;
       }
@@ -505,7 +513,7 @@
         background-repeat: no-repeat !important;
         background-position: 100% 100% !important;
         font-family: 'Noto Sans TC', sans-serif;
-        width: 31%;
+        width: 413px;
         &-relative {
           position: relative;
         }
@@ -513,7 +521,7 @@
           position: absolute;
         }
         img {
-          width: 110px;
+          max-width: 45%;
         }
         h4 {
           font-weight: 500;

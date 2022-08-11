@@ -5,8 +5,9 @@
   class="banner"
   :style="{ background: 'url(' + banner + ')' }"
   >
-    <div class="text-white d-flex justify-content-center">
+    <div class="text-white d-flex justify-content-center banner-column">
       <h1>社會影響力</h1>
+      <p>social  impact</p>
     </div>
   </section>
   <!-- [End]banner  -->
@@ -186,29 +187,29 @@
   <!-- [Start]Partner  -->
   <section>
     <div class=" position-relative partner-bg mb-21" :style="{ background: 'url(' + partner.partnerBg + ')' }">
-      <div class="d-flex align-items-end partner z-44 mb-176 position-relative" >
-        <div class="me-53 logo-wrap">
-          <div class="logo-wrap-bg d-flex flex-column justify-content-end pb-84" :style="{ background: 'url(' + partner.our + ')' }" style="height :696.13px;width :738px">
-            <div class="d-flex flex-column mb-173 logo-wrap-height justify-content-between">
+      <div class="d-flex  partner z-44 mb-176 position-relative" >
+        <div class="logo-wrap">
+          <div class="logo-wrap-bg logo-wrap-mobil d-flex flex-column justify-content-end pb-84" :style="{ background: 'url(' + partner.our + ')' }">
+            <div class="d-flex flex-column mb-173 justify-content-between">
               <h4 class="text-center mb-4 color-g">優良企業</h4>
-              <div class="d-flex align-items-center justify-content-center">
+              <div class="d-flex align-items-center justify-content-center mobil-d-none">
                 <button><font-awesome-icon icon="fa-solid fa-angle-left" /></button>
                 <div class="mx-2"><img :src="partner.partner1" alt=""></div>
                 <button><font-awesome-icon icon="fa-solid fa-angle-right" /></button>
               </div>
             </div>
             <div class="d-flex justify-content-around">
-              <div class="d-flex flex-column logo-wrap-height justify-content-between">
+              <div class="d-flex flex-column justify-content-between">
                 <h4 class="text-center mb-4 color-b">民間團體</h4>
-                <div class="d-flex align-items-center justify-content-center">
+                <div class="d-flex align-items-center justify-content-center mobil-d-none">
                   <button><font-awesome-icon icon="fa-solid fa-angle-left" /></button>
                   <div class="mx-2"><img :src="partner.partner2" alt=""></div>
                   <button><font-awesome-icon icon="fa-solid fa-angle-right" /></button>
                 </div>
               </div>
-              <div class="d-flex flex-column logo-wrap-height justify-content-between">
+              <div class="d-flex flex-column justify-content-between">
                 <h4 class="text-center mb-4 color-y">公益夥伴</h4>
-                <div class="d-flex align-items-center justify-content-center">
+                <div class="d-flex align-items-center justify-content-center mobil-d-none">
                   <button><font-awesome-icon icon="fa-solid fa-angle-left" /></button>
                   <div class="mx-2"><img :src="partner.partner3" alt=""></div>
                   <button><font-awesome-icon icon="fa-solid fa-angle-right" /></button>
@@ -217,19 +218,19 @@
             </div>
           </div>
         </div>
-        <div class="mb-74 position-absolute partner-right">
+        <div class="mb-74 position-absolute partner-right mt-202">
           <div class="d-flex position-relative">
-            <div>
+            <div class="z-55">
               <h2 class="english-title">Our Partner</h2>
               <h4 class="sub-title mb-26">影響力夥伴</h4>
             </div>
-              <div class="position-absolute text-position">
+              <div class="position-absolute text-position z-44">
                 <img class="" :src="partner.partnerText" alt="" srcset="">
               </div>
           </div>
           <p>太陽人全民電廠結合來自企業、民間團體及公益 單位夥伴的力量及<br/>特別的商業模式，一齊打造不一樣且 更加多元的綠色架構，加強對<br/>整體社會及世界環境的正 面影響力。</p>
 
-          <div class="d-flex justify-content-between">
+          <div class="d-flex justify-content-between partner-right-item">
             <div class="bg-circle" :style="{ background: 'url(' + partner.circle + ')' }">
               <div>優良企業</div>
               <div>180+</div>
@@ -261,7 +262,7 @@
         <div class="position-absolute z-33 see-right"><img class="" :src="see.seeText" alt=""></div>
       </div>
       <div class=" mb-100">
-        <div class="d-flex justify-content-center">
+        <div class="d-flex justify-content-center card-mobil">
           <div class="card shadow rounded border-0 card-padding  mb-30" :style="{ background: 'url(' + see.cardLogo + ')' }">
             <div class="d-flex align-items-end">
               <div class="card-absolute"><img class="card-relative" :src="see.logo" alt=""></div>
@@ -284,7 +285,7 @@
             <p class="mb-0 mt-20">一直以來都非常注重環保議題，太陽人全民電廠的初衷以及理念深深打動著我。期待能有更多人能看到太陽人全民電廠的努力，一起重視地球的未來！</p>
           </div>
         </div>
-        <div class="d-flex justify-content-center">
+        <div class="d-flex justify-content-center card-mobil">
           <div class="card shadow rounded border-0 card-padding  mb-30" :style="{ background: 'url(' + see.cardLogo + ')' }">
             <div class="d-flex align-items-end">
               <div class="card-absolute"><img class="card-relative" :src="see.logo" alt=""></div>
@@ -312,7 +313,7 @@
       <div class="d-flex flex-wrap">
         <div class="download-bar d-flex flex-column align-items-end mb-25">
           <p class="text-end mb-0 card-relative ">345KB</p>
-          <div class="d-flex align-items-center">
+          <div class="d-flex align-items-center download-bar-column">
             <div class="circle d-flex justify-content-center align-items-center"><img :src="see.icon"/></div>
             <div class="download d-flex justify-content-center align-items-center" :style="{ background: 'url(' + see.download + ')' }">pdf 檔案名稱名稱名稱名稱.pdf</div>
             <button class="">DOWNLOAD</button>
@@ -320,7 +321,7 @@
         </div>
         <div class="download-bar d-flex flex-column align-items-end mb-25">
           <p class="text-end mb-0 card-relative ">345KB</p>
-          <div class="d-flex align-items-center">
+          <div class="d-flex align-items-center download-bar-column">
             <div class="circle d-flex justify-content-center align-items-center"><img :src="see.icon"/></div>
             <div class="download d-flex justify-content-center align-items-center" :style="{ background: 'url(' + see.download + ')' }">pdf 檔案名稱名稱名稱名稱.pdf</div>
             <button class="">DOWNLOAD</button>
@@ -328,7 +329,7 @@
         </div>
         <div class="download-bar d-flex flex-column align-items-end">
           <p class="text-end mb-0 card-relative ">345KB</p>
-          <div class="d-flex align-items-center">
+          <div class="d-flex align-items-center download-bar-column">
             <div class="circle d-flex justify-content-center align-items-center"><img :src="see.icon"/></div>
             <div class="download d-flex justify-content-center align-items-center" :style="{ background: 'url(' + see.download + ')' }">pdf 檔案名稱名稱名稱名稱.pdf</div>
             <button class="">DOWNLOAD</button>
@@ -336,7 +337,7 @@
         </div>
         <div class="download-bar d-flex flex-column align-items-end mb-25">
           <p class="text-end mb-0 card-relative ">345KB</p>
-          <div class="d-flex align-items-center">
+          <div class="d-flex align-items-center download-bar-column">
             <div class="circle d-flex justify-content-center align-items-center"><img :src="see.icon"/></div>
             <div class="download d-flex justify-content-center align-items-center" :style="{ background: 'url(' + see.download + ')' }">pdf 檔案名稱名稱名稱名稱.pdf</div>
             <button class="">DOWNLOAD</button>
@@ -344,7 +345,7 @@
         </div>
         <div class="download-bar d-flex flex-column align-items-end mb-25">
           <p class="text-end mb-0 card-relative ">345KB</p>
-          <div class="d-flex align-items-center">
+          <div class="d-flex align-items-center download-bar-column">
             <div class="circle d-flex justify-content-center align-items-center"><img :src="see.icon"/></div>
             <div class="download d-flex justify-content-center align-items-center" :style="{ background: 'url(' + see.download + ')' }">pdf 檔案名稱名稱名稱名稱.pdf</div>
             <button class="">DOWNLOAD</button>
@@ -352,7 +353,7 @@
         </div>
         <div class="download-bar d-flex flex-column align-items-end">
           <p class="text-end mb-0 card-relative ">345KB</p>
-          <div class="d-flex align-items-center">
+          <div class="d-flex align-items-center download-bar-column">
             <div class="circle d-flex justify-content-center align-items-center"><img :src="see.icon"/></div>
             <div class="download d-flex justify-content-center align-items-center" :style="{ background: 'url(' + see.download + ')' }">pdf 檔案名稱名稱名稱名稱.pdf</div>
             <button class="">DOWNLOAD</button>
@@ -370,10 +371,10 @@
         <img :src="footer.footerLogo" alt="footer">
       </div>
       <!-- 2  -->
-      <div class="d-flex mb-45 justify-content-between" >
+      <div class="d-flex mb-45 justify-content-between footer-column" >
         <div style="width: 50%" class="me-74">
           <h6>Connect</h6>
-          <div class="d-flex">
+          <div class="d-flex footer-column">
             <div class="me-171">
               <p><a href="">宏威環球事業股份有限公司</a></p>
               <p><a href="">02-5574-0007</a></p>
@@ -386,7 +387,7 @@
             </div>
           </div>
         </div>
-        <div class="d-flex justify-content-between" style="width: 50%">
+        <div class="d-flex justify-content-between footer-column" style="width: 50%">
           <div >
             <h6>FOLLOW US</h6>
             <div class="follow">
@@ -404,7 +405,7 @@
       <!-- 3  -->
       <div>
         <h6>USEFULL LINKS</h6>
-        <div class="d-flex justify-content-between usefull">
+        <div class="d-flex justify-content-between usefull footer-column">
           <div>
             <h6>認識太陽人</h6>
             <p><a href="">公司介紹</a></p>

@@ -22,9 +22,16 @@
     h1 {
         font-size: 4rem;
         font-weight: 400;
+        @media screen and (max-width: 992px) {
+          font-size: 42px;
+          line-height: 42px;
+        }
     }
     p {
       color: #515C5C;
+      @media screen and (max-width: 992px) {
+        font-size: 14px;
+      }
     }
 
     .english {
@@ -101,16 +108,39 @@
         flex-direction: column;
         color: #fff;
         justify-content: center;
+        p {
+          display: none;
+        }
+        @media screen and(max-width: 992px) {
+          background-position: 0% 50% !important;
+          align-items: center;
+          h1 {
+            margin-bottom: 20px;
+          }
+          p {
+            display: block;
+            color: #fff;
+            text-align: center;
+            line-height: 14px;
+          }
+          .banner-column {
+            flex-direction: column;
+          }
+        }
         @media(max-width: 768px) {
             padding-left: 8.33%;
             padding-right: 8.33%;
         }
     }
+    // intro
     .intro {
         height: 349px;
         padding-bottom: 20px;
         margin-top: 4rem;
         background-repeat: no-repeat;
+        @media screen and (max-width: 992px) {
+          padding: 0% 5.3%;
+        }
         &-r {
           right: 11%;
           img {
@@ -329,6 +359,9 @@
 
     // goals
     .goals {
+      @media screen and (max-width: 992px) {
+        flex-direction: column;
+      }
       &-bg {
         background-repeat: no-repeat !important;
         background-position:bottom 0% right 0% !important;
@@ -375,6 +408,14 @@
       .ms-691 {
         margin-left: 36%;
         margin-top: 8%;
+        @media screen and (max-width: 992px) {
+          margin-left: 0%;
+          margin-top: 0%;
+          img {
+            max-width: 100%;
+            height: auto;
+          }
+        }
       }
       .mb-26 {
         margin-bottom: 1.625rem;
@@ -397,9 +438,32 @@
       height: 551px;
       width: 100%;
     }
+    
     .partner {
       // background-repeat: no-repeat !important;
       padding: 0 9% 0 16.66%;
+      @media screen and (max-width:992px) {
+        padding: 0% 5%;
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+        .logo-wrap {
+          &-bg {
+            height:auto !important;
+            width: 100% !important;
+          }
+          .mobil-d-none {
+            display: none !important ;
+          }
+        }
+        .partner-right {
+          justify-content: center;
+          position: relative !important;
+        }
+        .text-position {
+          bottom: 80px;
+          right: 20% !important;
+        }
+      }
       .me-53 {
         margin-right: 53px;
       }
@@ -421,6 +485,9 @@
     .z-44 {
       z-index: 44;
     }
+    .z-55 {
+      z-index: 55;
+    }
     .mb-21 {
       margin-bottom: 21px;
     }
@@ -429,6 +496,9 @@
     }
     .mb-176 {
       margin-bottom: 176.87px;
+    }
+    .mt-202 {
+      margin-top: 202px;
     }
     .bg-circle {
       background-repeat: no-repeat !important;
@@ -464,11 +534,10 @@
     .logo-wrap {
       font-family:'Noto Sans TC', sans-serif;
       &-bg {
+        height :696.13px;
+        width: 738px;
         background-size: contain !important;
         background-repeat: no-repeat !important;
-      }
-      &-height {
-        height: 197.64px;
       }
       .color {
         &-g {
@@ -498,6 +567,17 @@
       background-repeat: no-repeat !important;
       background-position: 0% 50% !important;
       padding: 0 auto ;
+      @media screen and (max-width:992px) {
+        padding: 0 5%;
+        .card-mobil {
+          flex-direction: column;
+        }
+        .download-bar {
+          &-column {
+            flex-direction: column;
+          }
+        }
+      }
       &-right {
         right: 5% !important;
       }
@@ -585,6 +665,12 @@
       background: #FAFAFA;
       padding: 53px 16.66% 50px 16.66%;
       font-family: 'Noto Sans TC', sans-serif;
+      @media screen and (max-width:992px) {
+        .footer-column {
+          display: flex;
+          flex-direction: column;
+        }
+      }
       a,i,p {
         color: #9A9999;
       }

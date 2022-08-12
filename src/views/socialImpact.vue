@@ -17,7 +17,7 @@
     <div class="intro d-flex align-items-end justify-content-center" :style="{ background: 'url(' + social.intro + ')' }">
       <div class="intro-m174 d-flex justify-content-center">
         <div class="d-flex justify-content-center">
-          <div class="mr-70"><img :src="social.introLeft" alt=""></div>
+          <div class="mr-70"><img class="brackets" :src="social.introLeft" alt=""></div>
           <div class="d-flex justify-content-center">
             <div class="mb-3 mt-53">
               <p class="mb-14 text-success">我們秉持著環境與經濟共贏的精神，以日本職人技術，台<br/>灣在地深耕為念，透過創新的商業模式與多方力量的串聯，<br/>為環境保育及能源轉型帶來正面的影響。<br/></p>
@@ -26,7 +26,7 @@
           </div>
           <div class="ml-70 d-flex align-items-end"><img :src="social.introRight" alt=""></div>
         </div>
-        <div class="position-absolute intro-right z-1"><img :src="social.introText" alt=""></div>
+        <div class="position-absolute intro-right z-1"><img class="brackets" :src="social.introText" alt=""></div>
       </div>
     </div>
   </section>
@@ -35,26 +35,28 @@
   <!-- [Start]intention  -->
   <section class="intention">
     <div class="intention-bg" :style="{ background: 'url(' + intention.intentionBg + ')' }">
-      <div class="d-flex ps-167 justify-content-between">
-        <div class="intention-width  z-3 pt-30">
+      <div class="d-flex ps-167 justify-content-between mobile-content">
+        <div class="intention-width mobile-center z-3 pt-30">
           <h2 class="english-title mb-3">Our Original Intention</h2>
           <h4 class="mb-35 sub-title">太陽人全民電廠的初心與理念</h4>
-          <p class="mb-54">2011 年,311 東日本大地震與福島核災，徹底改寫了我們對能源安全的認知，我們也因此認知到：環境和文明的永續及平衡，是這世代人類都必須面對的共同課題。文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例。</p>
+          <p class="mb-54 mobile-padding">2011 年,311 東日本大地震與福島核災，徹底改寫了我們對能源安全的認知，我們也因此認知到：環境和文明的永續及平衡，是這世代人類都必須面對的共同課題。文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例。</p>
           <div>
             <div class="mb-55">
-              <h4 class="mb-20 h4">綠能共享經濟的源起</h4>
-              <p>節能減碳,能源轉型已是世界趨勢，但礙於資金或資訊通路門檻過高，一般社會<br/>大眾的力量無法順暢而有效地參與其中，使得能源轉型之路窒礙難行。</p>
+              <h4 class="mb-20 h4 mobile-padding">綠能共享經濟的源起</h4>
+              <p class="mobile-padding">節能減碳,能源轉型已是世界趨勢，但礙於資金或資訊通路門檻過高，一般社會<br/>大眾的力量無法順暢而有效地參與其中，使得能源轉型之路窒礙難行。</p>
+              <img class="z-6 d-none mobile-d-block mobile-img mobile-block-r" :src="intention.intentionTree" alt="">
             </div>
             <div>
-              <h4 class="h4">民間力量 能源轉型</h4>
-              <p>太陽人自 2013 年開始提供以太陽能板為單位的電廠分割認購平台服務，以綠能<br/>的共享經濟為主軸，大幅降低了民眾參與的門檻，每一個人都能夠輕鬆地成為<br/>電廠老闆，並成為能源轉型的一道助力。</p>
+              <h4 class="h4 mobile-padding">民間力量 能源轉型</h4>
+              <p class="mobile-padding">太陽人自 2013 年開始提供以太陽能板為單位的電廠分割認購平台服務，以綠能<br/>的共享經濟為主軸，大幅降低了民眾參與的門檻，每一個人都能夠輕鬆地成為<br/>電廠老闆，並成為能源轉型的一道助力。</p>
+              <img class=" d-none mobile-d-block mobile-img" :src="intention.intentionSolar" alt=""/>
             </div>
           </div>
         </div>
         <div class="z-4 position-absolute intention-right">
-          <img class="" :src="intention.intentionText" alt="">
+          <img class="mobile-img" :src="intention.intentionText" alt="">
         </div>
-        <div class="z-5">
+        <div class="z-5 mobile-d-none">
           <div><img class="z-6 " :src="intention.intentionTree" style="width:749px ; height:547px ;" alt=""></div>
           <div><img class="z-7 " :src="intention.intentionSolar" style="width:627px ; height:461px ;" alt=""></div>
         </div>
@@ -77,7 +79,7 @@
           </div>
           <div class="ml-70 d-flex align-items-end"><img :src="social.introRight" alt=""></div>
         </div>
-        <div class="z-1 position-absolute intro-r"><img :src="social.introYourself" alt=""></div>
+        <div class="z-1 position-absolute intro-r"><img class="mobile-img" :src="social.introYourself" alt=""></div>
       </div>
     </div>
   </section>
@@ -94,13 +96,13 @@
               <h4 class="sub-title text-center mb-0">全民電廠足跡</h4>
             </div>
             <div class="z-11 position-absolute tracking-right">
-              <img :src="power.world" alt="" class="">
+              <img class="mobile-img" :src="power.world" alt="" >
             </div>
           </div>
         </div>
         <div class="card-wrap">
           <div style="max-width: 1280px;" class="tracking-card card-padding mb-126 shadow-lg rounded align-items-end">
-            <div class="d-flex align-items-end" >
+            <div class="d-flex align-items-end mobile-column" >
               <div class="content-width ">
                 <p class="mb-10"><small class="heighlight">2013 至 2016</small></p>
                 <h5 class="mb-10">跨國綠電共享經濟：全民電廠的先驅者</h5>
@@ -114,7 +116,7 @@
           </div>
           <!-- 2  -->
           <div style="max-width: 1280px;" class="tracking-card card-padding-reverse mb-126 shadow-lg rounded align-items-end">
-            <div class="d-flex align-items-end tracking-reverse">
+            <div class="d-flex align-items-end tracking-reverse mobile-column">
               <div class="content-width">
                 <p class="mb-10"><small class="heighlight">2017 至 2019</small></p>
                 <h5 class="mb-10">校園與全民的能源革命：綠能的共享經濟</h5>
@@ -127,7 +129,7 @@
           </div>
           <!-- 3  -->
           <div style="max-width: 1280px;" class="tracking-card card-padding-reverse mb-126 shadow-lg rounded align-items-end">
-            <div class="d-flex align-items-end tracking-reverse">
+            <div class="d-flex align-items-end tracking-reverse mobile-column">
               <div class="content-width">
                 <p class="mb-10"><small class="heighlight">2020至 2021</small></p>
                 <h5 class="mb-10">提升偏鄉能源自給率與就業率：花東子弟返鄉就業</h5>
@@ -140,7 +142,7 @@
           </div>
           <!-- 4  -->
           <div style="max-width: 1280px;" class="tracking-card card-padding mb-126 shadow-lg rounded align-items-end">
-            <div class="d-flex align-items-end">
+            <div class="d-flex align-items-end mobile-column">
               <div class="content-width">
                 <p class="mb-10"><small class="heighlight">2022 至 Future</small></p>
                 <h5 class="mb-10">日光公益愛心永續：日光循環公益創能計畫</h5>
@@ -167,16 +169,16 @@
 氣候行動、永續城鄉、潔淨能源等多元價值</p>
       </div>
       <div class="z-44 position-absolute ms-691"><img class="" :src="goals.goalsText" alt=""></div>
-      <div class="bg z-33 d-flex flex-column justify-content-center align-items-center position-absolute end-0" style="width: 950px;height: 873px;" :style="{ background: 'url(' + goals.rectangle + ')' }">
+      <div class="bg z-33 d-flex flex-column justify-content-center align-items-center position-absolute end-0 mobile-relative" style="width: 950px;height: 873px;" :style="{ background: 'url(' + goals.rectangle + ')' }">
         <div class="location">
           <div class="location-eye">
-            <div class="d-flex justify-content-center" style="width:97px; height:97px" :style="{ background: 'url(' + goals.rectangleEye + ')' }">13</div>
+            <div class="d-flex justify-content-center mobile-location-width" style="width:97px; height:97px" :style="{ background: 'url(' + goals.rectangleEye + ')' }">13</div>
           </div>
           <div class="location-house">
-            <div class="d-flex justify-content-center" style="width:97px; height:97px" :style="{ background: 'url(' + goals.rectangleHouse + ')' }">11</div>
+            <div class="d-flex justify-content-center mobile-location-width" style="width:97px; height:97px" :style="{ background: 'url(' + goals.rectangleHouse + ')' }">11</div>
           </div>
           <div class="location-sun">
-            <div class="d-flex justify-content-center" style="width:97px; height:97px" :style="{ background: 'url(' + goals.rectangleSun + ')' }">7</div>
+            <div class="d-flex justify-content-center location-width" style="width:97px; height:97px" :style="{ background: 'url(' + goals.rectangleSun + ')' }">7</div>
           </div>
         </div>
       </div>
@@ -187,7 +189,7 @@
   <!-- [Start]Partner  -->
   <section>
     <div class=" position-relative partner-bg mb-21" :style="{ background: 'url(' + partner.partnerBg + ')' }">
-      <div class="d-flex  partner z-44 mb-176 position-relative" >
+      <div class="d-flex partner z-44 mb-176 position-relative" >
         <div class="logo-wrap">
           <div class="logo-wrap-bg logo-wrap-mobil d-flex flex-column justify-content-end pb-84" :style="{ background: 'url(' + partner.our + ')' }">
             <div class="d-flex flex-column mb-173 justify-content-between">
@@ -218,19 +220,18 @@
             </div>
           </div>
         </div>
-        <div class="mb-74 position-absolute partner-right mt-202">
+        <div class="mb-74 position-absolute partner-right mt-202 mobile-relative">
           <div class="d-flex position-relative">
             <div class="z-55">
               <h2 class="english-title">Our Partner</h2>
               <h4 class="sub-title mb-26">影響力夥伴</h4>
             </div>
               <div class="position-absolute text-position z-44">
-                <img class="" :src="partner.partnerText" alt="" srcset="">
+                <img class="mobile-img" :src="partner.partnerText" alt="" srcset="">
               </div>
           </div>
-          <p>太陽人全民電廠結合來自企業、民間團體及公益 單位夥伴的力量及<br/>特別的商業模式，一齊打造不一樣且 更加多元的綠色架構，加強對<br/>整體社會及世界環境的正 面影響力。</p>
-
-          <div class="d-flex justify-content-between partner-right-item">
+          <p class="">太陽人全民電廠結合來自企業、民間團體及公益 單位夥伴的力量及<br/>特別的商業模式，一齊打造不一樣且 更加多元的綠色架構，加強對<br/>整體社會及世界環境的正 面影響力。</p>
+          <div class="d-flex justify-content-between">
             <div class="bg-circle" :style="{ background: 'url(' + partner.circle + ')' }">
               <div>優良企業</div>
               <div>180+</div>
@@ -246,7 +247,7 @@
           </div>
         </div>
       </div>
-      <div class="bg-gray position-absolute mb-79 z-33"></div>
+      <!-- <div class="bg-gray position-absolute mb-79 z-33"></div> -->
     </div>
   </section>
   <!-- [End]Partner  -->

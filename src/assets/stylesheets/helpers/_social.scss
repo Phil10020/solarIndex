@@ -12,6 +12,9 @@
     h4 {
         font-size: 1.5rem;
         font-weight: 900;
+        @media screen and (max-width:992px) {
+          font-size: 1.125rem;
+        }
     }
     h3 {
         font-size: 2.25rem;
@@ -59,6 +62,24 @@
         display: flex;
         flex-direction: column-reverse;
       }
+
+      .mobile-mb-30 {
+        margin-bottom: 30%;
+      }
+
+      .mobile-bottom-70 {
+        bottom: 70%;
+      }
+
+      .mobile-font-22 {
+        font-size: 22px;
+        line-height: 40px;
+      }
+
+      .mobile-items-start {
+        align-items: flex-start !important;
+      }
+    
     }
 
     .english {
@@ -102,10 +123,16 @@
     }
     .mb-200 {
       margin-bottom: 200px;
+      @media screen and (max-width:992px) {
+        margin-bottom: 24%;
+      }
     }
 
     .mb-205 {
       margin-bottom: 205px;
+      @media screen and (max-width:992px) {
+        margin-bottom: 28%;
+      }
     }
 
     .mb-79 {
@@ -127,6 +154,10 @@
     .sub-title {
       color: #333333 ;
       line-height: 40px;
+      @media screen and (max-width:992px) {
+        font-size: 22px;
+        text-align: center;
+      }
     }
 
     //[End] font-size 
@@ -175,14 +206,17 @@
         @media screen and (max-width: 992px) {
           background-size: contain !important;
           background-repeat: no-repeat !important;
-          margin-top: 38%;
+          margin-top: 0%;
           padding: 0% 5.3%;
+          height: auto;
           &-m174 {
-            margin-top: 38% !important;
-          }
+            margin-top: auto !important;
+            p:first-child:first-letter {
+                font-size: 2rem;
+            }
+        }
           &-right {
             left: 20% !important;
-
             img {
               max-width: 100%;
               height: auto;
@@ -267,6 +301,12 @@
         }
         .mobile-padding {
           padding: 0 5%;
+          &-l {
+            padding-left: 5.3%;
+          }
+          &-r {
+            padding-right: 5.3%;
+          }
         }
         .mobile-content {
           justify-content: center !important;
@@ -350,6 +390,14 @@
     //tracking
     .tracking {
       @media screen and (max-width:992px) {
+        &-card {
+          position: relative;
+          min-width: 0;
+          word-wrap: break-word;
+          background-clip: border-box;
+          border: 0.1px solid #fff !important;
+          border-radius: 0.25rem;
+        }
         .p-30 {
           padding: 0 5% !important;
         }
@@ -358,9 +406,11 @@
             display: flex;
             flex-direction: row-reverse;
           }
-          img {
-            bottom: 0% !important;
-            right: 0% !important;
+          .card-padding {
+            padding: 35% 4.5% 13.4% 4.5%;
+            &-reverse {
+              padding: 35% 4.5% 13.4% 4.5%;
+            }
           }
         }
       }
@@ -398,6 +448,9 @@
       }
       .mb-126 {
         margin-bottom: 7.875rem;
+        @media screen and (max-width:992px) {
+          margin-bottom: 24%;
+        }
       }
 
       .me-160 {
@@ -407,6 +460,9 @@
 
       .me-65 {
         margin-right: 12%;
+        @media screen and (max-width:992px) {
+          margin-right: 0%;
+        }
       }
 
       h5 {
@@ -425,10 +481,13 @@
         .tracking-reverse {
           display: flex;
           flex-direction: row-reverse;
+          @media screen and (max-width:992px) {
+            flex-direction: column-reverse;
+          }
         }
         img {
-          bottom: 0% !important;
-          right: 0% !important;
+          bottom: 0%;
+          right: 0% ;
         }
       }
 
@@ -465,7 +524,6 @@
     // goals
     .goals {
       @media screen and (max-width: 992px) {
-        padding: 0 5%;
         flex-direction: column !important;
         .bg {
           background-size: contain !important;
@@ -476,14 +534,15 @@
           position: relative !important;
         }
         .location {
-          position: relative !important;
+          position: absolute !important;
+          top: 50%;
           font-size: 12px !important;
           font-family: 'Noto Sans TC', sans-serif;
           color: #fff;
           &-eye {
             position: absolute;
             left: 0% !important;
-            bottom: 110px;
+            bottom: 0% !important;
           }
           &-house {
             position: absolute;
@@ -495,6 +554,14 @@
             left: 0% !important;
             bottom: -10px;
           }
+        }
+        .mobile-location-width {
+          font-size: 12px;
+          background-size: contain !important;
+          background-repeat: no-repeat !important;
+          min-width: 100%;
+          width: 38.78px !important;
+          height: 38.78px !important;
         }
       }
       &-bg {
@@ -539,6 +606,10 @@
 
       .ms-16 {
         margin-left: 16.93% ;
+        @media screen and (max-width: 992px) {
+          margin-left: 0% ;
+          position: relative;
+        }
       }
       .ms-691 {
         margin-left: 36%;
@@ -733,12 +804,16 @@
           flex-direction: column;
         }
         .download-bar {
+          align-items: flex-start !important;
+          .align-items-center {
+            align-items: flex-start !important;
+          }
           &-column {
             flex-direction: column;
           }
         }
         .card {
-          width: auto;
+          width: auto !important;
           max-width: 100%;
         }
         .download-bar {
@@ -868,6 +943,9 @@
       }
       .me-171 {
         margin-right: 171.19px;
+        @media screen and (max-width:992px) {
+          margin-right: 0px;
+        }
       }
       .follow{
         a {

@@ -2,7 +2,7 @@
 <div id="social">
       <!-- [Start]banner  -->
   <section
-  class="banner"
+  class="banner mobile-mb-30"
   :style="{ background: 'url(' + banner + ')' }"
   >
     <div class="text-white d-flex justify-content-center banner-column">
@@ -33,7 +33,7 @@
   <!-- [End]intro  -->
 
   <!-- [Start]intention  -->
-  <section class="intention">
+  <section class="intention mobile-mb-30">
     <div class="intention-bg" :style="{ background: 'url(' + intention.intentionBg + ')' }">
       <div class="d-flex ps-167 justify-content-between mobile-content">
         <div class="intention-width mobile-center z-3 pt-30">
@@ -44,12 +44,12 @@
             <div class="mb-55">
               <h4 class="mb-20 h4 mobile-padding">綠能共享經濟的源起</h4>
               <p class="mobile-padding">節能減碳,能源轉型已是世界趨勢，但礙於資金或資訊通路門檻過高，一般社會<br/>大眾的力量無法順暢而有效地參與其中，使得能源轉型之路窒礙難行。</p>
-              <img class="z-6 d-none mobile-d-block mobile-img mobile-block-r" :src="intention.intentionTree" alt="">
+              <img class="z-6 d-none mobile-d-block mobile-img mobile-padding-l" :src="intention.intentionTree" alt="">
             </div>
             <div>
               <h4 class="h4 mobile-padding">民間力量 能源轉型</h4>
               <p class="mobile-padding">太陽人自 2013 年開始提供以太陽能板為單位的電廠分割認購平台服務，以綠能<br/>的共享經濟為主軸，大幅降低了民眾參與的門檻，每一個人都能夠輕鬆地成為<br/>電廠老闆，並成為能源轉型的一道助力。</p>
-              <img class=" d-none mobile-d-block mobile-img" :src="intention.intentionSolar" alt=""/>
+              <img class=" d-none mobile-d-block mobile-img mobile-padding-r"  :src="intention.intentionSolar" alt=""/>
             </div>
           </div>
         </div>
@@ -90,12 +90,12 @@
     <div class="tracking tracking-bg" :style="{ background: 'url(' + tracking.trackingBg + ')' }">
       <div class="p-30">
         <div class="d-flex justify-content-center mb-97">
-          <div class="d-flex justify-content-center flex-column">
+          <div class="d-flex justify-content-center flex-column mobile-relative">
             <div class="z-22 position-relative">
               <h2 class="english-title">Power Plant Tracking</h2>
               <h4 class="sub-title text-center mb-0">全民電廠足跡</h4>
             </div>
-            <div class="z-11 position-absolute tracking-right">
+            <div class="z-11 position-absolute tracking-right mobile-bottom-70">
               <img class="mobile-img" :src="power.world" alt="" >
             </div>
           </div>
@@ -162,7 +162,7 @@
   <!-- [Start]Goals  -->
   <section class="mb-27" style="height:882px">
     <div class="goals d-flex justify-content-between goals-bg position-relative" :style="{ background: 'url(' + goals.goalsBg + ')' }">
-      <div class="z-55 d-flex flex-column justify-content-center ms-16 mt-center">
+      <div class="z-55 d-flex flex-column justify-content-center ms-16 mt-center mobile-padding">
         <h2 class="english-title">Our SDGS Goals</h2>
         <h4 class="sub-title mb-26">太陽人的 SDGs 永續發展目標</h4>
         <p>太陽人全民電場致力於同步達成：<br/>
@@ -178,7 +178,7 @@
             <div class="d-flex justify-content-center mobile-location-width" style="width:97px; height:97px" :style="{ background: 'url(' + goals.rectangleHouse + ')' }">11</div>
           </div>
           <div class="location-sun">
-            <div class="d-flex justify-content-center location-width" style="width:97px; height:97px" :style="{ background: 'url(' + goals.rectangleSun + ')' }">7</div>
+            <div class="d-flex justify-content-center  mobile-location-width" style="width:97px; height:97px" :style="{ background: 'url(' + goals.rectangleSun + ')' }">7</div>
           </div>
         </div>
       </div>
@@ -310,8 +310,8 @@
           </div>
         </div>
       </div>
-      <h4 class="text-center mb-25">社會影響力報告書</h4>
-      <div class="d-flex flex-wrap">
+      <h4 class="text-center mb-25 mobile-font-22">社會影響力報告書</h4>
+      <div class="d-flex flex-wrap mobile-column">
         <div class="download-bar d-flex flex-column align-items-end mb-25">
           <p class="text-end mb-0 card-relative ">345KB</p>
           <div class="d-flex align-items-center download-bar-column">

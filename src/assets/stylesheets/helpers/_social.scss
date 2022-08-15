@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC&family=Noto+Serif+TC&display=swap');
 #social {
+    border: 1px solid red;
     font-family: 'Noto Serif TC', serif, 'Noto Sans TC', sans-serif;
     //[Start] font-size 
     h6 {
@@ -48,6 +49,9 @@
       .mobile-relative {
         position: relative !important;
       }
+      .mobile-absolute {
+        position: absolute !important;
+      }
       .mobile-center {
         display: flex;
         flex-direction: column;
@@ -66,7 +70,6 @@
       .mobile-mb-30 {
         margin-bottom: 30%;
       }
-
       .mobile-bottom-70 {
         bottom: 70%;
       }
@@ -110,6 +113,9 @@
     }
     .mb-25 {
       margin-bottom: 25px;
+      @media screen and (max-width:992px) {
+        margin-bottom: 15%;
+      }
     }
 
     .mb-27 {
@@ -533,40 +539,55 @@
         .mobile-relative {
           position: relative !important;
         }
-        .location {
-          position: absolute !important;
-          top: 50%;
-          font-size: 12px !important;
-          font-family: 'Noto Sans TC', sans-serif;
-          color: #fff;
-          &-eye {
-            position: absolute;
-            left: 0% !important;
-            bottom: 0% !important;
-          }
-          &-house {
-            position: absolute;
-            right: 0% !important;
-            bottom: 25px;
-          }
-          &-sun {
-            position: absolute;
-            left: 0% !important;
-            bottom: -10px;
-          }
-        }
         .mobile-location-width {
           font-size: 12px;
           background-size: contain !important;
           background-repeat: no-repeat !important;
           min-width: 100%;
-          width: 38.78px !important;
-          height: 38.78px !important;
+          width: 50px !important;
+          height: 50px !important;
+        }
+        .location {
+          position: relative;
+          font-size: 12px;
+          font-family: 'Noto Sans TC', sans-serif;
+          color: #fff;
+          &-eye {
+            position: absolute !important;
+            bottom: 90% !important;
+            right: 65% !important;
+            
+          }
+          &-house {
+            position: absolute;
+            left: 0% !important;
+            bottom: 67% !important;
+          }
+          &-sun {
+            position: absolute;
+            left: 90% !important;
+            bottom: 60% !important;
+          }
+          &-logo {
+            background-size: contain !important;
+            background-repeat: no-repeat !important ;
+            position: absolute !important;
+            width: auto !important;
+            max-width: 50% !important;
+            left: 20% !important;
+          }
+        }
+        p{
+          text-align: center;
         }
       }
       &-bg {
         background-repeat: no-repeat !important;
         background-position:bottom 0% right 0% !important;
+      }
+      .sdgs {
+        background-repeat: no-repeat;
+        background-size: contain;
       }
       .z{
         &-55 {
@@ -581,26 +602,47 @@
       }
       .bg {
         background-repeat: no-repeat !important;
+        background-size: cover !important ;
       }
       .location {
+        background-size: contain;
+        background-repeat: no-repeat !important ;
         position: relative;
         font-size: 30px;
         font-family: 'Noto Sans TC', sans-serif;
         color: #fff;
         &-eye {
           position: absolute;
-          left: 130px;
-          bottom: 110px;
+          bottom: 90%;
+          left: 46%;
         }
         &-house {
           position: absolute;
-          right: 10px;
-          bottom: 25px;
+          left: -15% ;
+          bottom: 50%;
         }
         &-sun {
           position: absolute;
-          left: 300px;
-          bottom: -10px;
+          left: 85% ;
+          bottom: 45%;
+        }
+        &-logo {
+          color: #fff;
+          background-size: contain !important;
+          background-repeat: no-repeat !important ;
+          background-position: 50% 50% ;
+          position: relative !important;
+          left: 20% ;
+        }
+      }
+
+      .item-right {
+        @media screen and (max-width:1631px) {
+          display: none !important;
+        }
+        @media screen and (max-width:992px) {
+          display: block !important;
+          background-size: 100% !important;
         }
       }
 
@@ -649,6 +691,7 @@
       // background-repeat: no-repeat !important;
       padding: 0 9% 0 16.66%;
       @media screen and (max-width:992px) {
+        padding: 0 9% 0 9%!important;
         flex-wrap: wrap;
         flex-direction: column-reverse;
         br {
@@ -661,6 +704,7 @@
             height:auto !important;
             max-width: 100% !important;
             width: auto;
+            background-position: 50% 50% !important;
           }
           .mobil-d-none {
             display: none !important ;
@@ -670,6 +714,11 @@
           justify-content: center;
           position: relative !important;
           right: 0% !important;
+          p {
+            br {
+              display: none !important ;
+            }
+          }
         }
         .text-position {
           right: 10% !important;
@@ -693,6 +742,9 @@
             color: #FD9D24;
           }
         }
+        .mobile-right {
+          right: 40%;
+        }
       }
       .me-53 {
         margin-right: 53px;
@@ -705,11 +757,13 @@
       background-repeat: no-repeat !important;
       background-position: 76% 100% !important;
       padding: 0 5% !important;
+      @media screen and (max-width:992px) {
+        padding: 0% !important;
+      }
     }
     .z-33 {
-      z-index: -33;
+      z-index: 33;
       img {
-        position: relative;
         bottom: 110px;
       }
     }
@@ -804,26 +858,54 @@
           flex-direction: column;
         }
         .download-bar {
+          padding: 0 3%;
+          display: block !important;
           align-items: flex-start !important;
-          .align-items-center {
-            align-items: flex-start !important;
-          }
+          max-width: 100% !important;
+          width: auto !important;
+          // .align-items-center {
+          //   align-items: flex-start !important;
+          // }
           &-column {
             flex-direction: column;
+            display: block !important;
+            position: relative;
           }
         }
         .card {
           width: auto !important;
           max-width: 100%;
-        }
-        .download-bar {
-          max-width: 100% !important;
-          width: auto !important;
+          &-relative {
+            top: 0 !important;
+          }
         }
         .download {
-          max-width: 100% !important;
+          background-color: #eee !important;
+          background-size: cover !important;
+          display: flex !important;
           width: auto !important;
-          height: auto !important;
+          height: 72px !important;
+          text-align: center !important;
+          border-radius: 5px 5px 0% 0%  !important;
+        }
+        .button-color {
+          background: #62CFCA ;
+        }
+        .download-button {
+          display: flex;
+          align-items: center;
+          height: 50px;
+          background: #62CFCA;
+          border: none;
+          border-radius: 0% 0% 5px 5px !important;
+          color: #fff;
+          max-width: 100%;
+          
+        }
+        .circle {
+          position: absolute;
+          bottom: 70% !important;
+          left: -2% !important;
         }
       }
       &-right {
@@ -899,13 +981,15 @@
         width: 353px;
         height: 50px;
       }
-      button {
+      .button {
         height: 50px;
         background: #62CFCA;
         border: none;
         border-radius: 5%;
         color: #fff;
+
       }
+
     }
 
     // footer 

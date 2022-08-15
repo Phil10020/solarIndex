@@ -160,17 +160,17 @@
   <!-- [End]tracking  -->
 
   <!-- [Start]Goals  -->
-  <section class="mb-27" style="height:882px">
-    <div class="goals d-flex justify-content-between goals-bg position-relative" :style="{ background: 'url(' + goals.goalsBg + ')' }">
+  <section class="mb-27">
+    <div class="goals d-flex justify-content-between flex-wrap goals-bg position-relative" :style="{ background: 'url(' + goals.goalsBg + ')' }">
       <div class="z-55 d-flex flex-column justify-content-center ms-16 mt-center mobile-padding">
         <h2 class="english-title">Our SDGS Goals</h2>
         <h4 class="sub-title mb-26">太陽人的 SDGs 永續發展目標</h4>
         <p>太陽人全民電場致力於同步達成：<br/>
 氣候行動、永續城鄉、潔淨能源等多元價值</p>
       </div>
-      <div class="z-44 position-absolute ms-691"><img class="" :src="goals.goalsText" alt=""></div>
-      <div class="bg z-33 d-flex flex-column justify-content-center align-items-center position-absolute end-0 mobile-relative" style="width: 950px;height: 873px;" :style="{ background: 'url(' + goals.rectangle + ')' }">
-        <div class="location">
+      <!-- <div class="z-44 position-absolute ms-691"><img class="" :src="goals.goalsText" alt=""></div>
+      <div class="bg  d-flex flex-column justify-content-center align-items-center  img-fluid item-right position-relative" style="width: 950px;height: 873px;" :style="{ background: 'url(' + goals.rectangle + ')' }">
+        <div class="location-logo " :style="{ background: 'url(' + goals.goalsLogo + ')' }" style="width:300px; height:300px">
           <div class="location-eye">
             <div class="d-flex justify-content-center mobile-location-width" style="width:97px; height:97px" :style="{ background: 'url(' + goals.rectangleEye + ')' }">13</div>
           </div>
@@ -181,7 +181,7 @@
             <div class="d-flex justify-content-center  mobile-location-width" style="width:97px; height:97px" :style="{ background: 'url(' + goals.rectangleSun + ')' }">7</div>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </section>
   <!-- [End]Goals  -->
@@ -192,8 +192,8 @@
       <div class="d-flex partner z-44 mb-176 position-relative" >
         <div class="logo-wrap">
           <div class="logo-wrap-bg logo-wrap-mobil d-flex flex-column justify-content-end pb-84" :style="{ background: 'url(' + partner.our + ')' }">
-            <div class="d-flex flex-column mb-173 justify-content-between">
-              <h4 class="text-center mb-4 color-g">優良企業</h4>
+            <div class="d-flex flex-column mb-173 justify-content-between position-relative">
+              <h4 class="text-center mb-4 color-g mt-5 mobile-absolute mobile-right">優良企業</h4>
               <div class="d-flex align-items-center justify-content-center mobil-d-none">
                 <button><font-awesome-icon icon="fa-solid fa-angle-left" /></button>
                 <div class="mx-2"><img :src="partner.partner1" alt=""></div>
@@ -260,7 +260,7 @@
           <h2 class="english-title">More Powerful to See</h2>
           <h4 class="text-center">民間力量讓更多人看見</h4>
         </div>
-        <div class="position-absolute z-33 see-right"><img class="" :src="see.seeText" alt=""></div>
+        <div class="position-absolute z-33 see-right"><img class="img-fluid" :src="see.seeText" alt=""></div>
       </div>
       <div class=" mb-100">
         <div class="d-flex justify-content-center card-mobil">
@@ -316,48 +316,48 @@
           <p class="text-end mb-0 card-relative ">345KB</p>
           <div class="d-flex align-items-center download-bar-column">
             <div class="circle d-flex justify-content-center align-items-center"><img :src="see.icon"/></div>
-            <div class="download d-flex justify-content-center align-items-center" :style="{ background: 'url(' + see.download + ')' }">pdf 檔案名稱名稱名稱名稱.pdf</div>
-            <button class="">DOWNLOAD</button>
+            <div class="download d-flex justify-content-center  align-items-center" :style="{ background: 'url(' + see.download + ')' }">pdf 檔案名稱名稱名稱名稱.pdf</div>
+            <div type="button" class="d-flex align-items-center button button-color download-button justify-content-center">DOWNLOAD</div>
           </div>
         </div>
         <div class="download-bar d-flex flex-column align-items-end mb-25">
           <p class="text-end mb-0 card-relative ">345KB</p>
           <div class="d-flex align-items-center download-bar-column">
             <div class="circle d-flex justify-content-center align-items-center"><img :src="see.icon"/></div>
-            <div class="download d-flex justify-content-center align-items-center" :style="{ background: 'url(' + see.download + ')' }">pdf 檔案名稱名稱名稱名稱.pdf</div>
-            <button class="">DOWNLOAD</button>
-          </div>
-        </div>
-        <div class="download-bar d-flex flex-column align-items-end">
-          <p class="text-end mb-0 card-relative ">345KB</p>
-          <div class="d-flex align-items-center download-bar-column">
-            <div class="circle d-flex justify-content-center align-items-center"><img :src="see.icon"/></div>
-            <div class="download d-flex justify-content-center align-items-center" :style="{ background: 'url(' + see.download + ')' }">pdf 檔案名稱名稱名稱名稱.pdf</div>
-            <button class="">DOWNLOAD</button>
+            <div class="download d-flex justify-content-center  align-items-center" :style="{ background: 'url(' + see.download + ')' }">pdf 檔案名稱名稱名稱名稱.pdf</div>
+            <div type="button" class="d-flex align-items-center button button-color download-button justify-content-center">DOWNLOAD</div>
           </div>
         </div>
         <div class="download-bar d-flex flex-column align-items-end mb-25">
           <p class="text-end mb-0 card-relative ">345KB</p>
           <div class="d-flex align-items-center download-bar-column">
             <div class="circle d-flex justify-content-center align-items-center"><img :src="see.icon"/></div>
-            <div class="download d-flex justify-content-center align-items-center" :style="{ background: 'url(' + see.download + ')' }">pdf 檔案名稱名稱名稱名稱.pdf</div>
-            <button class="">DOWNLOAD</button>
+            <div class="download d-flex justify-content-center  align-items-center" :style="{ background: 'url(' + see.download + ')' }">pdf 檔案名稱名稱名稱名稱.pdf</div>
+            <div type="button" class="d-flex align-items-center button button-color download-button justify-content-center">DOWNLOAD</div>
           </div>
         </div>
         <div class="download-bar d-flex flex-column align-items-end mb-25">
           <p class="text-end mb-0 card-relative ">345KB</p>
           <div class="d-flex align-items-center download-bar-column">
             <div class="circle d-flex justify-content-center align-items-center"><img :src="see.icon"/></div>
-            <div class="download d-flex justify-content-center align-items-center" :style="{ background: 'url(' + see.download + ')' }">pdf 檔案名稱名稱名稱名稱.pdf</div>
-            <button class="">DOWNLOAD</button>
+            <div class="download d-flex justify-content-center  align-items-center" :style="{ background: 'url(' + see.download + ')' }">pdf 檔案名稱名稱名稱名稱.pdf</div>
+            <div type="button" class="d-flex align-items-center button button-color download-button justify-content-center">DOWNLOAD</div>
           </div>
         </div>
-        <div class="download-bar d-flex flex-column align-items-end">
+        <div class="download-bar d-flex flex-column align-items-end mb-25">
           <p class="text-end mb-0 card-relative ">345KB</p>
           <div class="d-flex align-items-center download-bar-column">
             <div class="circle d-flex justify-content-center align-items-center"><img :src="see.icon"/></div>
-            <div class="download d-flex justify-content-center align-items-center" :style="{ background: 'url(' + see.download + ')' }">pdf 檔案名稱名稱名稱名稱.pdf</div>
-            <button class="">DOWNLOAD</button>
+            <div class="download d-flex justify-content-center  align-items-center" :style="{ background: 'url(' + see.download + ')' }">pdf 檔案名稱名稱名稱名稱.pdf</div>
+            <div type="button" class="d-flex align-items-center button button-color download-button justify-content-center">DOWNLOAD</div>
+          </div>
+        </div>
+        <div class="download-bar d-flex flex-column align-items-end mb-25">
+          <p class="text-end mb-0 card-relative ">345KB</p>
+          <div class="d-flex align-items-center download-bar-column">
+            <div class="circle d-flex justify-content-center align-items-center"><img :src="see.icon"/></div>
+            <div class="download d-flex justify-content-center  align-items-center" :style="{ background: 'url(' + see.download + ')' }">pdf 檔案名稱名稱名稱名稱.pdf</div>
+            <div type="button" class="d-flex align-items-center button button-color download-button justify-content-center">DOWNLOAD</div>
           </div>
         </div>
       </div>
@@ -369,7 +369,7 @@
   <section class="pb-82">
     <footer>
       <div class="mb-45">
-        <img :src="footer.footerLogo" alt="footer">
+        <img class="img-fluid" :src="footer.footerLogo" alt="footer">
       </div>
       <!-- 2  -->
       <div class="d-flex mb-45 justify-content-between footer-column" >
@@ -489,7 +489,8 @@ export default {
         rectangleEye: require('../../public/images/social/goalsWrap/rectangle_eye.png'),
         rectangleSun: require('../../public/images/social/goalsWrap/rectangle_sun.png'),
         goalsBg: require('../../public/images/social/Section_goals.png'),
-        goalsText: require('../../public/images/social/goalsWrap/Our.png')
+        goalsText: require('../../public/images/social/goalsWrap/Our.png'),
+        goalsLogo: require('../../public/images/social/goalsWrap/sdgs.png')
       },
       partner: {
         our: require('../../public/images/social/our_partner.png'),

@@ -408,6 +408,9 @@
           padding: 0 5% !important;
         }
         .card-wrap {
+          img {
+            width: auto !important;
+          }
           .tracking-reverse {
             display: flex;
             flex-direction: row-reverse;
@@ -529,12 +532,16 @@
 
     // goals
     .goals {
+      @media screen and (max-width:1631px) and (min-width:993px) {
+        justify-content: center !important;
+      }
       @media screen and (max-width: 992px) {
         flex-direction: column !important;
         .bg {
           background-size: contain !important;
           max-width: 100%;
           width: auto !important;
+          height: 400px !important;
         }
         .mobile-relative {
           position: relative !important;
@@ -571,11 +578,15 @@
           &-logo {
             background-size: contain !important;
             background-repeat: no-repeat !important ;
-            position: absolute !important;
-            width: auto !important;
-            max-width: 50% !important;
-            left: 20% !important;
+            position: relative !important;
+            width: 200px !important;
+            height: 200px !important;
           }
+        }
+        .item-center {
+          display: flex !important;
+          justify-content: center !important;
+          align-items: flex-end !important;
         }
         p{
           text-align: center;
@@ -618,7 +629,7 @@
         }
         &-house {
           position: absolute;
-          left: -15% ;
+          left: -20% ;
           bottom: 50%;
         }
         &-sun {
@@ -632,17 +643,18 @@
           background-repeat: no-repeat !important ;
           background-position: 50% 50% ;
           position: relative !important;
-          left: 20% ;
         }
       }
 
       .item-right {
-        @media screen and (max-width:1631px) {
+        @media screen and (max-width:1631px) and (min-width:993px) {
           display: none !important;
         }
         @media screen and (max-width:992px) {
-          display: block !important;
+          display: flex !important;
           background-size: 100% !important;
+          align-items: center !important;
+          justify-content:center !important;
         }
       }
 
@@ -690,6 +702,30 @@
     .partner {
       // background-repeat: no-repeat !important;
       padding: 0 9% 0 16.66%;
+      @media screen and (max-width:1820px)  {
+        flex-direction: column-reverse;
+        h4 {
+          text-align: center;
+        }
+        p {
+          display: flex;
+          justify-content: center;
+          text-align: start;
+        }
+        .mobile-column-relative {
+          position: relative !important ;
+        }
+        .partner-right {
+          right: 0%;
+        }
+        .text-position {
+          right: 0% !important;
+        }
+        .mobile-center-1820 {
+          display: flex;
+          justify-content: center;
+        }
+      }
       @media screen and (max-width:992px) {
         padding: 0 9% 0 9%!important;
         flex-wrap: wrap;
@@ -742,8 +778,11 @@
             color: #FD9D24;
           }
         }
-        .mobile-right {
-          right: 40%;
+        .mobile-center-1820 {
+          display: block;
+        }
+        .mobile-absolute {
+          position: relative !important;
         }
       }
       .me-53 {
@@ -906,6 +945,9 @@
           position: absolute;
           bottom: 70% !important;
           left: -2% !important;
+        }
+        .see-right {
+          top: -40%;
         }
       }
       &-right {

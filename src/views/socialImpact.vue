@@ -110,7 +110,7 @@
       佐賀、長崎、大分等地的日本綠能電廠亦先後完工 掛表，共 35 位一般社會大眾一同參與並證明了民間 力量落實能源轉型的可行性與價值性。</p>
               </div>
               <div class="content-width position-relative">
-                <img class="img-fluid position-absolute"  :src="tracking.tracking1" alt=""/>
+                <img class="img-fluid position-absolute" style="width: 520px;" :src="tracking.tracking1" alt=""/>
               </div>
             </div>
           </div>
@@ -168,9 +168,9 @@
         <p>太陽人全民電場致力於同步達成：<br/>
 氣候行動、永續城鄉、潔淨能源等多元價值</p>
       </div>
-      <!-- <div class="z-44 position-absolute ms-691"><img class="" :src="goals.goalsText" alt=""></div>
-      <div class="bg  d-flex flex-column justify-content-center align-items-center  img-fluid item-right position-relative" style="width: 950px;height: 873px;" :style="{ background: 'url(' + goals.rectangle + ')' }">
-        <div class="location-logo " :style="{ background: 'url(' + goals.goalsLogo + ')' }" style="width:300px; height:300px">
+      <div class="z-44 position-absolute ms-691"><img class="" :src="goals.goalsText" alt=""></div>
+      <div class="bg  d-flex flex-column justify-content-center align-items-center  img-fluid item-center item-right position-relative" style="width: 950px;height: 873px;" :style="{ background: 'url(' + goals.rectangle + ')' }">
+        <div class="location-logo" :style="{ background: 'url(' + goals.goalsLogo + ')' }" style="width:300px; height:300px">
           <div class="location-eye">
             <div class="d-flex justify-content-center mobile-location-width" style="width:97px; height:97px" :style="{ background: 'url(' + goals.rectangleEye + ')' }">13</div>
           </div>
@@ -181,7 +181,7 @@
             <div class="d-flex justify-content-center  mobile-location-width" style="width:97px; height:97px" :style="{ background: 'url(' + goals.rectangleSun + ')' }">7</div>
           </div>
         </div>
-      </div> -->
+      </div>
     </div>
   </section>
   <!-- [End]Goals  -->
@@ -189,11 +189,11 @@
   <!-- [Start]Partner  -->
   <section>
     <div class=" position-relative partner-bg mb-21" :style="{ background: 'url(' + partner.partnerBg + ')' }">
-      <div class="d-flex partner z-44 mb-176 position-relative" >
-        <div class="logo-wrap">
-          <div class="logo-wrap-bg logo-wrap-mobil d-flex flex-column justify-content-end pb-84" :style="{ background: 'url(' + partner.our + ')' }">
+      <div class="d-flex partner z-44 mb-176 position-relative mobile-column-1820 " >
+        <div class="logo-wrap mobile-column-relative mobile-center-1820 ">
+          <div class="logo-wrap-bg logo-wrap-mobil d-flex flex-column justify-content-end  pb-84" :style="{ background: 'url(' + partner.our + ')' }">
             <div class="d-flex flex-column mb-173 justify-content-between position-relative">
-              <h4 class="text-center mb-4 color-g mt-5 mobile-absolute mobile-right">優良企業</h4>
+              <h4 class="text-center mb-4 color-g mt-5 mobile-absolute">優良企業</h4>
               <div class="d-flex align-items-center justify-content-center mobil-d-none">
                 <button><font-awesome-icon icon="fa-solid fa-angle-left" /></button>
                 <div class="mx-2"><img :src="partner.partner1" alt=""></div>
@@ -201,15 +201,15 @@
               </div>
             </div>
             <div class="d-flex justify-content-around">
-              <div class="d-flex flex-column justify-content-between">
-                <h4 class="text-center mb-4 color-b">民間團體</h4>
+              <div class="d-flex flex-column justify-content-between mobile-relative">
+                <h4 class="text-center mb-4 color-b ">民間團體</h4>
                 <div class="d-flex align-items-center justify-content-center mobil-d-none">
                   <button><font-awesome-icon icon="fa-solid fa-angle-left" /></button>
                   <div class="mx-2"><img :src="partner.partner2" alt=""></div>
                   <button><font-awesome-icon icon="fa-solid fa-angle-right" /></button>
                 </div>
               </div>
-              <div class="d-flex flex-column justify-content-between">
+              <div class="d-flex flex-column justify-content-between mobile-relative">
                 <h4 class="text-center mb-4 color-y">公益夥伴</h4>
                 <div class="d-flex align-items-center justify-content-center mobil-d-none">
                   <button><font-awesome-icon icon="fa-solid fa-angle-left" /></button>
@@ -220,18 +220,18 @@
             </div>
           </div>
         </div>
-        <div class="mb-74 position-absolute partner-right mt-202 mobile-relative">
-          <div class="d-flex position-relative">
+        <div class="mb-74 position-absolute partner-right mt-202 mobile-relative mobile-column-relative">
+          <div class="d-flex position-relative mobile-center-1820">
             <div class="z-55">
               <h2 class="english-title">Our Partner</h2>
               <h4 class="sub-title mb-26">影響力夥伴</h4>
             </div>
               <div class="position-absolute text-position z-44">
-                <img class="mobile-img" :src="partner.partnerText" alt="" srcset="">
+                <img class="mobile-img img-fluid" :src="partner.partnerText" alt="" srcset="">
               </div>
           </div>
           <p class="">太陽人全民電廠結合來自企業、民間團體及公益 單位夥伴的力量及<br/>特別的商業模式，一齊打造不一樣且 更加多元的綠色架構，加強對<br/>整體社會及世界環境的正 面影響力。</p>
-          <div class="d-flex justify-content-between">
+          <div class="d-flex justify-content-center">
             <div class="bg-circle" :style="{ background: 'url(' + partner.circle + ')' }">
               <div>優良企業</div>
               <div>180+</div>
@@ -255,7 +255,7 @@
   <!-- [Start]See  -->
   <section class="mb-20">
     <div class="see"  :style="{ background: 'url(' + see.seeBg + ')' }">
-      <div class="title-wrap d-flex justify-content-center mb-47">
+      <div class="title-wrap d-flex justify-content-center mb-47 position-relative">
         <div class="z-44">
           <h2 class="english-title">More Powerful to See</h2>
           <h4 class="text-center">民間力量讓更多人看見</h4>

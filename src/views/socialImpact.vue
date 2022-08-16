@@ -1,5 +1,5 @@
 <template>
-<div id="social">
+<section id="social">
       <!-- [Start]banner  -->
   <section
   class="banner mobile-mb-30"
@@ -160,7 +160,7 @@
   <!-- [End]tracking  -->
 
   <!-- [Start]Goals  -->
-  <section class="mb-27">
+  <section class="mb-27 mobile-mb-0">
     <div class="goals d-flex justify-content-between flex-wrap goals-bg position-relative" :style="{ background: 'url(' + goals.goalsBg + ')' }">
       <div class="z-55 d-flex flex-column justify-content-center ms-16 mt-center mobile-padding">
         <h2 class="english-title">Our SDGS Goals</h2>
@@ -169,7 +169,9 @@
 氣候行動、永續城鄉、潔淨能源等多元價值</p>
       </div>
       <div class="z-44 position-absolute ms-691"><img class="" :src="goals.goalsText" alt=""></div>
-      <div class="bg  d-flex flex-column justify-content-center align-items-center  img-fluid item-center item-right position-relative" style="width: 950px;height: 873px;" :style="{ background: 'url(' + goals.rectangle + ')' }">
+      <div class="bg  d-flex flex-column justify-content-center align-items-center  img-fluid item-center item-right position-absolute z-gray" style="width: 786px;height: 873px;" :style="{ background: 'url(' + goals.goalsGray + ')' }">
+      </div>
+      <div class="bg  d-flex flex-column justify-content-center align-items-center  img-fluid item-center item-right position-relative z-green" style="width: 950px;height: 665px;" :style="{ background: 'url(' + goals.goalsGreen + ')' }">
         <div class="location-logo" :style="{ background: 'url(' + goals.goalsLogo + ')' }" style="width:300px; height:300px">
           <div class="location-eye">
             <div class="d-flex justify-content-center mobile-location-width" style="width:97px; height:97px" :style="{ background: 'url(' + goals.rectangleEye + ')' }">13</div>
@@ -194,6 +196,7 @@
           <div class="logo-wrap-bg logo-wrap-mobil d-flex flex-column justify-content-end  pb-84" :style="{ background: 'url(' + partner.our + ')' }">
             <div class="d-flex flex-column mb-173 justify-content-between position-relative">
               <h4 class="text-center mb-4 color-g mt-5 mobile-absolute">優良企業</h4>
+              <p class=""><a class="web-d-none" href="">看更多夥伴>></a></p>
               <div class="d-flex align-items-center justify-content-center mobil-d-none">
                 <button><font-awesome-icon icon="fa-solid fa-angle-left" /></button>
                 <div class="mx-2"><img :src="partner.partner1" alt=""></div>
@@ -203,6 +206,7 @@
             <div class="d-flex justify-content-around">
               <div class="d-flex flex-column justify-content-between mobile-relative">
                 <h4 class="text-center mb-4 color-b ">民間團體</h4>
+                <p class=""><a class="web-d-none" href="">看更多夥伴>></a></p>
                 <div class="d-flex align-items-center justify-content-center mobil-d-none">
                   <button><font-awesome-icon icon="fa-solid fa-angle-left" /></button>
                   <div class="mx-2"><img :src="partner.partner2" alt=""></div>
@@ -211,6 +215,7 @@
               </div>
               <div class="d-flex flex-column justify-content-between mobile-relative">
                 <h4 class="text-center mb-4 color-y">公益夥伴</h4>
+                <p class=""><a class="web-d-none" href="">看更多夥伴>></a></p>
                 <div class="d-flex align-items-center justify-content-center mobil-d-none">
                   <button><font-awesome-icon icon="fa-solid fa-angle-left" /></button>
                   <div class="mx-2"><img :src="partner.partner3" alt=""></div>
@@ -454,7 +459,7 @@
     </footer>
   </section>
   <!-- [End]footer  -->
-</div>
+</section>
 </template>
 
 <script>
@@ -490,7 +495,9 @@ export default {
         rectangleSun: require('../../public/images/social/goalsWrap/rectangle_sun.png'),
         goalsBg: require('../../public/images/social/Section_goals.png'),
         goalsText: require('../../public/images/social/goalsWrap/Our.png'),
-        goalsLogo: require('../../public/images/social/goalsWrap/sdgs.png')
+        goalsLogo: require('../../public/images/social/goalsWrap/sdgs.png'),
+        goalsGray: require('../../public/images/social/goalsWrap/rectangle_gray.png'),
+        goalsGreen: require('../../public/images/social/goalsWrap/rectangle_green.png')
       },
       partner: {
         our: require('../../public/images/social/our_partner.png'),

@@ -123,7 +123,7 @@
                 <p>於 2018 年募資完成的太陽人龍肚光電球場專案共有 45 人參與太陽能板的認購，共 835 片太陽能板構成面積近 500 坪的光電球場，不但能夠讓學生們及地方居民不受天氣影響盡情活動身體，未來 20 年還能夠創造近 683 萬度的再生能源，減少二氧化碳排放量近 3,760,425 kg。</p>
               </div>
               <div class="content-width position-relative ">
-                <img class="img-fluid position-absolute " :src="tracking.tracking2" alt="">
+                <img class="img-fluid position-absolute img-1-width" :src="tracking.tracking2" alt="">
               </div>
             </div>
           </div>
@@ -136,20 +136,20 @@
                 <p>太陽人全民電廠的「點亮花東計畫」，透過在花東地區太陽能電廠的建置，有效地創造了大量且長期的工作機會，使花東偏鄉子弟不但能夠返鄉，還能夠獲得長期穩健的工作機會。</p>
               </div>
               <div class="content-width position-relative me-65">
-                <img class="img-fluid position-absolute" :src="tracking.tracking3" alt="">
+                <img class="img-fluid position-absolute img-1-width" :src="tracking.tracking3" alt="">
               </div>
             </div>
           </div>
           <!-- 4  -->
           <div style="max-width: 1280px;" class="tracking-card card-padding-reverse mb-126 shadow-lg rounded align-items-end">
-            <div class="d-flex align-items-end mobile-column ">
+            <div class="d-flex align-items-end mobile-column tracking-reverse">
               <div class="content-width me-65">
                 <p class="mb-10"><small class="heighlight">2022 至 Future</small></p>
                 <h5 class="mb-10">日光公益愛心永續：日光循環公益創能計畫</h5>
                 <p>太陽人全民電廠透過日光公益模式，為社福機構或弱勢族群提供長期間的被動收益，以太陽的能量為他們帶來永續的溫暖。期待您也能一起參與，在參與氣候行動的同時不但能夠創造個人的經濟價值，也能讓您的愛心同步放大，達成環境、理財、公益的共贏。</p>
               </div>
               <div class="content-width position-relative">
-                <img class="img-fluid position-absolute"  :src="tracking.tracking4" alt="">
+                <img class="img-fluid position-absolute img-1-width"  :src="tracking.tracking4" alt="">
               </div>
             </div>
           </div>

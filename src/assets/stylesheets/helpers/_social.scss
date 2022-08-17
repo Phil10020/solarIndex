@@ -449,6 +449,39 @@
 
     //tracking
     .tracking {
+        @media screen and (max-width:1660px) and (min-width:992px) {
+          &-card {
+            position: relative;
+            min-width: 0;
+            word-wrap: break-word;
+            background-clip: border-box;
+            border: 0.1px solid #fff !important;
+            border-radius: 0.25rem;
+          }
+          .p-30 {
+            padding: 0 16.6% !important;
+          }
+          .card-wrap {
+            align-items: center;
+            .tracking-reverse {
+              display: flex;
+              flex-direction: row-reverse;
+            }
+            .flex-row-reverse {
+              flex-direction: column-reverse !important;
+            }
+            .card-padding {
+              padding: 35% 4.5% 7% 4.5%;
+              &-reverse {
+                padding: 35% 4.5% 7% 4.5%;
+              }
+            }
+            .img-1-width {
+              width:1200px ;
+              margin-bottom: 5%;
+            }
+          }
+        }
       @media screen and (max-width:992px) {
         &-card {
           position: relative;
@@ -508,6 +541,9 @@
       }
       .mb-97 {
         margin-bottom: 97px;
+        @media screen and (max-width:1660px) and (min-width:993px) {
+          margin-bottom: 24%;
+        }
         @media screen and (max-width:992px) {
           margin-bottom: 24%;
         }
@@ -517,6 +553,9 @@
       }
       .mb-126 {
         margin-bottom: 7.875rem;
+        @media screen and (max-width:1660px) and (min-width:993px) {
+          margin-bottom: 28%;
+        }
         @media screen and (max-width:992px) {
           margin-bottom: 24%;
         }
@@ -529,6 +568,9 @@
 
       .me-65 {
         margin-right: 5%;
+        @media screen and (max-width:1660px) and (min-width:993px) {
+          margin-right: 0%;
+        }
         @media screen and (max-width:992px) {
           margin-right: 0%;
         }
@@ -550,6 +592,9 @@
         .tracking-reverse {
           display: flex;
           // flex-direction: row-reverse;
+          @media screen and (max-width:1660px) and (min-width:993px) {
+            flex-direction: column-reverse;
+          }
           @media screen and (max-width:992px) {
             flex-direction: column-reverse;
           }

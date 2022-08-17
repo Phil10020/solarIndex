@@ -58,7 +58,7 @@
         </div>
         <div class="z-5 mobile-d-none">
           <div><img class="z-6 " :src="intention.intentionTree" style="width:749px ; height:547px ;" alt=""></div>
-          <div><img class="z-7 " :src="intention.intentionSolar" style="width:627px ; height:461px ;" alt=""></div>
+          <div class="d-flex justify-content-end"><img class="z-7 " :src="intention.intentionSolar" style="width:627px ; height:461px ;" alt=""></div>
         </div>
       </div>
     </div>
@@ -168,7 +168,7 @@
         <p>太陽人全民電場致力於同步達成：<br/>
 氣候行動、永續城鄉、潔淨能源等多元價值</p>
       </div>
-      <div class="z-44 position-absolute ms-691"><img class="" :src="goals.goalsText" alt=""></div>
+      <div class="z-44 position-absolute ms-691"><img class="img-fluid" :src="goals.goalsText" alt=""></div>
       <div class="bg  d-flex flex-column justify-content-center align-items-center  img-fluid item-center item-right position-absolute z-gray" style="width: 786px;height: 873px;" :style="{ background: 'url(' + goals.goalsGray + ')' }">
       </div>
       <div class="bg  d-flex flex-column justify-content-center align-items-center  img-fluid item-center item-right position-relative z-green" style="width: 950px;height: 665px;" :style="{ background: 'url(' + goals.goalsGreen + ')' }">
@@ -177,7 +177,7 @@
             <div class="d-flex justify-content-center mobile-location-width" style="width:97px; height:97px" :style="{ background: 'url(' + goals.rectangleEye + ')' }">13</div>
           </div>
           <div class="location-house">
-            <div class="d-flex justify-content-center mobile-location-width" style="width:97px; height:97px" :style="{ background: 'url(' + goals.rectangleHouse + ')' }">11</div>
+            <div class="d-flex justify-content-center mobile-location-width" style="width:100px; height:100px" :style="{ background: 'url(' + goals.rectangleHouse + ')' }">11</div>
           </div>
           <div class="location-sun">
             <div class="d-flex justify-content-center  mobile-location-width" style="width:97px; height:97px" :style="{ background: 'url(' + goals.rectangleSun + ')' }">7</div>

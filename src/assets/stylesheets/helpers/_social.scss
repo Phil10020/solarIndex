@@ -301,7 +301,7 @@
         background-repeat: no-repeat !important;
         background-position: left bottom !important;
       }
-      @media screen and (max-width:1840px) and (min-width:992px) {
+      @media screen and (max-width:1660px) and (min-width:992px) {
         .ps-167 {
           padding-left: 0%;
         }
@@ -393,7 +393,8 @@
             // right: 20%;
             z-index: 7;
             bottom: 52px;
-            right: 21.3%;
+            // right: 21.3%;
+            right: 0%;
         }
         &-width {
             width: 630px;
@@ -590,6 +591,72 @@
     .goals {
       @media screen and (max-width:1631px) and (min-width:993px) {
         justify-content: center !important;
+        flex-direction: column !important;
+        .bg {
+          background-size: contain !important;
+          max-width: 100%;
+          width: auto !important;
+          height: 400px !important;
+        }
+        .mobile-relative {
+          position: relative !important;
+        }
+        // .mobile-location-width {
+        //   font-size: 12px;
+        //   background-size: contain !important;
+        //   background-repeat: no-repeat !important;
+        //   min-width: 100%;
+        //   width: 50px !important;
+        //   height: 50px !important;
+        // }
+        .location {
+          position: relative;
+          font-size: 30px;
+          font-family: 'Noto Sans TC', sans-serif;
+          color: #fff;
+          &-eye {
+            position: absolute !important;
+            bottom: 90% !important;
+            right: 46% !important;
+            
+          }
+          &-house {
+            position: absolute;
+            left: -20% !important;
+            bottom: 50% !important;
+          }
+          &-sun {
+            position: absolute;
+            left: 85% !important;
+            bottom: 45% !important;
+          }
+          &-logo {
+            background-size: contain !important;
+            background-repeat: no-repeat !important ;
+            position: relative !important;
+          }
+        }
+        .item-center {
+          display: flex !important;
+          justify-content: center !important;
+          align-items: flex-end !important;
+        }
+        .ms-16 {
+          display: flex !important;
+          margin-left: 0% !important;
+          align-items: center ;
+        }
+        .ms-691 {
+          margin-left: 46% !important;
+          margin-top: 0% !important;
+          margin-bottom: 40%;
+        }
+        p {
+          text-align: center;
+        }
+        .z-green {
+          padding-top: 10%;
+        }
       }
       @media screen and (max-width: 992px) {
         flex-direction: column !important;
@@ -720,7 +787,11 @@
 
       .item-right {
         @media screen and (max-width:1631px) and (min-width:993px) {
-          display: none !important;
+          display: flex !important;
+          background-size: cover !important;
+          background-position: 50% 50% !important;
+          align-items: center !important;
+          justify-content:center !important;
         }
         @media screen and (max-width:992px) {
           display: flex !important;
@@ -835,8 +906,8 @@
         }
         .bg-circle {
           max-width: 100% !important;
-          width: 99px !important;
-          height: 99px !important;
+          width: 110px !important;
+          height: 110px !important;
           div:nth-child(1) {
             line-height: 1.5rem;
             font-size: 12px !important;
@@ -900,8 +971,8 @@
       background-repeat: no-repeat !important;
       background-position: 50% 50% !important;
       background-size: contain !important;
-      width: 140px;
-      height: 140px;
+      width: 150px;
+      height: 150px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -1076,7 +1147,7 @@
         padding: 0 41px 40px 44px;
       }
       .circle {
-        height: 80px;
+        height: 85px;
         width: 80px;
         background-color: #62CFCA;
         border-radius: 50%;

@@ -41,12 +41,12 @@
           <h4 class="mb-35 sub-title">太陽人全民電廠的初心與理念</h4>
           <p class="mb-54 mobile-padding">2011 年,311 東日本大地震與福島核災，徹底改寫了我們對能源安全的認知，我們也因此認知到：環境和文明的永續及平衡，是這世代人類都必須面對的共同課題。文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例。</p>
           <div>
-            <div class="mb-55">
+            <div class="mb-55 position-relative">
               <h4 class="mb-20 h4 mobile-padding">綠能共享經濟的源起</h4>
               <p class="mobile-padding">節能減碳,能源轉型已是世界趨勢，但礙於資金或資訊通路門檻過高，一般社會<br/>大眾的力量無法順暢而有效地參與其中，使得能源轉型之路窒礙難行。</p>
               <img class="z-6 d-none mobile-d-block mobile-img mobile-padding-l" :src="intention.intentionTree" alt="">
             </div>
-            <div>
+            <div class="position-relative">
               <h4 class="h4 mobile-padding">民間力量 能源轉型</h4>
               <p class="mobile-padding">太陽人自 2013 年開始提供以太陽能板為單位的電廠分割認購平台服務，以綠能<br/>的共享經濟為主軸，大幅降低了民眾參與的門檻，每一個人都能夠輕鬆地成為<br/>電廠老闆，並成為能源轉型的一道助力。</p>
               <img class=" d-none mobile-d-block mobile-img mobile-padding-r"  :src="intention.intentionSolar" alt=""/>
@@ -102,54 +102,54 @@
         </div>
         <div class="card-wrap">
           <div style="max-width: 1280px;" class="tracking-card card-padding mb-126 shadow-lg rounded align-items-end">
-            <div class="d-flex align-items-end mobile-column" >
+            <div class="d-flex align-items-end mobile-column flex-row-reverse" >
               <div class="content-width ">
                 <p class="mb-10"><small class="heighlight">2013 至 2016</small></p>
                 <h5 class="mb-10">跨國綠電共享經濟：全民電廠的先驅者</h5>
                 <p>「鹿兒島本名一號」是太陽人全民電廠 於 2013 年推出的第一座，日台全民皆可參與的綠能 電廠專案。開啟了綠電共享經濟的先河。<br/>
       佐賀、長崎、大分等地的日本綠能電廠亦先後完工 掛表，共 35 位一般社會大眾一同參與並證明了民間 力量落實能源轉型的可行性與價值性。</p>
               </div>
-              <div class="content-width position-relative">
-                <img class="img-fluid position-absolute" style="width: 520px;" :src="tracking.tracking1" alt=""/>
+              <div class="content-width position-relative me-65">
+                <img class="img-fluid position-absolute img-1-width"  :src="tracking.tracking1" alt=""/>
               </div>
             </div>
           </div>
           <!-- 2  -->
           <div style="max-width: 1280px;" class="tracking-card card-padding-reverse mb-126 shadow-lg rounded align-items-end">
             <div class="d-flex align-items-end tracking-reverse mobile-column">
-              <div class="content-width">
+              <div class="content-width me-65">
                 <p class="mb-10"><small class="heighlight">2017 至 2019</small></p>
                 <h5 class="mb-10">校園與全民的能源革命：綠能的共享經濟</h5>
                 <p>於 2018 年募資完成的太陽人龍肚光電球場專案共有 45 人參與太陽能板的認購，共 835 片太陽能板構成面積近 500 坪的光電球場，不但能夠讓學生們及地方居民不受天氣影響盡情活動身體，未來 20 年還能夠創造近 683 萬度的再生能源，減少二氧化碳排放量近 3,760,425 kg。</p>
               </div>
               <div class="content-width position-relative ">
-                <img class="img-fluid position-absolute me-65" :src="tracking.tracking2" alt="">
+                <img class="img-fluid position-absolute " :src="tracking.tracking2" alt="">
               </div>
             </div>
           </div>
           <!-- 3  -->
-          <div style="max-width: 1280px;" class="tracking-card card-padding-reverse mb-126 shadow-lg rounded align-items-end">
-            <div class="d-flex align-items-end tracking-reverse mobile-column">
+          <div style="max-width: 1280px;" class="tracking-card card-padding mb-126 shadow-lg rounded align-items-end">
+            <div class="d-flex align-items-end tracking-reverse mobile-column flex-row-reverse">
               <div class="content-width">
                 <p class="mb-10"><small class="heighlight">2020至 2021</small></p>
                 <h5 class="mb-10">提升偏鄉能源自給率與就業率：花東子弟返鄉就業</h5>
                 <p>太陽人全民電廠的「點亮花東計畫」，透過在花東地區太陽能電廠的建置，有效地創造了大量且長期的工作機會，使花東偏鄉子弟不但能夠返鄉，還能夠獲得長期穩健的工作機會。</p>
               </div>
-              <div class="content-width position-relative">
-                <img class="img-fluid position-absolute me-65" :src="tracking.tracking3" alt="">
+              <div class="content-width position-relative me-65">
+                <img class="img-fluid position-absolute" :src="tracking.tracking3" alt="">
               </div>
             </div>
           </div>
           <!-- 4  -->
-          <div style="max-width: 1280px;" class="tracking-card card-padding mb-126 shadow-lg rounded align-items-end">
-            <div class="d-flex align-items-end mobile-column">
-              <div class="content-width">
+          <div style="max-width: 1280px;" class="tracking-card card-padding-reverse mb-126 shadow-lg rounded align-items-end">
+            <div class="d-flex align-items-end mobile-column ">
+              <div class="content-width me-65">
                 <p class="mb-10"><small class="heighlight">2022 至 Future</small></p>
                 <h5 class="mb-10">日光公益愛心永續：日光循環公益創能計畫</h5>
                 <p>太陽人全民電廠透過日光公益模式，為社福機構或弱勢族群提供長期間的被動收益，以太陽的能量為他們帶來永續的溫暖。期待您也能一起參與，在參與氣候行動的同時不但能夠創造個人的經濟價值，也能讓您的愛心同步放大，達成環境、理財、公益的共贏。</p>
               </div>
               <div class="content-width position-relative">
-                <img class="img-fluid position-absolute" style="width: 520px;" :src="tracking.tracking4" alt="">
+                <img class="img-fluid position-absolute"  :src="tracking.tracking4" alt="">
               </div>
             </div>
           </div>

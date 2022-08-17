@@ -247,7 +247,6 @@
           }
           p {
             font-size: 28px;
-            font-weight: 600;
           }
         }
         &-r {
@@ -302,6 +301,50 @@
         background-repeat: no-repeat !important;
         background-position: left bottom !important;
       }
+      @media screen and (max-width:1840px) and (min-width:992px) {
+        .ps-167 {
+          padding-left: 0%;
+        }
+        .mobile-d-none {
+          display: none;
+        }
+        .mobile-d-block {
+          display: block !important;
+        }
+        .mobile-padding {
+          padding: 0 5%;
+          &-l {
+            padding-left: 0%;
+            max-width: 100%;
+            height: auto;
+          }
+          &-r {
+            padding-right: 0%;
+            max-width: 100%;
+            height: auto;
+          }
+        }
+        .mobile-content {
+          justify-content: center !important;
+          p {
+            font-family: 'Noto Sans TC', sans-serif;
+          }
+          .z-4 {
+            z-index: 10;
+            img {
+              position: relative;
+              bottom: 30px !important;
+              left: 30% !important;
+            }
+          }
+        }
+        .mobile-center {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+      }
       @media screen and (max-width:992px) {
         .ps-167 {
           padding-left: 0%;
@@ -315,10 +358,10 @@
         .mobile-padding {
           padding: 0 5%;
           &-l {
-            padding-left: 5.3%;
+            right: 0%;
           }
           &-r {
-            padding-right: 5.3%;
+            left: 0%;
           }
         }
         .mobile-content {
@@ -415,18 +458,21 @@
           padding: 0 5% !important;
         }
         .card-wrap {
-          img {
-            width: auto !important;
-          }
           .tracking-reverse {
             display: flex;
             flex-direction: row-reverse;
+          }
+          .flex-row-reverse {
+            flex-direction: column-reverse !important;
           }
           .card-padding {
             padding: 35% 4.5% 13.4% 4.5%;
             &-reverse {
               padding: 35% 4.5% 13.4% 4.5%;
             }
+          }
+          .img-1-width {
+            width:800px ;
           }
         }
       }
@@ -475,7 +521,7 @@
 
 
       .me-65 {
-        margin-right: 12%;
+        margin-right: 5%;
         @media screen and (max-width:992px) {
           margin-right: 0%;
         }
@@ -496,7 +542,7 @@
       .card-wrap {
         .tracking-reverse {
           display: flex;
-          flex-direction: row-reverse;
+          // flex-direction: row-reverse;
           @media screen and (max-width:992px) {
             flex-direction: column-reverse;
           }

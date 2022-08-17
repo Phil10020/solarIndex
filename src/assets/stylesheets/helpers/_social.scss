@@ -504,6 +504,9 @@
       }
       .mb-97 {
         margin-bottom: 97px;
+        @media screen and (max-width:992px) {
+          margin-bottom: 24%;
+        }
       }
       .mb-10 {
         margin-bottom: 10px;

@@ -189,7 +189,7 @@
         p {
           display: none;
         }
-        @media screen and(max-width: 992px) {
+        @media screen and (max-width: 992px) {
           background-position: 0% 50% !important;
           align-items: center;
           h1 {
@@ -1086,7 +1086,7 @@
     .see {
       background-repeat: no-repeat !important;
       background-position: 0% 50% !important;
-      padding: 0 auto ;
+      padding: 0 16.6%;
       @media screen and (max-width:992px) {
         padding: 0 5%;
         .p-16 {

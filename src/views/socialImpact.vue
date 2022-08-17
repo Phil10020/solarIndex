@@ -39,16 +39,16 @@
         <div class="intention-width mobile-center z-3 pt-30">
           <h2 class="english-title mb-3">Our Original Intention</h2>
           <h4 class="mb-35 sub-title">太陽人全民電廠的初心與理念</h4>
-          <p class="mb-54 mobile-padding">2011 年,311 東日本大地震與福島核災，徹底改寫了我們對能源安全的認知，我們也因此認知到：環境和文明的永續及平衡，是這世代人類都必須面對的共同課題。文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例文字範例。</p>
+          <p class="mb-54 mobile-padding">2011 年,311 東日本大地震與福島核災，徹底改寫了我們對能源安全的認知，我們也因此認知到：環境和文明的永續及平衡，是這世代人類都必須面對的共同課題。</p>
           <div>
             <div class="mb-55 position-relative">
               <h4 class="mb-20 h4 mobile-padding">綠能共享經濟的源起</h4>
-              <p class="mobile-padding">節能減碳,能源轉型已是世界趨勢，但礙於資金或資訊通路門檻過高，一般社會<br/>大眾的力量無法順暢而有效地參與其中，使得能源轉型之路窒礙難行。</p>
+              <p class="mobile-padding">節能減碳,能源轉型已是世界趨勢，但礙於資金或資訊通路門檻過高，一般社會大眾的力量無法順暢而有效地參與其中，使得能源轉型之路窒礙難行。</p>
               <img class="z-6 d-none mobile-d-block mobile-img mobile-padding-l" :src="intention.intentionTree" alt="">
             </div>
             <div class="position-relative">
               <h4 class="h4 mobile-padding">民間力量 能源轉型</h4>
-              <p class="mobile-padding">太陽人自 2013 年開始提供以太陽能板為單位的電廠分割認購平台服務，以綠能<br/>的共享經濟為主軸，大幅降低了民眾參與的門檻，每一個人都能夠輕鬆地成為<br/>電廠老闆，並成為能源轉型的一道助力。</p>
+              <p class="mobile-padding">太陽人自 2013 年開始提供以太陽能板為單位的電廠分割認購平台服務，以綠能的共享經濟為主軸，大幅降低了民眾參與的門檻，每一個人都能夠輕鬆地成為電廠老闆，並成為能源轉型的一道助力。</p>
               <img class=" d-none mobile-d-block mobile-img mobile-padding-r"  :src="intention.intentionSolar" alt=""/>
             </div>
           </div>
@@ -269,21 +269,21 @@
       </div>
       <div class=" mb-100">
         <div class="d-flex justify-content-center card-mobil">
-          <div class="card shadow rounded border-0 card-padding  mb-30" :style="{ background: 'url(' + see.cardLogo + ')' }">
+          <div class="card shadow rounded border-0 card-padding  m-3" :style="{ background: 'url(' + see.cardLogo + ')' }">
             <div class="d-flex align-items-end">
               <div class="card-absolute"><img class="card-relative" :src="see.logo" alt=""></div>
               <h4 class="mb-0 ms-130 mt-20">陳小姐<br/><span>ｘｘｘｘ企業高階主管</span></h4>
             </div>
             <p class="mb-0 mt-20">一直以來都非常注重環保議題，太陽人全民電廠的初衷以及理念深深打動著我。期待能有更多人能看到太陽人全民電廠的努力，一起重視地球的未來！</p>
           </div>
-          <div class="card shadow rounded border-0 card-padding  mb-30" :style="{ background: 'url(' + see.cardLogo + ')' }">
+          <div class="card shadow rounded border-0 card-padding  m-3" :style="{ background: 'url(' + see.cardLogo + ')' }">
             <div class="d-flex align-items-end">
               <div class="card-absolute"><img class="card-relative" :src="see.logo" alt=""></div>
               <h4 class="mb-0 ms-130 mt-20">陳小姐<br/><span>ｘｘｘｘ企業高階主管</span></h4>
             </div>
             <p class="mb-0 mt-20">一直以來都非常注重環保議題，太陽人全民電廠的初衷以及理念深深打動著我。期待能有更多人能看到太陽人全民電廠的努力，一起重視地球的未來！</p>
           </div>
-          <div class="card shadow rounded border-0 card-padding  mb-30" :style="{ background: 'url(' + see.cardLogo + ')' }">
+          <div class="card shadow rounded border-0 card-padding  m-3" :style="{ background: 'url(' + see.cardLogo + ')' }">
             <div class="d-flex align-items-end">
               <div class="card-absolute"><img class="card-relative" :src="see.logo" alt=""></div>
               <h4 class="mb-0 ms-130 mt-20">陳小姐<br/><span>ｘｘｘｘ企業高階主管</span></h4>
@@ -292,21 +292,21 @@
           </div>
         </div>
         <div class="d-flex justify-content-center card-mobil">
-          <div class="card shadow rounded border-0 card-padding  mb-30" :style="{ background: 'url(' + see.cardLogo + ')' }">
+          <div class="card shadow rounded border-0 card-padding  m-3" :style="{ background: 'url(' + see.cardLogo + ')' }">
             <div class="d-flex align-items-end">
               <div class="card-absolute"><img class="card-relative" :src="see.logo" alt=""></div>
               <h4 class="mb-0 ms-130 mt-20">陳小姐<br/><span>ｘｘｘｘ企業高階主管</span></h4>
             </div>
             <p class="mb-0 mt-20">一直以來都非常注重環保議題，太陽人全民電廠的初衷以及理念深深打動著我。期待能有更多人能看到太陽人全民電廠的努力，一起重視地球的未來！</p>
           </div>
-          <div class="card shadow rounded border-0 card-padding  mb-30" :style="{ background: 'url(' + see.cardLogo + ')' }">
+          <div class="card shadow rounded border-0 card-padding  m-3" :style="{ background: 'url(' + see.cardLogo + ')' }">
             <div class="d-flex align-items-end">
               <div class="card-absolute"><img class="card-relative" :src="see.logo" alt=""></div>
               <h4 class="mb-0 ms-130 mt-20">陳小姐<br/><span>ｘｘｘｘ企業高階主管</span></h4>
             </div>
             <p class="mb-0 mt-20">一直以來都非常注重環保議題，太陽人全民電廠的初衷以及理念深深打動著我。期待能有更多人能看到太陽人全民電廠的努力，一起重視地球的未來！</p>
           </div>
-          <div class="card shadow rounded border-0 card-padding  mb-30" :style="{ background: 'url(' + see.cardLogo + ')' }">
+          <div class="card shadow rounded border-0 card-padding  m-3" :style="{ background: 'url(' + see.cardLogo + ')' }">
             <div class="d-flex align-items-end">
               <div class="card-absolute"><img class="card-relative" :src="see.logo" alt=""></div>
               <h4 class="mb-0 ms-130 mt-20">陳小姐<br/><span>ｘｘｘｘ企業高階主管</span></h4>

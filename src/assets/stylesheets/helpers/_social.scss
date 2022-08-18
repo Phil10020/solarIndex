@@ -42,6 +42,7 @@
     }
     .web-d-none {
       display: none;
+      color: #000 !important;
       @media screen and (max-width:992px) {
         display: block;
       }

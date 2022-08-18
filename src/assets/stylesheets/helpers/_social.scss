@@ -1087,6 +1087,21 @@
       background-repeat: no-repeat !important;
       background-position: 0% 50% !important;
       padding: 0 16.6%;
+      @media screen and (max-width:1433px) and (min-width:993px) {
+        .align-items-end {
+          align-items: flex-start !important;
+        }
+        .mobile-imgWrap-1433 {
+          padding-top: 5% !important;
+          flex-direction: column;
+          .card-absolute {
+            position: relative;
+          }
+          .ms-130 {
+            margin-left: 0% !important;
+          }
+        }
+      }
       @media screen and (max-width:992px) {
         padding: 0 5%;
         .p-16 {

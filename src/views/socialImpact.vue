@@ -315,7 +315,7 @@
           </div>
         </div>
       </div>
-      <h4 class="text-center mb-25 mobile-font-22">社會影響力報告書</h4>
+      <!-- <h4 class="text-center mb-25 mobile-font-22">社會影響力報告書</h4>
       <div class="d-flex flex-wrap mobile-column justify-content-around">
         <div class="download-bar d-flex flex-column  mb-25 position-relative">
           <p class="text-end mb-2 card-relative ">345KB</p>
@@ -365,7 +365,7 @@
             <div type="button" class="d-flex align-items-center button button-color download-button justify-content-center">DOWNLOAD</div>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </section>
   <!-- [End]See  -->

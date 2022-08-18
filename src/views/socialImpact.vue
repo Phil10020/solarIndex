@@ -316,7 +316,7 @@
         </div>
       </div>
       <h4 class="text-center mb-25 mobile-font-22">社會影響力報告書</h4>
-      <div class="d-flex flex-wrap mobile-column p-16 justify-content-around">
+      <div class="d-flex flex-wrap mobile-column justify-content-around">
         <div class="download-bar d-flex flex-column  mb-25 position-relative">
           <p class="text-end mb-2 card-relative ">345KB</p>
           <div class="d-flex align-items-center justify-content-between download-bar-column">

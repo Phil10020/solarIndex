@@ -144,7 +144,7 @@
           <div style="max-width: 1280px;" class="tracking-card card-padding-reverse mb-126 shadow-lg rounded align-items-end">
             <div class="d-flex align-items-end mobile-column tracking-reverse">
               <div class="content-width me-65">
-                <p class="mb-10"><small class="heighlight">2022 至 Future</small></p>
+                <p class="mb-10"><small class="heighlight">2022 至 未來</small></p>
                 <h5 class="mb-10">日光公益愛心永續：日光循環公益創能計畫</h5>
                 <p>太陽人全民電廠透過日光公益模式，為社福機構或弱勢族群提供長期間的被動收益，以太陽的能量為他們帶來永續的溫暖。期待您也能一起參與，在參與氣候行動的同時不但能夠創造個人的經濟價值，也能讓您的愛心同步放大，達成環境、理財、公益的共贏。</p>
               </div>

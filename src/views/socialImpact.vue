@@ -195,31 +195,31 @@
         <div class="logo-wrap mobile-column-relative mobile-center-1820 ">
           <div class="logo-wrap-bg logo-wrap-mobil d-flex flex-column justify-content-end  pb-84" :style="{ background: 'url(' + partner.our + ')' }">
             <div class="d-flex flex-column mb-173 justify-content-between position-relative">
-              <h4 class="text-center mb-4 color-g mt-5 mobile-absolute">優良企業</h4>
+              <h4 class="text-center mb-4 color-g mt-5 mobile-absolute">媒體報導</h4>
               <p class=""><a class="web-d-none" href="">看更多夥伴>></a></p>
               <div class="d-flex align-items-center justify-content-center mobil-d-none">
-                <button><font-awesome-icon icon="fa-solid fa-angle-left" /></button>
+                <!-- <button><font-awesome-icon icon="fa-solid fa-angle-left" /></button> -->
                 <div class="mx-2"><img :src="partner.partner1" alt=""></div>
-                <button><font-awesome-icon icon="fa-solid fa-angle-right" /></button>
+                <!-- <button><font-awesome-icon icon="fa-solid fa-angle-right" /></button> -->
               </div>
             </div>
             <div class="d-flex justify-content-around">
               <div class="d-flex flex-column justify-content-between mobile-relative">
-                <h4 class="text-center mb-4 color-b ">民間團體</h4>
+                <h4 class="text-center mb-4 color-b ">公益夥伴</h4>
                 <p class=""><a class="web-d-none" href="">看更多夥伴>></a></p>
                 <div class="d-flex align-items-center justify-content-center mobil-d-none">
-                  <button><font-awesome-icon icon="fa-solid fa-angle-left" /></button>
+                  <!-- <button><font-awesome-icon icon="fa-solid fa-angle-left" /></button> -->
                   <div class="mx-2"><img :src="partner.partner2" alt=""></div>
-                  <button><font-awesome-icon icon="fa-solid fa-angle-right" /></button>
+                  <!-- <button><font-awesome-icon icon="fa-solid fa-angle-right" /></button> -->
                 </div>
               </div>
               <div class="d-flex flex-column justify-content-between mobile-relative">
-                <h4 class="text-center mb-4 color-y">公益夥伴</h4>
+                <h4 class="text-center mb-4 color-y">政府機關</h4>
                 <p class=""><a class="web-d-none" href="">看更多夥伴>></a></p>
                 <div class="d-flex align-items-center justify-content-center mobil-d-none">
-                  <button><font-awesome-icon icon="fa-solid fa-angle-left" /></button>
+                  <!-- <button><font-awesome-icon icon="fa-solid fa-angle-left" /></button> -->
                   <div class="mx-2"><img :src="partner.partner3" alt=""></div>
-                  <button><font-awesome-icon icon="fa-solid fa-angle-right" /></button>
+                  <!-- <button><font-awesome-icon icon="fa-solid fa-angle-right" /></button> -->
                 </div>
               </div>
             </div>

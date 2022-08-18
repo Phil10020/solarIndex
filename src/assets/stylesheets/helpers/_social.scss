@@ -640,11 +640,14 @@
       @media screen and (max-width:1631px) and (min-width:993px) {
         justify-content: center !important;
         flex-direction: column !important;
+        padding: 0% 16.6%;
         .bg {
           background-size: contain !important;
           max-width: 100%;
           width: auto !important;
           height: 400px !important;
+          border: 1px solid #fff;
+          border-radius: 10px;
         }
         .mobile-relative {
           position: relative !important;
@@ -1158,7 +1161,7 @@
         .circle {
           position: absolute;
           bottom: 70% !important;
-          left: -2% !important;
+          left: -5% !important;
         }
         .see-right {
           top: -40%;

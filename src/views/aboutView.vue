@@ -2,11 +2,11 @@
 <section id="social">
       <!-- [Start]banner  -->
   <section
-  class="banner mobile-mb-30 banner-bg"
+  class="banner mobile-mb-30"
   :style="{ background: 'url(' + banner + ')' }"
   >
     <div class="text-white d-flex justify-content-center banner-column">
-      <h1>社會影響力</h1>
+      <h1>社會影響</h1>
       <p>social  impact</p>
     </div>
   </section>
@@ -260,112 +260,7 @@
   <!-- [Start]See  -->
   <section class="mb-20">
     <div class="see"  :style="{ background: 'url(' + see.seeBg + ')' }">
-      <div class="title-wrap d-flex justify-content-center mb-47 position-relative">
-        <div class="z-44">
-          <h2 class="english-title">More Powerful to See</h2>
-          <h4 class="text-center">民間力量讓更多人看見</h4>
-        </div>
-        <div class="position-absolute z-33 see-right"><img class="img-fluid" :src="see.seeText" alt=""></div>
-      </div>
-      <div class=" mb-100">
-        <div class="d-flex justify-content-center card-mobil">
-          <div class="card shadow rounded border-0 card-padding  m-3" :style="{ background: 'url(' + see.cardLogo + ')' }">
-            <div class="d-flex align-items-end mobile-imgWrap-1433">
-              <div class="card-absolute"><img class="card-relative" :src="see.logo" alt=""></div>
-              <h4 class="mb-0 ms-130 mt-20">陳小姐<br/><span>ｘｘｘｘ企業高階主管</span></h4>
-            </div>
-            <p class="mb-0 mt-20">一直以來都非常注重環保議題，太陽人全民電廠的初衷以及理念深深打動著我。期待能有更多人能看到太陽人全民電廠的努力，一起重視地球的未來！</p>
-          </div>
-          <div class="card shadow rounded border-0 card-padding  m-3" :style="{ background: 'url(' + see.cardLogo + ')' }">
-            <div class="d-flex align-items-end mobile-imgWrap-1433">
-              <div class="card-absolute"><img class="card-relative" :src="see.logo" alt=""></div>
-              <h4 class="mb-0 ms-130 mt-20">陳小姐<br/><span>ｘｘｘｘ企業高階主管</span></h4>
-            </div>
-            <p class="mb-0 mt-20">一直以來都非常注重環保議題，太陽人全民電廠的初衷以及理念深深打動著我。期待能有更多人能看到太陽人全民電廠的努力，一起重視地球的未來！</p>
-          </div>
-          <div class="card shadow rounded border-0 card-padding  m-3" :style="{ background: 'url(' + see.cardLogo + ')' }">
-            <div class="d-flex align-items-end mobile-imgWrap-1433">
-              <div class="card-absolute"><img class="card-relative" :src="see.logo" alt=""></div>
-              <h4 class="mb-0 ms-130 mt-20">陳小姐<br/><span>ｘｘｘｘ企業高階主管</span></h4>
-            </div>
-            <p class="mb-0 mt-20">一直以來都非常注重環保議題，太陽人全民電廠的初衷以及理念深深打動著我。期待能有更多人能看到太陽人全民電廠的努力，一起重視地球的未來！</p>
-          </div>
-        </div>
-        <div class="d-flex justify-content-center card-mobil">
-          <div class="card shadow rounded border-0 card-padding  m-3" :style="{ background: 'url(' + see.cardLogo + ')' }">
-            <div class="d-flex align-items-end mobile-imgWrap-1433">
-              <div class="card-absolute"><img class="card-relative" :src="see.logo" alt=""></div>
-              <h4 class="mb-0 ms-130 mt-20">陳小姐<br/><span>ｘｘｘｘ企業高階主管</span></h4>
-            </div>
-            <p class="mb-0 mt-20">一直以來都非常注重環保議題，太陽人全民電廠的初衷以及理念深深打動著我。期待能有更多人能看到太陽人全民電廠的努力，一起重視地球的未來！</p>
-          </div>
-          <div class="card shadow rounded border-0 card-padding  m-3" :style="{ background: 'url(' + see.cardLogo + ')' }">
-            <div class="d-flex align-items-end mobile-imgWrap-1433">
-              <div class="card-absolute"><img class="card-relative" :src="see.logo" alt=""></div>
-              <h4 class="mb-0 ms-130 mt-20">陳小姐<br/><span>ｘｘｘｘ企業高階主管</span></h4>
-            </div>
-            <p class="mb-0 mt-20">一直以來都非常注重環保議題，太陽人全民電廠的初衷以及理念深深打動著我。期待能有更多人能看到太陽人全民電廠的努力，一起重視地球的未來！</p>
-          </div>
-          <div class="card shadow rounded border-0 card-padding  m-3" :style="{ background: 'url(' + see.cardLogo + ')' }">
-            <div class="d-flex align-items-end mobile-imgWrap-1433">
-              <div class="card-absolute"><img class="card-relative" :src="see.logo" alt=""></div>
-              <h4 class="mb-0 ms-130 mt-20">陳小姐<br/><span>ｘｘｘｘ企業高階主管</span></h4>
-            </div>
-            <p class="mb-0 mt-20">一直以來都非常注重環保議題，太陽人全民電廠的初衷以及理念深深打動著我。期待能有更多人能看到太陽人全民電廠的努力，一起重視地球的未來！</p>
-          </div>
-        </div>
-      </div>
-      <!-- <h4 class="text-center mb-25 mobile-font-22">社會影響力報告書</h4>
-      <div class="d-flex flex-wrap mobile-column justify-content-around">
-        <div class="download-bar d-flex flex-column  mb-25 position-relative">
-          <p class="text-end mb-2 card-relative ">345KB</p>
-          <div class="d-flex align-items-center justify-content-between download-bar-column">
-            <div class="circle d-flex justify-content-center align-items-center position-absolute"><img :src="see.icon"/></div>
-            <div class="download d-flex justify-content-center  align-items-center ">pdf 檔案名稱名稱名稱名稱.pdf</div>
-            <div type="button" class="d-flex align-items-center button button-color download-button justify-content-center">DOWNLOAD</div>
-          </div>
-        </div>
-        <div class="download-bar d-flex flex-column  mb-25 position-relative">
-          <p class="text-end mb-2 card-relative ">345KB</p>
-          <div class="d-flex align-items-center download-bar-column">
-            <div class="circle d-flex justify-content-center align-items-center position-absolute"><img :src="see.icon"/></div>
-            <div class="download d-flex justify-content-center  align-items-center ">pdf 檔案名稱名稱名稱名稱.pdf</div>
-            <div type="button" class="d-flex align-items-center button button-color download-button justify-content-center">DOWNLOAD</div>
-          </div>
-        </div>
-        <div class="download-bar d-flex flex-column  mb-25 position-relative">
-          <p class="text-end mb-2 card-relative ">345KB</p>
-          <div class="d-flex align-items-center download-bar-column">
-            <div class="circle d-flex justify-content-center align-items-center position-absolute"><img :src="see.icon"/></div>
-            <div class="download d-flex justify-content-center  align-items-center ">pdf 檔案名稱名稱名稱名稱.pdf</div>
-            <div type="button" class="d-flex align-items-center button button-color download-button justify-content-center">DOWNLOAD</div>
-          </div>
-        </div>
-        <div class="download-bar d-flex flex-column  mb-25 position-relative">
-          <p class="text-end mb-2 card-relative ">345KB</p>
-          <div class="d-flex align-items-center download-bar-column">
-            <div class="circle d-flex justify-content-center align-items-center position-absolute"><img :src="see.icon"/></div>
-            <div class="download d-flex justify-content-center  align-items-center ">pdf 檔案名稱名稱名稱名稱.pdf</div>
-            <div type="button" class="d-flex align-items-center button button-color download-button justify-content-center">DOWNLOAD</div>
-          </div>
-        </div>
-        <div class="download-bar d-flex flex-column  mb-25 position-relative">
-          <p class="text-end mb-2 card-relative ">345KB</p>
-          <div class="d-flex align-items-center download-bar-column">
-            <div class="circle d-flex justify-content-center align-items-center position-absolute"><img :src="see.icon"/></div>
-            <div class="download d-flex justify-content-center  align-items-center ">pdf 檔案名稱名稱名稱名稱.pdf</div>
-            <div type="button" class="d-flex align-items-center button button-color download-button justify-content-center">DOWNLOAD</div>
-          </div>
-        </div>
-        <div class="download-bar d-flex flex-column  mb-25 position-relative">
-          <p class="text-end mb-2 card-relative ">345KB</p>
-          <div class="d-flex align-items-center download-bar-column">
-            <div class="circle d-flex justify-content-center align-items-center position-absolute"><img :src="see.icon"/></div>
-            <div class="download d-flex justify-content-center  align-items-center ">pdf 檔案名稱名稱名稱名稱.pdf</div>
-            <div type="button" class="d-flex align-items-center button button-color download-button justify-content-center">DOWNLOAD</div>
-          </div>
-        </div>
-      </div> -->
+        <swiperBar></swiperBar>
     </div>
   </section>
   <!-- [End]See  -->
@@ -463,8 +358,13 @@
 </template>
 
 <script>
+import swiperBar from '../components/swiperView.vue'
+
 export default {
   name: 'socialImpact',
+  components: {
+    swiperBar
+  },
   data () {
     return {
       banner: require('../../public/images/social/BN.png'),

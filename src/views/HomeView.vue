@@ -13,6 +13,9 @@
     <div>
     <h1><router-link to="social">social</router-link></h1>
   </div>
+  <div>
+    <h1><router-link to="about">about</router-link></h1>
+  </div>
 </template>
 
 <script>

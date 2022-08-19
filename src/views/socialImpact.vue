@@ -2,7 +2,7 @@
 <section id="social">
       <!-- [Start]banner  -->
   <section
-  class="banner mobile-mb-30 banner-bg"
+  class="banner mobile-mb-30"
   :style="{ background: 'url(' + banner + ')' }"
   >
     <div class="text-white d-flex justify-content-center banner-column">

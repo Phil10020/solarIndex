@@ -22,8 +22,8 @@
     h2 {
         font-size: 3rem;
         @media screen and (max-width: 992px) {
-          font-size: 42px ;
-          line-height: 56px ;
+          font-size: 42px !important;
+          line-height: 56px !important;
         }
     }
     h1 {
@@ -42,20 +42,21 @@
     }
     .web-d-none {
       display: none;
+      color: #000 !important;
       @media screen and (max-width:992px) {
         display: block;
       }
     }
     @media screen and (max-width: 992px) {
       .mobile-img {
-        max-width: 100% ;
-        height: auto ;
+        max-width: 100% !important;
+        height: auto !important;
       }
       .mobile-relative {
-        position: relative ;
+        position: relative !important;
       }
       .mobile-absolute {
-        position: absolute ;
+        position: absolute !important;
       }
       .mobile-center {
         display: flex;
@@ -84,7 +85,7 @@
       }
 
       .mobile-items-start {
-        align-items: flex-start ;
+        align-items: flex-start !important;
       }
     
     }
@@ -92,9 +93,9 @@
     .english {
         @media screen and (max-width:992px) {
           &-title {
-            font-size: 42px ;
-            line-height: 56px ;
-            text-align: center ;
+            font-size: 42px !important;
+            line-height: 56px !important;
+            text-align: center !important;
           }
         }
         &-title {
@@ -177,9 +178,9 @@
     .banner {
         height: 360px;
         overflow: hidden;
-        background-size: cover ;
-        background-repeat: no-repeat ;
-        background-position: 50% 50% ;
+        background-size: cover !important;
+        background-repeat: no-repeat !important;
+        background-position: 50% 50% !important;
         position: relative;
         padding: 0 16.66%;
         display: flex;
@@ -190,7 +191,7 @@
           display: none;
         }
         @media screen and (max-width: 992px) {
-          background-position: 0% 50% ;
+          background-position: 0% 50% !important;
           align-items: center;
           h1 {
             margin-bottom: 20px;
@@ -220,19 +221,19 @@
           margin-top: 0%;
         }
         @media screen and (max-width: 992px) {
-          background-size: contain ;
-          background-repeat: no-repeat ;
+          background-size: contain !important;
+          background-repeat: no-repeat !important;
           margin-top: 0%;
           padding: 0% 5.3%;
           height: auto;
           &-m174 {
-            margin-top: auto ;
+            margin-top: auto !important;
             p:first-child:first-letter {
                 font-size: 2rem;
             }
         }
           &-right {
-            left: 20% ;
+            left: 20% !important;
             img {
               max-width: 100%;
               height: auto;
@@ -243,10 +244,10 @@
             display:none ;
           }
           .mr-70 {
-            margin-right: auto ;
+            margin-right: auto !important;
           }
           .ml-70 {
-            margin-left: auto ;
+            margin-left: auto !important;
           }
           p {
             font-size: 28px;
@@ -301,8 +302,8 @@
         right: 26%;
       }
       &-bg {
-        background-repeat: no-repeat ;
-        background-position: left bottom ;
+        background-repeat: no-repeat !important;
+        background-position: left bottom !important;
       }
       @media screen and (max-width:1660px) and (min-width:992px) {
         .ps-167 {
@@ -312,7 +313,7 @@
           display: none;
         }
         .mobile-d-block {
-          display: block ;
+          display: block !important;
         }
         .mobile-padding {
           padding: 0 5%;
@@ -328,7 +329,7 @@
           }
         }
         .mobile-content {
-          justify-content: center ;
+          justify-content: center !important;
           p {
             font-family: 'Noto Sans TC', sans-serif;
           }
@@ -336,8 +337,8 @@
             z-index: 10;
             img {
               position: relative;
-              bottom: 30px ;
-              left: 30% ;
+              bottom: 30px !important;
+              left: 30% !important;
             }
           }
         }
@@ -356,7 +357,7 @@
           display: none;
         }
         .mobile-d-block {
-          display: block ;
+          display: block !important;
         }
         .mobile-padding {
           padding: 0 5%;
@@ -368,7 +369,7 @@
           }
         }
         .mobile-content {
-          justify-content: center ;
+          justify-content: center !important;
           p {
             font-family: 'Noto Sans TC', sans-serif;
           }
@@ -376,8 +377,8 @@
             z-index: 10;
             img {
               position: relative;
-              bottom: 30px ;
-              left: 30% ;
+              bottom: 30px !important;
+              left: 30% !important;
             }
           }
         }
@@ -455,11 +456,11 @@
             min-width: 0;
             word-wrap: break-word;
             background-clip: border-box;
-            border: 0.1px solid #fff ;
+            border: 0.1px solid #fff !important;
             border-radius: 0.25rem;
           }
           .p-30 {
-            padding: 0 16.6% ;
+            padding: 0 16.6% !important;
           }
           .card-wrap {
             align-items: center;
@@ -468,7 +469,7 @@
               flex-direction: row-reverse;
             }
             .flex-row-reverse {
-              flex-direction: column-reverse ;
+              flex-direction: column-reverse !important;
             }
             .card-padding {
               padding: 35% 4.5% 7% 4.5%;
@@ -488,11 +489,11 @@
           min-width: 0;
           word-wrap: break-word;
           background-clip: border-box;
-          border: 0.1px solid #fff ;
+          border: 0.1px solid #fff !important;
           border-radius: 0.25rem;
         }
         .p-30 {
-          padding: 0 5% ;
+          padding: 0 5% !important;
         }
         .card-wrap {
           .tracking-reverse {
@@ -500,7 +501,7 @@
             flex-direction: row-reverse;
           }
           .flex-row-reverse {
-            flex-direction: column-reverse ;
+            flex-direction: column-reverse !important;
           }
           .card-padding {
             padding: 35% 4.5% 13.4% 4.5%;
@@ -517,8 +518,8 @@
         right: 15%;
       }
       &-bg {
-        background-repeat: no-repeat ;
-        background-position: 0% 50% ;
+        background-repeat: no-repeat !important;
+        background-position: 0% 50% !important;
       }
       &-card {
         position: relative;
@@ -638,27 +639,27 @@
     // goals
     .goals {
       @media screen and (max-width:1631px) and (min-width:993px) {
-        justify-content: center ;
-        flex-direction: column ;
+        justify-content: center !important;
+        flex-direction: column !important;
         padding: 0% 16.6%;
         .bg {
-          background-size: contain ;
+          background-size: contain !important;
           max-width: 100%;
-          width: auto ;
-          height: 400px ;
+          width: auto !important;
+          height: 400px !important;
           border: 1px solid #fff;
           border-radius: 10px;
         }
         .mobile-relative {
-          position: relative ;
+          position: relative !important;
         }
         // .mobile-location-width {
         //   font-size: 12px;
-        //   background-size: contain ;
-        //   background-repeat: no-repeat ;
+        //   background-size: contain !important;
+        //   background-repeat: no-repeat !important;
         //   min-width: 100%;
-        //   width: 50px ;
-        //   height: 50px ;
+        //   width: 50px !important;
+        //   height: 50px !important;
         // }
         .location {
           position: relative;
@@ -666,40 +667,40 @@
           font-family: 'Noto Sans TC', sans-serif;
           color: #fff;
           &-eye {
-            position: absolute ;
-            bottom: 90% ;
-            right: 46% ;
+            position: absolute !important;
+            bottom: 90% !important;
+            right: 46% !important;
             
           }
           &-house {
             position: absolute;
-            left: -20% ;
-            bottom: 50% ;
+            left: -20% !important;
+            bottom: 50% !important;
           }
           &-sun {
             position: absolute;
-            left: 85% ;
-            bottom: 45% ;
+            left: 85% !important;
+            bottom: 45% !important;
           }
           &-logo {
-            background-size: contain ;
-            background-repeat: no-repeat  ;
-            position: relative ;
+            background-size: contain !important;
+            background-repeat: no-repeat !important ;
+            position: relative !important;
           }
         }
         .item-center {
-          display: flex ;
-          justify-content: center ;
-          align-items: flex-end ;
+          display: flex !important;
+          justify-content: center !important;
+          align-items: flex-end !important;
         }
         .ms-16 {
-          display: flex ;
-          margin-left: 0% ;
+          display: flex !important;
+          margin-left: 0% !important;
           align-items: center ;
         }
         .ms-691 {
-          margin-left: 46% ;
-          margin-top: 0% ;
+          margin-left: 46% !important;
+          margin-top: 0% !important;
           margin-bottom: 40%;
         }
         p {
@@ -710,23 +711,23 @@
         }
       }
       @media screen and (max-width: 992px) {
-        flex-direction: column ;
+        flex-direction: column !important;
         .bg {
-          background-size: contain ;
+          background-size: contain !important;
           max-width: 100%;
-          width: auto ;
-          height: 400px ;
+          width: auto !important;
+          height: 400px !important;
         }
         .mobile-relative {
-          position: relative ;
+          position: relative !important;
         }
         .mobile-location-width {
           font-size: 12px;
-          background-size: contain ;
-          background-repeat: no-repeat ;
+          background-size: contain !important;
+          background-repeat: no-repeat !important;
           min-width: 100%;
-          width: 50px ;
-          height: 50px ;
+          width: 50px !important;
+          height: 50px !important;
         }
         .location {
           position: relative;
@@ -734,41 +735,41 @@
           font-family: 'Noto Sans TC', sans-serif;
           color: #fff;
           &-eye {
-            position: absolute ;
-            bottom: 90% ;
-            right: 65% ;
+            position: absolute !important;
+            bottom: 90% !important;
+            right: 65% !important;
             
           }
           &-house {
             position: absolute;
-            left: 0% ;
-            bottom: 67% ;
+            left: 0% !important;
+            bottom: 67% !important;
           }
           &-sun {
             position: absolute;
-            left: 90% ;
-            bottom: 60% ;
+            left: 90% !important;
+            bottom: 60% !important;
           }
           &-logo {
-            background-size: contain ;
-            background-repeat: no-repeat  ;
-            position: relative ;
-            width: 200px ;
-            height: 200px ;
+            background-size: contain !important;
+            background-repeat: no-repeat !important ;
+            position: relative !important;
+            width: 200px !important;
+            height: 200px !important;
           }
         }
         .item-center {
-          display: flex ;
-          justify-content: center ;
-          align-items: flex-end ;
+          display: flex !important;
+          justify-content: center !important;
+          align-items: flex-end !important;
         }
         p{
           text-align: center;
         }
       }
       &-bg {
-        background-repeat: no-repeat ;
-        background-position:bottom 0% right 0% ;
+        background-repeat: no-repeat !important;
+        background-position:bottom 0% right 0% !important;
       }
       .sdgs {
         background-repeat: no-repeat;
@@ -794,20 +795,20 @@
         }
       }
       .bg {
-        background-repeat: no-repeat ;
-        background-size: cover  ;
+        background-repeat: no-repeat !important;
+        background-size: cover !important ;
       }
       .bg-green {
-        background-repeat: no-repeat ;
-        background-size: 90%  ;
-        background-position: 100% 50%  ;
+        background-repeat: no-repeat !important;
+        background-size: 90% !important ;
+        background-position: 100% 50% !important ;
       }
       .gray-right {
         right: 0%;
       }
       .location {
         background-size: contain;
-        background-repeat: no-repeat  ;
+        background-repeat: no-repeat !important ;
         position: relative;
         font-size: 30px;
         font-family: 'Noto Sans TC', sans-serif;
@@ -829,26 +830,26 @@
         }
         &-logo {
           color: #fff;
-          background-size: contain ;
-          background-repeat: no-repeat  ;
+          background-size: contain !important;
+          background-repeat: no-repeat !important ;
           background-position: 50% 50% ;
-          position: relative ;
+          position: relative !important;
         }
       }
 
       .item-right {
         @media screen and (max-width:1631px) and (min-width:993px) {
-          display: flex ;
-          background-size: cover ;
-          background-position: 50% 50% ;
-          align-items: center ;
-          justify-content:center ;
+          display: flex !important;
+          background-size: cover !important;
+          background-position: 50% 50% !important;
+          align-items: center !important;
+          justify-content:center !important;
         }
         @media screen and (max-width:992px) {
-          display: flex ;
-          background-size: 100% ;
-          align-items: center ;
-          justify-content:center ;
+          display: flex !important;
+          background-size: 100% !important;
+          align-items: center !important;
+          justify-content:center !important;
         }
       }
 
@@ -866,8 +867,8 @@
           margin-left: 0%;
           margin-top: 0%;
           img {
-            max-width: 80% ;
-            height: auto ;
+            max-width: 80% !important;
+            height: auto !important;
           }
         }
       }
@@ -891,7 +892,7 @@
     }
     
     .partner {
-      // background-repeat: no-repeat ;
+      // background-repeat: no-repeat !important;
       padding: 0 9% 0 16.66%;
       @media screen and (max-width:1820px)  {
         flex-direction: column-reverse;
@@ -904,13 +905,13 @@
           text-align: start;
         }
         .mobile-column-relative {
-          position: relative  ;
+          position: relative !important ;
         }
         .partner-right {
           right: 0%;
         }
         .text-position {
-          right: 0% ;
+          right: 0% !important;
         }
         .mobile-center-1820 {
           display: flex;
@@ -921,7 +922,7 @@
         }
       }
       @media screen and (max-width:992px) {
-        padding: 0 9% 0 9%;
+        padding: 0 9% 0 9%!important;
         flex-wrap: wrap;
         flex-direction: column-reverse;
         br {
@@ -931,41 +932,41 @@
         .logo-wrap {
           max-width: 100%;
           &-bg {
-            height:auto ;
-            max-width: 100% ;
+            height:auto !important;
+            max-width: 100% !important;
             width: auto;
-            background-position: 50% 50% ;
+            background-position: 50% 50% !important;
           }
           .mobil-d-none {
-            display: none  ;
+            display: none !important ;
           }
         }
         .partner-right {
           justify-content: center;
-          position: relative ;
-          right: 0% ;
+          position: relative !important;
+          right: 0% !important;
           p {
             br {
-              display: none  ;
+              display: none !important ;
             }
           }
         }
         .text-position {
-          right: 10% ;
+          right: 10% !important;
           img {
-            max-width: 100% ;
+            max-width: 100% !important;
             width: auto;
             height: auto;
           }
         }
         .bg-circle {
-          max-width: 100% ;
-          width: 113px ;
-          height: 113px ;
+          max-width: 100% !important;
+          width: 113px !important;
+          height: 113px !important;
           padding-bottom: 3%;
           div:nth-child(1) {
             line-height: 1.5rem;
-            font-size: 12px ;
+            font-size: 12px !important;
           }
           div:nth-child(2) {
             font-size: 28px;
@@ -977,7 +978,7 @@
           display: block;
         }
         .mobile-absolute {
-          position: relative ;
+          position: relative !important;
         }
         .mb-173 {
           margin-bottom: 30%;
@@ -991,11 +992,11 @@
       }
     }
     .partner-bg {
-      background-repeat: no-repeat ;
-      background-position: 76% 100% ;
-      padding: 0 5% ;
+      background-repeat: no-repeat !important;
+      background-position: 76% 100% !important;
+      padding: 0 5% !important;
       @media screen and (max-width:992px) {
-        padding: 0% ;
+        padding: 0% !important;
       }
     }
     .z-33 {
@@ -1023,9 +1024,9 @@
       margin-top: 202px;
     }
     .bg-circle {
-      background-repeat: no-repeat ;
-      background-position: 50% 50% ;
-      background-size: contain ;
+      background-repeat: no-repeat !important;
+      background-position: 50% 50% !important;
+      background-size: contain !important;
       width: 170px;
       height: 170px;
       display: flex;
@@ -1052,15 +1053,15 @@
     }
     .text-position {
       bottom: 80px;
-      right: -25% ;
+      right: -25% !important;
     }
     .logo-wrap {
       font-family:'Noto Sans TC', sans-serif;
       &-bg {
         height :696.13px;
         width: 738px;
-        background-size: contain ;
-        background-repeat: no-repeat ;
+        background-size: contain !important;
+        background-repeat: no-repeat !important;
       }
       .color {
         &-g {
@@ -1087,62 +1088,62 @@
 
     // see 
     .see {
-      background-repeat: no-repeat ;
-      background-position: 0% 50% ;
+      background-repeat: no-repeat !important;
+      background-position: 0% 50% !important;
       padding: 0 16.6%;
       @media screen and (max-width:1433px) and (min-width:993px) {
         .align-items-end {
-          align-items: flex-start ;
+          align-items: flex-start !important;
         }
         .mobile-imgWrap-1433 {
-          padding-top: 5% ;
+          padding-top: 5% !important;
           flex-direction: column;
           .card-absolute {
             position: relative;
           }
           .ms-130 {
-            margin-left: 0% ;
+            margin-left: 0% !important;
           }
         }
       }
       @media screen and (max-width:992px) {
         padding: 0 5%;
         .p-16 {
-          padding: 0% ;
+          padding: 0% !important;
         }
         .card-mobil {
           flex-direction: column;
         }
         .download-bar {
           padding: 0 3%;
-          display: block ;
-          align-items: flex-start ;
-          max-width: 100% ;
-          width: auto ;
+          display: block !important;
+          align-items: flex-start !important;
+          max-width: 100% !important;
+          width: auto !important;
           // .align-items-center {
-          //   align-items: flex-start ;
+          //   align-items: flex-start !important;
           // }
           &-column {
             flex-direction: column;
-            display: block ;
+            display: block !important;
             position: relative;
           }
         }
         .card {
-          width: auto ;
+          width: auto !important;
           max-width: 100%;
           &-relative {
-            top: 0 ;
+            top: 0 !important;
           }
         }
         .download {
-          background-color: #eee ;
-          background-size: cover ;
-          display: flex ;
-          width: auto ;
-          height: 72px ;
-          text-align: center ;
-          border-radius: 5px 5px 0% 0%  ;
+          background-color: #eee !important;
+          background-size: cover !important;
+          display: flex !important;
+          width: auto !important;
+          height: 72px !important;
+          text-align: center !important;
+          border-radius: 5px 5px 0% 0%  !important;
         }
         .button-color {
           background: #62CFCA ;
@@ -1153,22 +1154,22 @@
           height: 50px;
           background: #62CFCA;
           border: none;
-          border-radius: 0% 0% 5px 5px ;
+          border-radius: 0% 0% 5px 5px !important;
           color: #fff;
           max-width: 100%;
           
         }
         .circle {
           position: absolute;
-          bottom: 70% ;
-          left: -5% ;
+          bottom: 70% !important;
+          left: -5% !important;
         }
         .see-right {
           top: -40%;
         }
       }
       &-right {
-        right: 5% ;
+        right: 5% !important;
       }
       &-absolute {
         position: absolute;
@@ -1179,8 +1180,8 @@
         bottom: 115px;
       }
       .card {
-        background-repeat: no-repeat ;
-        background-position: 100% 100% ;
+        background-repeat: no-repeat !important;
+        background-position: 100% 100% !important;
         font-family: 'Noto Sans TC', sans-serif;
         width: 413px;
         &-relative {
@@ -1239,8 +1240,8 @@
         }
       }
       .download {
-        background-repeat: no-repeat ;
-        background-position: 50% 50% ;
+        background-repeat: no-repeat !important;
+        background-position: 50% 50% !important;
         width: 100%;
         height: 50px;
         background-color: #eee;

@@ -315,61 +315,64 @@
           </div>
         </div> -->
       </div>
-      <!-- <h4 class="text-center mb-25 mobile-font-22">社會影響力報告書</h4>
-      <div class="d-flex flex-wrap mobile-column justify-content-around">
-        <div class="download-bar d-flex flex-column  mb-25 position-relative">
-          <p class="text-end mb-2 card-relative ">345KB</p>
-          <div class="d-flex align-items-center justify-content-between download-bar-column">
-            <div class="circle d-flex justify-content-center align-items-center position-absolute"><img :src="see.icon"/></div>
-            <div class="download d-flex justify-content-center  align-items-center ">pdf 檔案名稱名稱名稱名稱.pdf</div>
-            <div type="button" class="d-flex align-items-center button button-color download-button justify-content-center">DOWNLOAD</div>
-          </div>
-        </div>
-        <div class="download-bar d-flex flex-column  mb-25 position-relative">
-          <p class="text-end mb-2 card-relative ">345KB</p>
-          <div class="d-flex align-items-center download-bar-column">
-            <div class="circle d-flex justify-content-center align-items-center position-absolute"><img :src="see.icon"/></div>
-            <div class="download d-flex justify-content-center  align-items-center ">pdf 檔案名稱名稱名稱名稱.pdf</div>
-            <div type="button" class="d-flex align-items-center button button-color download-button justify-content-center">DOWNLOAD</div>
-          </div>
-        </div>
-        <div class="download-bar d-flex flex-column  mb-25 position-relative">
-          <p class="text-end mb-2 card-relative ">345KB</p>
-          <div class="d-flex align-items-center download-bar-column">
-            <div class="circle d-flex justify-content-center align-items-center position-absolute"><img :src="see.icon"/></div>
-            <div class="download d-flex justify-content-center  align-items-center ">pdf 檔案名稱名稱名稱名稱.pdf</div>
-            <div type="button" class="d-flex align-items-center button button-color download-button justify-content-center">DOWNLOAD</div>
-          </div>
-        </div>
-        <div class="download-bar d-flex flex-column  mb-25 position-relative">
-          <p class="text-end mb-2 card-relative ">345KB</p>
-          <div class="d-flex align-items-center download-bar-column">
-            <div class="circle d-flex justify-content-center align-items-center position-absolute"><img :src="see.icon"/></div>
-            <div class="download d-flex justify-content-center  align-items-center ">pdf 檔案名稱名稱名稱名稱.pdf</div>
-            <div type="button" class="d-flex align-items-center button button-color download-button justify-content-center">DOWNLOAD</div>
-          </div>
-        </div>
-        <div class="download-bar d-flex flex-column  mb-25 position-relative">
-          <p class="text-end mb-2 card-relative ">345KB</p>
-          <div class="d-flex align-items-center download-bar-column">
-            <div class="circle d-flex justify-content-center align-items-center position-absolute"><img :src="see.icon"/></div>
-            <div class="download d-flex justify-content-center  align-items-center ">pdf 檔案名稱名稱名稱名稱.pdf</div>
-            <div type="button" class="d-flex align-items-center button button-color download-button justify-content-center">DOWNLOAD</div>
-          </div>
-        </div>
-        <div class="download-bar d-flex flex-column  mb-25 position-relative">
-          <p class="text-end mb-2 card-relative ">345KB</p>
-          <div class="d-flex align-items-center download-bar-column">
-            <div class="circle d-flex justify-content-center align-items-center position-absolute"><img :src="see.icon"/></div>
-            <div class="download d-flex justify-content-center  align-items-center ">pdf 檔案名稱名稱名稱名稱.pdf</div>
-            <div type="button" class="d-flex align-items-center button button-color download-button justify-content-center">DOWNLOAD</div>
-          </div>
-        </div>
-      </div> -->
     </div>
   </section>
   <!-- [End]See  -->
-
+  <!-- [Start]social  -->
+  <section class="see">
+    <h4 class="text-center mb-25 mobile-font-22">社會影響力報告書</h4>
+    <div class="d-flex flex-wrap mobile-column justify-content-around">
+      <div class="download-bar d-flex flex-column  mb-25 position-relative">
+        <p class="text-end mb-2 card-relative ">345KB</p>
+        <div class="d-flex align-items-center justify-content-between download-bar-column">
+          <div class="circle d-flex justify-content-center align-items-center position-absolute"><img :src="see.icon"/></div>
+          <div class="download d-flex justify-content-center  align-items-center ">pdf 檔案名稱名稱名稱名稱.pdf</div>
+          <div type="button" class="d-flex align-items-center button button-color download-button justify-content-center">DOWNLOAD</div>
+        </div>
+      </div>
+      <div class="download-bar d-flex flex-column  mb-25 position-relative">
+        <p class="text-end mb-2 card-relative ">345KB</p>
+        <div class="d-flex align-items-center download-bar-column">
+          <div class="circle d-flex justify-content-center align-items-center position-absolute"><img :src="see.icon"/></div>
+          <div class="download d-flex justify-content-center  align-items-center ">pdf 檔案名稱名稱名稱名稱.pdf</div>
+          <div type="button" class="d-flex align-items-center button button-color download-button justify-content-center">DOWNLOAD</div>
+        </div>
+      </div>
+      <div class="download-bar d-flex flex-column  mb-25 position-relative">
+        <p class="text-end mb-2 card-relative ">345KB</p>
+        <div class="d-flex align-items-center download-bar-column">
+          <div class="circle d-flex justify-content-center align-items-center position-absolute"><img :src="see.icon"/></div>
+          <div class="download d-flex justify-content-center  align-items-center ">pdf 檔案名稱名稱名稱名稱.pdf</div>
+          <div type="button" class="d-flex align-items-center button button-color download-button justify-content-center">DOWNLOAD</div>
+        </div>
+      </div>
+      <div class="download-bar d-flex flex-column  mb-25 position-relative">
+        <p class="text-end mb-2 card-relative ">345KB</p>
+        <div class="d-flex align-items-center download-bar-column">
+          <div class="circle d-flex justify-content-center align-items-center position-absolute"><img :src="see.icon"/></div>
+          <div class="download d-flex justify-content-center  align-items-center ">pdf 檔案名稱名稱名稱名稱.pdf</div>
+          <div type="button" class="d-flex align-items-center button button-color download-button justify-content-center">DOWNLOAD</div>
+        </div>
+      </div>
+      <div class="download-bar d-flex flex-column  mb-25 position-relative">
+        <p class="text-end mb-2 card-relative ">345KB</p>
+        <div class="d-flex align-items-center download-bar-column">
+          <div class="circle d-flex justify-content-center align-items-center position-absolute"><img :src="see.icon"/></div>
+          <div class="download d-flex justify-content-center  align-items-center ">pdf 檔案名稱名稱名稱名稱.pdf</div>
+          <div type="button" class="d-flex align-items-center button button-color download-button justify-content-center">DOWNLOAD</div>
+        </div>
+      </div>
+      <div class="download-bar d-flex flex-column  mb-25 position-relative">
+        <p class="text-end mb-2 card-relative ">345KB</p>
+        <div class="d-flex align-items-center download-bar-column">
+          <div class="circle d-flex justify-content-center align-items-center position-absolute"><img :src="see.icon"/></div>
+          <div class="download d-flex justify-content-center  align-items-center ">pdf 檔案名稱名稱名稱名稱.pdf</div>
+          <div type="button" class="d-flex align-items-center button button-color download-button justify-content-center">DOWNLOAD</div>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- [End]social  -->
   <!-- [Start]footer  -->
   <section class="pb-82">
     <footer>

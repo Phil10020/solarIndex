@@ -271,27 +271,27 @@
         <div class="d-flex justify-content-center card-mobil">
           <div class="card shadow rounded border-0 card-padding  m-3" :style="{ background: 'url(' + see.cardLogo + ')' }">
             <div class="d-flex align-items-end mobile-imgWrap-1433">
-              <div class="card-absolute"><img class="card-relative" :src="see.logo" alt=""></div>
-              <h4 class="mb-0 ms-130 mt-20">陳小姐<br/><span>ｘｘｘｘ企業高階主管</span></h4>
+              <div class="card-absolute bg-up"><div class="card-relative card-Wu" :style="{ background: 'url(' + see.Wu + ')' }"></div></div>
+              <h4 class="mb-0 ms-130 mt-20">鄔先生<br/><span>風力發電 運維工程師</span></h4>
             </div>
-            <p class="mb-0 mt-20">一直以來都非常注重環保議題，太陽人全民電廠的初衷以及理念深深打動著我。期待能有更多人能看到太陽人全民電廠的努力，一起重視地球的未來！</p>
+            <p class="mb-0 mt-20">「太陽光電，風力發電，強強聯手，節能省碳，環保愛地球，為台灣共創能源永續經營新里程。」</p>
           </div>
           <div class="card shadow rounded border-0 card-padding  m-3" :style="{ background: 'url(' + see.cardLogo + ')' }">
             <div class="d-flex align-items-end mobile-imgWrap-1433">
-              <div class="card-absolute"><img class="card-relative" :src="see.logo" alt=""></div>
-              <h4 class="mb-0 ms-130 mt-20">陳小姐<br/><span>ｘｘｘｘ企業高階主管</span></h4>
+              <div class="card-absolute bg-up"><div class="card-relative card-Ceng" :style="{ background: 'url(' + see.Ceng + ')' }"></div></div>
+              <h4 class="mb-0 ms-130 mt-20">曾聖文  博士<br/><span>國立臺灣海洋大學副教授</span></h4>
             </div>
-            <p class="mb-0 mt-20">一直以來都非常注重環保議題，太陽人全民電廠的初衷以及理念深深打動著我。期待能有更多人能看到太陽人全民電廠的努力，一起重視地球的未來！</p>
+            <p class="mb-0 mt-20">在臺灣能源轉型的過程中，「太陽人」建立了一個整合公民力量、以社區為主體及務實推動低碳永續的發展典範！</p>
           </div>
           <div class="card shadow rounded border-0 card-padding  m-3" :style="{ background: 'url(' + see.cardLogo + ')' }">
             <div class="d-flex align-items-end mobile-imgWrap-1433">
-              <div class="card-absolute"><img class="card-relative" :src="see.logo" alt=""></div>
-              <h4 class="mb-0 ms-130 mt-20">陳小姐<br/><span>ｘｘｘｘ企業高階主管</span></h4>
+              <div class="card-absolute bg-up"><div class="card-relative card-Yung" :style="{ background: 'url(' + see.Yung + ')' }"></div></div>
+              <h4 class="mb-0 ms-130 mt-20">楊婕妤<br/><span>關愛之家創辦人</span></h4>
             </div>
-            <p class="mb-0 mt-20">一直以來都非常注重環保議題，太陽人全民電廠的初衷以及理念深深打動著我。期待能有更多人能看到太陽人全民電廠的努力，一起重視地球的未來！</p>
+            <p class="mb-0 mt-20">謝謝日光循環公益計畫，以綠能不間斷地支持我們，持續提供0~12歲不分國籍兒童的全日型照顧服務。</p>
           </div>
         </div>
-        <div class="d-flex justify-content-center card-mobil">
+        <!-- <div class="d-flex justify-content-center card-mobil">
           <div class="card shadow rounded border-0 card-padding  m-3" :style="{ background: 'url(' + see.cardLogo + ')' }">
             <div class="d-flex align-items-end mobile-imgWrap-1433">
               <div class="card-absolute"><img class="card-relative" :src="see.logo" alt=""></div>
@@ -313,7 +313,7 @@
             </div>
             <p class="mb-0 mt-20">一直以來都非常注重環保議題，太陽人全民電廠的初衷以及理念深深打動著我。期待能有更多人能看到太陽人全民電廠的努力，一起重視地球的未來！</p>
           </div>
-        </div>
+        </div> -->
       </div>
       <!-- <h4 class="text-center mb-25 mobile-font-22">社會影響力報告書</h4>
       <div class="d-flex flex-wrap mobile-column justify-content-around">
@@ -514,7 +514,10 @@ export default {
         icon: require('../../public/images/social/icon.png'),
         download: require('../../public/images/social/download_bar.png'),
         seeText: require('../../public/images/social/to_see.png'),
-        cardLogo: require('../../public/images/social/card_logo.png')
+        cardLogo: require('../../public/images/social/card_logo.png'),
+        Wu: require('../../public/images/social/see/avatarWu.jpg'),
+        Ceng: require('../../public/images/social/see/avatarCeng.jpg'),
+        Yung: require('../../public/images/social/see/avatarYung.jpg')
       },
       power: {
         world: require('../../public/images/social/all_world.png')

@@ -1193,6 +1193,30 @@
         img {
           max-width: 45%;
         }
+        &-Wu {
+          border: 1px solid #fff;
+          background-size: 200% !important;
+          background-position: 60% 50% !important;
+          border-radius: 50%;
+          width: 97px;
+          height: 97px;
+        }
+        &-Ceng {
+          border: 1px solid #fff;
+          background-size: 200% !important;
+          background-position: 60% 50% !important;
+          border-radius: 50%;
+          width: 97px;
+          height: 97px;
+        }
+        &-Yung {
+          border: 1px solid #fff;
+          background-size: 200% !important;
+          background-position: 90% 30% !important;
+          border-radius: 50%;
+          width: 97px;
+          height: 97px;
+        }
         h4 {
           font-weight: 500;
           line-height: 34.75px;
@@ -1218,8 +1242,11 @@
         }
 
       }
+      .bg-up {
+        top: 2%;
+      }
       .card-padding {
-        padding: 0 41px 40px 44px;
+        padding: 0 2% 2% 2%;
         @media screen and (max-width:1433px) and (min-width:993px)  {
           padding: 0 1.5% 1.5% 1.5%;
         }

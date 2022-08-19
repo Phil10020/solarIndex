@@ -21,10 +21,6 @@
     }
     h2 {
         font-size: 3rem;
-        @media screen and (max-width: 992px) {
-          font-size: 42px !important;
-          line-height: 56px !important;
-        }
     }
     h1 {
         font-size: 4rem;
@@ -42,7 +38,7 @@
     }
     .web-d-none {
       display: none;
-      color: #000 !important;
+      color: #000 ;
       @media screen and (max-width:992px) {
         display: block;
       }
@@ -1096,13 +1092,9 @@
           align-items: flex-start !important;
         }
         .mobile-imgWrap-1433 {
-          padding-top: 5% !important;
           flex-direction: column;
           .card-absolute {
             position: relative;
-          }
-          .ms-130 {
-            margin-left: 0% !important;
           }
         }
       }
@@ -1136,6 +1128,7 @@
             top: 0 !important;
           }
         }
+
         .download {
           background-color: #eee !important;
           background-size: cover !important;
@@ -1227,14 +1220,8 @@
 
           }
         }
-        .mt-20 {
-          margin-top: 20px;
-        }
         .me-20 {
           margin-right: 20px;
-        }
-        .ms-130 {
-          margin-left: 130px;
         }
         p {
           font-weight: 300;
@@ -1243,12 +1230,12 @@
 
       }
       .bg-up {
-        top: 2%;
+        top: 7%;
       }
       .card-padding {
-        padding: 0 2% 2% 2%;
+        padding:2%;
         @media screen and (max-width:1433px) and (min-width:993px)  {
-          padding: 0 1.5% 1.5% 1.5%;
+          padding:1.5%;
         }
       }
       .circle {

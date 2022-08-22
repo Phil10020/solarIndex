@@ -31,6 +31,11 @@ const routes = [
     path: '/social',
     name: 'socialImpact',
     component: () => import('../views/socialImpact.vue')
+  },
+  {
+    path: '/about',
+    name: 'aboutView',
+    component: () => import('../views/aboutView.vue')
   }
 ]
 

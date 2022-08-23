@@ -1,11 +1,29 @@
 <template>
   <swiper
     :modules="modules"
-    :slides-per-view="4"
+    :slides-per-view="1"
+    :space-between="0"
     navigation
     :pagination="{ clickable: true }"
     @swiper="onSwiper"
     @slideChange="onSlideChange"
+    :breakpoints="{
+    768: {
+      width: 768,
+      slidesPerView: 2,
+      spaceBetween: 20
+    },
+    992: {
+      width: 992,
+      slidesPerView: 3,
+      spaceBetween: 30
+    },
+    1440: {
+      width: 1440,
+      slidesPerView: 4,
+      spaceBetween: 40
+    }
+    }"
   >
     <swiper-slide>
       <div class="about-card position-relative" style="width: 17.8125rem;">
@@ -105,6 +123,7 @@ import { Swiper, SwiperSlide } from 'swiper/vue'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
+// swiperJs
 
 export default {
   components: {

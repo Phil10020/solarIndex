@@ -323,7 +323,7 @@
     <div class="about  pt-100" style="height: 819px" :style="{ background: 'url(' + about.BG + ')' }">
       <h2 class="text-white text-center text-b mb-116">太陽人介紹</h2>
       <swiper class="mb-30"></swiper>
-      <h4 class=" text-center "><a class="text-white" href="#">加入我們</a></h4>
+      <h4 class=" text-center "><a class="text-white join" href="#"><span>加入我們</span></a></h4>
     </div>
 	</section>
 	<!-- [End]about  -->

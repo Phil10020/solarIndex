@@ -1,3 +1,11 @@
+.swiper {
+  margin: 0% 5% ;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .swiper-pagination {
     .swiper-pagination-bullet {
         opacity: 1;
@@ -10,8 +18,9 @@
 }
 
 .swiper-button-next {
-  right: 5px !important;
+  right: 0% !important;
   left: auto !important;
+  z-index: 10;
   &:after {
     font-size: 13px !important;
     font-weight: bolder;
@@ -21,6 +30,7 @@
 .swiper-button-prev{
     right: auto !important;
     left: 0px !important;
+    z-index: 10;
     &:after {
         font-size: 13px !important;
         font-weight: bolder;
@@ -44,7 +54,18 @@
   justify-content: center;
   color: var(--swiper-navigation-color,var(--swiper-theme-color));
 }
-
+swiper-slide {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+}
+.join {
+  span {
+    border-bottom: 2px solid #fff;
+    padding-bottom: 1px;
+  }
+}
 
 :root {
   --swiper-theme-color: gray !important;
@@ -56,7 +77,20 @@
 
 .about {
     font-family: 'Noto Sans TC', sans-serif;
-    padding: 0% 16.6%;
+    padding: 0% 15%;
+    @media screen and (max-width:992px) {
+      padding: 0% 10%; 
+    }
+    @media screen and (max-width:767px) {
+      padding: 0% auto;
+      &-card {
+        width: auto !important;
+        height:374px ;
+      }
+      .card-body {
+        padding: 1rem 2rem;
+      }
+    }
     h2 {
         font-size: 40px !important;
         line-height: 40px;

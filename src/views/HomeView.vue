@@ -16,6 +16,9 @@
   <div>
     <h1><router-link to="about">about</router-link></h1>
   </div>
+    <div>
+    <h1><router-link to="performance">performance</router-link></h1>
+  </div>
 </template>
 
 <script>

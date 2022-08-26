@@ -15,64 +15,244 @@
   <!-- [Start]Tab  -->
   <section class="tab">
     <div class="d-flex flex-column align-items-center justify-content-center">
-      <div class="d-flex justify-content-center tab-choose shadow rounded">
-        <button type="button"><h4 class="heighlight">台灣電廠</h4></button>
-        <button type="button"><h4>日本電廠</h4> </button>
+      <div class="d-flex justify-content-center tab-choose shadow rounded mb-30">
+        <button type="button" @click="tab(false)"><h4 :class="{ heighlight : !isShowInWeb }">台灣電廠</h4></button>
+        <button type="button" @click="tab(true)"><h4 :class="{ heighlight : isShowInWeb }">日本電廠</h4></button>
       </div>
-      <div class="d-flex">
-        <div class="heighlight">台北</div>
-        <div>桃園</div>
-        <div>新竹</div>
-        <div>苗栗</div>
-        <div>台中</div>
-        <div>嘉義</div>
-        <div>台南</div>
-        <div>雲林</div>
-        <div>高雄</div>
-        <div>花蓮</div>
-        <div>宜蘭</div>
-      </div>
-      <div class="d-flex">
-        <div>日本1</div>
-        <div>日本2</div>
-        <div>日本3</div>
-        <div>日本4</div>
-        <div>日本5</div>
-      </div>
+      <ul class="d-flex" v-if="isShowInWeb == false">
+        <li :class="{ active : currentFilter === 'tpe' } " @click.prevent="filterCategory('tpe')"><button type="button" >台北</button></li>
+        <li :class="{ active : currentFilter === 'tyn' }" @click.prevent="filterCategory('tyn')"><button type="button">桃園</button></li>
+        <li :class="{ active : currentFilter === 'hsz' }" @click.prevent="filterCategory('hsz')"><button type="button">新竹</button></li>
+        <li :class="{ active : currentFilter === 'zmi' }" @click.prevent="filterCategory('zmi')"><button type="button">苗栗</button></li>
+        <li :class="{ active : currentFilter === 'txg' }" @click.prevent="filterCategory('txg')"><button type="button">台中</button></li>
+        <li :class="{ active : currentFilter === 'chw' }" @click.prevent="filterCategory('chw')"><button type="button">彰化</button></li>
+        <li :class="{ active : currentFilter === 'ntc' }" @click.prevent="filterCategory('ntc')"><button type="button">南投</button></li>
+        <li :class="{ active : currentFilter === 'yun' }" @click.prevent="filterCategory('yun')"><button type="button">雲林</button></li>
+        <li :class="{ active : currentFilter === 'cyi' }" @click.prevent="filterCategory('cyi')"><button type="button">嘉義</button></li>
+        <li :class="{ active : currentFilter === 'tnn' }" @click.prevent="filterCategory('tnn')"><button type="button">台南</button></li>
+        <li :class="{ active : currentFilter === 'khh' }" @click.prevent="filterCategory('khh')"><button type="button">高雄</button></li>
+        <li :class="{ active : currentFilter === 'pif' }" @click.prevent="filterCategory('pif')"><button type="button">屏東</button></li>
+        <li :class="{ active : currentFilter === 'ttt' }" @click.prevent="filterCategory('ttt')"><button type="button">台東</button></li>
+        <li :class="{ active : currentFilter === 'hun' }" @click.prevent="filterCategory('hun')"><button type="button">花蓮</button></li>
+        <li :class="{ active : currentFilter === 'ila' }" @click.prevent="filterCategory('ila')"><button type="button">宜蘭</button></li>
+      </ul>
+      <ul class="d-flex" v-else>
+        <li>日本1</li>
+        <li>日本2</li>
+        <li>日本3</li>
+        <li>日本4</li>
+        <li>日本5</li>
+      </ul>
     </div>
   </section>
   <!-- [End]Tab  -->
 
 <!-- [Start]card+map  -->
-  <section class="d-flex row">
+  <section class="d-flex justify-content-cneter box-padding">
     <!-- [Start]Card  -->
-    <section class="col-6">
-      <div class="d-flex">
-        <div style="height:100px; width:100px"><img src="" alt="">1</div>
-        <div>
-          <div>
-            <p>屋頂型</p>
-            <h2>太陽人一號</h2>
-            <p>桃園八德</p>
-          </div>
-          <div class="d-flex">
-            <div class="d-flex">
-              <div><img src="" alt=""></div>
-              <p>總容量 : 11.90 KW</p>
+    <section class=" solar">
+      <div class="card-scrollBar shadow-lg round" >
+        <div class="card mb-3" style="max-width: 889px;"  v-for="item in typeFilter" :key="item.index">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="../../public/images/performance/panels.png" class="img-fluid rounded-start" alt="">
+              </div>
+              <div class="col-md-8 solar-bg" :style="{ background: 'url(' + card.BG + ')' }">
+                <div class="card-body ">
+                  <p class="d-inline-flex card-text card-body-heighlight">屋頂型</p>
+                  <h4 class="card-title">太陽人一號</h4>
+                  <p class="card-text">{{ item.name }}</p>
+                  <div class="d-flex align-items-center">
+                    <div class="d-flex me-2">
+                      <div class="me-1"><img src="../../public/images/performance/battery.svg" alt=""></div>
+                      <p>總容量 : 11.90 KW</p>
+                    </div>
+                    <div class="d-flex">
+                      <div class="me-1"><img src="../../public/images/performance/solar_icon.svg" alt=""></div>
+                      <p>總片數 : 35片</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="d-flex">
-              <div><img src="" alt=""></div>
-              <p>總片數 : 35片</p>
-            </div>
-          </div>
         </div>
+        <!-- <div class="card mb-3" style="max-width: 889px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="../../public/images/performance/panels.png" class="img-fluid rounded-start" alt="">
+              </div>
+              <div class="col-md-8 solar-bg" :style="{ background: 'url(' + card.BG + ')' }">
+                <div class="card-body ">
+                  <p class="d-inline-flex card-text card-body-heighlight">屋頂型</p>
+                  <h4 class="card-title">太陽人一號</h4>
+                  <p class="card-text">桃園八德</p>
+                  <div class="d-flex align-items-center">
+                    <div class="d-flex me-2">
+                      <div class="me-1"><img src="../../public/images/performance/battery.svg" alt=""></div>
+                      <p>總容量 : 11.90 KW</p>
+                    </div>
+                    <div class="d-flex">
+                      <div class="me-1"><img src="../../public/images/performance/solar_icon.svg" alt=""></div>
+                      <p>總片數 : 35片</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="card mb-3" style="max-width: 889px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="../../public/images/performance/panels.png" class="img-fluid rounded-start" alt="">
+              </div>
+              <div class="col-md-8 solar-bg" :style="{ background: 'url(' + card.BG + ')' }">
+                <div class="card-body ">
+                  <p class="d-inline-flex card-text card-body-heighlight">屋頂型</p>
+                  <h4 class="card-title">太陽人一號</h4>
+                  <p class="card-text">桃園八德</p>
+                  <div class="d-flex align-items-center">
+                    <div class="d-flex me-2">
+                      <div class="me-1"><img src="../../public/images/performance/battery.svg" alt=""></div>
+                      <p>總容量 : 11.90 KW</p>
+                    </div>
+                    <div class="d-flex">
+                      <div class="me-1"><img src="../../public/images/performance/solar_icon.svg" alt=""></div>
+                      <p>總片數 : 35片</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="card mb-3" style="max-width: 889px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="../../public/images/performance/panels.png" class="img-fluid rounded-start" alt="">
+              </div>
+              <div class="col-md-8 solar-bg" :style="{ background: 'url(' + card.BG + ')' }">
+                <div class="card-body ">
+                  <p class="d-inline-flex card-text card-body-heighlight">屋頂型</p>
+                  <h4 class="card-title">太陽人一號</h4>
+                  <p class="card-text">桃園八德</p>
+                  <div class="d-flex align-items-center">
+                    <div class="d-flex me-2">
+                      <div class="me-1"><img src="../../public/images/performance/battery.svg" alt=""></div>
+                      <p>總容量 : 11.90 KW</p>
+                    </div>
+                    <div class="d-flex">
+                      <div class="me-1"><img src="../../public/images/performance/solar_icon.svg" alt=""></div>
+                      <p>總片數 : 35片</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="card mb-3" style="max-width: 889px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="../../public/images/performance/panels.png" class="img-fluid rounded-start" alt="">
+              </div>
+              <div class="col-md-8 solar-bg" :style="{ background: 'url(' + card.BG + ')' }">
+                <div class="card-body ">
+                  <p class="d-inline-flex card-text card-body-heighlight">屋頂型</p>
+                  <h4 class="card-title">太陽人一號</h4>
+                  <p class="card-text">桃園八德</p>
+                  <div class="d-flex align-items-center">
+                    <div class="d-flex me-2">
+                      <div class="me-1"><img src="../../public/images/performance/battery.svg" alt=""></div>
+                      <p>總容量 : 11.90 KW</p>
+                    </div>
+                    <div class="d-flex">
+                      <div class="me-1"><img src="../../public/images/performance/solar_icon.svg" alt=""></div>
+                      <p>總片數 : 35片</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="card mb-3" style="max-width: 889px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="../../public/images/performance/panels.png" class="img-fluid rounded-start" alt="">
+              </div>
+              <div class="col-md-8 solar-bg" :style="{ background: 'url(' + card.BG + ')' }">
+                <div class="card-body ">
+                  <p class="d-inline-flex card-text card-body-heighlight">屋頂型</p>
+                  <h4 class="card-title">太陽人一號</h4>
+                  <p class="card-text">桃園八德</p>
+                  <div class="d-flex align-items-center">
+                    <div class="d-flex me-2">
+                      <div class="me-1"><img src="../../public/images/performance/battery.svg" alt=""></div>
+                      <p>總容量 : 11.90 KW</p>
+                    </div>
+                    <div class="d-flex">
+                      <div class="me-1"><img src="../../public/images/performance/solar_icon.svg" alt=""></div>
+                      <p>總片數 : 35片</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="card mb-3" style="max-width: 889px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="../../public/images/performance/panels.png" class="img-fluid rounded-start" alt="">
+              </div>
+              <div class="col-md-8 solar-bg" :style="{ background: 'url(' + card.BG + ')' }">
+                <div class="card-body ">
+                  <p class="d-inline-flex card-text card-body-heighlight">屋頂型</p>
+                  <h4 class="card-title">太陽人一號</h4>
+                  <p class="card-text">桃園八德</p>
+                  <div class="d-flex align-items-center">
+                    <div class="d-flex me-2">
+                      <div class="me-1"><img src="../../public/images/performance/battery.svg" alt=""></div>
+                      <p>總容量 : 11.90 KW</p>
+                    </div>
+                    <div class="d-flex">
+                      <div class="me-1"><img src="../../public/images/performance/solar_icon.svg" alt=""></div>
+                      <p>總片數 : 35片</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="card mb-3" style="max-width: 889px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="../../public/images/performance/panels.png" class="img-fluid rounded-start" alt="">
+              </div>
+              <div class="col-md-8 solar-bg" :style="{ background: 'url(' + card.BG + ')' }">
+                <div class="card-body ">
+                  <p class="d-inline-flex card-text card-body-heighlight">屋頂型</p>
+                  <h4 class="card-title">太陽人一號</h4>
+                  <p class="card-text">桃園八德</p>
+                  <div class="d-flex align-items-center">
+                    <div class="d-flex me-2">
+                      <div class="me-1"><img src="../../public/images/performance/battery.svg" alt=""></div>
+                      <p>總容量 : 11.90 KW</p>
+                    </div>
+                    <div class="d-flex">
+                      <div class="me-1"><img src="../../public/images/performance/solar_icon.svg" alt=""></div>
+                      <p>總片數 : 35片</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div> -->
       </div>
     </section>
       <!-- [End]Card  -->
 
     <!-- [Start]google map  -->
-    <section class="col-6">
-      <h1>google-map</h1>
+    <section class="">
+      <div class="d-flex justify-content-center align-items-center">
+        <h1 class="">google-map</h1>
+      </div>
     </section>
     <!-- [End]google map  -->
   </section>
@@ -175,64 +355,55 @@ export default {
   data () {
     return {
       banner: require('../../public/images/banner/performance_BN.png'),
-      social: {
-        intro: require('../../public/images/social/Section_intro.png'),
-        introLeft: require('../../public/images/social/intro_outline_left.png'),
-        introRight: require('../../public/images/social/intro_outline_right.png'),
-        introText: require('../../public/images/social/Social_Impact.png'),
-        introYourself: require('../../public/images/social/Yourself.png')
-      },
-      intention: {
-        intentionText: require('../../public/images/social/Spare.png'),
-        intentionBg: require('../../public/images/social/Section_Intention.png'),
-        intentionTree: require('../../public/images/social/intention_tree.png'),
-        intentionSolar: require('../../public/images/social/intention_solar.png')
-      },
-      tracking: {
-        tracking1: require('../../public/images/social/tracking1.png'),
-        tracking2: require('../../public/images/social/tracking2.png'),
-        tracking3: require('../../public/images/social/tracking3.png'),
-        tracking4: require('../../public/images/social/tracking4.png'),
-        trackingBg: require('../../public/images/social/Section_tracking.png')
-      },
-      goals: {
-        rectangle: require('../../public/images/social/goalsWrap/rectangle.png'),
-        rectangleHouse: require('../../public/images/social/goalsWrap/rectangle_house.png'),
-        rectangleEye: require('../../public/images/social/goalsWrap/rectangle_eye.png'),
-        rectangleSun: require('../../public/images/social/goalsWrap/rectangle_sun.png'),
-        goalsBg: require('../../public/images/social/Section_goals.png'),
-        goalsText: require('../../public/images/social/goalsWrap/Our.png'),
-        goalsLogo: require('../../public/images/social/goalsWrap/sdgs.png'),
-        goalsGray: require('../../public/images/social/goalsWrap/rectangle_gray.png'),
-        goalsGreen: require('../../public/images/social/goalsWrap/rectangle_green.png')
-      },
-      partner: {
-        our: require('../../public/images/social/our_partner.png'),
-        circle: require('../../public/images/social/partner_circle.png'),
-        partnerBg: require('../../public/images/social/Section_partner.png'),
-        partnerText: require('../../public/images/social/text_best.png'),
-        partner1: require('../../public/images/social/partnerImg/partner1.png'),
-        partner2: require('../../public/images/social/partnerImg/partner2.png'),
-        partner3: require('../../public/images/social/partnerImg/partner3.png')
-      },
-      see: {
-        logo: require('../../public/images/social/see_logo.png'),
-        seeBg: require('../../public/images/social/Section_see.png'),
-        icon: require('../../public/images/social/icon.png'),
-        download: require('../../public/images/social/download_bar.png'),
-        seeText: require('../../public/images/social/to_see.png'),
-        cardLogo: require('../../public/images/social/card_logo.png'),
-        Wu: require('../../public/images/social/see/avatarWu.jpg'),
-        Ceng: require('../../public/images/social/see/avatarCeng.jpg'),
-        Yung: require('../../public/images/social/see/avatarYung.jpg')
-      },
-      power: {
-        world: require('../../public/images/social/all_world.png')
+      card: {
+        panels: require('../../public/images/performance/panels.png'),
+        BG: require('../../public/images/performance/sun_bg.png'),
+        battery: require('../../public/images/performance/battery.svg'),
+        solar: require('../../public/images/performance/solar_icon.svg')
       },
       footer: {
         footerLogo: require('../../public/images/social/footerLogo.svg')
-      }
+      },
+      product: [{ name: '台北', type: 'tpe' },
+        { name: '桃園', type: 'tyn' },
+        { name: '新竹', type: 'hsz' },
+        { name: '苗栗', type: 'zmi' },
+        { name: '台中', type: 'txg' },
+        { name: '彰化', type: 'chw' },
+        { name: '南投', type: 'ntc' },
+        { name: '雲林', type: 'yun' },
+        { name: '嘉義', type: 'cyi' },
+        { name: '台南', type: 'tnn' },
+        { name: '高雄', type: 'khh' },
+        { name: '屏東', type: 'pif' },
+        { name: '台東', type: 'ttt' },
+        { name: '花蓮', type: 'hun' },
+        { name: '宜蘭', type: 'ila' },
+        { name: '桃園', type: 'tyn' },
+        { name: '桃園', type: 'tyn' },
+        { name: '桃園', type: 'tyn' },
+        { name: '彰化', type: 'chw' },
+        { name: '彰化', type: 'chw' },
+        { name: '高雄', type: 'khh' }
+      ],
+      typeFilter: [{ name: '台北', type: 'tpe' }],
+      isShowInWeb: false,
+      currentFilter: 'tpe'
     }
+  },
+  methods: {
+    tab (isShow) {
+      this.isShowInWeb = isShow
+    },
+    filterCategory: function (type) {
+      this.currentFilter = type
+      this.typeFilter = this.product.filter((item) => {
+        return item.type.includes(type)
+      })
+    }
+  },
+  mounted () {
+    this.typeFilter = this.product
   }
 }
 </script>

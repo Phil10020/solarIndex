@@ -236,7 +236,7 @@
             background-position: 100% 100% !important;
         }
         .card {
-            z-index: -10;
+            z-index: 5;
         }
         .card-scrollBar {
             height: 865px;
@@ -245,7 +245,7 @@
             padding: 5%;
         }
         .card-body {
-            z-index: -5;
+            z-index: 10;
             &-heighlight {
                 position: relative;
                 &:before {
@@ -261,4 +261,16 @@
         }
     }
     
+    .map {
+        .bi-geo-alt-fill {
+            color: #000;
+        }
+        .mapActive {
+            color: rgb(172, 39, 39) !important;
+        }
+
+        .mapShow {
+            display: block !important;
+        }
+    }
 }

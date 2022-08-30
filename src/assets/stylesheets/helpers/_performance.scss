@@ -234,6 +234,12 @@
             background-size: 20% !important;
             background-repeat: no-repeat !important;
             background-position: 100% 100% !important;
+            :hover {
+                background: url('/public/images/performance/sun_bg_light.png');
+                background-size: 20% !important;
+                background-repeat: no-repeat !important;
+                background-position: 100% 100% !important;
+            }
         }
         .card {
             z-index: 5;
@@ -243,6 +249,11 @@
             overflow: scroll;
             border: 1px solid #fff;
             padding: 5%;
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+        ::-webkit-scrollbar {
+            display: none;
         }
         .card-body {
             z-index: 10;

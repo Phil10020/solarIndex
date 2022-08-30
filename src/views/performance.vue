@@ -53,7 +53,7 @@
     <!-- [Start]Card  -->
     <section class=" solar">
       <div class="card-scrollBar shadow-lg round" >
-        <div class="card mb-3" style="max-width: 889px;"  v-for="item in typeFilter" :key="item.id" @click.prevent="change(item.id)" :id="item.id">
+        <div class="card mb-3" style="max-width: 889px;" v-for="item in typeFilter" :key="item.id" @click.prevent="change(item.id)" :id="item.id">
             <div class="row g-0">
               <div class="col-md-4">
                 <img src="../../public/images/performance/panels.png" class="img-fluid rounded-start" alt="">
@@ -85,7 +85,7 @@
     <section class="map" style="width:45%">
       <div class="d-flex justify-content-center align-items-center">
         <h1 class="d-flex flex-wrap">google-map
-          <div v-for="item in typeFilter" :key="item.id" class="d-none" :class="{ mapShow : change(id)  }"><i class="bi bi-geo-alt-fill" :class="{ mapActive : currentFilter === '' } "></i> {{ item.name }} </div>
+          <div v-for="item in typeFilter" :key="item.id" class="d-none" :class="{ mapShow: mapFilter === item.id }"><i class="bi bi-geo-alt-fill" :class="{ mapActive : currentFilter === '' } "></i> {{ item.name }} </div>
         </h1>
       </div>
     </section>
@@ -193,6 +193,7 @@ export default {
       card: {
         panels: require('../../public/images/performance/panels.png'),
         BG: require('../../public/images/performance/sun_bg.png'),
+        BG2: require('../../public/images/performance/sun_bg_light.png'),
         battery: require('../../public/images/performance/battery.svg'),
         solar: require('../../public/images/performance/solar_icon.svg')
       },
@@ -215,19 +216,20 @@ export default {
         { name: '台東', type: 'ttt', id: '13' },
         { name: '花蓮', type: 'hun', id: '14' },
         { name: '宜蘭', type: 'ila', id: '15' },
-        { name: '桃園', type: 'tyn', id: '16' },
-        { name: '桃園', type: 'tyn', id: '17' },
-        { name: '桃園', type: 'tyn', id: '18' },
-        { name: '彰化', type: 'chw', id: '19' },
-        { name: '彰化', type: 'chw', id: '20' },
-        { name: '高雄', type: 'khh', id: '21' }
+        { name: '桃園2', type: 'tyn', id: '16' },
+        { name: '桃園3', type: 'tyn', id: '17' },
+        { name: '桃園4', type: 'tyn', id: '18' },
+        { name: '彰化2', type: 'chw', id: '19' },
+        { name: '彰化3', type: 'chw', id: '20' },
+        { name: '高雄2', type: 'khh', id: '21' }
       ],
       typeFilter: [],
       isShowInWeb: false,
       currentFilter: '',
       mapClick: false,
       mapShowOn: false,
-      mapId: []
+      mapId: [],
+      mapFilter: ''
     }
   },
   // 台灣 or 日本 列表顯示切換方法
@@ -235,12 +237,10 @@ export default {
     tab (isShow) {
       this.isShowInWeb = isShow
     },
-    change: function (id) {
-      console.log(id)
-      console.log(this.typeFilter)
+    change: function (test) {
+      this.mapFilter = test
       this.mapId = this.typeFilter.filter((item) => {
-        console.log(item.id)
-        return item.id.includes(id)
+        return item.id.includes(test)
       })
     },
     mapActive (isActive) {
@@ -251,6 +251,7 @@ export default {
     },
     // 列表地區篩選功能
     filterCategory: function (type) {
+      this.mapFilter = ''
       this.currentFilter = type
       this.typeFilter = this.product.filter((item) => {
         return item.type.includes(type)

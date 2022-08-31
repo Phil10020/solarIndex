@@ -2,7 +2,7 @@
 <section id="performance">
       <!-- [Start]banner  -->
   <section
-  class="banner mobile-mb-30"
+  class="banner"
   :style="{ background: 'url(' + banner + ')' }"
   >
     <div class="text-white d-flex justify-content-center banner-column">
@@ -19,7 +19,7 @@
         <button type="button" @click="tab(false)"><h4 :class="{ heighlight : !isShowInWeb }">台灣電廠</h4></button>
         <button type="button" @click="tab(true)"><h4 :class="{ heighlight : isShowInWeb }">日本電廠</h4></button>
       </div>
-      <ul class="d-flex" v-if="isShowInWeb == false">
+      <ul class="d-flex flex-wrap" v-if="isShowInWeb == false">
         <li :class="{ active : currentFilter === '' } " @click.prevent="filterCategory('')"><button type="button" >全部</button></li>
         <li :class="{ active : currentFilter === 'tpe' } " @click.prevent="filterCategory('tpe')"><button type="button" >台北</button></li>
         <li :class="{ active : currentFilter === 'tyn' }" @click.prevent="filterCategory('tyn')"><button type="button">桃園</button></li>
@@ -51,14 +51,14 @@
 <!-- [Start]card+map  -->
   <section class="d-flex justify-content-cneter box-padding">
     <!-- [Start]Card  -->
-    <section class=" solar">
-      <div class="card-scrollBar shadow-lg round" >
-        <div class="card mb-3" style="max-width: 889px;" v-for="item in typeFilter" :key="item.id" @click.prevent="change(item.id)" :id="item.id">
-            <div class="row g-0">
+    <section class=" solar position-relative"  v-show="cardStaytus">
+      <div class="card-scrollBar shadow-lg round ">
+        <div class="solar-card mb-3" style="max-width: 889px;" v-for="item in typeFilter" :key="item.id" @click.prevent="change(item.id)" :id="item.id">
+            <div class="row g-0 solar-bg">
               <div class="col-md-4">
-                <img src="../../public/images/performance/panels.png" class="img-fluid rounded-start" alt="">
+                <img src="../../public/images/performance/panels.png" class="img-fluid rounded-start" title="太陽人一號" alt="太陽人一號">
               </div>
-              <div class="col-md-8 solar-bg" :style="{ background: 'url(' + card.BG + ')' }">
+              <div class="col-md-8">
                 <div class="card-body ">
                   <p class="d-inline-flex card-text card-body-heighlight">屋頂型</p>
                   <h4 class="card-title">太陽人一號</h4>
@@ -78,15 +78,21 @@
             </div>
         </div>
       </div>
+      <div class="d-flex justify-content-center d-md-none">
+        <button type="button" class="button_style" @click="buttonStus(false)"><img :src="card.buttonIcon" alt="map_icon"> 地圖模式</button>
+      </div>
     </section>
       <!-- [End]Card  -->
 
     <!-- [Start]google map  -->
-    <section class="map" style="width:45%">
+    <section class="map" style="width:45%"  v-show="mapStaytus">
       <div class="d-flex justify-content-center align-items-center">
         <h1 class="d-flex flex-wrap">google-map
           <div v-for="item in typeFilter" :key="item.id" class="d-none" :class="{ mapShow: mapFilter === item.id }"><i class="bi bi-geo-alt-fill" :class="{ mapActive : currentFilter === '' } "></i> {{ item.name }} </div>
         </h1>
+      </div>
+      <div class="d-flex justify-content-center d-md-none">
+        <button type="button" class="button_style" @click="buttonMapStus(false)"><i class="bi bi-list-ul"></i> 列表模式</button>
       </div>
     </section>
     <!-- [End]google map  -->
@@ -182,6 +188,7 @@
   </section>
   <!-- [End]footer  -->
 </section>
+
 </template>
 
 <script>
@@ -195,7 +202,8 @@ export default {
         BG: require('../../public/images/performance/sun_bg.png'),
         BG2: require('../../public/images/performance/sun_bg_light.png'),
         battery: require('../../public/images/performance/battery.svg'),
-        solar: require('../../public/images/performance/solar_icon.svg')
+        solar: require('../../public/images/performance/solar_icon.svg'),
+        buttonIcon: require('../../public/images/performance/map_button.svg')
       },
       footer: {
         footerLogo: require('../../public/images/social/footerLogo.svg')
@@ -228,6 +236,8 @@ export default {
       currentFilter: '',
       mapClick: false,
       mapShowOn: false,
+      mapStaytus: true,
+      cardStaytus: true,
       mapId: [],
       mapFilter: ''
     }
@@ -236,6 +246,14 @@ export default {
   methods: {
     tab (isShow) {
       this.isShowInWeb = isShow
+    },
+    buttonStus (isActive) {
+      this.mapStaytus = true
+      this.cardStaytus = false
+    },
+    buttonMapStus (isActive) {
+      this.mapStaytus = false
+      this.cardStaytus = true
     },
     change: function (test) {
       this.mapFilter = test
@@ -256,7 +274,23 @@ export default {
       this.typeFilter = this.product.filter((item) => {
         return item.type.includes(type)
       })
+    },
+    myEventHandler (e) {
+      if (window.innerWidth > 767) {
+        this.mapStaytus = true
+        this.cardStaytus = true
+      } else if (window.innerWidth < 767) {
+        this.mapStaytus = false
+      }
     }
+  },
+  // 組件生成時監聽畫面寬度
+  created () {
+    window.addEventListener('resize', this.myEventHandler)
+  },
+  // 組件銷毀時釋放內存
+  unmounted () {
+    window.removeEventListener('resize', this.myEventHandler)
   },
   // 渲染初始資料顯示畫面
   mounted () {

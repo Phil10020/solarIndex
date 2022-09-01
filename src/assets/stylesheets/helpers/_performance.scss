@@ -150,6 +150,15 @@
         border: 1px solid #fff;
         background-color: #fff;
     }
+
+    .button_style {
+        background-color: #2AA19C;
+        color: #fff;
+        border-radius: 5px;
+        width: 106px;
+        height: 36px;
+    }
+
     .img-fluid {
         height: 100%;
     }
@@ -214,8 +223,8 @@
             min-width: 0;
             word-wrap: break-word;
             background-clip: border-box;
-            border: 0.1px solid #fff ;
-            border-radius: 0.25rem;
+            border: 1px solid #fff ;
+            border-radius: 1rem;
           }
         &-bg {
             background-image: url('/public/images/performance/sun_bg.png');
@@ -238,7 +247,7 @@
             z-index: 5;
         }
         .card-scrollBar {
-            height: 865px;
+            height: 100vh;
             overflow: scroll;
             border: 1px solid #fff;
             padding: 5%;
@@ -263,16 +272,17 @@
                 }
             }
         }
-        .button_style {
-            background-color: #2AA19C;
-            color: #fff;
-            border-radius: 5px;
-            width: 106px;
-            height: 36px;
+        .btn-center {
+            bottom: 10%;
+            left: 30% ;
+            right:30%;
         }
     }
     
     .map {
+        @media screen and (max-width: 768px) {
+            display: none;
+        }
         .bi-geo-alt-fill {
             color: #000;
         }
@@ -283,5 +293,36 @@
         .mapShow {
             display: block !important;
         }
+        #fullscreen:fullscreen {
+            background-color: rgb(125, 180, 148);
+        }
+    }
+
+    .mapOn {
+        display: block;
+        @media screen and (max-width:768px) {
+            display: block;
+        }
+    }
+
+    .cardOn {
+        display: block;
+        @media screen and (max-width:768px) {
+            display: none;
+        }
+    }
+
+    .btnShow {
+        display: block !important;
+    }
+
+    .tabBtn {
+        width: 100px;
+        height: 100px;
+        background-color: rgb(39, 180, 137);
+        position: fixed;
+        bottom: 5%;
+        right: 5%;
+        z-index: 10;
     }
 }

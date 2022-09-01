@@ -49,14 +49,15 @@
   <!-- [End]Tab  -->
 
 <!-- [Start]card+map  -->
-  <section class="d-flex justify-content-cneter box-padding">
+  <section class="d-flex justify-content-cneter box-padding position-relative">
+    <button @click="backToTop" class="tabBtn d-none" :class="{ btnShow : topBtn === true }">Top</button>
     <!-- [Start]Card  -->
-    <section class=" solar position-relative"  v-show="cardStaytus">
+    <section class=" solar position-relative" :class="{ cardOn : cardStaytus === true }">
       <div class="card-scrollBar shadow-lg round ">
         <div class="solar-card mb-3" style="max-width: 889px;" v-for="item in typeFilter" :key="item.id" @click.prevent="change(item.id)" :id="item.id">
             <div class="row g-0 solar-bg">
               <div class="col-md-4">
-                <img src="../../public/images/performance/panels.png" class="img-fluid rounded-start" title="太陽人一號" alt="太陽人一號">
+                <img src="../../public/images/performance/panels.png" class="img-fluid rounded" alt="太陽人一號">
               </div>
               <div class="col-md-8">
                 <div class="card-body ">
@@ -78,21 +79,21 @@
             </div>
         </div>
       </div>
-      <div class="d-flex justify-content-center d-md-none">
-        <button type="button" class="button_style" @click="buttonStus(false)"><img :src="card.buttonIcon" alt="map_icon"> 地圖模式</button>
+      <div class="d-flex justify-content-center d-md-none position-absolute btn-center">
+        <button type="button" class="button_style" @click="buttonStaytus(false)"><img :src="card.buttonIcon" alt="map_icon"> 地圖模式</button>
       </div>
     </section>
       <!-- [End]Card  -->
 
     <!-- [Start]google map  -->
-    <section class="map" style="width:45%"  v-show="mapStaytus">
-      <div class="d-flex justify-content-center align-items-center">
+    <section class="map" :class="{ mapOn : mapStaytus === true }" style="width:45%">
+      <div class="d-flex justify-content-center align-items-center" id="fullscreen">
         <h1 class="d-flex flex-wrap">google-map
           <div v-for="item in typeFilter" :key="item.id" class="d-none" :class="{ mapShow: mapFilter === item.id }"><i class="bi bi-geo-alt-fill" :class="{ mapActive : currentFilter === '' } "></i> {{ item.name }} </div>
         </h1>
       </div>
       <div class="d-flex justify-content-center d-md-none">
-        <button type="button" class="button_style" @click="buttonMapStus(false)"><i class="bi bi-list-ul"></i> 列表模式</button>
+        <button type="button" id="fullscreen-button" class="button_style" @click="buttonMapStaytus(false)"><i class="bi bi-list-ul"></i> 列表模式</button>
       </div>
     </section>
     <!-- [End]google map  -->
@@ -236,8 +237,9 @@ export default {
       currentFilter: '',
       mapClick: false,
       mapShowOn: false,
-      mapStaytus: true,
-      cardStaytus: true,
+      mapStaytus: false,
+      cardStaytus: false,
+      topBtn: false,
       mapId: [],
       mapFilter: ''
     }
@@ -247,13 +249,13 @@ export default {
     tab (isShow) {
       this.isShowInWeb = isShow
     },
-    buttonStus (isActive) {
-      this.mapStaytus = true
-      this.cardStaytus = false
+    buttonStaytus (isActive) {
+      this.mapStaytus = !isActive
+      this.cardStaytus = !isActive
     },
-    buttonMapStus (isActive) {
-      this.mapStaytus = false
-      this.cardStaytus = true
+    buttonMapStaytus (isActive) {
+      this.mapStaytus = isActive
+      this.cardStaytus = isActive
     },
     change: function (test) {
       this.mapFilter = test
@@ -275,22 +277,27 @@ export default {
         return item.type.includes(type)
       })
     },
+    // 點擊移動到最上面
+    backToTop (isActive) {
+      document.body.scrollTop = 0
+      document.documentElement.scrollTop = 0
+    },
+    // 監聽滾動值並顯示向上選項
     myEventHandler (e) {
-      if (window.innerWidth > 767) {
-        this.mapStaytus = true
-        this.cardStaytus = true
-      } else if (window.innerWidth < 767) {
-        this.mapStaytus = false
+      if (document.body.srcollTop > 100 || document.documentElement.scrollTop > 100) {
+        this.topBtn = true
+      } else {
+        this.topBtn = false
       }
     }
   },
   // 組件生成時監聽畫面寬度
   created () {
-    window.addEventListener('resize', this.myEventHandler)
+    window.addEventListener('scroll', this.myEventHandler)
   },
   // 組件銷毀時釋放內存
   unmounted () {
-    window.removeEventListener('resize', this.myEventHandler)
+    window.removeEventListener('scroll', this.myEventHandler)
   },
   // 渲染初始資料顯示畫面
   mounted () {

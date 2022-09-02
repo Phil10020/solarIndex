@@ -1,5 +1,9 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC&family=Noto+Serif+TC&display=swap');
 #performance {
+    // *{
+    //     border: 2px solid red;
+    // }
     font-family: 'Noto Sans TC', sans-serif, 'Noto Serif TC', serif;
     //[Start] font-size 
     h6 {
@@ -147,7 +151,7 @@
         flex-direction: column;
       }
     button {
-        border: 1px solid #fff;
+        border: none;
         background-color: #fff;
     }
 
@@ -253,6 +257,9 @@
             padding: 5%;
             -ms-overflow-style: none;  /* IE and Edge */
             scrollbar-width: none;  /* Firefox */
+            @media screen and (max-width:768px) {
+                height: 60vh;
+            }
         }
         ::-webkit-scrollbar {
             display: none;
@@ -317,12 +324,16 @@
     }
 
     .tabBtn {
-        width: 100px;
-        height: 100px;
-        background-color: rgb(39, 180, 137);
         position: fixed;
         bottom: 5%;
         right: 5%;
         z-index: 10;
+        padding: 0;
+        .bi {
+            color: #fff;
+            font-size: 50px;
+            background-color: #2AA19C;
+            line-height: 50px;
+        }
     }
 }

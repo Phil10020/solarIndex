@@ -53,7 +53,7 @@
     <!-- [Start]Card  -->
     <section class=" solar position-relative" :class="{ cardOn : cardStaytus === true }">
       <div class="card-scrollBar shadow-lg round ">
-        <button @click="backToTop" class="tabBtn d-none" :class="{ btnShow : topBtn === true }"><i class="bi bi-chevron-bar-up"></i></button>
+        <button @click="backToTop" class="tabBtn d-none" :class="{ btnShow : topBtn === true }"><i class="bi bi-chevron-bar-up d-flex justify-content-center"></i></button>
         <div class="solar-card mb-3" style="max-width: 889px;" v-for="item in typeFilter" :key="item.id" @click.prevent="change(item.id)" :id="item.id">
             <div class="row g-0 solar-bg">
               <div class="col-md-4">

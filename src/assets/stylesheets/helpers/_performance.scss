@@ -54,6 +54,10 @@
     .me-3 {
     margin-right: 1rem;
     }
+    .mapHide {
+        display: none !important;
+    }
+
     .web-d-none {
     display: none;
     color: #000 ;
@@ -152,7 +156,7 @@
       }
     button {
         border: none;
-        background-color: #fff;
+        background: none;
     }
 
     .button_style {
@@ -218,6 +222,25 @@
                     padding-bottom: 5px;
                 }
             }
+        }
+        @media screen and (max-width:767px) {
+            &-relative {
+                position: relative;
+            }
+            &-absolute {
+                position: absolute;
+            }
+            &-bottom {
+                bottom: 70%;
+            }
+            &-choose {
+                width: 80%;
+            }
+
+            ul {
+                margin-top: 10%;
+            }
+
         }
     }
 
@@ -287,8 +310,14 @@
     }
     
     .map {
+        width: 45%;
         @media screen and (max-width: 768px) {
             display: none;
+            width: 100%;
+        }
+        &-position {
+            top: 0%;
+            right: 0%;
         }
         .bi-geo-alt-fill {
             color: #000;
@@ -300,9 +329,10 @@
         .mapShow {
             display: block !important;
         }
-        #fullscreen:fullscreen {
-            background-color: rgb(125, 180, 148);
+        &-height {
+            height: 100vh;
         }
+        
     }
 
     .mapOn {

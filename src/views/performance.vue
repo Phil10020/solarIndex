@@ -4,6 +4,7 @@
   <section
   class="banner"
   :style="{ background: 'url(' + banner + ')' }"
+  :class="{ mapHide: mapStaytus===true }"
   >
     <div class="text-white d-flex justify-content-center banner-column">
       <h1>太陽人實績</h1>
@@ -14,12 +15,12 @@
 
   <!-- [Start]Tab  -->
   <section class="tab">
-    <div class="d-flex flex-column align-items-center justify-content-center">
-      <div class="d-flex justify-content-center tab-choose shadow rounded mb-30">
+    <div class="d-flex flex-column align-items-center justify-content-center tab-relative">
+      <div class="d-flex justify-content-center tab-choose shadow rounded mb-30 tab-absolute tab-bottom" :class="{ mapHide: mapStaytus===true }">
         <button type="button" @click="tab(false)"><h4 :class="{ heighlight : !isShowInWeb }">台灣電廠</h4></button>
         <button type="button" @click="tab(true)"><h4 :class="{ heighlight : isShowInWeb }">日本電廠</h4></button>
       </div>
-      <ul class="d-flex flex-wrap" v-if="isShowInWeb == false">
+      <ul class="d-flex flex-wrap " v-if="isShowInWeb == false">
         <li :class="{ active : currentFilter === '' } " @click.prevent="filterCategory('')"><button type="button" >全部</button></li>
         <li :class="{ active : currentFilter === 'tpe' } " @click.prevent="filterCategory('tpe')"><button type="button" >台北</button></li>
         <li :class="{ active : currentFilter === 'tyn' }" @click.prevent="filterCategory('tyn')"><button type="button">桃園</button></li>
@@ -80,20 +81,22 @@
         </div>
       </div>
       <div class="d-flex justify-content-center d-md-none position-absolute btn-center">
-        <button type="button" class="button_style" @click="buttonStaytus(false)"><img :src="card.buttonIcon" alt="map_icon"> 地圖模式</button>
+        <button type="button" class="button_style" @click="buttonStaytus(false);"><img :src="card.buttonIcon" alt="map_icon"> 地圖模式</button>
       </div>
     </section>
       <!-- [End]Card  -->
 
     <!-- [Start]google map  -->
-    <section class="map" :class="{ mapOn : mapStaytus === true }" style="width:45%">
-      <div class="d-flex justify-content-center align-items-center" id="fullscreen">
-        <h1 class="d-flex flex-wrap">google-map
-          <div v-for="item in typeFilter" :key="item.id" class="d-none" :class="{ mapShow: mapFilter === item.id }"><i class="bi bi-geo-alt-fill" :class="{ mapActive : currentFilter === '' } "></i> {{ item.name }} </div>
-        </h1>
-      </div>
-      <div class="d-flex justify-content-center d-md-none">
-        <button type="button" id="fullscreen-button" class="button_style" @click="buttonMapStaytus(false)"><i class="bi bi-list-ul"></i> 列表模式</button>
+    <section class="map position-relative" :class="{ mapOn : mapStaytus === true }" id="fullscreen">
+      <div ref="mapFull">
+        <div class="d-flex justify-content-center align-items-center map-height" ref="mapFull">
+          <h1 class="d-flex flex-wrap">google-map
+            <div v-for="item in typeFilter" :key="item.id" class="d-none" :class="{ mapShow: mapFilter === item.id }"><i class="bi bi-geo-alt-fill" :class="{ mapActive : currentFilter === '' } "></i> {{ item.name }} </div>
+          </h1>
+        </div>
+        <div class="d-flex justify-content-end d-md-none position-absolute map-position">
+          <button id="fullscreen-button" type="button" class="button_style" @click="buttonMapStaytus(false)"><i class="bi bi-list-ul"></i> 列表模式</button>
+        </div>
       </div>
     </section>
     <!-- [End]google map  -->
@@ -101,7 +104,7 @@
 <!-- [end]card+map  -->
   <!-- [Start]footer  -->
   <section class="pb-82">
-    <footer>
+    <footer :class="{ mapHide: mapStaytus===true }">
       <div class="mb-45">
         <img class="img-fluid" :src="footer.footerLogo" alt="footer">
       </div>
@@ -289,15 +292,22 @@ export default {
       } else {
         this.topBtn = false
       }
+    },
+    screenWidth (e) {
+      if (document.body.clientWidth > 767) {
+        this.mapStaytus = false
+      }
     }
   },
   // 組件生成時監聽畫面寬度
   created () {
     window.addEventListener('scroll', this.myEventHandler)
+    window.addEventListener('resize', this.screenWidth)
   },
   // 組件銷毀時釋放內存
   unmounted () {
     window.removeEventListener('scroll', this.myEventHandler)
+    window.removeEventListener('resize', this.screenWidth)
   },
   // 渲染初始資料顯示畫面
   mounted () {

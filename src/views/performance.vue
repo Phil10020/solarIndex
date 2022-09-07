@@ -4,7 +4,7 @@
   <section
   class="banner"
   :style="{ background: 'url(' + banner + ')' }"
-  :class="{ mapHide: mapStaytus===true }"
+  :class="{ mapHide: mapClick===true }"
   >
     <div class="text-white d-flex justify-content-center banner-column">
       <h1>太陽人實績</h1>
@@ -16,7 +16,7 @@
   <!-- [Start]Tab  -->
   <section class="tab">
     <div class="d-flex flex-column align-items-center justify-content-center tab-relative">
-      <div class="d-flex justify-content-center tab-choose shadow rounded mb-30 tab-absolute tab-bottom" :class="{ mapHide: mapStaytus===true }">
+      <div class="d-flex justify-content-center tab-choose shadow rounded mb-30 tab-absolute tab-bottom" :class="{ mapHide: mapClick===true }">
         <button type="button" @click="tab(false)"><h4 :class="{ heighlight : !isShowInWeb }">台灣電廠</h4></button>
         <button type="button" @click="tab(true)"><h4 :class="{ heighlight : isShowInWeb }">日本電廠</h4></button>
       </div>
@@ -90,7 +90,11 @@
     <section class="map position-relative" :class="{ mapOn : mapStaytus === true }" id="fullscreen">
       <div ref="mapFull">
         <div class="d-flex justify-content-center align-items-center map-height" ref="mapFull">
-          <h1 class="d-flex flex-wrap">google-map
+          <h1 class="d-flex flex-wrap" style="width: 100%; height: auto">
+            <GoogleMap api-key="AIzaSyDY-TLsDy3imgioimj8-oFolszY4AfYDAk" style="width: 100%; height: 100vh" mapTypeId="terrain" :center="center" :zoom="4">
+              <Marker :options="{ position: center }" />
+              <Circle v-for="circle in circles" :options="circle" />
+            </GoogleMap>
             <div v-for="item in typeFilter" :key="item.id" class="d-none" :class="{ mapShow: mapFilter === item.id }"><i class="bi bi-geo-alt-fill" :class="{ mapActive : currentFilter === '' } "></i> {{ item.name }} </div>
           </h1>
         </div>
@@ -196,7 +200,18 @@
 </template>
 
 <script>
-export default {
+import { defineComponent } from 'vue'
+import { GoogleMap, Marker, Circle } from 'vue3-google-map'
+
+export default defineComponent({
+  components: { GoogleMap, Marker, Circle },
+  setup () {
+    const center = { lat: 25.06028906969831, lng: 121.56274049448633 }
+    const cities = {
+      
+    }
+    return { center, circles }
+  },
   name: 'performanceView',
   data () {
     return {
@@ -212,8 +227,8 @@ export default {
       footer: {
         footerLogo: require('../../public/images/social/footerLogo.svg')
       },
-      product: [{ name: '全部', type: '', id: '0' },
-        { name: '台北', type: 'tpe', id: '1' },
+      product: [{ name: '全部', type: '', id: '0', lat: '25.06028906969831', lng: '121.56274049448633' },
+        { name: '台北', type: 'tpe', id: '1', lat: '25.050969377003902', lng: '121.54212467525183' },
         { name: '桃園', type: 'tyn', id: '2' },
         { name: '新竹', type: 'hsz', id: '3' },
         { name: '苗栗', type: 'zmi', id: '4' },
@@ -255,10 +270,12 @@ export default {
     buttonStaytus (isActive) {
       this.mapStaytus = !isActive
       this.cardStaytus = !isActive
+      this.mapClick = !isActive
     },
     buttonMapStaytus (isActive) {
       this.mapStaytus = isActive
       this.cardStaytus = isActive
+      this.mapClick = isActive
     },
     change: function (test) {
       this.mapFilter = test
@@ -292,26 +309,19 @@ export default {
       } else {
         this.topBtn = false
       }
-    },
-    screenWidth (e) {
-      if (document.body.clientWidth > 767) {
-        this.mapStaytus = false
-      }
     }
   },
   // 組件生成時監聽畫面寬度
   created () {
     window.addEventListener('scroll', this.myEventHandler)
-    window.addEventListener('resize', this.screenWidth)
   },
   // 組件銷毀時釋放內存
   unmounted () {
     window.removeEventListener('scroll', this.myEventHandler)
-    window.removeEventListener('resize', this.screenWidth)
   },
   // 渲染初始資料顯示畫面
   mounted () {
     this.typeFilter = this.product
   }
-}
+})
 </script>

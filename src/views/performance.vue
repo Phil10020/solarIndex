@@ -91,9 +91,8 @@
       <div ref="mapFull">
         <div class="d-flex justify-content-center align-items-center map-height" ref="mapFull">
           <h1 class="d-flex flex-wrap" style="width: 100%; height: auto">
-            <GoogleMap api-key="AIzaSyDY-TLsDy3imgioimj8-oFolszY4AfYDAk" style="width: 100%; height: 100vh" mapTypeId="terrain" :center="center" :zoom="4">
-              <Marker :options="{ position: center }" />
-              <Circle v-for="circle in circles" :options="circle" />
+            <GoogleMap api-key="AIzaSyDY-TLsDy3imgioimj8-oFolszY4AfYDAk" style="width: 100%; height: 100vh" mapTypeId="terrain" :center="center" :zoom="15">
+              <Circle v-for="circle in circles" :options="circle" :key="circle.index"/>
             </GoogleMap>
             <div v-for="item in typeFilter" :key="item.id" class="d-none" :class="{ mapShow: mapFilter === item.id }"><i class="bi bi-geo-alt-fill" :class="{ mapActive : currentFilter === '' } "></i> {{ item.name }} </div>
           </h1>
@@ -201,14 +200,41 @@
 
 <script>
 import { defineComponent } from 'vue'
-import { GoogleMap, Marker, Circle } from 'vue3-google-map'
+import { GoogleMap, Circle } from 'vue3-google-map'
 
 export default defineComponent({
-  components: { GoogleMap, Marker, Circle },
+  components: { GoogleMap, Circle },
   setup () {
     const center = { lat: 25.06028906969831, lng: 121.56274049448633 }
     const cities = {
-      
+      chicago: {
+        center: { lat: 25.06993288021561, lng: 121.55237656340105 },
+        population: 10
+      },
+      newyork: {
+        center: { lat: 25.064013194515127, lng: 121.5534343529679 },
+        population: 30
+      },
+      losangeles: {
+        center: { lat: 24.983690859651343, lng: 121.30978936834545 },
+        population: 2
+      },
+      vancouver: {
+        center: { lat: 24.98174264414725, lng: 121.3153078668324 },
+        population: 3
+      }
+    }
+    const circles = {}
+    for (const key in cities) {
+      circles[key] = {
+        center: cities[key].center,
+        radius: Math.sqrt(cities[key].population) * 100,
+        strokeColor: '#FF0000',
+        strokeOpacity: 0.8,
+        strokeWeight: 2,
+        fillColor: '#FF0000',
+        fillOpacity: 0.35
+      }
     }
     return { center, circles }
   },

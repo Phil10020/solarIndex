@@ -91,13 +91,22 @@
       <div ref="mapFull">
         <div class="d-flex justify-content-center align-items-center map-height" ref="mapFull">
           <h1 class="d-flex flex-wrap" style="width: 100%; height: auto">
-            <GoogleMap api-key="AIzaSyDY-TLsDy3imgioimj8-oFolszY4AfYDAk" style="width: 100%; height: 100vh" :center="center" :zoom="10">
+            <GoogleMap api-key="AIzaSyDY-TLsDy3imgioimj8-oFolszY4AfYDAk" :draggable="true" style="width: 100%; height: 100vh" :center="center" :zoom="8">
               <MarkerCluster>
                 <!-- <Marker v-for="(m, i) in cities" :options="{ position: m}" :key="i"/> -->
-                <CustomMarker v-for="(m, i) in cities" :options="{ position: m, anchorPoint: 'BOTTOM_CENTER' }" :key="i">
+                <CustomMarker v-for=" m in typeFilter" :options="{position: m, markerOptions}" :key="m.id">
+                  <InfoWindow :options="{ position: m }">
+                    <div id="contet">
+                      <div id="siteNotice"></div>
+                      <h1 id="firstHeading" class="firstHeading"></h1>
+                      <div id="bodyContent">
+                        testwords
+                      </div>
+                    </div>
+                  </InfoWindow>
                   <div style="text-align: center">
-                    <div style="font-size: 1.125rem">Vuejs Amsterdam</div>
-                    <img :src="map.icon1" width="50" height="50" style="margin-top: 8px" />
+                    <div style="font-size: 1.125rem"></div>
+                    <img :src="mapImg.icon1" width="50" height="50" style="margin-top: 8px" />
                   </div>
                 </CustomMarker>
               </MarkerCluster>
@@ -208,30 +217,37 @@
 
 <script>
 import { defineComponent } from 'vue'
-import { GoogleMap, CustomMarker, MarkerCluster } from 'vue3-google-map'
+import { GoogleMap, CustomMarker, MarkerCluster, InfoWindow } from 'vue3-google-map'
 export default defineComponent({
-  components: { GoogleMap, CustomMarker, MarkerCluster },
-  setup () {
-    const center = { lat: 25.06028906969831, lng: 121.56274049448633 }
-    const cities = [
-      { lat: 25.059414384251326, lng: 121.5629228880385, type: 'info' },
-      { lat: 25.058481364297446, lng: 121.56193583523209, type: 'info' },
-      { lat: 25.058053727798242, lng: 121.56255810768886, type: 'info' },
-      { lat: 25.058714619940766, lng: 121.56286924391725, type: 'info' },
-      { lat: 25.050879721043408, lng: 121.56608674996336, type: 'info' },
-      { lat: 25.050597852400905, lng: 121.56556103702573, type: 'info' },
-      { lat: 25.04970364414221, lng: 121.56529281613919, type: 'info' },
-      { lat: 25.03990004026794, lng: 121.56672565420384, type: 'info' }
-    ]
-    return { center, cities }
-  },
+  components: { GoogleMap, CustomMarker, MarkerCluster, InfoWindow },
+  // setup () {
+  //   const center = { lat: 25.06028906969831, lng: 121.56274049448633 }
+  //   const cities = [
+  //     { lat: 25.059414384251326, lng: 121.5629228880385, type: 'info' },
+  //     { lat: 25.058481364297446, lng: 121.56193583523209, type: 'info' },
+  //     { lat: 25.058053727798242, lng: 121.56255810768886, type: 'info' },
+  //     { lat: 25.058714619940766, lng: 121.56286924391725, type: 'info' },
+  //     { lat: 25.050879721043408, lng: 121.56608674996336, type: 'info' },
+  //     { lat: 25.050597852400905, lng: 121.56556103702573, type: 'info' },
+  //     { lat: 25.04970364414221, lng: 121.56529281613919, type: 'info' },
+  //     { lat: 25.03990004026794, lng: 121.56672565420384, type: 'info' }
+  //   ]
+  //   const markerOptions = { anchorPoint: 'BOTTOM_CENTER' }
+  //   return { center, cities, markerOptions }
+  // },
   name: 'performanceView',
   data () {
     return {
-      banner: require('../../public/images/banner/performance_BN.png'),
-      map: {
+      // google map
+      center: {
+        lat: 24.15994867967149, lng: 120.6668839584927
+      },
+      markerOptions: { anchorPoint: 'BOTTOM_CENTER' },
+      mapImg: {
         icon1: require('../../public/images/performance/map_location.svg')
       },
+      // google map end
+      banner: require('../../public/images/banner/performance_BN.png'),
       card: {
         panels: require('../../public/images/performance/panels.png'),
         BG: require('../../public/images/performance/sun_bg.png'),
@@ -243,28 +259,28 @@ export default defineComponent({
       footer: {
         footerLogo: require('../../public/images/social/footerLogo.svg')
       },
-      product: [{ name: '全部', type: '', id: '0', lat: '25.06028906969831', lng: '121.56274049448633' },
-        { name: '台北', type: 'tpe', id: '1', lat: '25.050969377003902', lng: '121.54212467525183' },
-        { name: '桃園', type: 'tyn', id: '2' },
-        { name: '新竹', type: 'hsz', id: '3' },
-        { name: '苗栗', type: 'zmi', id: '4' },
-        { name: '台中', type: 'txg', id: '5' },
-        { name: '彰化', type: 'chw', id: '6' },
-        { name: '南投', type: 'ntc', id: '7' },
-        { name: '雲林', type: 'yun', id: '8' },
-        { name: '嘉義', type: 'cyi', id: '9' },
-        { name: '台南', type: 'tnn', id: '10' },
-        { name: '高雄', type: 'khh', id: '11' },
-        { name: '屏東', type: 'pif', id: '12' },
-        { name: '台東', type: 'ttt', id: '13' },
-        { name: '花蓮', type: 'hun', id: '14' },
-        { name: '宜蘭', type: 'ila', id: '15' },
-        { name: '桃園2', type: 'tyn', id: '16' },
-        { name: '桃園3', type: 'tyn', id: '17' },
-        { name: '桃園4', type: 'tyn', id: '18' },
-        { name: '彰化2', type: 'chw', id: '19' },
-        { name: '彰化3', type: 'chw', id: '20' },
-        { name: '高雄2', type: 'khh', id: '21' }
+      product: [{ name: '全部', type: '', id: '0', lat: 25.06028906969831, lng: 121.56274049448633 },
+        { name: '台北', type: 'tpe', id: '1', lat: 25.050969377003902, lng: 121.54212467525183 },
+        { name: '桃園', type: 'tyn', id: '2', lat: 24.986894047611, lng: 121.29388756392709 },
+        { name: '新竹', type: 'hsz', id: '3', lat: 24.800027720461806, lng: 121.01336006809437 },
+        { name: '苗栗', type: 'zmi', id: '4', lat: 24.566569753240113, lng: 120.82654144301092 },
+        { name: '台中', type: 'txg', id: '5', lat: 24.15994867967149, lng: 120.6668839584927 },
+        { name: '彰化', type: 'chw', id: '6', lat: 24.0673650117656, lng: 120.52227718237252 },
+        { name: '南投', type: 'ntc', id: '7', lat: 23.978378742377043, lng: 120.97973789965829 },
+        { name: '雲林', type: 'yun', id: '8', lat: 23.70919101917908, lng: 120.35397353588306 },
+        { name: '嘉義', type: 'cyi', id: '9', lat: 23.48572372036004, lng: 120.35196393217525 },
+        { name: '台南', type: 'tnn', id: '10', lat: 23.010328292432725, lng: 120.20262059791625 },
+        { name: '高雄', type: 'khh', id: '11', lat: 22.65144245079988, lng: 120.33657271721873 },
+        { name: '屏東', type: 'pif', id: '12', lat: 22.00523482142756, lng: 120.74237520494879 },
+        { name: '台東', type: 'ttt', id: '13', lat: 22.808441031271123, lng: 121.07113737207148 },
+        { name: '花蓮', type: 'hun', id: '14', lat: 24.00443050272153, lng: 121.58562650225669 },
+        { name: '宜蘭', type: 'ila', id: '15', lat: 24.676748834596715, lng: 121.77076723429016 },
+        { name: '桃園2', type: 'tyn', id: '16', lat: 24.98716147559075, lng: 121.29499263396606 },
+        { name: '桃園3', type: 'tyn', id: '17', lat: 24.98712743933471, lng: 121.29484779468909 },
+        { name: '桃園4', type: 'tyn', id: '18', lat: 24.987783851182293, lng: 121.29398412344504 },
+        { name: '彰化2', type: 'chw', id: '19', lat: 24.036327081938406, lng: 120.50013286625226 },
+        { name: '彰化3', type: 'chw', id: '20', lat: 24.056784742424483, lng: 120.46897632845513 },
+        { name: '高雄2', type: 'khh', id: '21', lat: 22.63995650299897, lng: 120.33446986549417 }
       ],
       typeFilter: [],
       isShowInWeb: false,
@@ -295,6 +311,8 @@ export default defineComponent({
     },
     change: function (test) {
       this.mapFilter = test
+      this.GoogleMap.MaxZoomStatus = '17'
+      console.log('111')
       this.mapId = this.typeFilter.filter((item) => {
         return item.id.includes(test)
       })
@@ -307,6 +325,7 @@ export default defineComponent({
     },
     // 列表地區篩選功能
     filterCategory: function (type) {
+      this.typeFilter = ''
       this.mapFilter = ''
       this.currentFilter = type
       this.typeFilter = this.product.filter((item) => {

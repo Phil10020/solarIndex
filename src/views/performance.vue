@@ -93,22 +93,34 @@
           <h1 class="d-flex flex-wrap" style="width: 100%; height: auto">
             <GoogleMap api-key="AIzaSyDY-TLsDy3imgioimj8-oFolszY4AfYDAk" :draggable="true" style="width: 100%; height: 100vh" :center="center" :zoom="8">
               <MarkerCluster>
-                <!-- <Marker v-for="(m, i) in cities" :options="{ position: m}" :key="i"/> -->
-                <CustomMarker v-for=" m in typeFilter" :options="{position: m, markerOptions}" :key="m.id">
-                  <InfoWindow :options="{ position: m }">
-                    <div id="contet">
-                      <div id="siteNotice"></div>
-                      <h1 id="firstHeading" class="firstHeading"></h1>
-                      <div id="bodyContent">
-                        testwords
-                      </div>
+                <Marker v-for=" m in typeFilter" :options="{position: m, markerOptions,icon: mapImg.icon1 }" :key="m.id">
+                  <InfoWindow>
+                    <div class="solar-card mb-3" style="max-width: 20rem;" @click.prevent="change(m.id)">
+                        <div class="row g-0 solar-bg">
+                          <div class="col-md-4" >
+                            <img :src="card.panels" style="width: 8rem" class="rounded" alt="太陽人一號">
+                          </div>
+                          <div class="col-md-8">
+                            <div class="card-body ">
+                              <p class="d-inline-flex card-text card-body-heighlight">屋頂型</p>
+                              <h6 class="card-title">太陽人一號</h6>
+                              <p class="card-text">{{ m.name }}</p>
+                              <div class="d-flex align-items-center">
+                                <div class="d-flex me-2">
+                                  <div class="me-1"><img src="../../public/images/performance/battery.svg" alt=""></div>
+                                  <p>總容量 : 11.90 KW</p>
+                                </div>
+                                <div class="d-flex">
+                                  <div class="me-1"><img src="../../public/images/performance/solar_icon.svg" alt=""></div>
+                                  <p>總片數 : {{ m.num }}片</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                     </div>
                   </InfoWindow>
-                  <div style="text-align: center">
-                    <div style="font-size: 1.125rem"></div>
-                    <img :src="mapImg.icon1" width="50" height="50" style="margin-top: 8px" />
-                  </div>
-                </CustomMarker>
+                </Marker>
               </MarkerCluster>
             </GoogleMap>
             <div v-for="item in typeFilter" :key="item.id" class="d-none" :class="{ mapShow: mapFilter === item.id }"><i class="bi bi-geo-alt-fill" :class="{ mapActive : currentFilter === '' } "></i> {{ item.name }} </div>
@@ -217,9 +229,9 @@
 
 <script>
 import { defineComponent } from 'vue'
-import { GoogleMap, CustomMarker, MarkerCluster, InfoWindow } from 'vue3-google-map'
+import { GoogleMap, Marker, MarkerCluster, InfoWindow } from 'vue3-google-map'
 export default defineComponent({
-  components: { GoogleMap, CustomMarker, MarkerCluster, InfoWindow },
+  components: { GoogleMap, Marker, MarkerCluster, InfoWindow },
   // setup () {
   //   const center = { lat: 25.06028906969831, lng: 121.56274049448633 }
   //   const cities = [
@@ -259,28 +271,28 @@ export default defineComponent({
       footer: {
         footerLogo: require('../../public/images/social/footerLogo.svg')
       },
-      product: [{ name: '全部', type: '', id: '0', lat: 25.06028906969831, lng: 121.56274049448633 },
-        { name: '台北', type: 'tpe', id: '1', lat: 25.050969377003902, lng: 121.54212467525183 },
-        { name: '桃園', type: 'tyn', id: '2', lat: 24.986894047611, lng: 121.29388756392709 },
-        { name: '新竹', type: 'hsz', id: '3', lat: 24.800027720461806, lng: 121.01336006809437 },
-        { name: '苗栗', type: 'zmi', id: '4', lat: 24.566569753240113, lng: 120.82654144301092 },
-        { name: '台中', type: 'txg', id: '5', lat: 24.15994867967149, lng: 120.6668839584927 },
-        { name: '彰化', type: 'chw', id: '6', lat: 24.0673650117656, lng: 120.52227718237252 },
-        { name: '南投', type: 'ntc', id: '7', lat: 23.978378742377043, lng: 120.97973789965829 },
-        { name: '雲林', type: 'yun', id: '8', lat: 23.70919101917908, lng: 120.35397353588306 },
-        { name: '嘉義', type: 'cyi', id: '9', lat: 23.48572372036004, lng: 120.35196393217525 },
-        { name: '台南', type: 'tnn', id: '10', lat: 23.010328292432725, lng: 120.20262059791625 },
-        { name: '高雄', type: 'khh', id: '11', lat: 22.65144245079988, lng: 120.33657271721873 },
-        { name: '屏東', type: 'pif', id: '12', lat: 22.00523482142756, lng: 120.74237520494879 },
-        { name: '台東', type: 'ttt', id: '13', lat: 22.808441031271123, lng: 121.07113737207148 },
-        { name: '花蓮', type: 'hun', id: '14', lat: 24.00443050272153, lng: 121.58562650225669 },
-        { name: '宜蘭', type: 'ila', id: '15', lat: 24.676748834596715, lng: 121.77076723429016 },
-        { name: '桃園2', type: 'tyn', id: '16', lat: 24.98716147559075, lng: 121.29499263396606 },
-        { name: '桃園3', type: 'tyn', id: '17', lat: 24.98712743933471, lng: 121.29484779468909 },
-        { name: '桃園4', type: 'tyn', id: '18', lat: 24.987783851182293, lng: 121.29398412344504 },
-        { name: '彰化2', type: 'chw', id: '19', lat: 24.036327081938406, lng: 120.50013286625226 },
-        { name: '彰化3', type: 'chw', id: '20', lat: 24.056784742424483, lng: 120.46897632845513 },
-        { name: '高雄2', type: 'khh', id: '21', lat: 22.63995650299897, lng: 120.33446986549417 }
+      product: [{ name: '全部', type: '', id: '0', lat: 25.06028906969831, address: '45645', num: 10, lng: 121.56274049448633 },
+        { name: '台北', type: 'tpe', id: '1', lat: 25.050969377003902, address: 'test1', num: 11, lng: 121.54212467525183 },
+        { name: '桃園', type: 'tyn', id: '2', lat: 24.986894047611, address: 'test2', num: 12, lng: 121.29388756392709 },
+        { name: '新竹', type: 'hsz', id: '3', lat: 24.800027720461806, address: 'test3', num: 13, lng: 121.01336006809437 },
+        { name: '苗栗', type: 'zmi', id: '4', lat: 24.566569753240113, address: 'test4', num: 14, lng: 120.82654144301092 },
+        { name: '台中', type: 'txg', id: '5', lat: 24.15994867967149, address: 'test5', num: 15, lng: 120.6668839584927 },
+        { name: '彰化', type: 'chw', id: '6', lat: 24.0673650117656, address: 'test6', num: 16, lng: 120.52227718237252 },
+        { name: '南投', type: 'ntc', id: '7', lat: 23.978378742377043, address: 'test7', num: 17, lng: 120.97973789965829 },
+        { name: '雲林', type: 'yun', id: '8', lat: 23.70919101917908, address: 'test8', num: 18, lng: 120.35397353588306 },
+        { name: '嘉義', type: 'cyi', id: '9', lat: 23.48572372036004, address: 'test9', num: 19, lng: 120.35196393217525 },
+        { name: '台南', type: 'tnn', id: '10', lat: 23.010328292432725, address: 'test10', num: 20, lng: 120.20262059791625 },
+        { name: '高雄', type: 'khh', id: '11', lat: 22.65144245079988, address: 'test11', num: 21, lng: 120.33657271721873 },
+        { name: '屏東', type: 'pif', id: '12', lat: 22.00523482142756, address: 'test12', num: 22, lng: 120.74237520494879 },
+        { name: '台東', type: 'ttt', id: '13', lat: 22.808441031271123, address: 'test13', num: 23, lng: 121.07113737207148 },
+        { name: '花蓮', type: 'hun', id: '14', lat: 24.00443050272153, address: 'test14', num: 24, lng: 121.58562650225669 },
+        { name: '宜蘭', type: 'ila', id: '15', lat: 24.676748834596715, address: 'test15', num: 25, lng: 121.77076723429016 },
+        { name: '桃園2', type: 'tyn', id: '16', lat: 24.98716147559075, address: 'test16', num: 26, lng: 121.29499263396606 },
+        { name: '桃園3', type: 'tyn', id: '17', lat: 24.98712743933471, address: 'test17', num: 27, lng: 121.29484779468909 },
+        { name: '桃園4', type: 'tyn', id: '18', lat: 24.987783851182293, address: 'test18', num: 28, lng: 121.29398412344504 },
+        { name: '彰化2', type: 'chw', id: '19', lat: 24.036327081938406, address: 'test19', num: 29, lng: 120.50013286625226 },
+        { name: '彰化3', type: 'chw', id: '20', lat: 24.056784742424483, address: 'test20', num: 30, lng: 120.46897632845513 },
+        { name: '高雄2', type: 'khh', id: '21', lat: 22.63995650299897, address: 'test21', num: 31, lng: 120.33446986549417 }
       ],
       typeFilter: [],
       isShowInWeb: false,

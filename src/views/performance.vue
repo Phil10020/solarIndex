@@ -91,10 +91,10 @@
       <div ref="mapFull">
         <div class="d-flex justify-content-center align-items-center map-height" ref="mapFull">
           <h1 class="d-flex flex-wrap" style="width: 100%; height: auto">
-            <GoogleMap api-key="AIzaSyDY-TLsDy3imgioimj8-oFolszY4AfYDAk" :draggable="true" style="width: 100%; height: 100vh" :center="center" :zoom="8">
+            <GoogleMap api-key="AIzaSyDY-TLsDy3imgioimj8-oFolszY4AfYDAk" :streetViewControl="false" :mapTypeControl="false" :draggable="true" style="width: 100%; height: 100vh" :center="center" :zoom="8">
               <MarkerCluster>
                 <Marker v-for=" m in typeFilter" :options="{position: m, markerOptions,icon: mapImg.icon1 }" :key="m.id">
-                  <InfoWindow>
+                  <InfoWindow :options="{ opened: true }">
                     <div class="solar-card mb-3" style="max-width: 20rem;" @click.prevent="change(m.id)">
                         <div class="row g-0 solar-bg">
                           <div class="col-md-4" >
@@ -323,7 +323,6 @@ export default defineComponent({
     },
     change: function (test) {
       this.mapFilter = test
-      this.GoogleMap.MaxZoomStatus = '17'
       console.log('111')
       this.mapId = this.typeFilter.filter((item) => {
         return item.id.includes(test)

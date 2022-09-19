@@ -21,11 +21,11 @@
         <button type="button" @click="tab(true)"><h4 :class="{ heighlight : isShowInWeb }">日本電廠</h4></button>
       </div>
       <ul class="d-flex flex-wrap " v-if="isShowInWeb == false">
-        <li :class="{ active : currentFilter === '' } " @click.prevent="filterCategory('')"><button type="button" >全部</button></li>
-        <li :class="{ active : currentFilter === 'tpe' } " @click.prevent="filterCategory('tpe')"><button type="button" >台北</button></li>
-        <li :class="{ active : currentFilter === 'tyn' }" @click.prevent="filterCategory('tyn')"><button type="button">桃園</button></li>
+        <li :class="{ active : areaFilter === '' } " @click.prevent="getDataName('')"><button type="button" >全部</button></li>
+        <li :class="{ active : currentFilter === 'tpe' } " @click.prevent="filterCategory('tpe'), getDataName()"><button type="button" >台北</button></li>
+        <li :class="{ active : areaFilter === '桃園市' }" @click.prevent="getDataName('桃園市')"><button type="button">桃園</button></li>
         <li :class="{ active : currentFilter === 'hsz' }" @click.prevent="filterCategory('hsz')"><button type="button">新竹</button></li>
-        <li :class="{ active : currentFilter === 'zmi' }" @click.prevent="filterCategory('zmi')"><button type="button">苗栗</button></li>
+        <li :class="{ active : areaFilter === '苗栗縣' }" @click.prevent="getDataName('苗栗縣')"><button type="button">苗栗</button></li>
         <li :class="{ active : currentFilter === 'txg' }" @click.prevent="filterCategory('txg')"><button type="button">台中</button></li>
         <li :class="{ active : currentFilter === 'chw' }" @click.prevent="filterCategory('chw')"><button type="button">彰化</button></li>
         <li :class="{ active : currentFilter === 'ntc' }" @click.prevent="filterCategory('ntc')"><button type="button">南投</button></li>
@@ -55,24 +55,24 @@
     <section class=" solar position-relative" :class="{ cardOn : cardStaytus === true }">
       <div class="card-scrollBar shadow-lg round ">
         <button @click="backToTop" class="tabBtn d-none" :class="{ btnShow : topBtn === true }"><i class="bi bi-chevron-bar-up d-flex justify-content-center"></i></button>
-        <div class="solar-card mb-3" style="max-width: 889px;" v-for="item in typeFilter" :key="item.id" @click.prevent="change(item.id)" :id="item.id">
+        <div class="solar-card mb-3" style="max-width: 889px;" v-for="item in areaName" :key="item.index+1" @click.prevent="change(item.pst_county)" :id="item.id">
             <div class="row g-0 solar-bg">
               <div class="col-md-4">
-                <img src="../../public/images/performance/panels.png" class="img-fluid rounded" alt="太陽人一號">
+                <img :src="'https://www.hellosolarman.com/' + item.pst_mpic"   class="img-fluid rounded" alt="太陽人一號">
               </div>
               <div class="col-md-8">
                 <div class="card-body ">
                   <p class="d-inline-flex card-text card-body-heighlight">屋頂型</p>
-                  <h4 class="card-title">太陽人一號</h4>
-                  <p class="card-text">{{ item.name }}</p>
+                  <h4 class="card-title">{{ item.pst_name }}</h4>
+                  <p class="card-text">{{ item.pst_district }}</p>
                   <div class="d-flex align-items-center">
                     <div class="d-flex me-2">
                       <div class="me-1"><img src="../../public/images/performance/battery.svg" alt=""></div>
-                      <p>總容量 : 11.90 KW</p>
+                      <p>總容量 : {{ item.kw_capacity }} KW</p>
                     </div>
                     <div class="d-flex">
                       <div class="me-1"><img src="../../public/images/performance/solar_icon.svg" alt=""></div>
-                      <p>總片數 : 35片</p>
+                      <p>總片數 : {{ item.pst_qutys }}片</p>
                     </div>
                   </div>
                 </div>
@@ -303,7 +303,10 @@ export default defineComponent({
       cardStaytus: false,
       topBtn: false,
       mapId: [],
-      mapFilter: ''
+      mapFilter: '',
+      productData: [],
+      areaName: {},
+      areaFilter: ''
     }
   },
   // 台灣 or 日本 列表顯示切換方法
@@ -333,6 +336,23 @@ export default defineComponent({
     },
     mapShow (isActive) {
       this.mapShowOn = isActive
+    },
+    // axios
+    getData () {
+      const url = 'https://solardata.hellosolarman.com/api/data/stations'
+      this.$http.get(url).then((res) => {
+        this.productData = res.data.filter((item) => {
+          return item.pst_mpic !== null
+        })
+      }).catch((err) => {
+        console.log(err)
+      })
+    },
+    getDataName (area) {
+      this.areaFilter = area
+      this.areaName = this.productData.filter((item) => {
+        return item.pst_county.includes(area)
+      })
     },
     // 列表地區篩選功能
     filterCategory: function (type) {
@@ -367,6 +387,7 @@ export default defineComponent({
   },
   // 渲染初始資料顯示畫面
   mounted () {
+    this.getData()
     this.typeFilter = this.product
   }
 })

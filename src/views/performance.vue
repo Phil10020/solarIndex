@@ -22,21 +22,21 @@
       </div>
       <ul class="d-flex flex-wrap " v-if="isShowInWeb == false">
         <li :class="{ active : areaFilter === '' } " @click.prevent="getDataName('')"><button type="button" >全部</button></li>
-        <li :class="{ active : currentFilter === 'tpe' } " @click.prevent="filterCategory('tpe'), getDataName()"><button type="button" >台北</button></li>
+        <li :class="{ active : areaFilter === '台北縣' } " @click.prevent="getDataName('台北縣')"><button type="button" >台北</button></li>
         <li :class="{ active : areaFilter === '桃園市' }" @click.prevent="getDataName('桃園市')"><button type="button">桃園</button></li>
-        <li :class="{ active : currentFilter === 'hsz' }" @click.prevent="filterCategory('hsz')"><button type="button">新竹</button></li>
+        <li :class="{ active : areaFilter === '新竹縣' }" @click.prevent="getDataName('新竹縣')"><button type="button">新竹</button></li>
         <li :class="{ active : areaFilter === '苗栗縣' }" @click.prevent="getDataName('苗栗縣')"><button type="button">苗栗</button></li>
-        <li :class="{ active : currentFilter === 'txg' }" @click.prevent="filterCategory('txg')"><button type="button">台中</button></li>
-        <li :class="{ active : currentFilter === 'chw' }" @click.prevent="filterCategory('chw')"><button type="button">彰化</button></li>
-        <li :class="{ active : currentFilter === 'ntc' }" @click.prevent="filterCategory('ntc')"><button type="button">南投</button></li>
-        <li :class="{ active : currentFilter === 'yun' }" @click.prevent="filterCategory('yun')"><button type="button">雲林</button></li>
-        <li :class="{ active : currentFilter === 'cyi' }" @click.prevent="filterCategory('cyi')"><button type="button">嘉義</button></li>
-        <li :class="{ active : currentFilter === 'tnn' }" @click.prevent="filterCategory('tnn')"><button type="button">台南</button></li>
-        <li :class="{ active : currentFilter === 'khh' }" @click.prevent="filterCategory('khh')"><button type="button">高雄</button></li>
-        <li :class="{ active : currentFilter === 'pif' }" @click.prevent="filterCategory('pif')"><button type="button">屏東</button></li>
-        <li :class="{ active : currentFilter === 'ttt' }" @click.prevent="filterCategory('ttt')"><button type="button">台東</button></li>
-        <li :class="{ active : currentFilter === 'hun' }" @click.prevent="filterCategory('hun')"><button type="button">花蓮</button></li>
-        <li :class="{ active : currentFilter === 'ila' }" @click.prevent="filterCategory('ila')"><button type="button">宜蘭</button></li>
+        <li :class="{ active : areaFilter === '臺中市' }" @click.prevent="getDataName('臺中市')"><button type="button">台中</button></li>
+        <li :class="{ active : areaFilter === '彰化縣' }" @click.prevent="getDataName('彰化縣')"><button type="button">彰化</button></li>
+        <li :class="{ active : areaFilter === '南投縣' }" @click.prevent="getDataName('南投縣')"><button type="button">南投</button></li>
+        <li :class="{ active : areaFilter === '雲林縣' }" @click.prevent="getDataName('雲林縣')"><button type="button">雲林</button></li>
+        <li :class="{ active : areaFilter === '嘉義縣' }" @click.prevent="getDataName('嘉義縣')"><button type="button">嘉義</button></li>
+        <li :class="{ active : areaFilter === '臺南市' }" @click.prevent="getDataName('臺南市')"><button type="button">台南</button></li>
+        <li :class="{ active : areaFilter === '高雄市' }" @click.prevent="getDataName('高雄市')"><button type="button">高雄</button></li>
+        <li :class="{ active : areaFilter === '屏東縣' }" @click.prevent="getDataName('屏東縣')"><button type="button">屏東</button></li>
+        <li :class="{ active : areaFilter === '台東縣' }" @click.prevent="getDataName('台東縣')"><button type="button">台東</button></li>
+        <li :class="{ active : areaFilter === '花蓮縣' }" @click.prevent="getDataName('花蓮縣')"><button type="button">花蓮</button></li>
+        <li :class="{ active : areaFilter === '宜蘭縣' }" @click.prevent="getDataName('宜蘭縣')"><button type="button">宜蘭</button></li>
       </ul>
       <ul class="d-flex" v-else>
         <li>日本1</li>
@@ -50,12 +50,12 @@
   <!-- [End]Tab  -->
 
 <!-- [Start]card+map  -->
-  <section class="d-flex justify-content-cneter box-padding position-relative">
+  <section class="d-flex justify-content-center box-padding position-relative">
     <!-- [Start]Card  -->
-    <section class=" solar position-relative" :class="{ cardOn : cardStaytus === true }">
+    <section  style="background-color: rgb(208 249 209);" class=" solar position-relative" :class="{ cardOn : cardStaytus === true }">
       <div class="card-scrollBar shadow-lg round ">
         <button @click="backToTop" class="tabBtn d-none" :class="{ btnShow : topBtn === true }"><i class="bi bi-chevron-bar-up d-flex justify-content-center"></i></button>
-        <div class="solar-card mb-3" style="max-width: 889px;" v-for="item in areaName" :key="item.index+1" @click.prevent="change(item.pst_county)" :id="item.id">
+        <div class="solar-card mb-3" style="max-width: 889px;" v-for="item in areaName" :key="item.pst_address" @click.prevent="change(item.pst_county)" :id="item.id">
             <div class="row g-0 solar-bg">
               <div class="col-md-4">
                 <img :src="'https://www.hellosolarman.com/' + item.pst_mpic"   class="img-fluid rounded" alt="太陽人一號">
@@ -87,7 +87,7 @@
       <!-- [End]Card  -->
 
     <!-- [Start]google map  -->
-    <section class="map position-relative" :class="{ mapOn : mapStaytus === true }" id="fullscreen">
+    <section style="background-color: rgb(0 249 209);" class="map position-relative" :class="{ mapOn : mapStaytus === true }" id="fullscreen">
       <div ref="mapFull">
         <div class="d-flex justify-content-center align-items-center map-height" ref="mapFull">
           <h1 class="d-flex flex-wrap" style="width: 100%; height: auto">
@@ -232,21 +232,6 @@ import { defineComponent } from 'vue'
 import { GoogleMap, Marker, MarkerCluster, InfoWindow } from 'vue3-google-map'
 export default defineComponent({
   components: { GoogleMap, Marker, MarkerCluster, InfoWindow },
-  // setup () {
-  //   const center = { lat: 25.06028906969831, lng: 121.56274049448633 }
-  //   const cities = [
-  //     { lat: 25.059414384251326, lng: 121.5629228880385, type: 'info' },
-  //     { lat: 25.058481364297446, lng: 121.56193583523209, type: 'info' },
-  //     { lat: 25.058053727798242, lng: 121.56255810768886, type: 'info' },
-  //     { lat: 25.058714619940766, lng: 121.56286924391725, type: 'info' },
-  //     { lat: 25.050879721043408, lng: 121.56608674996336, type: 'info' },
-  //     { lat: 25.050597852400905, lng: 121.56556103702573, type: 'info' },
-  //     { lat: 25.04970364414221, lng: 121.56529281613919, type: 'info' },
-  //     { lat: 25.03990004026794, lng: 121.56672565420384, type: 'info' }
-  //   ]
-  //   const markerOptions = { anchorPoint: 'BOTTOM_CENTER' }
-  //   return { center, cities, markerOptions }
-  // },
   name: 'performanceView',
   data () {
     return {
@@ -305,7 +290,7 @@ export default defineComponent({
       mapId: [],
       mapFilter: '',
       productData: [],
-      areaName: {},
+      areaName: [],
       areaFilter: ''
     }
   },
@@ -326,7 +311,6 @@ export default defineComponent({
     },
     change: function (test) {
       this.mapFilter = test
-      console.log('111')
       this.mapId = this.typeFilter.filter((item) => {
         return item.id.includes(test)
       })
@@ -340,17 +324,21 @@ export default defineComponent({
     // axios
     getData () {
       const url = 'https://solardata.hellosolarman.com/api/data/stations'
-      this.$http.get(url).then((res) => {
-        this.productData = res.data.filter((item) => {
-          return item.pst_mpic !== null
+      this.$http.get(url)
+        .then((res) => {
+          this.productData = res.data.filter((item) => { return item.pst_mpic !== null })
         })
-      }).catch((err) => {
-        console.log(err)
-      })
+        .then(() => { return this.getDataName('') })
+        .catch((err) => {
+          console.log(err)
+        })
     },
     getDataName (area) {
+      console.log('111')
+      this.areaName = []
       this.areaFilter = area
       this.areaName = this.productData.filter((item) => {
+        console.log('get')
         return item.pst_county.includes(area)
       })
     },
@@ -380,6 +368,7 @@ export default defineComponent({
   // 組件生成時監聽畫面寬度
   created () {
     window.addEventListener('scroll', this.myEventHandler)
+    this.getData()
   },
   // 組件銷毀時釋放內存
   unmounted () {
@@ -387,7 +376,6 @@ export default defineComponent({
   },
   // 渲染初始資料顯示畫面
   mounted () {
-    this.getData()
     this.typeFilter = this.product
   }
 })

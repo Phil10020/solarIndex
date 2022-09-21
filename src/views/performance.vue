@@ -52,27 +52,27 @@
 <!-- [Start]card+map  -->
   <section class="d-flex justify-content-center box-padding position-relative">
     <!-- [Start]Card  -->
-    <section  style="background-color: rgb(208 249 209);" class=" solar position-relative" :class="{ cardOn : cardStaytus === true }">
+    <section class=" solar position-relative" :class="{ cardOn : cardStaytus === true }">
       <div class="card-scrollBar shadow-lg round ">
         <button @click="backToTop" class="tabBtn d-none" :class="{ btnShow : topBtn === true }"><i class="bi bi-chevron-bar-up d-flex justify-content-center"></i></button>
-        <div class="solar-card mb-3" style="max-width: 889px;" v-for="item in areaName" :key="item.pst_address" @click.prevent="change(item.pst_county)" :id="item.id">
+        <div class="solar-card mb-3" style="max-width: 889px;" v-for="item in areaName" :key="item.address" @click.prevent="change(item.country)">
             <div class="row g-0 solar-bg">
               <div class="col-md-4">
-                <img :src="'https://www.hellosolarman.com/' + item.pst_mpic"   class="img-fluid rounded" alt="太陽人一號">
+                <img :src="'https://www.hellosolarman.com/' + item.mpic"   class="img-fluid rounded" alt="{{ item.name }}">
               </div>
               <div class="col-md-8">
                 <div class="card-body ">
                   <p class="d-inline-flex card-text card-body-heighlight">屋頂型</p>
-                  <h4 class="card-title">{{ item.pst_name }}</h4>
-                  <p class="card-text">{{ item.pst_district }}</p>
+                  <h4 class="card-title">{{ item.name }}</h4>
+                  <p class="card-text">{{ item.district }}</p>
                   <div class="d-flex align-items-center">
                     <div class="d-flex me-2">
                       <div class="me-1"><img src="../../public/images/performance/battery.svg" alt=""></div>
-                      <p>總容量 : {{ item.kw_capacity }} KW</p>
+                      <p>總容量 : {{ item.kw }} KW</p>
                     </div>
                     <div class="d-flex">
                       <div class="me-1"><img src="../../public/images/performance/solar_icon.svg" alt=""></div>
-                      <p>總片數 : {{ item.pst_qutys }}片</p>
+                      <p>總片數 : {{ item.num }}片</p>
                     </div>
                   </div>
                 </div>
@@ -93,22 +93,22 @@
           <h1 class="d-flex flex-wrap" style="width: 100%; height: auto">
             <GoogleMap api-key="AIzaSyDY-TLsDy3imgioimj8-oFolszY4AfYDAk" :streetViewControl="false" :mapTypeControl="false" :draggable="true" style="width: 100%; height: 100vh" :center="center" :zoom="8">
               <MarkerCluster>
-                <Marker v-for=" m in typeFilter" :options="{position: m, markerOptions,icon: mapImg.icon1 }" :key="m.id">
+                <Marker v-for=" m in areaName" :options="{position: m, markerOptions,icon: mapImg.icon1 }" :key="m.address">
                   <InfoWindow :options="{ opened: true }">
                     <div class="solar-card mb-3" style="max-width: 20rem;" @click.prevent="change(m.id)">
                         <div class="row g-0 solar-bg">
                           <div class="col-md-4" >
-                            <img :src="card.panels" style="width: 8rem" class="rounded" alt="太陽人一號">
+                            <img :src="'https://www.hellosolarman.com/' + m.mpic" style="width: 8rem" class="rounded" alt="太陽人一號">
                           </div>
                           <div class="col-md-8">
                             <div class="card-body ">
                               <p class="d-inline-flex card-text card-body-heighlight">屋頂型</p>
-                              <h6 class="card-title">太陽人一號</h6>
-                              <p class="card-text">{{ m.name }}</p>
+                              <h6 class="card-title">{{ m.name }}</h6>
+                              <p class="card-text">{{ m.district }}</p>
                               <div class="d-flex align-items-center">
                                 <div class="d-flex me-2">
                                   <div class="me-1"><img src="../../public/images/performance/battery.svg" alt=""></div>
-                                  <p>總容量 : 11.90 KW</p>
+                                  <p>總容量 : {{ m.kw }} KW</p>
                                 </div>
                                 <div class="d-flex">
                                   <div class="me-1"><img src="../../public/images/performance/solar_icon.svg" alt=""></div>
@@ -291,7 +291,8 @@ export default defineComponent({
       mapFilter: '',
       productData: [],
       areaName: [],
-      areaFilter: ''
+      areaFilter: '',
+      newMapArray: []
     }
   },
   // 台灣 or 日本 列表顯示切換方法
@@ -328,18 +329,17 @@ export default defineComponent({
         .then((res) => {
           this.productData = res.data.filter((item) => { return item.pst_mpic !== null })
         })
+        .then(() => { return this.googleMapForeach() })
         .then(() => { return this.getDataName('') })
         .catch((err) => {
           console.log(err)
         })
     },
     getDataName (area) {
-      console.log('111')
       this.areaName = []
       this.areaFilter = area
-      this.areaName = this.productData.filter((item) => {
-        console.log('get')
-        return item.pst_county.includes(area)
+      this.areaName = this.newMapArray.filter((item) => {
+        return item.country.includes(area)
       })
     },
     // 列表地區篩選功能
@@ -363,6 +363,16 @@ export default defineComponent({
       } else {
         this.topBtn = false
       }
+    },
+    // googleMap陣列
+    googleMapForeach () {
+      this.productData.forEach((item) => {
+        const x = item.latitude
+        const y = item.longitude
+        // item.lat = parseFloat(x)
+        // item.lng = parseFloat(y)
+        this.newMapArray.push({ lat: parseFloat(x), lng: parseFloat(y), kw: item.kw_capacity, address: item.pst_address, country: item.pst_county, district: item.pst_district, mpic: item.pst_mpic, name: item.pst_name, num: item.pst_qutys })
+      })
     }
   },
   // 組件生成時監聽畫面寬度
@@ -376,7 +386,7 @@ export default defineComponent({
   },
   // 渲染初始資料顯示畫面
   mounted () {
-    this.typeFilter = this.product
+    this.areaName = this.newMapArray
   }
 })
 </script>

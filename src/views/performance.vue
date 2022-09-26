@@ -55,7 +55,7 @@
     <section class=" solar position-relative" :class="{ cardOn : cardStaytus === true }">
       <div class="card-scrollBar shadow-lg round ">
         <button @click="backToTop" class="tabBtn d-none" :class="{ btnShow : topBtn === true }"><i class="bi bi-chevron-bar-up d-flex justify-content-center"></i></button>
-        <div class="solar-card mb-3" style="max-width: 889px;" v-for="item in areaName" :key="item.address" @click.prevent="change(item.country)">
+        <div class="solar-card mb-3" style="max-width: 889px;" v-for="(item, index) in mapData" :key="index" @click.prevent="change(item.country)">
             <div class="row g-0 solar-bg">
               <div class="col-md-4">
                 <img :src="'https://www.hellosolarman.com/' + item.mpic"   class="img-fluid rounded" alt="{{ item.name }}">
@@ -93,7 +93,7 @@
           <h1 class="d-flex flex-wrap" style="width: 100%; height: auto">
             <GoogleMap api-key="AIzaSyDY-TLsDy3imgioimj8-oFolszY4AfYDAk" :streetViewControl="false" :mapTypeControl="false" :draggable="true" style="width: 100%; height: 100vh" :center="center" :zoom="8">
               <MarkerCluster>
-                <Marker v-for=" m in areaName" :options="{position: m, markerOptions,icon: mapImg.icon1 }" :key="m.address">
+                <Marker v-for=" (m, index) in mapData" :options="{position: m, markerOptions,icon: mapImg.icon1 }" :key="index">
                   <InfoWindow :options="{ opened: true }">
                     <div class="solar-card mb-3" style="max-width: 20rem;" @click.prevent="change(m.id)">
                         <div class="row g-0 solar-bg">
@@ -290,7 +290,7 @@ export default defineComponent({
       mapId: [],
       mapFilter: '',
       productData: [],
-      areaName: [],
+      mapData: [],
       areaFilter: '',
       newMapArray: []
     }
@@ -336,9 +336,9 @@ export default defineComponent({
         })
     },
     getDataName (area) {
-      this.areaName = []
+      this.mapData = []
       this.areaFilter = area
-      this.areaName = this.newMapArray.filter((item) => {
+      this.mapData = this.newMapArray.filter((item) => {
         return item.country.includes(area)
       })
     },
@@ -386,7 +386,7 @@ export default defineComponent({
   },
   // 渲染初始資料顯示畫面
   mounted () {
-    this.areaName = this.newMapArray
+    this.mapData = this.newMapArray
   }
 })
 </script>

@@ -55,7 +55,7 @@
     <section class=" solar position-relative" :class="{ cardOn : cardStaytus === true }">
       <div class="card-scrollBar shadow-lg round ">
         <button @click="backToTop" class="tabBtn d-none" :class="{ btnShow : topBtn === true }"><i class="bi bi-chevron-bar-up d-flex justify-content-center"></i></button>
-        <div class="solar-card mb-3" style="max-width: 889px;" v-for="(item, index) in mapData" :key="index" @click.prevent="change(item.country)">
+        <div class="solar-card mb-3" style="max-width: 889px;" v-for="(item, index) in mapData" :key="index" @click.prevent="change(item.country);openInfoWindow(item.index)">
             <div class="row g-0 solar-bg">
               <div class="col-md-4">
                 <img :src="'https://www.hellosolarman.com/' + item.mpic"   class="img-fluid rounded" alt="{{ item.name }}">
@@ -312,6 +312,7 @@ export default defineComponent({
     },
     change: function (test) {
       this.mapFilter = test
+      console.log('123')
       this.mapId = this.typeFilter.filter((item) => {
         return item.id.includes(test)
       })
@@ -355,6 +356,11 @@ export default defineComponent({
     backToTop (isActive) {
       document.body.scrollTop = 0
       document.documentElement.scrollTop = 0
+    },
+    openInfoWindow () {
+      this.InfoWindow.open({
+        anchor: this.Marker
+      })
     },
     // 監聽滾動值並顯示向上選項
     myEventHandler (e) {

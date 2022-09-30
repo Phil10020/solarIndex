@@ -94,9 +94,9 @@
             <GMapMap :center="center"
               :options="options"
               :zoom="8" map-type-id="terrain" style="width: 50vw; height: 100vh">
-                <GMapCluster :zoomOnClick="true">
-                  <GMapMarker :icon="icon" :key="index" v-for="(m, index) in mapData" :position="m.position" :clickable="true" :draggable="true"
-                    @click="center = m.position" />
+                <GMapCluster :zoomOnClick="true" :maxZoom="zoom" :minimumClusterSize="2" :styles="clusterIcon">
+                  <GMapMarker :icon="mapImg.icon1" :key="index" v-for="(m, index) in mapData" :position="m.position" :clickable="true" :draggable="true"
+          @click="center=m.position" />
                 </GMapCluster>
             </GMapMap>
             <!-- <GMapMap :streetViewControl="false" :mapTypeControl="false" :draggable="true" style="width: 100%; height: 100vh" :center="center" :zoom="mapSize">
@@ -256,6 +256,15 @@ export default ({
         rotateControl: true,
         fullscreenControl: true
       },
+      clusterIcon: [
+        {
+          textColor: 'black',
+          url: require('../../public/images/performance/map_location_nolight.svg'),
+          height: 50,
+          width: 50,
+          textSize: 20
+        }
+      ],
       // google map end
       banner: require('../../public/images/banner/performance_BN.png'),
       card: {
@@ -392,7 +401,7 @@ export default ({
         const y = item.longitude
         // item.lat = parseFloat(x)
         // item.lng = parseFloat(y)
-        this.newMapArray.push({ lat: parseFloat(x), lng: parseFloat(y), kw: item.kw_capacity, address: item.pst_address, country: item.pst_county, district: item.pst_district, mpic: item.pst_mpic, name: item.pst_name, num: item.pst_qutys })
+        this.newMapArray.push({ position: { lat: parseFloat(x), lng: parseFloat(y) }, kw: item.kw_capacity, address: item.pst_address, country: item.pst_county, district: item.pst_district, mpic: item.pst_mpic, name: item.pst_name, num: item.pst_qutys })
       })
     }
   },

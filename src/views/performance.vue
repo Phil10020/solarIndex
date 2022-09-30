@@ -55,7 +55,7 @@
     <section class=" solar position-relative" :class="{ cardOn : cardStaytus === true }">
       <div class="card-scrollBar shadow-lg round ">
         <button @click="backToTop" class="tabBtn d-none" :class="{ btnShow : topBtn === true }"><i class="bi bi-chevron-bar-up d-flex justify-content-center"></i></button>
-        <div class="solar-card mb-3" style="max-width: 889px;" v-for="(item, index) in mapData" :key="index" @click.prevent="change(item.country)">
+        <div class="solar-card mb-3" style="max-width: 889px;" v-for="(item, index) in mapData" :key="index" @click.prevent="change(item.country);openMarker(index);center= item.position">
             <div class="row g-0 solar-bg">
               <div class="col-md-4">
                 <img :src="'https://www.hellosolarman.com/' + item.mpic"   class="img-fluid rounded" alt="{{ item.name }}">
@@ -93,10 +93,37 @@
           <h1 class="d-flex flex-wrap" style="width: 100%; height: auto">
             <GMapMap :center="center"
               :options="options"
-              :zoom="8" map-type-id="terrain" style="width: 50vw; height: 100vh">
-                <GMapCluster :zoomOnClick="true" :maxZoom="zoom" :minimumClusterSize="2" :styles="clusterIcon">
+              :zoom="zoom" map-type-id="terrain" style="width: 50vw; height: 100vh">
+                <GMapCluster :zoomOnClick="true" :minimumClusterSize="5" :styles="clusterIcon">
                   <GMapMarker :icon="mapImg.icon1" :key="index" v-for="(m, index) in mapData" :position="m.position" :clickable="true" :draggable="true"
-          @click="center=m.position" />
+          @click="center=m.position;openMarker(index)" @closeclick="openMarker(null)">
+                    <GMapInfoWindow :closeclick="true" @closeclick="openMarker(null)" :opened="openedMarkerID === index">
+                      <div class="solar-card mb-3" style="max-width: 20rem;" @click.prevent="change(m.id)">
+                          <div class="row g-0 solar-bg">
+                            <div class="col-md-4" >
+                              <img :src="'https://www.hellosolarman.com/' + m.mpic" style="width: 8rem" class="rounded" alt="太陽人一號">
+                            </div>
+                            <div class="col-md-8">
+                              <div class="card-body ">
+                                <p class="d-inline-flex card-text card-body-heighlight">屋頂型</p>
+                                <h6 class="card-title">{{ m.name }}</h6>
+                                <p class="card-text">{{ m.district }}</p>
+                                <div class="d-flex align-items-center">
+                                  <div class="d-flex me-2">
+                                    <div class="me-1"><img src="../../public/images/performance/battery.svg" alt=""></div>
+                                    <p>總容量 : {{ m.kw }} KW</p>
+                                  </div>
+                                  <div class="d-flex">
+                                    <div class="me-1"><img src="../../public/images/performance/solar_icon.svg" alt=""></div>
+                                    <p>總片數 : {{ m.num }}片</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                      </div>
+                    </GMapInfoWindow>
+                  </GMapMarker>
                 </GMapCluster>
             </GMapMap>
             <!-- <GMapMap :streetViewControl="false" :mapTypeControl="false" :draggable="true" style="width: 100%; height: 100vh" :center="center" :zoom="mapSize">
@@ -247,14 +274,14 @@ export default ({
       mapImg: {
         icon1: require('../../public/images/performance/map_location.svg')
       },
-      mapSize: 8,
       options: {
         zoomControl: true,
         mapTypeControl: false,
         scaleControl: true,
         streetViewControl: false,
         rotateControl: true,
-        fullscreenControl: true
+        fullscreenControl: true,
+        zoom: 8
       },
       clusterIcon: [
         {
@@ -265,6 +292,7 @@ export default ({
           textSize: 20
         }
       ],
+      openedMarkerID: null,
       // google map end
       banner: require('../../public/images/banner/performance_BN.png'),
       card: {
@@ -359,6 +387,7 @@ export default ({
         })
     },
     getDataName (area) {
+      this.zoom = 8
       this.mapData = []
       this.areaFilter = area
       // pop null country
@@ -403,6 +432,11 @@ export default ({
         // item.lng = parseFloat(y)
         this.newMapArray.push({ position: { lat: parseFloat(x), lng: parseFloat(y) }, kw: item.kw_capacity, address: item.pst_address, country: item.pst_county, district: item.pst_district, mpic: item.pst_mpic, name: item.pst_name, num: item.pst_qutys })
       })
+    },
+    openMarker (index) {
+      this.openedMarkerID = index
+      this.zoom = 16
+      console.log(index)
     }
   },
   // 組件生成時監聽畫面寬度

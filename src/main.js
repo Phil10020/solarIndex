@@ -30,7 +30,8 @@ app.component('font-awesome-icon', FontAwesomeIcon)
 app.use(VueGoogleMaps, {
   load: {
     key: 'AIzaSyDY-TLsDy3imgioimj8-oFolszY4AfYDAk'
-  }
+  },
+  autobindAllEvents: true
 })
 app.use(router)
 app.mount('#app')

@@ -22,7 +22,7 @@
       </div>
       <ul class="d-flex flex-wrap " v-if="isShowInWeb == false">
         <li :class="{ active : areaFilter === '' } " @click.prevent="getDataName('')"><button type="button" >全部</button></li>
-        <li :class="{ active : areaFilter === '台北縣' } " @click.prevent="getDataName('台北縣')"><button type="button" >台北</button></li>
+        <li :class="{ active : areaFilter === '台北市' } " @click.prevent="getDataName('台北市')"><button type="button" >台北</button></li>
         <li :class="{ active : areaFilter === '桃園市' }" @click.prevent="getDataName('桃園市')"><button type="button">桃園</button></li>
         <li :class="{ active : areaFilter === '新竹縣' }" @click.prevent="getDataName('新竹縣')"><button type="button">新竹</button></li>
         <li :class="{ active : areaFilter === '苗栗縣' }" @click.prevent="getDataName('苗栗縣')"><button type="button">苗栗</button></li>
@@ -93,32 +93,28 @@
           <h1 class="d-flex flex-wrap" style="width: 100%; height: auto">
             <GMapMap :center="center"
               :options="options"
-              :zoom="zoom" map-type-id="terrain" style="width: 50vw; height: 100vh">
-                <GMapCluster :zoomOnClick="true" :minimumClusterSize="5" :styles="clusterIcon">
+              :zoom="zoom" map-type-id="roadmap" style="width: 50vw; height: 100vh">
+                <GMapCluster :zoomOnClick="true" :minimumClusterSize="4" :styles="clusterIcon">
                   <GMapMarker :icon="mapImg.icon1" :key="index" v-for="(m, index) in mapData" :position="m.position" :clickable="true" :draggable="true"
           @click="center=m.position;openMarker(index)" @closeclick="openMarker(null)">
                     <GMapInfoWindow :closeclick="true" @closeclick="openMarker(null)" :opened="openedMarkerID === index">
-                      <div class="solar-card mb-3" style="max-width: 20rem;" @click.prevent="change(m.id)">
+                      <div class="solar-card" style="max-width: 21rem;" @click.prevent="change(m.id)">
                           <div class="row g-0 solar-bg">
                             <div class="col-md-4" >
-                              <img :src="'https://www.hellosolarman.com/' + m.mpic" style="width: 8rem" class="rounded" alt="太陽人一號">
+                              <img :src="'https://www.hellosolarman.com/' + m.mpic" style="height: 5rem" class="rounded" alt="太陽人一號">
                             </div>
-                            <div class="col-md-8">
-                              <div class="card-body ">
+                            <div class="col-md-6">
+                              <div class="d-flex flex-wrap">
                                 <p class="d-inline-flex card-text card-body-heighlight">屋頂型</p>
                                 <h6 class="card-title">{{ m.name }}</h6>
-                                <p class="card-text">{{ m.district }}</p>
-                                <div class="d-flex align-items-center">
-                                  <div class="d-flex me-2">
-                                    <div class="me-1"><img src="../../public/images/performance/battery.svg" alt=""></div>
-                                    <p>總容量 : {{ m.kw }} KW</p>
-                                  </div>
-                                  <div class="d-flex">
-                                    <div class="me-1"><img src="../../public/images/performance/solar_icon.svg" alt=""></div>
-                                    <p>總片數 : {{ m.num }}片</p>
-                                  </div>
+                                <div class="d-flex flex-wrap">
+                                  <p class="card-text">{{ m.district }}</p>
+                                  <p class="pstLine">總片數 : {{ m.num }}片</p>
                                 </div>
                               </div>
+                            </div>
+                            <div class="col-md-2 d-flex align-items-center">
+                              <button><img :src="mapImg.vector" alt=""/></button>
                             </div>
                           </div>
                       </div>
@@ -126,38 +122,6 @@
                   </GMapMarker>
                 </GMapCluster>
             </GMapMap>
-            <!-- <GMapMap :streetViewControl="false" :mapTypeControl="false" :draggable="true" style="width: 100%; height: 100vh" :center="center" :zoom="mapSize">
-              <GMapCluster>
-                <GMapMarker v-for=" (m, index) in mapData" :options="{position: m, markerOptions,icon: mapImg.icon1 }" :key="index">
-                  <GMapInfoWindow :opened="true">
-                    <div class="solar-card mb-3" style="max-width: 20rem;" @click.prevent="change(m.id)">
-                        <div class="row g-0 solar-bg">
-                          <div class="col-md-4" >
-                            <img :src="'https://www.hellosolarman.com/' + m.mpic" style="width: 8rem" class="rounded" alt="太陽人一號">
-                          </div>
-                          <div class="col-md-8">
-                            <div class="card-body ">
-                              <p class="d-inline-flex card-text card-body-heighlight">屋頂型</p>
-                              <h6 class="card-title">{{ m.name }}</h6>
-                              <p class="card-text">{{ m.district }}</p>
-                              <div class="d-flex align-items-center">
-                                <div class="d-flex me-2">
-                                  <div class="me-1"><img src="../../public/images/performance/battery.svg" alt=""></div>
-                                  <p>總容量 : {{ m.kw }} KW</p>
-                                </div>
-                                <div class="d-flex">
-                                  <div class="me-1"><img src="../../public/images/performance/solar_icon.svg" alt=""></div>
-                                  <p>總片數 : {{ m.num }}片</p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                    </div>
-                  </GMapInfoWindow>
-                </GMapMarker>
-              </GMapCluster>
-            </GMapMap> -->
             <div v-for="item in typeFilter" :key="item.id" class="d-none" :class="{ mapShow: mapFilter === item.id }"><i class="bi bi-geo-alt-fill" :class="{ mapActive : currentFilter === '' } "></i> {{ item.name }} </div>
           </h1>
         </div>
@@ -272,7 +236,8 @@ export default ({
         lat: 24.15994867967149, lng: 120.6668839584927
       },
       mapImg: {
-        icon1: require('../../public/images/performance/map_location.svg')
+        icon1: require('../../public/images/performance/map_location.svg'),
+        vector: require('../../public/images/performance/vector.png')
       },
       options: {
         zoomControl: true,
@@ -281,7 +246,8 @@ export default ({
         streetViewControl: false,
         rotateControl: true,
         fullscreenControl: true,
-        zoom: 8
+        zoom: 8,
+        clickableIcons: false
       },
       clusterIcon: [
         {
@@ -289,7 +255,8 @@ export default ({
           url: require('../../public/images/performance/map_location_nolight.svg'),
           height: 50,
           width: 50,
-          textSize: 20
+          textSize: 20,
+          anchorText: [12, 0]
         }
       ],
       openedMarkerID: null,
@@ -378,7 +345,7 @@ export default ({
       const url = 'https://solardata.hellosolarman.com/api/data/stations'
       this.$http.get(url)
         .then((res) => {
-          this.productData = res.data.filter((item) => { return item.pst_mpic !== null })
+          this.productData = res.data.filter((item) => { return item.pst_mpic && item.longitude && item.latitude && item.kw_capacity !== null })
         })
         .then(() => { return this.googleMapForeach() })
         // .then(() => { return this.getDataName('') })
@@ -434,8 +401,8 @@ export default ({
       })
     },
     openMarker (index) {
-      this.openedMarkerID = index
       this.zoom = 16
+      this.openedMarkerID = index
       console.log(index)
     }
   },

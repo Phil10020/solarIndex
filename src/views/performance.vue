@@ -96,12 +96,12 @@
               :zoom="zoom" map-type-id="roadmap" style="width: 50vw; height: 100vh">
                 <GMapCluster :zoomOnClick="true" :minimumClusterSize="4" :styles="clusterIcon">
                   <GMapMarker :icon="mapImg.icon1" :key="index" v-for="(m, index) in mapData" :position="m.position" :clickable="true" :draggable="true"
-          @click="center=m.position;openMarker(index)" @closeclick="openMarker(null)">
+          @click="openMarker(index)" @closeclick="openMarker(null)">
                     <GMapInfoWindow :closeclick="true" @closeclick="openMarker(null)" :opened="openedMarkerID === index">
                       <div class="solar-card" style="max-width: 21rem;" @click.prevent="change(m.id)">
                           <div class="row g-0 solar-bg">
-                            <div class="col-md-4" >
-                              <img :src="'https://www.hellosolarman.com/' + m.mpic" style="height: 5rem" class="rounded" alt="太陽人一號">
+                            <div class="col-md-4 d-flex align-items-center" >
+                              <img :src="'https://www.hellosolarman.com/' + m.mpic" style="width: 6rem;height: 5rem" class="rounded" alt="太陽人一號">
                             </div>
                             <div class="col-md-6">
                               <div class="d-flex flex-wrap">
@@ -247,7 +247,17 @@ export default ({
         rotateControl: true,
         fullscreenControl: true,
         zoom: 8,
-        clickableIcons: false
+        clickableIcons: false,
+        minZoom: 8,
+        maxZoom: 16,
+        styles: [
+          {
+            featureType: 'poi',
+            stylers: [{
+              visibility: 'off'
+            }]
+          }
+        ]
       },
       clusterIcon: [
         {
@@ -403,7 +413,7 @@ export default ({
     openMarker (index) {
       this.zoom = 16
       this.openedMarkerID = index
-      console.log(index)
+      console.log(this.center)
     }
   },
   // 組件生成時監聽畫面寬度

@@ -291,21 +291,21 @@
         ::-webkit-scrollbar {
             display: none;
         }
-        .card-body {
-            z-index: 10;
-            &-heighlight {
-                position: relative;
-                &:before {
-                  content: "";
-                  z-index: -1;
-                  position: absolute;
-                  height: 9px;
-                  bottom: 0;
-                  background: rgba(255, 235, 147, 1);
-                  width: 100%;
-                }
-            }
-        }
+        // .card-body {
+        //     z-index: 10;
+        //     &-heighlight {
+        //         position: relative;
+        //         &:before {
+        //           content: "";
+        //           z-index: -1;
+        //           position: absolute;
+        //           height: 9px;
+        //           bottom: 0;
+        //           background: rgba(255, 235, 147, 1);
+        //           width: 100%;
+        //         }
+        //     }
+        // }
         .btn-center {
             bottom: 10%;
             left: 30% ;
@@ -316,6 +316,21 @@
         &:before {
             content: "|";
             margin: 0 5px;
+        }
+    }
+    .card-body {
+        z-index: 10;
+        &-heighlight {
+            position: relative;
+            &:before {
+              content: "";
+              z-index: -1;
+              position: absolute;
+              height: 9px;
+              bottom: 0;
+              background: rgba(255, 235, 147, 1);
+              width: 100%;
+            }
         }
     }
     .map {

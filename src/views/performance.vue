@@ -87,15 +87,18 @@
       <!-- [End]Card  -->
 
     <!-- [Start]google map  -->
-    <section style="background-color: rgb(0 249 209);" class="map position-relative" :class="{ mapOn : mapStaytus === true }" id="fullscreen">
+    <section class="map position-relative" :class="{ mapOn : mapStaytus === true }" id="fullscreen">
       <div ref="mapFull">
         <div class="d-flex justify-content-center align-items-center map-height" ref="mapFull">
-          <h1 class="d-flex flex-wrap" style="width: 100%; height: auto">
+          <h1 class="d-flex flex-wrap position-relative justify-content-center" style="width: 100%; height: auto">
+            <div style="height: 67px; z-index: 10" class="powerPlant position-absolute shadow-lg rounded">
+              <p>全球已完成{{productData.length}}座電廠</p>
+            </div>
             <GMapMap :center="center"
               :options="options"
-              :zoom="zoom" map-type-id="roadmap" style="width: 50vw; height: 100vh">
+              :zoom="zoom" map-type-id="roadmap" style="height: 100vh;" class="mapWidth">
                 <GMapCluster :zoomOnClick="true" :minimumClusterSize="4" :styles="clusterIcon">
-                  <GMapMarker :icon="mapImg.icon1" :key="index" v-for="(m, index) in mapData" :position="m.position" :clickable="true" :draggable="true"
+                  <GMapMarker :icon="mapImg.icon1" :key="index" v-for="(m, index) in mapData" :position="m.position" :clickable="true" :draggable="false"
           @click="openMarker(index)" @closeclick="openMarker(null)">
                     <GMapInfoWindow :closeclick="true" @closeclick="openMarker(null)" :opened="openedMarkerID === index">
                       <div class="solar-card" style="max-width: 21rem;" @click.prevent="change(m.id)">
@@ -122,7 +125,7 @@
                   </GMapMarker>
                 </GMapCluster>
             </GMapMap>
-            <div v-for="item in typeFilter" :key="item.id" class="d-none" :class="{ mapShow: mapFilter === item.id }"><i class="bi bi-geo-alt-fill" :class="{ mapActive : currentFilter === '' } "></i> {{ item.name }} </div>
+            <swiper class="position-absolute swiperPosition"></swiper>
           </h1>
         </div>
         <div class="d-flex justify-content-end d-md-none position-absolute map-position">
@@ -227,8 +230,13 @@
 </template>
 
 <script>
+import swiper from '../component/googleMapSwiper.vue'
+
 export default ({
   name: 'performanceView',
+  components: {
+    swiper
+  },
   data () {
     return {
       // google map
@@ -245,11 +253,12 @@ export default ({
         scaleControl: true,
         streetViewControl: false,
         rotateControl: true,
-        fullscreenControl: true,
+        fullscreenControl: false,
         zoom: 8,
-        clickableIcons: false,
+        clickableIcons: true,
+        // scrollwheel: false,
         minZoom: 8,
-        maxZoom: 16,
+        maxZoom: 20,
         styles: [
           {
             featureType: 'poi',

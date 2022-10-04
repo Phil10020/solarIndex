@@ -340,8 +340,8 @@
             width: 100%;
         }
         &-position {
-            top: 0%;
-            right: 0%;
+            top: 2%;
+            right: 2%;
         }
         .bi-geo-alt-fill {
             color: #000;
@@ -355,6 +355,17 @@
         }
         &-height {
             height: 100vh-tab;
+            .z-1 {
+                z-index: 1;
+            }
+            
+            .z-20 {
+                z-index: 20;
+            }
+            
+            .mapWidth {
+                width: 100vw;
+            }
         }
         
     }
@@ -392,5 +403,26 @@
             font-size: 40px;
         }
     }
-}
 
+    .powerPlant {
+        background: #FFEB93;
+        color: #000;
+        font-size: 24px;
+        display: flex;
+        align-items: center;
+        padding: 3% 8%;
+        p {
+            margin-bottom: 0;
+            font-weight: 600;
+        }
+        border-radius: 10px 10px;
+        bottom: 8%;
+        @media screen and (max-width: 768px) {
+            display: none;
+        }
+    }
+
+    .swiperPosition {
+        bottom: 5%;
+    }
+}

@@ -125,7 +125,43 @@
                   </GMapMarker>
                 </GMapCluster>
             </GMapMap>
-            <swiper class="position-absolute swiperPosition"></swiper>
+            <swiper
+              style="z-index: 10"
+              class="position-absolute swiperPosition"
+              :modules="modules"
+              :slides-per-view="2"
+              :space-between="10"
+              navigation
+              :pagination="{ clickable: true }"
+              @swiper="onSwiper"
+              @slideChange="onSlideChange"
+              :breakpoints="{
+              768: {
+                width: 768,
+                slidesPerView: 2,
+                spaceBetween: 10
+              },
+              992: {
+                width: 992,
+                slidesPerView: 2,
+                spaceBetween: 10
+              },
+              1440: {
+                width: 1440,
+                slidesPerView: 2,
+                spaceBetween: 10
+              }
+              }"
+            >
+              <swiper-slide v-for="(item, index) in mapData" :key="index">
+                <div class="about-card position-relative" style="width:10rem;">
+                  <div class="card-title position-relative"><h5 class="position-relative"> {{ item.name }}</h5></div>
+                  <img :src="'https://www.hellosolarman.com/' + item.mpic" class="card-img-top" alt="">
+                  <div class="card-body position-absolute text-white content-down">
+                  </div>
+                </div>
+              </swiper-slide>
+            </swiper>
           </h1>
         </div>
         <div class="d-flex justify-content-end d-md-none position-absolute map-position">
@@ -230,12 +266,21 @@
 </template>
 
 <script>
-import swiper from '../component/googleMapSwiper.vue'
+import { Navigation, Pagination } from 'swiper'
 
+// Import Swiper Vue.js components
+import { Swiper, SwiperSlide } from 'swiper/vue'
+
+// Import Swiper styles
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
+// swiperJs
 export default ({
   name: 'performanceView',
   components: {
-    swiper
+    Swiper,
+    SwiperSlide
   },
   data () {
     return {
@@ -423,6 +468,19 @@ export default ({
       this.zoom = 16
       this.openedMarkerID = index
       console.log(this.center)
+    }
+  },
+  setup () {
+    const onSwiper = (swiper) => {
+      console.log(swiper)
+    }
+    const onSlideChange = () => {
+      console.log('slide change')
+    }
+    return {
+      onSwiper,
+      onSlideChange,
+      modules: [Navigation, Pagination]
     }
   },
   // 組件生成時監聽畫面寬度

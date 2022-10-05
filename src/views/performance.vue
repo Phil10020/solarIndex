@@ -56,7 +56,7 @@
       <div class="card-scrollBar shadow-lg round ">
         <button @click="backToTop" class="tabBtn d-none" :class="{ btnShow : topBtn === true }"><i class="bi bi-chevron-bar-up d-flex justify-content-center"></i></button>
         <div class="solar-card mb-3" style="max-width: 889px;" v-for="(item, index) in mapData" :key="index" @click.prevent="change(item.country);openMarker(index);center= item.position">
-            <div class="row g-0 solar-bg">
+            <div class="row g-0 solar-bg flex-nowrap">
               <div class="col-md-4">
                 <img :src="'https://www.hellosolarman.com/' + item.mpic"   class="img-fluid rounded" alt="{{ item.name }}">
               </div>
@@ -99,12 +99,12 @@
               :zoom="zoom" map-type-id="roadmap" style="height: 100vh;" class="mapWidth">
                 <GMapCluster :zoomOnClick="true" :minimumClusterSize="4" :styles="clusterIcon">
                   <GMapMarker :icon="mapImg.icon1" :key="index" v-for="(m, index) in mapData" :position="m.position" :clickable="true" :draggable="false"
-          @click="openMarker(index)" @closeclick="openMarker(null)">
+                    @click="openMarker(index)" @closeclick="openMarker(null)">
                     <GMapInfoWindow :closeclick="true" @closeclick="openMarker(null)" :opened="openedMarkerID === index">
                       <div class="solar-card" style="max-width: 21rem;" @click.prevent="change(m.id)">
                           <div class="row g-0 solar-bg">
                             <div class="col-md-4 d-flex align-items-center" >
-                              <img :src="'https://www.hellosolarman.com/' + m.mpic" style="width: 6rem;height: 5rem" class="rounded" alt="太陽人一號">
+                              <img :src="'https://www.hellosolarman.com/' + m.mpic" class="infoImg" style="" alt="太陽人一號">
                             </div>
                             <div class="col-md-6">
                               <div class="d-flex flex-wrap">
@@ -117,7 +117,9 @@
                               </div>
                             </div>
                             <div class="col-md-2 d-flex align-items-center">
-                              <button><img :src="mapImg.vector" alt=""/></button>
+                              <a href="#">
+                                <button type="button"><img :src="mapImg.vector" alt=""/></button>
+                              </a>
                             </div>
                           </div>
                       </div>
@@ -126,38 +128,30 @@
                 </GMapCluster>
             </GMapMap>
             <swiper
-              style="z-index: 10"
-              class="position-absolute swiperPosition"
+              style="z-index: 10;width: 90%"
+              class="position-absolute swiperPosition mb-5 "
               :modules="modules"
-              :slides-per-view="2"
+              :slides-per-view="1"
               :space-between="10"
               navigation
-              :pagination="{ clickable: true }"
               @swiper="onSwiper"
               @slideChange="onSlideChange"
-              :breakpoints="{
-              768: {
-                width: 768,
-                slidesPerView: 2,
-                spaceBetween: 10
-              },
-              992: {
-                width: 992,
-                slidesPerView: 2,
-                spaceBetween: 10
-              },
-              1440: {
-                width: 1440,
-                slidesPerView: 2,
-                spaceBetween: 10
-              }
-              }"
             >
-              <swiper-slide v-for="(item, index) in mapData" :key="index">
-                <div class="about-card position-relative" style="width:10rem;">
-                  <div class="card-title position-relative"><h5 class="position-relative"> {{ item.name }}</h5></div>
-                  <img :src="'https://www.hellosolarman.com/' + item.mpic" class="card-img-top" alt="">
-                  <div class="card-body position-absolute text-white content-down">
+              <swiper-slide v-for="(item, index) in mapData" class="shadow rounded" :key="index" @click.prevent="change(item.country);openMarker(index);center= item.position" style="width:19.1rem">
+                <div class=" position-relative d-flex flex-wrap swiper-card">
+                  <div class="col-4" >
+                    <img :src="'https://www.hellosolarman.com/' + item.mpic" class="img-fluid" alt="" style="border-radius: 10% 10%;height:5.625rem; width:6.5rem"/>
+                  </div>
+                  <div class="col-6">
+                    <p class="d-inline-flex swiper-heighlight">屋頂型</p>
+                    <h6 class="card-title text-black" style="overflow: hidden">{{ item.name }}</h6>
+                    <div class="d-flex flex-wrap">
+                      <p class="">{{ item.district }}</p>
+                      <p class="pstLine">總片數 : {{ item.num }}片</p>
+                    </div>
+                  </div>
+                  <div class="col-2 d-flex align-items-center">
+                    <button><img :src="mapImg.vector" alt=""/></button>
                   </div>
                 </div>
               </swiper-slide>
@@ -266,7 +260,7 @@
 </template>
 
 <script>
-import { Navigation, Pagination } from 'swiper'
+import { Navigation } from 'swiper'
 
 // Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from 'swiper/vue'
@@ -274,7 +268,6 @@ import { Swiper, SwiperSlide } from 'swiper/vue'
 // Import Swiper styles
 import 'swiper/css'
 import 'swiper/css/navigation'
-import 'swiper/css/pagination'
 // swiperJs
 export default ({
   name: 'performanceView',
@@ -480,7 +473,7 @@ export default ({
     return {
       onSwiper,
       onSlideChange,
-      modules: [Navigation, Pagination]
+      modules: [Navigation]
     }
   },
   // 組件生成時監聽畫面寬度

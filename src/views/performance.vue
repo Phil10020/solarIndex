@@ -85,7 +85,6 @@
       </div>
     </section>
       <!-- [End]Card  -->
-
     <!-- [Start]google map  -->
     <section class="map position-relative" :class="{ mapOn : mapStaytus === true }" id="fullscreen">
       <div ref="mapFull">
@@ -101,7 +100,7 @@
                   <GMapMarker :icon="mapImg.icon1" :key="index" v-for="(m, index) in mapData" :position="m.position" :clickable="true" :draggable="false"
                     @click="openMarker(index)" @closeclick="openMarker(null)">
                     <GMapInfoWindow :closeclick="true" @closeclick="openMarker(null)" :opened="openedMarkerID === index">
-                      <div class="solar-card" style="max-width: 21rem;" @click.prevent="change(m.id)">
+                      <div class="solar-card" style="max-width: 21rem;" @click="change(m.id)">
                           <div class="row g-0 solar-bg">
                             <div class="col-md-4 d-flex align-items-center" >
                               <img :src="'https://www.hellosolarman.com/' + m.mpic" class="infoImg" style="" alt="太陽人一號">
@@ -109,7 +108,7 @@
                             <div class="col-md-6">
                               <div class="d-flex flex-wrap">
                                 <p class="d-inline-flex card-text card-body-heighlight">屋頂型</p>
-                                <h6 class="card-title">{{ m.name }}</h6>
+                                  <h6 class="card-title">{{ m.name }}</h6>
                                 <div class="d-flex flex-wrap">
                                   <p class="card-text">{{ m.district }}</p>
                                   <p class="pstLine">總片數 : {{ m.num }}片</p>
@@ -117,8 +116,8 @@
                               </div>
                             </div>
                             <div class="col-md-2 d-flex align-items-center">
-                              <a href="#">
-                                <button type="button"><img :src="mapImg.vector" alt=""/></button>
+                              <a href="https://www.managertoday.com.tw/articles/view/65714">
+                                <button @click="call" type="button"><img :src="mapImg.vector" alt="vector"/></button>
                               </a>
                             </div>
                           </div>
@@ -461,6 +460,9 @@ export default ({
       this.zoom = 16
       this.openedMarkerID = index
       console.log(this.center)
+    },
+    call () {
+      console.log('clicked')
     }
   },
   setup () {

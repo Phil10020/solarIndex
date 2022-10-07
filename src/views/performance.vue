@@ -117,7 +117,7 @@
                             </div>
                             <div class="col-md-2 d-flex align-items-center">
                               <a href="https://www.managertoday.com.tw/articles/view/65714">
-                                <button @click="call" type="button"><img :src="mapImg.vector" alt="vector"/></button>
+                                <button type="button"><img :src="mapImg.vector" alt="vector"/></button>
                               </a>
                             </div>
                           </div>
@@ -285,7 +285,7 @@ export default ({
         vector: require('../../public/images/performance/vector.png')
       },
       options: {
-        zoomControl: true,
+        zoomControl: false,
         mapTypeControl: false,
         scaleControl: true,
         streetViewControl: false,
@@ -293,7 +293,6 @@ export default ({
         fullscreenControl: false,
         zoom: 8,
         clickableIcons: true,
-        // scrollwheel: false,
         minZoom: 8,
         maxZoom: 20,
         styles: [
@@ -329,29 +328,6 @@ export default ({
       footer: {
         footerLogo: require('../../public/images/social/footerLogo.svg')
       },
-      product: [{ name: '全部', type: '', id: '0', lat: 25.06028906969831, address: '45645', num: 10, lng: 121.56274049448633 },
-        { name: '台北', type: 'tpe', id: '1', lat: 25.050969377003902, address: 'test1', num: 11, lng: 121.54212467525183 },
-        { name: '桃園', type: 'tyn', id: '2', lat: 24.986894047611, address: 'test2', num: 12, lng: 121.29388756392709 },
-        { name: '新竹', type: 'hsz', id: '3', lat: 24.800027720461806, address: 'test3', num: 13, lng: 121.01336006809437 },
-        { name: '苗栗', type: 'zmi', id: '4', lat: 24.566569753240113, address: 'test4', num: 14, lng: 120.82654144301092 },
-        { name: '台中', type: 'txg', id: '5', lat: 24.15994867967149, address: 'test5', num: 15, lng: 120.6668839584927 },
-        { name: '彰化', type: 'chw', id: '6', lat: 24.0673650117656, address: 'test6', num: 16, lng: 120.52227718237252 },
-        { name: '南投', type: 'ntc', id: '7', lat: 23.978378742377043, address: 'test7', num: 17, lng: 120.97973789965829 },
-        { name: '雲林', type: 'yun', id: '8', lat: 23.70919101917908, address: 'test8', num: 18, lng: 120.35397353588306 },
-        { name: '嘉義', type: 'cyi', id: '9', lat: 23.48572372036004, address: 'test9', num: 19, lng: 120.35196393217525 },
-        { name: '台南', type: 'tnn', id: '10', lat: 23.010328292432725, address: 'test10', num: 20, lng: 120.20262059791625 },
-        { name: '高雄', type: 'khh', id: '11', lat: 22.65144245079988, address: 'test11', num: 21, lng: 120.33657271721873 },
-        { name: '屏東', type: 'pif', id: '12', lat: 22.00523482142756, address: 'test12', num: 22, lng: 120.74237520494879 },
-        { name: '台東', type: 'ttt', id: '13', lat: 22.808441031271123, address: 'test13', num: 23, lng: 121.07113737207148 },
-        { name: '花蓮', type: 'hun', id: '14', lat: 24.00443050272153, address: 'test14', num: 24, lng: 121.58562650225669 },
-        { name: '宜蘭', type: 'ila', id: '15', lat: 24.676748834596715, address: 'test15', num: 25, lng: 121.77076723429016 },
-        { name: '桃園2', type: 'tyn', id: '16', lat: 24.98716147559075, address: 'test16', num: 26, lng: 121.29499263396606 },
-        { name: '桃園3', type: 'tyn', id: '17', lat: 24.98712743933471, address: 'test17', num: 27, lng: 121.29484779468909 },
-        { name: '桃園4', type: 'tyn', id: '18', lat: 24.987783851182293, address: 'test18', num: 28, lng: 121.29398412344504 },
-        { name: '彰化2', type: 'chw', id: '19', lat: 24.036327081938406, address: 'test19', num: 29, lng: 120.50013286625226 },
-        { name: '彰化3', type: 'chw', id: '20', lat: 24.056784742424483, address: 'test20', num: 30, lng: 120.46897632845513 },
-        { name: '高雄2', type: 'khh', id: '21', lat: 22.63995650299897, address: 'test21', num: 31, lng: 120.33446986549417 }
-      ],
       typeFilter: [],
       isShowInWeb: false,
       currentFilter: '',
@@ -385,10 +361,7 @@ export default ({
     },
     change: function (test) {
       this.mapFilter = test
-      console.log('123')
-      this.mapId = this.typeFilter.filter((item) => {
-        return item.id.includes(test)
-      })
+      this.mapId = this.typeFilter.filter((item) => item.id.includes(test))
     },
     mapActive (isActive) {
       this.mapClick = isActive
@@ -401,9 +374,9 @@ export default ({
       const url = 'https://solardata.hellosolarman.com/api/data/stations'
       this.$http.get(url)
         .then((res) => {
-          this.productData = res.data.filter((item) => { return item.pst_mpic && item.longitude && item.latitude && item.kw_capacity !== null })
+          this.productData = res.data.filter((item) => item.pst_mpic && item.longitude && item.latitude && item.kw_capacity !== null)
         })
-        .then(() => { return this.googleMapForeach() })
+        .then(() => this.googleMapForeach())
         // .then(() => { return this.getDataName('') })
         .catch((err) => {
           console.log(err)
@@ -417,27 +390,22 @@ export default ({
       this.newMapArray = this.newMapArray.filter((item) => {
         return item.country != null
       })
-      this.mapData = this.newMapArray.filter((item) => {
-        return item.country.includes(area)
-      })
+      this.mapData = this.newMapArray.filter((item) => item.country.includes(area)
+      )
     },
     // 列表地區篩選功能
     filterCategory: function (type) {
       this.typeFilter = ''
       this.mapFilter = ''
       this.currentFilter = type
-      this.typeFilter = this.product.filter((item) => {
-        return item.type.includes(type)
-      })
+      this.typeFilter = this.product.filter((item) => item.type.includes(type)
+      )
     },
     // 點擊移動到最上面
     backToTop (isActive) {
       document.body.scrollTop = 0
       document.documentElement.scrollTop = 0
     },
-    // openInfoWindow (index) {
-    //   console.log(index, this.mapData[index].lat, this.mapData[index].lng)
-    // },
     // 監聽滾動值並顯示向上選項
     myEventHandler (e) {
       if (document.body.srcollTop > 100 || document.documentElement.scrollTop > 100) {
@@ -451,18 +419,12 @@ export default ({
       this.productData.forEach((item) => {
         const x = item.latitude
         const y = item.longitude
-        // item.lat = parseFloat(x)
-        // item.lng = parseFloat(y)
         this.newMapArray.push({ position: { lat: parseFloat(x), lng: parseFloat(y) }, kw: item.kw_capacity, address: item.pst_address, country: item.pst_county, district: item.pst_district, mpic: item.pst_mpic, name: item.pst_name, num: item.pst_qutys })
       })
     },
     openMarker (index) {
       this.zoom = 16
       this.openedMarkerID = index
-      console.log(this.center)
-    },
-    call () {
-      console.log('clicked')
     }
   },
   setup () {

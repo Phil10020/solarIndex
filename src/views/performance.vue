@@ -55,7 +55,7 @@
     <section class=" solar position-relative" :class="{ cardOn : cardStaytus === true }">
       <div class="card-scrollBar shadow-lg round ">
         <button @click="backToTop" class="tabBtn d-none" :class="{ btnShow : topBtn === true }"><i class="bi bi-chevron-bar-up d-flex justify-content-center"></i></button>
-        <div class="solar-card mb-3" style="max-width: 889px;" v-for="(item, index) in mapData" :key="item.name" @click="openMarker(index);center= item.position">
+        <div class="solar-card mb-3" style="max-width: 889px;" v-for="(item, index) in mapData" :key="item.name" @click="openMarker(index); center=item.position">
             <div class="row g-0 solar-bg flex-nowrap">
               <div class="col-md-4">
                 <img :src="'https://www.hellosolarman.com/' + item.mpic"  class="img-fluid rounded" alt="{{ item.name }}">
@@ -68,7 +68,7 @@
                   <div class="d-flex align-items-center">
                     <div class="d-flex me-2">
                       <div class="me-1"><img src="../../public/images/performance/battery.svg" alt=""></div>
-                      <p>總容量 : {{ item.kw }} KW</p>
+                      <p>總容量 : {{ item.kw }} kW</p>
                     </div>
                     <div class="d-flex">
                       <div class="me-1"><img src="../../public/images/performance/solar_icon.svg" alt=""></div>
@@ -100,7 +100,7 @@
                   <GMapMarker :icon="mapImg.icon1" :key="m.name" v-for="(m, index) in mapData" :position="m.position" :clickable="true" :draggable="false"
                     @click="openMarker(index)" @closeclick="openMarker(null)">
                     <GMapInfoWindow :closeclick="true" @closeclick="openMarker(null)" :opened="openedMarkerID === index">
-                      <div class="solar-card" style="max-width: 21rem;" @click="change(m.id)">
+                      <div class="solar-card" style="max-width: 21rem;">
                           <div class="row g-0 solar-bg">
                             <div class="col-md-4 d-flex align-items-center" >
                               <img :src="'https://www.hellosolarman.com/' + m.mpic" class="infoImg" style="" alt="太陽人一號">
@@ -425,6 +425,8 @@ export default ({
     openMarker (index) {
       this.zoom = 20
       this.openedMarkerID = index
+      // this.center = this.mapData[index].position
+      console.log(this.center, this.openedMarkerID)
     }
   },
   setup () {
@@ -434,6 +436,7 @@ export default ({
     const onSlideChange = () => {
       console.log('slide change')
     }
+
     return {
       onSwiper,
       onSlideChange,

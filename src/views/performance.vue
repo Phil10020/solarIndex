@@ -55,7 +55,7 @@
     <section class=" solar position-relative" :class="{ cardOn : cardStaytus === true }">
       <div class="card-scrollBar shadow-lg round ">
         <button @click="backToTop" class="tabBtn d-none" :class="{ btnShow : topBtn === true }"><i class="bi bi-chevron-bar-up d-flex justify-content-center"></i></button>
-        <div class="solar-card mb-3" style="max-width: 889px;" v-for="(item, index) in mapData" :key="item.name" @click="openMarker(index); center=item.position">
+        <div class="solar-card mb-3" style="max-width: 889px;" v-for="(item, index) in mapData" :key="item.name" @click="openMarker(index)">
             <div class="row g-0 solar-bg flex-nowrap">
               <div class="col-md-4">
                 <img :src="'https://www.hellosolarman.com/' + item.mpic"  class="img-fluid rounded" alt="{{ item.name }}">
@@ -99,7 +99,7 @@
                 <GMapCluster :zoomOnClick="true" :minimumClusterSize="4" :styles="clusterIcon">
                   <GMapMarker :icon="mapImg.icon1" :key="m.name" v-for="(m, index) in mapData" :position="m.position" :clickable="true" :draggable="false"
                     @click="openMarker(index)" @closeclick="openMarker(null)">
-                    <GMapInfoWindow :closeclick="true" @closeclick="openMarker(null)" :opened="openedMarkerID === index">
+                    <GMapInfoWindow :closeclick="true" :opened="openedMarkerID === index">
                       <div class="solar-card" style="max-width: 21rem;">
                           <div class="row g-0 solar-bg">
                             <div class="col-md-4 d-flex align-items-center" >
@@ -136,7 +136,7 @@
               @swiper="onSwiper"
               @slideChange="onSlideChange"
             >
-              <swiper-slide v-for="(item, index) in mapData" class="shadow rounded" :key="item.name" @click.prevent="change(item.country);openMarker(index);center= item.position" style="width:19.1rem">
+              <swiper-slide v-for="(item, index) in mapData" class="shadow rounded" :key="item.name" @click="openMarker(index)" style="width:19.1rem">
                 <div class=" position-relative d-flex flex-wrap swiper-card">
                   <div class="col-4" >
                     <img :src="'https://www.hellosolarman.com/' + item.mpic" class="img-fluid" alt="" style="border-radius: 10% 10%;height:5.625rem; width:6.5rem"/>
@@ -425,7 +425,7 @@ export default ({
     openMarker (index) {
       this.zoom = 20
       this.openedMarkerID = index
-      // this.center = this.mapData[index].position
+      this.center = this.mapData[index].position
       console.log(this.center, this.openedMarkerID)
     }
   },

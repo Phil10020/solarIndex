@@ -229,5 +229,12 @@
             margin-left: 0;
         }
     }
+
+    .modal-dialog {
+        @media (min-width:576px) {
+            max-width: 60%;
+        }
+        
+    }
 }
 

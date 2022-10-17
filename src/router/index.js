@@ -13,6 +13,11 @@ const routes = [
     component: () => import('../views/newsPage.vue')
   },
   {
+    path: '/newsDetailPage',
+    name: 'newsDetailPage',
+    component: () => import('../views/newsDetailPage.vue')
+  },
+  {
     path: '/coupon',
     name: 'couponView',
     component: () => import('../views/couponSharing.vue')

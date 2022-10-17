@@ -76,7 +76,8 @@
     <div class="d-flex flex-wrap px-0 item-width" :class="{ 'justify-content-start': error }">
       <div class="d-flex px-0 mb-3 card-width" :class="{ 'me-md-5': error }" v-for="item in filterProduct.slice(pageStart, pageStart + countOfPage)"
         :key="item.title">
-      <div class="card mb-3 mb-lg-0">
+        <router-link to="newsDetailPage">
+          <div class="card mb-3 mb-lg-0">
           <img :src="item.testImg" class="card-img-top" alt="" />
           <div class="card-body px-0 p-md-2">
             <div class="d-flex justify-content-between">
@@ -85,8 +86,9 @@
             </div>
             <h5 class="card-title py-3 m-0">{{ item.title }}</h5>
           </div>
+          </div>
+        </router-link>
       </div>
-    </div>
     </div>
     <!-- [End]Content  -->
     <!-- [Start]Pagination  -->

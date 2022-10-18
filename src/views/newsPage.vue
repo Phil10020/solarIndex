@@ -17,8 +17,8 @@
       <i class="bi bi-chevron-double-right"></i>
       <a href="/news.aspx">太陽人快報</a>
       <i class="bi bi-chevron-double-right"></i>
-      <a :class="{ 'active': currentFilter === 'green' }" v-if="currentFilter === 'green'">綠能轉型行不行</a>
-      <a :class="{ 'active': currentFilter === 'news' }" v-else-if="currentFilter === 'news'">太陽人最新消息</a>
+      <a :class="{ 'active': currentFilter === 'A' }" v-if="currentFilter === 'A'">綠能轉型行不行</a>
+      <a :class="{ 'active': currentFilter === 'B' }" v-else-if="currentFilter === 'B'">太陽人最新消息</a>
       <a :class="{ 'active':currentFilter === '' }" v-else>全部</a>
     </nav>
   </section>
@@ -75,16 +75,16 @@
     <!-- [Start]Content (slice取得第開始，與結尾資料並與頁數關聯) -->
     <div class="d-flex flex-wrap px-0 item-width" :class="{ 'justify-content-start': error }">
       <div class="d-flex px-0 mb-3 card-width" :class="{ 'me-md-5': error }" v-for="item in filterProduct.slice(pageStart, pageStart + countOfPage)"
-        :key="item.title">
+        :key="item.id">
         <router-link to="newsDetailPage">
           <div class="card mb-3 mb-lg-0">
-          <img :src="item.testImg" class="card-img-top" alt="" />
+          <img :src="item.img" class="card-img-top" alt="" />
           <div class="card-body px-0 p-md-2">
             <div class="d-flex justify-content-between">
-              <div><i class="bi bi-calendar3"></i> {{ item.date }} </div>
+              <div><i class="bi bi-calendar3"></i> {{ item.create_date }} </div>
               <div><i class="bi bi-list-ul"></i> {{ item.category }} </div>
             </div>
-            <h5 class="card-title py-3 m-0">{{ item.title }}</h5>
+            <h5 v-html="item.content" class="card-title py-3 m-0"></h5>
           </div>
           </div>
         </router-link>
@@ -281,7 +281,9 @@ export default {
       countOfPage: 6,
       currentPage: 1,
       isActive: true,
-      error: false
+      error: false,
+      newsData: [],
+      filterData: []
     }
   },
   methods: {
@@ -290,10 +292,10 @@ export default {
       this.setPage(1)
       this.currentFilter = type
       if (type === 'all') {
-        this.typeFilter = this.product
+        this.typeFilter = this.newsData
         this.currentFilter = ''
       } else {
-        this.typeFilter = this.product.filter((item) => {
+        this.typeFilter = this.newsData.filter((item) => {
           // 使用includes判斷true or false 篩選 type (news & green)
           return item.type.toLowerCase().includes(type)
         })
@@ -305,6 +307,20 @@ export default {
       if (idx >= 0 || idx < this.totalPage) {
         this.currentPage = idx
       }
+    },
+    getData () {
+      const web = 'https://www.hellosolarman.com'
+      const url = 'https://solardata.hellosolarman.com/api/data/news'
+      this.$http.get(url).then((res) => {
+        this.newsData = res.data.filter((item) => {
+          if (item.img.match('http') !== true) {
+            item.img = web + item.img
+          } return item.img
+        })
+        console.log(this.newsData)
+      }).catch((err) => {
+        console.log(err, 'getError')
+      })
     }
   },
   computed: {
@@ -328,10 +344,11 @@ export default {
   },
   mounted () {
     // 渲染全部product資料
-    this.typeFilter = this.product
+    // this.typeFilter = this.newsData
   },
   created () {
     this.paginate_total = this.typeFilter.length / this.paginate
+    this.getData()
   },
   watch: {
     // 監聽事件並將更動後的currentPage，設定回原本預設值

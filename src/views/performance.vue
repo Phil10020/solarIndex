@@ -18,7 +18,6 @@
     <div class="d-flex flex-column align-items-center justify-content-center tab-relative">
       <div class="d-flex justify-content-center tab-choose shadow rounded mb-30 tab-absolute tab-bottom" :class="{ mapHide: mapClick===true }">
         <button type="button" @click="tab(false)"><h4 :class="{ heighlight : !isShowInWeb }">台灣電廠</h4></button>
-        <button type="button" @click="tab(true)"><h4 :class="{ heighlight : isShowInWeb }">日本電廠</h4></button>
       </div>
       <ul class="d-flex flex-wrap " v-if="isShowInWeb == false">
         <li :class="{ active : areaFilter === '' } " @click.prevent="getDataName('')"><button type="button" >全部</button></li>
@@ -26,24 +25,15 @@
         <li :class="{ active : areaFilter === '桃園市' }" @click.prevent="getDataName('桃園市')"><button type="button">桃園</button></li>
         <li :class="{ active : areaFilter === '新竹縣' }" @click.prevent="getDataName('新竹縣')"><button type="button">新竹</button></li>
         <li :class="{ active : areaFilter === '苗栗縣' }" @click.prevent="getDataName('苗栗縣')"><button type="button">苗栗</button></li>
-        <li :class="{ active : areaFilter === '臺中市' }" @click.prevent="getDataName('臺中市')"><button type="button">台中</button></li>
         <li :class="{ active : areaFilter === '彰化縣' }" @click.prevent="getDataName('彰化縣')"><button type="button">彰化</button></li>
         <li :class="{ active : areaFilter === '南投縣' }" @click.prevent="getDataName('南投縣')"><button type="button">南投</button></li>
         <li :class="{ active : areaFilter === '雲林縣' }" @click.prevent="getDataName('雲林縣')"><button type="button">雲林</button></li>
         <li :class="{ active : areaFilter === '嘉義縣' }" @click.prevent="getDataName('嘉義縣')"><button type="button">嘉義</button></li>
         <li :class="{ active : areaFilter === '臺南市' }" @click.prevent="getDataName('臺南市')"><button type="button">台南</button></li>
         <li :class="{ active : areaFilter === '高雄市' }" @click.prevent="getDataName('高雄市')"><button type="button">高雄</button></li>
-        <li :class="{ active : areaFilter === '屏東縣' }" @click.prevent="getDataName('屏東縣')"><button type="button">屏東</button></li>
         <li :class="{ active : areaFilter === '台東縣' }" @click.prevent="getDataName('台東縣')"><button type="button">台東</button></li>
         <li :class="{ active : areaFilter === '花蓮縣' }" @click.prevent="getDataName('花蓮縣')"><button type="button">花蓮</button></li>
         <li :class="{ active : areaFilter === '宜蘭縣' }" @click.prevent="getDataName('宜蘭縣')"><button type="button">宜蘭</button></li>
-      </ul>
-      <ul class="d-flex" v-else>
-        <li>日本1</li>
-        <li>日本2</li>
-        <li>日本3</li>
-        <li>日本4</li>
-        <li>日本5</li>
       </ul>
     </div>
   </section>
@@ -91,7 +81,7 @@
         <div class="d-flex justify-content-center align-items-center map-height" ref="mapFull">
           <h1 class="d-flex flex-wrap position-relative justify-content-center" style="width: 100%; height: auto">
             <div style="height: 67px; z-index: 10" class="powerPlant position-absolute shadow-lg rounded">
-              <p>全球已完成{{productData.length}}座電廠</p>
+              <p>全台已完成{{productData.length}}座電廠</p>
             </div>
             <GMapMap :center="center"
               :options="options"

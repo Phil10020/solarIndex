@@ -74,17 +74,17 @@
   <section class="news-section-papers">
     <!-- [Start]Content (slice取得第開始，與結尾資料並與頁數關聯) -->
     <div class="d-flex flex-wrap px-0 item-width" :class="{ 'justify-content-start': error }">
-      <div class="d-flex px-0 mb-3 card-width" :class="{ 'me-md-5': error }" v-for="item in filterProduct.slice(pageStart, pageStart + countOfPage)"
+      <div class="d-flex px-0 mb-3 news-card" :class="{ 'me-md-5': error }" v-for="item in filterProduct.slice(pageStart, pageStart + countOfPage)"
         :key="item.id">
-        <router-link to="newsDetailPage">
-          <div class="card mb-3 mb-lg-0">
-          <img :src="item.img" class="card-img-top" alt="" />
+        <router-link to="newsDetailPage" style="width: 100%">
+          <div class="mb-3 mb-lg-0">
+          <img :src="item.img" class="card-img-style " style="height: 180px" :alt="item.title" />
           <div class="card-body px-0 p-md-2">
             <div class="d-flex justify-content-between">
               <div><i class="bi bi-calendar3"></i> {{ item.create_date }} </div>
-              <div><i class="bi bi-list-ul"></i> {{ item.category }} </div>
+              <div><i class="bi bi-list-ul"></i> {{ item.newsCategory }} </div>
             </div>
-            <h5 v-html="item.content" class="card-title py-3 m-0"></h5>
+            <h5 v-html="item.title" class="card-title py-3 m-0"></h5>
           </div>
           </div>
         </router-link>
@@ -292,10 +292,10 @@ export default {
       this.setPage(1)
       this.currentFilter = type
       if (type === 'all') {
-        this.typeFilter = this.newsData
+        this.typeFilter = this.filterData
         this.currentFilter = ''
       } else {
-        this.typeFilter = this.newsData.filter((item) => {
+        this.typeFilter = this.filterData.filter((item) => {
           // 使用includes判斷true or false 篩選 type (news & green)
           return item.type.toLowerCase().includes(type)
         })
@@ -313,13 +313,25 @@ export default {
       const url = 'https://solardata.hellosolarman.com/api/data/news'
       this.$http.get(url).then((res) => {
         this.newsData = res.data.filter((item) => {
-          if (item.img.match('http') !== true) {
+          if (item.img.match('http') === null) {
             item.img = web + item.img
-          } return item.img
+          }
+          return this.newsData
         })
         console.log(this.newsData)
-      }).catch((err) => {
-        console.log(err, 'getError')
+      })
+        .then(() => this.changeCategory())
+        .catch((err) => {
+          console.log(err, 'getError')
+        })
+    },
+    changeCategory () {
+      this.newsData.forEach((item) => {
+        if (item.category === 'A') {
+          this.filterData.push({ ...item, newsCategory: '太陽人最新消息' })
+        } else {
+          this.filterData.push({ ...item, newsCategory: '綠能轉型行不行' })
+        }
       })
     }
   },
@@ -344,10 +356,10 @@ export default {
   },
   mounted () {
     // 渲染全部product資料
-    // this.typeFilter = this.newsData
+    this.typeFilter = this.filterData
   },
   created () {
-    this.paginate_total = this.typeFilter.length / this.paginate
+    // this.paginate_total = this.filterData.length / this.paginate
     this.getData()
   },
   watch: {

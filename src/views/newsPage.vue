@@ -17,8 +17,8 @@
       <i class="bi bi-chevron-double-right"></i>
       <a href="/news.aspx">太陽人快報</a>
       <i class="bi bi-chevron-double-right"></i>
-      <a :class="{ 'active': currentFilter === 'A' }" v-if="currentFilter === 'A'">綠能轉型行不行</a>
-      <a :class="{ 'active': currentFilter === 'B' }" v-else-if="currentFilter === 'B'">太陽人最新消息</a>
+      <a :class="{ 'active': currentFilter === 'a' }" v-if="currentFilter === 'a'">綠能轉型行不行</a>
+      <a :class="{ 'active': currentFilter === 'b' }" v-else-if="currentFilter === 'b'">太陽人最新消息</a>
       <a :class="{ 'active':currentFilter === '' }" v-else>全部</a>
     </nav>
   </section>
@@ -35,14 +35,14 @@
           全部
         </li>
         <li
-          :class="{ 'active': currentFilter === 'news' }"
-          @click.prevent="filterCategory('news')"
+          :class="{ 'active': currentFilter === 'a' }"
+          @click.prevent="filterCategory('a')"
         >
           太陽人最新消息
         </li>
         <li
-          :class="{ 'active': currentFilter === 'green' }"
-          @click.prevent="filterCategory('green')"
+          :class="{ 'active': currentFilter === 'b' }"
+          @click.prevent="filterCategory('b')"
         >
           綠能轉型行不行
         </li>
@@ -74,7 +74,7 @@
   <section class="news-section-papers">
     <!-- [Start]Content (slice取得第開始，與結尾資料並與頁數關聯) -->
     <div class="d-flex flex-wrap px-0 item-width" :class="{ 'justify-content-start': error }">
-      <div class="d-flex px-0 mb-3 news-card" :class="{ 'me-md-5': error }" v-for="item in filterProduct.slice(pageStart, pageStart + countOfPage)"
+      <div class="d-flex px-0 mb-3 news-card" :class="{ 'me-md-5': error }" v-for="item in typeFilter.slice(pageStart, pageStart + countOfPage)"
         :key="item.id">
         <router-link to="newsDetailPage" style="width: 100%">
           <div class="mb-3 mb-lg-0">
@@ -104,8 +104,8 @@
           </li>
           <li
             class="page-item"
-            v-for="n in totalPage"
-            :key="n.title"
+            v-for="n in pageArr.slice(currentPage-1, currentPage+5)"
+            :key="n.index"
             :class="{ 'active': currentPage === n }"
             @click.prevent="setPage(n)"
           >
@@ -134,156 +134,14 @@ export default {
       search: '',
       typeFilter: [],
       imgSrc: require('../../public/images/title/page_here_section_2.jpg'),
-      product: [
-        {
-          testImg: require('../../public/images/news/news-background.jpg'),
-          category: '太陽人最新消息',
-          title: 'test11',
-          date: '2022/07/01',
-          type: 'news'
-        },
-        {
-          testImg: require('../../public/images/news/news-background.jpg'),
-          category: '綠能轉型行不行',
-          title: 'test12',
-          date: '2022/07/01',
-          type: 'green'
-        },
-        {
-          testImg: require('../../public/images/news/news-background.jpg'),
-          category: '太陽人最新消息',
-          title: 'test13',
-          date: '2022/07/01',
-          type: 'news'
-        },
-        {
-          testImg: require('../../public/images/news/news-background.jpg'),
-          category: '綠能轉型行不行',
-          title: 'test14',
-          date: '2022/07/01',
-          type: 'green'
-        },
-        {
-          testImg: require('../../public/images/news/news-background.jpg'),
-          category: '太陽人最新消息',
-          title: 'test15',
-          date: '2022/07/01',
-          type: 'news'
-        },
-        {
-          testImg: require('../../public/images/news/news-background.jpg'),
-          category: '綠能轉型行不行',
-          title: 'test16',
-          date: '2022/07/01',
-          type: 'green'
-        },
-        {
-          testImg: require('../../public/images/news/news-background.jpg'),
-          category: '太陽人最新消息',
-          title: 'test17',
-          date: '2022/07/01',
-          type: 'news'
-        },
-        {
-          testImg: require('../../public/images/news/news-background.jpg'),
-          category: '綠能轉型行不行',
-          title: 'test18',
-          date: '2022/07/01',
-          type: 'green'
-        },
-        {
-          testImg: require('../../public/images/news/news-background.jpg'),
-          category: '太陽人最新消息',
-          title: 'test19',
-          date: '2022/07/01',
-          type: 'news'
-        },
-        {
-          testImg: require('../../public/images/news/news-background.jpg'),
-          category: '綠能轉型行不行',
-          title: 'test20',
-          date: '2022/07/01',
-          type: 'green'
-        },
-        // test dadta
-        {
-          testImg: require('../../public/images/news/news-background.jpg'),
-          category: '太陽人最新消息',
-          title: 'test21',
-          date: '2022/07/01',
-          type: 'news'
-        },
-        {
-          testImg: require('../../public/images/news/news-background.jpg'),
-          category: '綠能轉型行不行',
-          title: 'test22',
-          date: '2022/07/01',
-          type: 'green'
-        },
-        {
-          testImg: require('../../public/images/news/news-background.jpg'),
-          category: '太陽人最新消息',
-          title: 'test23',
-          date: '2022/07/01',
-          type: 'news'
-        },
-        {
-          testImg: require('../../public/images/news/news-background.jpg'),
-          category: '綠能轉型行不行',
-          title: 'test24',
-          date: '2022/07/01',
-          type: 'green'
-        },
-        {
-          testImg: require('../../public/images/news/news-background.jpg'),
-          category: '太陽人最新消息',
-          title: 'test25',
-          date: '2022/07/01',
-          type: 'news'
-        },
-        {
-          testImg: require('../../public/images/news/news-background.jpg'),
-          category: '綠能轉型行不行',
-          title: 'test26',
-          date: '2022/07/01',
-          type: 'green'
-        },
-        {
-          testImg: require('../../public/images/news/news-background.jpg'),
-          category: '太陽人最新消息',
-          title: 'test27',
-          date: '2022/07/01',
-          type: 'news'
-        },
-        {
-          testImg: require('../../public/images/news/news-background.jpg'),
-          category: '綠能轉型行不行',
-          title: 'test28',
-          date: '2022/07/01',
-          type: 'green'
-        },
-        {
-          testImg: require('../../public/images/news/news-background.jpg'),
-          category: '太陽人最新消息',
-          title: 'test29',
-          date: '2022/07/01',
-          type: 'news'
-        },
-        {
-          testImg: require('../../public/images/news/news-background.jpg'),
-          category: '綠能轉型行不行',
-          title: 'test30',
-          date: '2022/07/01',
-          type: 'green'
-        }
-      ],
       currentFilter: '',
       countOfPage: 6,
       currentPage: 1,
       isActive: true,
       error: false,
       newsData: [],
-      filterData: []
+      filterData: [],
+      pageArr: []
     }
   },
   methods: {
@@ -297,10 +155,9 @@ export default {
       } else {
         this.typeFilter = this.filterData.filter((item) => {
           // 使用includes判斷true or false 篩選 type (news & green)
-          return item.type.toLowerCase().includes(type)
+          return item.category.toLowerCase().includes(type)
         })
       } ;
-      console.log(this.type)
     },
     // 將參數帶入預設頁面currentPage
     setPage: function (idx) {
@@ -321,11 +178,15 @@ export default {
         console.log(this.newsData)
       })
         .then(() => this.changeCategory())
+        .then(() => this.addArrIdx())
         .catch((err) => {
           console.log(err, 'getError')
         })
     },
     changeCategory () {
+      for (let num = 1; num <= this.totalPage; num++) {
+        this.filterData.push(num)
+      }
       this.newsData.forEach((item) => {
         if (item.category === 'A') {
           this.filterData.push({ ...item, newsCategory: '太陽人最新消息' })
@@ -333,6 +194,13 @@ export default {
           this.filterData.push({ ...item, newsCategory: '綠能轉型行不行' })
         }
       })
+    },
+    addArrIdx () {
+      const allPage = Math.ceil(this.typeFilter.length / this.countOfPage)
+      for (let newsIdx = 1; newsIdx <= allPage; newsIdx++) {
+        this.pageArr.push(newsIdx)
+      }
+      console.log(this.pageArr.length)
     }
   },
   computed: {
@@ -341,7 +209,7 @@ export default {
       return this.typeFilter.filter((item) => {
         return (
           item.title.toLowerCase().includes(this.search.toLowerCase()) ||
-          item.category.toLowerCase().includes(this.search.toLowerCase())
+          item.content.toLowerCase().includes(this.search.toLowerCase())
         )
       })
     },
@@ -351,7 +219,7 @@ export default {
     },
     // 總頁數公式
     totalPage: function () {
-      return Math.ceil(this.filterProduct.length / this.countOfPage)
+      return Math.ceil(this.typeFilter.length / this.countOfPage)
     }
   },
   mounted () {

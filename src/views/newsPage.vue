@@ -69,14 +69,13 @@
     </div>
   </section>
   <!-- [End]Page & Search  -->
-
   <!-- [Start]Main  -->
   <section class="news-section-papers">
     <!-- [Start]Content (slice取得第開始，與結尾資料並與頁數關聯) -->
     <div class="d-flex flex-wrap px-0 item-width" :class="{ 'justify-content-start': error }">
-      <div class="d-flex px-0 mb-3 news-card" :class="{ 'me-md-5': error }" v-for="item in typeFilter.slice(pageStart, pageStart + countOfPage)"
+      <div class="d-flex px-0 mb-3 news-card" :class="{ 'me-md-5': error }" v-for="item in filterProduct.slice(pageStart, pageStart + countOfPage)"
         :key="item.id">
-        <router-link to="newsDetailPage" style="width: 100%">
+        <router-link :to="{name:'newsDetailPage', params:{id: item.id}}" style="width: 100%">
           <div class="mb-3 mb-lg-0">
           <img :src="item.img" class="card-img-style " style="height: 180px" :alt="item.title" />
           <div class="card-body px-0 p-md-2">
@@ -158,6 +157,7 @@ export default {
           return item.category.toLowerCase().includes(type)
         })
       } ;
+      this.addArrIdx()
     },
     // 將參數帶入預設頁面currentPage
     setPage: function (idx) {
@@ -196,7 +196,8 @@ export default {
       })
     },
     addArrIdx () {
-      const allPage = Math.ceil(this.typeFilter.length / this.countOfPage)
+      this.pageArr = []
+      const allPage = Math.ceil(this.filterProduct.length / this.countOfPage)
       for (let newsIdx = 1; newsIdx <= allPage; newsIdx++) {
         this.pageArr.push(newsIdx)
       }
@@ -208,8 +209,7 @@ export default {
     filterProduct () {
       return this.typeFilter.filter((item) => {
         return (
-          item.title.toLowerCase().includes(this.search.toLowerCase()) ||
-          item.content.toLowerCase().includes(this.search.toLowerCase())
+          item.title.includes(this.search.toLowerCase())
         )
       })
     },
@@ -231,9 +231,10 @@ export default {
     this.getData()
   },
   watch: {
-    // 監聽事件並將更動後的currentPage，設定回原本預設值
+    // 監聽事件並將更動後的currentPage，設定回原本預設值，並且觸發addArrIdx函式重新計算頁數
     search: function () {
       this.currentPage = 1
+      this.addArrIdx()
     },
     currentPage: function () {
       // 判斷物件長度是否為2(若為2則啟用v-bind屬性，將它改成justify-content-start狀態)，以及是否在頁尾(currentPage===totalPage)

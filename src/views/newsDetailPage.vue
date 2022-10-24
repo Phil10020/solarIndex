@@ -233,7 +233,8 @@ export default {
       countOfPage: 6,
       currentPage: 1,
       isActive: true,
-      error: false
+      error: false,
+      newsData: []
     }
   },
   methods: {
@@ -257,6 +258,30 @@ export default {
       if (idx >= 0 || idx < this.totalPage) {
         this.currentPage = idx
       }
+    },
+    getData () {
+      const web = 'https://www.hellosolarman.com'
+      const url = 'https://solardata.hellosolarman.com/api/data/news'
+      this.$http.get(url).then((res) => {
+        this.newsData = res.data.filter((item) => {
+          if (res.data.id === this.$route) {
+            console.log(this.$route)
+          }
+          return this.newsData
+        })
+      })
+        .then((res) => {
+          this.newsData = res.data.filter((item) => {
+            if (item.img.match('http') === null) {
+              item.img = web + item.img
+            }
+            return this.newsData
+          })
+          console.log(this.newsData)
+        })
+        .catch((err) => {
+          console.log(err, 'getError')
+        })
     }
   },
   computed: {
@@ -283,6 +308,7 @@ export default {
     this.typeFilter = this.product
   },
   created () {
+    this.getData()
     this.paginate_total = this.typeFilter.length / this.paginate
   },
   watch: {

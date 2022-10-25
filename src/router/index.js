@@ -15,7 +15,8 @@ const routes = [
   {
     path: '/newsDetailPage/:id',
     name: 'newsDetailPage',
-    component: () => import('../views/newsDetailPage.vue')
+    component: () => import('../views/newsDetailPage.vue'),
+    props: true
   },
   {
     path: '/coupon',

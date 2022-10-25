@@ -19,67 +19,73 @@
       <i class="bi bi-chevron-double-right"></i>
       <a :class="{ 'active': currentFilter === 'green' }" v-if="currentFilter === 'green'">綠能轉型行不行</a>
       <a :class="{ 'active': currentFilter === 'news' }" v-else-if="currentFilter === 'news'">太陽人最新消息</a>
-      <a :class="{ 'active':currentFilter === '' }" v-else>全部</a>
+      <a :class="{ 'active':currentFilter === '' }" v-else>{{ newsData[0].title }}</a>
     </nav>
   </section>
   <!-- [End]Breadcrumb  -->
+  <!-- [Start]article doesn't find -->
+  <section v-if="axiosStatus === true" style="height: 50vh" class="d-flex align-items-center justify-content-center">
+    <h2>此篇文章不存在!</h2>
+  </section>
+  <!-- [End]article doesn't find  -->
   <!-- [Start]SinglePageContent  -->
-  <section>
-    <div>
-      <div class="d-flex flex-wrap justify-content-end">
-        <button><font-awesome-icon icon="fa-solid fa-angle-left" /></button>
-        <button><font-awesome-icon icon="fa-solid fa-list" /></button>
-        <button><font-awesome-icon icon="fa-solid fa-angle-right" /></button>
+  <section class="newsPageDetail" v-else>
+    <div class="">
+      <div class="d-flex flex-wrap justify-content-end news-detail-operation">
+        <router-link :to="'/news'">
+          <button><font-awesome-icon icon="fa-solid fa-list"/></button>
+        </router-link>
       </div>
-      <h2 class="d-flex justify-content-center">「國際女童日」 大家有聽過這個節日嗎？</h2>
-      <div class="d-flex flex-wrap justify-content-between">
-        <div class="d-flex flex-wrap">
-          <div><i class="bi bi-calendar3"></i>10/13/2022 10:18:47 AM</div>
-          <div><i class="bi bi-list-ul"></i>太陽人最新消息</div>
+      <div class="news-detail-content">
+        <h2 class="d-flex">{{ newsData[0].title }}</h2>
+        <div class="d-flex flex-wrap justify-content-between">
+          <div class="d-flex flex-wrap">
+            <div><i class="bi bi-calendar3"></i>10/13/2022 10:18:47 AM</div>
+            <div><i class="bi bi-list-ul"></i>太陽人最新消息</div>
+          </div>
+          <div class="d-flex flex-wrap">
+            分享至
+            <div><i class="bi bi-facebook"></i></div>
+            <div><i class="bi bi-line"></i></div>
+            <div><i class="bi bi-twitter"></i></div>
+          </div>
         </div>
-        <div class="d-flex flex-wrap">
-          分享至
-          <div><i class="bi bi-facebook"></i></div>
-          <div><i class="bi bi-line"></i></div>
-          <div><i class="bi bi-twitter"></i></div>
+        <div class="d-flex flex-wrap justify-content-start content" v-html="newsData[0].content">
         </div>
-      </div>
-      <div class="d-flex justify-content-center">
-        太陽人全民電廠便是一個這樣的團隊。
-
-        誰說能源產業只能是男生當道，不能是女孩主導呢?
-
-        太陽人全民電廠的團隊成員有高達6成都是女生,而且物件開發或電表安裝等作業也都有女性成員參與其中呢!
-
-        當我們的「太陽美少女」團隊集結在一起時，就沒有什麼解不開的難題~
-
-        太陽的光可以照出彩虹的顏色，如同太陽人的美少女們，在一個充滿著性別刻板印象的能源產業中，像陽光般為這個產業映照出更耀眼的色彩。
-
-        現今社會女力當道，太陽人同樣倡議 Women thrive，工作能力與性別並沒有直接關係，且太陽人團隊也支持女性同仁們持續跨部門學習，不論是工程第一現場或是內勤畫建置圖、政府公文送件，方方面面都難不倒「她們」。
-
-        未來太陽人會繼續帶給大家滿滿的正能量喔!!
-
-        也期待您一起加入太陽人的大家庭，一起達成能源的轉型、環境的永續
-
-        追蹤太陽人臉書: 太陽人全民電廠   太陽人Instagram: hellosolarman
-      </div>
+        </div>
     </div>
   </section>
   <!-- [End]SinglePageContent  -->
   <!-- [Start]footer  -->
   <section>
-    <h4>最近發布</h4>
-    <div><swiper></swiper></div>
+    <h4>最近發布
+    </h4>
+    <div class="d-flex position-relative justify-content-center">
+        <button class="position-absolute start-0">
+          <i class="bi bi-chevron-left fs-5"></i>
+        </button>
+        <button class="position-absolute end-0">
+          <i class="bi bi-chevron-right fs-5"></i>
+        </button>
+        <div class="">
+          <div><img src="" alt="img"/></div>
+          <div>dark hover</div>
+        </div>
+      </div>
+
   </section>
   <!-- [End]footer  -->
 </template>
 
 <script>
-import swiper from '../component/swiperNews.vue'
 export default {
   name: 'newsDetailPage',
   components: {
-    swiper
+  },
+  props: {
+    id: {
+      type: String
+    }
   },
   data () {
     return {
@@ -234,7 +240,8 @@ export default {
       currentPage: 1,
       isActive: true,
       error: false,
-      newsData: []
+      newsData: [],
+      axiosStatus: false
     }
   },
   methods: {
@@ -261,26 +268,19 @@ export default {
     },
     getData () {
       const web = 'https://www.hellosolarman.com'
-      const url = 'https://solardata.hellosolarman.com/api/data/news'
-      this.$http.get(url).then((res) => {
-        this.newsData = res.data.filter((item) => {
-          if (res.data.id === this.$route) {
-            console.log(this.$route)
-          }
-          return this.newsData
-        })
-      })
+      const id = this.id
+      const url = `https://solardata.hellosolarman.com/api/data/new?id=${id}`
+      this.$http.get(url)
         .then((res) => {
           this.newsData = res.data.filter((item) => {
             if (item.img.match('http') === null) {
               item.img = web + item.img
-            }
-            return this.newsData
+            } return this.newsData
           })
-          console.log(this.newsData)
         })
         .catch((err) => {
           console.log(err, 'getError')
+          this.axiosStatus = true
         })
     }
   },
@@ -330,4 +330,9 @@ export default {
 }
 </script>
 
-<style lang="sass"></style>
+<style lang="scss" scoped>
+  .swiper {
+    width: 600px;
+    height: 300px;
+  }
+</style>

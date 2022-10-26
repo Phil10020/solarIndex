@@ -57,19 +57,22 @@
   </section>
   <!-- [End]SinglePageContent  -->
   <!-- [Start]footer  -->
-  <section>
+  <section class="newsSlider">
     <h4>最近發布
     </h4>
-    <div class="d-flex position-relative justify-content-center">
-        <button class="position-absolute start-0">
+    <div class="d-flex position-relative">
+        <button class="position-absolute start-0 slider-button" @click.prevent="slideCtrl(1)">
           <i class="bi bi-chevron-left fs-5"></i>
         </button>
-        <button class="position-absolute end-0">
+        <button class="position-absolute end-0 slider-button" @click.prevent="slideCtrl(-1)">
           <i class="bi bi-chevron-right fs-5"></i>
         </button>
-        <div class="">
-          <div><img src="" alt="img"/></div>
-          <div>dark hover</div>
+        <div class="slider-box">
+          <div class="slider-card" v-for="item in imgData" :key="item.id">
+            <div class="slider-img" :style="{ background:' url('+ item.img +')'}">
+            </div>
+            <div class="">dark hover</div>
+          </div>
         </div>
       </div>
 
@@ -92,156 +95,15 @@ export default {
       search: '',
       typeFilter: [],
       imgSrc: require('../../public/images/title/page_here_section_2.jpg'),
-      product: [
-        {
-          testImg: require('../../public/images/news/news-background.jpg'),
-          category: '太陽人最新消息',
-          title: 'test11',
-          date: '2022/07/01',
-          type: 'news'
-        },
-        {
-          testImg: require('../../public/images/news/news-background.jpg'),
-          category: '綠能轉型行不行',
-          title: 'test12',
-          date: '2022/07/01',
-          type: 'green'
-        },
-        {
-          testImg: require('../../public/images/news/news-background.jpg'),
-          category: '太陽人最新消息',
-          title: 'test13',
-          date: '2022/07/01',
-          type: 'news'
-        },
-        {
-          testImg: require('../../public/images/news/news-background.jpg'),
-          category: '綠能轉型行不行',
-          title: 'test14',
-          date: '2022/07/01',
-          type: 'green'
-        },
-        {
-          testImg: require('../../public/images/news/news-background.jpg'),
-          category: '太陽人最新消息',
-          title: 'test15',
-          date: '2022/07/01',
-          type: 'news'
-        },
-        {
-          testImg: require('../../public/images/news/news-background.jpg'),
-          category: '綠能轉型行不行',
-          title: 'test16',
-          date: '2022/07/01',
-          type: 'green'
-        },
-        {
-          testImg: require('../../public/images/news/news-background.jpg'),
-          category: '太陽人最新消息',
-          title: 'test17',
-          date: '2022/07/01',
-          type: 'news'
-        },
-        {
-          testImg: require('../../public/images/news/news-background.jpg'),
-          category: '綠能轉型行不行',
-          title: 'test18',
-          date: '2022/07/01',
-          type: 'green'
-        },
-        {
-          testImg: require('../../public/images/news/news-background.jpg'),
-          category: '太陽人最新消息',
-          title: 'test19',
-          date: '2022/07/01',
-          type: 'news'
-        },
-        {
-          testImg: require('../../public/images/news/news-background.jpg'),
-          category: '綠能轉型行不行',
-          title: 'test20',
-          date: '2022/07/01',
-          type: 'green'
-        },
-        // test dadta
-        {
-          testImg: require('../../public/images/news/news-background.jpg'),
-          category: '太陽人最新消息',
-          title: 'test21',
-          date: '2022/07/01',
-          type: 'news'
-        },
-        {
-          testImg: require('../../public/images/news/news-background.jpg'),
-          category: '綠能轉型行不行',
-          title: 'test22',
-          date: '2022/07/01',
-          type: 'green'
-        },
-        {
-          testImg: require('../../public/images/news/news-background.jpg'),
-          category: '太陽人最新消息',
-          title: 'test23',
-          date: '2022/07/01',
-          type: 'news'
-        },
-        {
-          testImg: require('../../public/images/news/news-background.jpg'),
-          category: '綠能轉型行不行',
-          title: 'test24',
-          date: '2022/07/01',
-          type: 'green'
-        },
-        {
-          testImg: require('../../public/images/news/news-background.jpg'),
-          category: '太陽人最新消息',
-          title: 'test25',
-          date: '2022/07/01',
-          type: 'news'
-        },
-        {
-          testImg: require('../../public/images/news/news-background.jpg'),
-          category: '綠能轉型行不行',
-          title: 'test26',
-          date: '2022/07/01',
-          type: 'green'
-        },
-        {
-          testImg: require('../../public/images/news/news-background.jpg'),
-          category: '太陽人最新消息',
-          title: 'test27',
-          date: '2022/07/01',
-          type: 'news'
-        },
-        {
-          testImg: require('../../public/images/news/news-background.jpg'),
-          category: '綠能轉型行不行',
-          title: 'test28',
-          date: '2022/07/01',
-          type: 'green'
-        },
-        {
-          testImg: require('../../public/images/news/news-background.jpg'),
-          category: '太陽人最新消息',
-          title: 'test29',
-          date: '2022/07/01',
-          type: 'news'
-        },
-        {
-          testImg: require('../../public/images/news/news-background.jpg'),
-          category: '綠能轉型行不行',
-          title: 'test30',
-          date: '2022/07/01',
-          type: 'green'
-        }
-      ],
       currentFilter: '',
       countOfPage: 6,
       currentPage: 1,
       isActive: true,
       error: false,
       newsData: [],
-      axiosStatus: false
+      axiosStatus: false,
+      imgData: [],
+      slideData: []
     }
   },
   methods: {
@@ -278,38 +140,59 @@ export default {
             } return this.newsData
           })
         })
+        .then(() => {
+          this.getImg()
+        })
         .catch((err) => {
           console.log(err, 'getError')
           this.axiosStatus = true
         })
+    },
+    getImg () {
+      const web = 'https://www.hellosolarman.com'
+      const url = 'https://solardata.hellosolarman.com/api/data/news'
+      this.$http.get(url).then((res) => {
+        this.imgData = res.data.filter((item, index) => {
+          if (item.img.match('http') === null) {
+            item.img = web + item.img
+          }
+          return index < 10
+        })
+      })
+        .catch((err) => {
+          console.log(err, 'getError')
+        })
+    },
+    slideCtrl (slidesToShow = 1) {
+      if (slidesToShow > 0) {
+        const shiftItem = this.slideData.shift()
+        this.slideData.push(shiftItem)
+        return
+      }
+      if (slidesToShow < 0) {
+        const shiftItem = this.slideData.pop()
+        this.slideData.unshift(shiftItem)
+      }
+    },
+    imgArry () {
+      for (let i = 0; i < this.imgData.length * 2; i++) {
+        const obj = {}
+        obj.id = i
+        obj.ref = i % this.imgData.length
+        this.slideData.push(obj)
+      }
     }
   },
   computed: {
-    // 搜尋功能
-    filterProduct () {
-      return this.typeFilter.filter((item) => {
-        return (
-          item.title.toLowerCase().includes(this.search.toLowerCase()) ||
-          item.category.toLowerCase().includes(this.search.toLowerCase())
-        )
-      })
-    },
-    // 起始頁數設定
-    pageStart: function () {
-      return (this.currentPage - 1) * this.countOfPage
-    },
-    // 總頁數公式
-    totalPage: function () {
-      return Math.ceil(this.filterProduct.length / this.countOfPage)
-    }
   },
   mounted () {
     // 渲染全部product資料
-    this.typeFilter = this.product
+    this.imgArry()
+    console.log(this.imgData.length)
   },
   created () {
     this.getData()
-    this.paginate_total = this.typeFilter.length / this.paginate
+    this.getImg()
   },
   watch: {
     // 監聽事件並將更動後的currentPage，設定回原本預設值
@@ -329,10 +212,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-  .swiper {
-    width: 600px;
-    height: 300px;
-  }
-</style>

@@ -12,4 +12,37 @@
         border-bottom: solid 1px #eee;
         overflow-x: hidden;
     }
+
+}
+
+.newsSlider {
+    padding: 1px 16.66% 65px 16.66%;
+    background-color: #eee;
+    .slider-box {
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        .slider-card {
+            width: 30%;
+            margin: 0 15px 0 0;
+            height: 210px;
+            position: relative;
+            display: inline-block;
+            font-size: initial;
+            white-space: normal;
+            transition: 0.3s ease-in-out;
+            left: 0;
+            .slider-img {
+                width: 100%;
+                height: 100%;
+                background-size: cover !important;
+                background-repeat: no-repeat !important;
+                background-position: 50% 50% !important;
+            }
+        }
+    }
+    .slider-button {
+        z-index: 10;
+        top: 35%;
+    }
 }

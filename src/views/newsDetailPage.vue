@@ -61,19 +61,20 @@
     <h4>最近發布
     </h4>
     <div class="d-flex position-relative">
-        <button class="position-absolute start-0 slider-button" @click.prevent="slideCtrl(1)">
+        <button type="button" class="position-absolute start-0 slider-button" @click.prevent="slideCtrl(1)">
           <i class="bi bi-chevron-left fs-5"></i>
         </button>
-        <button class="position-absolute end-0 slider-button" @click.prevent="slideCtrl(-1)">
+        <button type="button" class="position-absolute end-0 slider-button" @click.prevent="slideCtrl(-1)">
           <i class="bi bi-chevron-right fs-5"></i>
         </button>
+        <!-- 輪播swiper功能  -->
         <div class="slider-box">
-          <div class="slider-card" v-for="item in imgData" :key="item.id">
-            <div class="slider-img" :style="{ background:' url('+ item.img +')'}">
-            </div>
+          <li class="slider-card" v-for="item in slideData" :key="item.id">
+              <img class="slider-img" :src="imgData[item.ref].img" :alt="imgData.title"/>
             <div class="">dark hover</div>
-          </div>
+          </li>
         </div>
+        <!-- swiper end  -->
       </div>
 
   </section>
@@ -103,7 +104,9 @@ export default {
       newsData: [],
       axiosStatus: false,
       imgData: [],
-      slideData: []
+      slideData: [],
+      clickWait: false,
+      timer: {}
     }
   },
   methods: {
@@ -139,9 +142,7 @@ export default {
               item.img = web + item.img
             } return this.newsData
           })
-        })
-        .then(() => {
-          this.getImg()
+          console.log(this.newsData)
         })
         .catch((err) => {
           console.log(err, 'getError')
@@ -151,29 +152,47 @@ export default {
     getImg () {
       const web = 'https://www.hellosolarman.com'
       const url = 'https://solardata.hellosolarman.com/api/data/news'
-      this.$http.get(url).then((res) => {
-        this.imgData = res.data.filter((item, index) => {
-          if (item.img.match('http') === null) {
-            item.img = web + item.img
-          }
-          return index < 10
+      console.log('step1')
+      this.$http.get(url)
+        .then((res) => {
+          console.log('step2')
+          this.imgData = res.data.filter((item, index) => {
+            if (item.img.match('http') === null) {
+              item.img = web + item.img
+            }
+            return index < 5
+          })
         })
-      })
+        .then(() => {
+          this.imgArry()
+        })
         .catch((err) => {
           console.log(err, 'getError')
         })
+      console.log('step3')
     },
+    // 控制swiper點擊左右
     slideCtrl (slidesToShow = 1) {
+      if (this.clickWait) {
+        return
+      }
+      this.stopTime()
+      this.clickWait = true
       if (slidesToShow > 0) {
         const shiftItem = this.slideData.shift()
         this.slideData.push(shiftItem)
+        console.log(this.slideData, 'l')
+        this.setTime()
         return
       }
       if (slidesToShow < 0) {
         const shiftItem = this.slideData.pop()
         this.slideData.unshift(shiftItem)
+        this.setTime()
+        console.log(this.slideData, 'r')
       }
     },
+    // 圖片無限輪播算式
     imgArry () {
       for (let i = 0; i < this.imgData.length * 2; i++) {
         const obj = {}
@@ -181,6 +200,14 @@ export default {
         obj.ref = i % this.imgData.length
         this.slideData.push(obj)
       }
+    },
+    setTime () {
+      this.timer = setTimeout(() => {
+        this.clickWait = false
+      }, 500)
+    },
+    stopTime () {
+      clearInterval(this.timer)
     }
   },
   computed: {
@@ -188,7 +215,6 @@ export default {
   mounted () {
     // 渲染全部product資料
     this.imgArry()
-    console.log(this.imgData.length)
   },
   created () {
     this.getData()

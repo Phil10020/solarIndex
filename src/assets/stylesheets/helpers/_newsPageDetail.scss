@@ -13,6 +13,27 @@
         overflow-x: hidden;
     }
 
+    .btnShow {
+        display: block !important;
+    }
+
+    .tabBtn {
+        width: 50px;
+        height: 50px;
+        position: fixed;
+        bottom: 5%;
+        right: 5%;
+        z-index: 10;
+        padding: 0;
+        background-color: $primary;
+        border-radius: 50%;
+        border: #fff;
+        .bi {
+            color: #fff;
+            font-size: 40px;
+        }
+    }
+
 }
 
 .newsSlider {
@@ -30,8 +51,12 @@
             display: inline-block;
             font-size: initial;
             white-space: normal;
-            transition: 0.3s ease-in-out;
-            left: 0;
+            left: calc(-100% / 2 * 2.5);
+            &:first-child,
+            &:last-child {
+                opacity: 0;
+                z-index: -1;
+            }
             .slider-img {
                 width: 100%;
                 height: 100%;
@@ -39,10 +64,54 @@
                 background-repeat: no-repeat !important;
                 background-position: 50% 50% !important;
             }
+            .slider-hover {
+                position: absolute;
+                opacity: 0;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                display: flex;
+                transition: 0.3s ease-in-out;
+                &:hover {
+                    position: absolute;
+                    background: rgb(32, 28, 28);
+                    opacity: 0.8;
+                }
+                .link-icon {
+                    width: 45px;
+                    height: 45px;
+                    background-color: #A71E38;
+                    color: #fff;
+                    border-radius: 50%;
+                    text-align: center;
+                    line-height: 45px;
+                    font-size: 20px;
+                    margin-bottom: 15px;
+                }
+            }
         }
     }
     .slider-button {
-        z-index: 10;
-        top: 35%;
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        box-shadow: 0 10px 20px rgb(0 0 0 / 19%), 0 6px 6px rgb(0 0 0 / 23%);
+        top: 40%;
+        transform: translatey(-50%);
+        z-index: 90;
+        font-size: 25px;
+        text-align: center;
+        border: none;
+        color: $primary;
+        background-color: #fff;
+        &:hover {
+            color: #fff;
+            background-color: $primary;
+        }
+    }
+    .flip-list-move {
+        transition: transform 0.8s;
     }
 }

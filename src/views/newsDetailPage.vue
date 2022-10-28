@@ -30,24 +30,22 @@
   <!-- [End]article doesn't find  -->
   <!-- [Start]SinglePageContent  -->
   <section class="newsPageDetail" v-else>
+    <router-link :to="'/news'">
+      <button @click="backToTop" class="tabBtn d-none" :class="{ btnShow : topBtn === true }"><i class="bi bi-list-ul d-flex justify-content-center fs-3"></i></button>
+    </router-link>
     <div class="">
-      <div class="d-flex flex-wrap justify-content-end news-detail-operation">
-        <router-link :to="'/news'">
-          <button><font-awesome-icon icon="fa-solid fa-list"/></button>
-        </router-link>
-      </div>
       <div class="news-detail-content">
         <h2 class="d-flex">{{ newsData[0].title }}</h2>
         <div class="d-flex flex-wrap justify-content-between">
           <div class="d-flex flex-wrap">
-            <div><i class="bi bi-calendar3"></i>10/13/2022 10:18:47 AM</div>
-            <div><i class="bi bi-list-ul"></i>太陽人最新消息</div>
+            <div><i class="bi bi-calendar3 text-primary"></i>10/13/2022 10:18:47 AM</div>
+            <div><i class="bi bi-list-ul text-primary"></i>太陽人最新消息</div>
           </div>
-          <div class="d-flex flex-wrap">
+          <div class="d-flex flex-wrap align-items-center">
             分享至
-            <div><i class="bi bi-facebook"></i></div>
-            <div><i class="bi bi-line"></i></div>
-            <div><i class="bi bi-twitter"></i></div>
+            <a href="" target="_blank"><i class="bi bi-facebook m-2 fs-5 " style="color: #4267b2"></i></a>
+            <a href="" target="_blank"><i class="bi bi-line m-2 fs-5 " style="color: #01B902;"></i></a>
+            <a href="" target="_blank"><i class="bi bi-twitter m-2 fs-5 "  style="color: #3FAAF3;"></i></a>
           </div>
         </div>
         <div class="d-flex flex-wrap justify-content-start content" v-html="newsData[0].content">
@@ -61,19 +59,24 @@
     <h4>最近發布
     </h4>
     <div class="d-flex position-relative">
-        <button type="button" class="position-absolute start-0 slider-button" @click.prevent="slideCtrl(1)">
-          <i class="bi bi-chevron-left fs-5"></i>
+        <button type="button" class=" start-0 slider-button" @click.prevent="slideCtrl(-1)">
+          <i class="bi bi-chevron-left fs-3"></i>
         </button>
-        <button type="button" class="position-absolute end-0 slider-button" @click.prevent="slideCtrl(-1)">
-          <i class="bi bi-chevron-right fs-5"></i>
+        <button type="button" class=" end-0 slider-button" @click.prevent="slideCtrl(1)">
+          <i class="bi bi-chevron-right fs-3"></i>
         </button>
         <!-- 輪播swiper功能  -->
-        <div class="slider-box">
+        <transition-group name="flip-list" tag="ul" class="slider-box">
           <li class="slider-card" v-for="item in slideData" :key="item.id">
-              <img class="slider-img" :src="imgData[item.ref].img" :alt="imgData.title"/>
-            <div class="">dark hover</div>
+            <img class="slider-img" :src="imgData[item.ref].img" :alt="imgData.title"/>
+            <div class="slider-hover">
+              <router-link target="_blank" class="d-flex flex-column justify-content-center" :to="{name:'newsDetailPage', params:{id: imgData[item.ref].id}}" style="width:100%">
+                <div class="d-flex justify-content-center"><i class="bi bi-link-45deg link-icon" ></i></div>
+                <div class="text-white fs-4 d-flex justify-content-center">{{ imgData[item.ref].title }}</div>
+              </router-link>
+            </div>
           </li>
-        </div>
+        </transition-group>
         <!-- swiper end  -->
       </div>
 
@@ -106,7 +109,8 @@ export default {
       imgData: [],
       slideData: [],
       clickWait: false,
-      timer: {}
+      timer: {},
+      topBtn: false
     }
   },
   methods: {
@@ -208,6 +212,14 @@ export default {
     },
     stopTime () {
       clearInterval(this.timer)
+    },
+    // 監聽滾動值並顯示向上選項
+    myEventHandler (e) {
+      if (document.body.srcollTop > 100 || document.documentElement.scrollTop > 100) {
+        this.topBtn = true
+      } else {
+        this.topBtn = false
+      }
     }
   },
   computed: {
@@ -217,8 +229,14 @@ export default {
     this.imgArry()
   },
   created () {
+    // 監聽滑鼠滾動
+    window.addEventListener('scroll', this.myEventHandler)
     this.getData()
     this.getImg()
+  },
+  unmounted () {
+    // 銷毀組件
+    window.removeEventListener('scroll', this.myEventHandler)
   },
   watch: {
     // 監聽事件並將更動後的currentPage，設定回原本預設值

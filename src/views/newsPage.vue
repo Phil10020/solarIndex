@@ -73,11 +73,18 @@
   <section class="news-section-papers">
     <!-- [Start]Content (slice取得第開始，與結尾資料並與頁數關聯) -->
     <div class="d-flex flex-wrap px-0 item-width" :class="{ 'justify-content-start': error }">
-      <div class="d-flex px-0 mb-3 news-card" :class="{ 'me-md-5': error }" v-for="item in filterProduct.slice(pageStart, pageStart + countOfPage)"
+      <div class="d-flex px-0 mb-3 news-card position-relative" :class="{ 'me-md-5': error }" v-for="item in filterProduct.slice(pageStart, pageStart + countOfPage)"
         :key="item.id">
         <router-link :to="{name:'newsDetailPage', params:{id: item.id}}" style="width: 100%">
           <div class="mb-3 mb-lg-0">
-          <img :src="item.img" class="card-img-style " style="height: 180px" :alt="item.title" />
+          <div class="position-relative">
+            <img :src="item.img" class="card-img-style " style="height: 180px" :alt="item.title" />
+            <div class="item-hover">
+              <a target="_blank" class="d-flex flex-column justify-content-center" style="width:100%">
+                <div class="d-flex justify-content-center"><i class="bi bi-link-45deg link-icon" ></i></div>
+              </a>
+            </div>
+          </div>
           <div class="card-body px-0 p-md-2">
             <div class="d-flex justify-content-between">
               <div><i class="bi bi-calendar3"></i> {{ item.create_date }} </div>
@@ -112,7 +119,7 @@
           </li>
           <li
             class="page-item"
-            :class="{ 'disabled': currentPage === totalPage }"
+            :class="{ 'disabled': currentPage === pageArr.length }"
             @click.prevent="setPage(currentPage + 1)"
           >
             <a class="page-link" href="#"><i class="bi bi-chevron-bar-right"></i></a>
@@ -179,6 +186,7 @@ export default {
       })
         .then(() => this.changeCategory())
         .then(() => this.addArrIdx())
+        .then(() => this.changeDate())
         .catch((err) => {
           console.log(err, 'getError')
         })
@@ -193,6 +201,11 @@ export default {
         } else {
           this.filterData.push({ ...item, newsCategory: '綠能轉型行不行' })
         }
+      })
+    },
+    changeDate () {
+      this.filterData.forEach((item) => {
+        item.create_date = new Date(item.create_date).toLocaleDateString()
       })
     },
     addArrIdx () {
@@ -238,7 +251,7 @@ export default {
     },
     currentPage: function () {
       // 判斷物件長度是否為2(若為2則啟用v-bind屬性，將它改成justify-content-start狀態)，以及是否在頁尾(currentPage===totalPage)
-      if (this.typeFilter.length % this.countOfPage === 2 && this.currentPage === this.totalPage) {
+      if (this.filterProduct.length % this.countOfPage === 2 && this.currentPage === this.pageArr.length) {
         this.error = true
         this.isActive = false
       } else {

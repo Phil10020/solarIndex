@@ -15,7 +15,7 @@
     <nav class="navigation-item">
       <a href="/index.aspx">首頁</a>
       <i class="bi bi-chevron-double-right"></i>
-      <a href="/news.aspx">太陽人快報</a>
+      <router-link :to="'/news'" >太陽人快報</router-link>
       <i class="bi bi-chevron-double-right"></i>
       <a :class="{ 'active': currentFilter === 'green' }" v-if="currentFilter === 'green'">綠能轉型行不行</a>
       <a :class="{ 'active': currentFilter === 'news' }" v-else-if="currentFilter === 'news'">太陽人最新消息</a>
@@ -38,8 +38,8 @@
         <h2 class="d-flex">{{ newsData[0].title }}</h2>
         <div class="d-flex flex-wrap justify-content-between">
           <div class="d-flex flex-wrap">
-            <div><i class="bi bi-calendar3 text-primary"></i>10/13/2022 10:18:47 AM</div>
-            <div><i class="bi bi-list-ul text-primary"></i>太陽人最新消息</div>
+            <div><i class="bi bi-calendar3 text-primary"></i>{{ newsData[0].create_date }}</div>
+            <div><i class="bi bi-list-ul text-primary"></i>{{ newsData[0].category }}</div>
           </div>
           <div class="d-flex flex-wrap align-items-center">
             分享至
@@ -56,7 +56,7 @@
   <!-- [End]SinglePageContent  -->
   <!-- [Start]footer  -->
   <section class="newsSlider">
-    <h4>最近發布
+    <h4 class="slider-title">最近發布
     </h4>
     <div class="d-flex position-relative">
         <button type="button" class=" start-0 slider-button" @click.prevent="slideCtrl(-1)">
@@ -146,7 +146,16 @@ export default {
               item.img = web + item.img
             } return this.newsData
           })
-          console.log(this.newsData)
+          this.newsData.forEach((item) => {
+            if (item.category === 'A') {
+              item.category = '太陽人最新消息'
+            } else {
+              item.category = '綠能轉型行不行'
+            }
+          })
+        })
+        .then(() => {
+          this.changeDate()
         })
         .catch((err) => {
           console.log(err, 'getError')
@@ -220,6 +229,12 @@ export default {
       } else {
         this.topBtn = false
       }
+    },
+    // 時間格式轉換
+    changeDate () {
+      this.newsData.forEach((item) => {
+        item.create_date = new Date(item.create_date).toLocaleDateString()
+      })
     }
   },
   computed: {

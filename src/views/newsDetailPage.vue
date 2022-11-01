@@ -67,7 +67,7 @@
         </button>
         <!-- 輪播swiper功能  -->
         <transition-group name="flip-list" tag="ul" class="slider-box">
-          <li class="slider-card" v-for="item in slideData" :key="item.id">
+          <li class="slider-card" :class="{'sliderCardWidth': screenWidth }" v-for="item in slideData" :key="item.id">
             <img class="slider-img" :src="imgData[item.ref].img" :alt="imgData.title"/>
             <div class="slider-hover">
               <router-link target="_blank" class="d-flex flex-column justify-content-center" :to="{name:'newsDetailPage', params:{id: imgData[item.ref].id}}" style="width:100%">
@@ -110,7 +110,8 @@ export default {
       slideData: [],
       clickWait: false,
       timer: {},
-      topBtn: false
+      topBtn: false,
+      screenWidth: false
     }
   },
   methods: {
@@ -169,6 +170,14 @@ export default {
       this.$http.get(url)
         .then((res) => {
           console.log('step2')
+          // 陣列日期升序排列、去除時間格式
+          this.imgData = res.data.sort(function (a, b) {
+            return new Date(b.create_date) - new Date(a.create_date)
+          })
+          this.imgData.forEach((item) => {
+            item.create_date = new Date(item.create_date).toLocaleDateString()
+          })
+          // 將資料篩選至5筆內
           this.imgData = res.data.filter((item, index) => {
             if (item.img.match('http') === null) {
               item.img = web + item.img
@@ -232,9 +241,17 @@ export default {
     },
     // 時間格式轉換
     changeDate () {
-      this.newsData.forEach((item) => {
+      // 升序排列
+      this.imgData.sort(function (a, b) {
+        return new Date(b.create_date) - new Date(a.create_date)
+      })
+      this.imgData.forEach((item) => {
         item.create_date = new Date(item.create_date).toLocaleDateString()
       })
+    },
+    widthEventHandler () {
+      window.innerWidth < 768 ? this.screenWidth = true : this.screenWidth = false
+      console.log(window.innerWidth)
     }
   },
   computed: {
@@ -242,6 +259,7 @@ export default {
   mounted () {
     // 渲染全部product資料
     this.imgArry()
+    window.addEventListener('resize', this.widthEventHandler)
   },
   created () {
     // 監聽滑鼠滾動
@@ -252,6 +270,7 @@ export default {
   unmounted () {
     // 銷毀組件
     window.removeEventListener('scroll', this.myEventHandler)
+    window.removeEventListener('resize', this.widthEventHandler)
   },
   watch: {
     // 監聽事件並將更動後的currentPage，設定回原本預設值

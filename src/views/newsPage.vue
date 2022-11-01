@@ -72,8 +72,8 @@
   <!-- [Start]Main  -->
   <section class="news-section-papers">
     <!-- [Start]Content (slice取得第開始，與結尾資料並與頁數關聯) -->
-    <div class="d-flex flex-wrap px-0 item-width" :class="{ 'justify-content-start': error }">
-      <div class="d-flex px-0 mb-3 news-card position-relative" :class="{ 'me-md-5': error }" v-for="item in filterProduct.slice(pageStart, pageStart + countOfPage)"
+    <div class="d-flex flex-wrap px-0 item-width row justify-content-center" :class="{ 'justify-content-start': error }">
+      <div class="d-flex  mb-3 news-card position-relative col-3 g-3" :class="{ 'me-md-5': error }" v-for="item in filterProduct.slice(pageStart, pageStart + countOfPage)"
         :key="item.id">
         <router-link :to="{name:'newsDetailPage', params:{id: item.id}}" style="width: 100%">
           <div class="mb-3 mb-lg-0">
@@ -100,7 +100,7 @@
     <!-- [Start]Pagination  -->
     <div class="pagination-block d-flex justify-content-center mt-5 mb-5">
       <nav aria-label="Page navigation example">
-        <ul class="pagination">
+        <ul class="pagination" :class="{ 'disabled': pageArr.length === 1 }">
           <li
             class="page-item"
             :class="{ 'disabled': currentPage === 1 }"
@@ -204,9 +204,15 @@ export default {
       })
     },
     changeDate () {
+      // 升序排列
+      this.filterData.sort(function (a, b) {
+        return new Date(b.create_date) - new Date(a.create_date)
+      })
+      // 篩選字串
       this.filterData.forEach((item) => {
         item.create_date = new Date(item.create_date).toLocaleDateString()
       })
+      console.log(this.filterData)
     },
     addArrIdx () {
       this.pageArr = []
@@ -238,6 +244,7 @@ export default {
   mounted () {
     // 渲染全部product資料
     this.typeFilter = this.filterData
+    console.log(this.filterData.create_date)
   },
   created () {
     // this.paginate_total = this.filterData.length / this.paginate
@@ -248,17 +255,17 @@ export default {
     search: function () {
       this.currentPage = 1
       this.addArrIdx()
-    },
-    currentPage: function () {
-      // 判斷物件長度是否為2(若為2則啟用v-bind屬性，將它改成justify-content-start狀態)，以及是否在頁尾(currentPage===totalPage)
-      if (this.filterProduct.length % this.countOfPage === 2 && this.currentPage === this.pageArr.length) {
-        this.error = true
-        this.isActive = false
-      } else {
-        this.error = false
-        this.isActive = true
-      }
     }
+    // currentPage: function () {
+    //   // 判斷物件長度是否為2(若為2則啟用v-bind屬性，將它改成justify-content-start狀態)，以及是否在頁尾(currentPage===totalPage)
+    //   if (this.filterProduct.length % this.countOfPage === 2 && this.currentPage === this.pageArr.length) {
+    //     this.error = true
+    //     this.isActive = false
+    //   } else {
+    //     this.error = false
+    //     this.isActive = true
+    //   }
+    // }
   }
 }
 </script>

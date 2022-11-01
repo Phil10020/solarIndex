@@ -19,6 +19,17 @@ const routes = [
     props: true
   },
   {
+    path: '/newsVue3',
+    name: 'newsPageVue3',
+    component: () => import('../views/newsPageVue3.vue')
+  },
+  {
+    path: '/newsDetailPageVue3/:id',
+    name: 'newsDetailPageVue3',
+    component: () => import('../views/newsDetailPageVue3.vue'),
+    props: true
+  },
+  {
     path: '/coupon',
     name: 'couponView',
     component: () => import('../views/couponSharing.vue')

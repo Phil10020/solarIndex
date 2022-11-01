@@ -5,6 +5,9 @@
     
     .news-detail-content {
         padding: 65px 24.66% 0 24.66%;
+        @media screen and (max-width:768px) {
+            padding: 65px 13% 0 13%;
+        }
     }
 
     .content {
@@ -90,6 +93,9 @@
                     margin-bottom: 15px;
                 }
             }
+        }
+        .sliderCardWidth {
+            width: 100%;
         }
     }
     .slider-button {

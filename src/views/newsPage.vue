@@ -73,7 +73,7 @@
   <section class="news-section-papers">
     <!-- [Start]Content (slice取得第開始，與結尾資料並與頁數關聯) -->
     <div class="d-flex flex-wrap px-0 item-width row justify-content-center" :class="{ 'justify-content-start': error }">
-      <div class="d-flex  mb-3 news-card position-relative col-3 g-3" :class="{ 'me-md-5': error }" v-for="item in filterProduct.slice(pageStart, pageStart + countOfPage)"
+      <div class="d-flex  mb-3 news-card position-relative col-4 g-3" :class="{ 'me-md-5': error }" v-for="item in filterProduct.slice(pageStart, pageStart + countOfPage)"
         :key="item.id">
         <router-link :to="{name:'newsDetailPage', params:{id: item.id}}" style="width: 100%">
           <div class="mb-3 mb-lg-0">

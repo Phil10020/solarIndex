@@ -242,10 +242,10 @@ export default {
     // 時間格式轉換
     changeDate () {
       // 升序排列
-      this.imgData.sort(function (a, b) {
+      this.newsData.sort(function (a, b) {
         return new Date(b.create_date) - new Date(a.create_date)
       })
-      this.imgData.forEach((item) => {
+      this.newsData.forEach((item) => {
         item.create_date = new Date(item.create_date).toLocaleDateString()
       })
     },

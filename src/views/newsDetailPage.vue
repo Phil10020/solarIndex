@@ -260,6 +260,7 @@ export default {
     // 渲染全部product資料
     this.imgArry()
     window.addEventListener('resize', this.widthEventHandler)
+    this.widthEventHandler()
   },
   created () {
     // 監聽滑鼠滾動

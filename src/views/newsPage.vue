@@ -100,7 +100,7 @@
     <!-- [Start]Pagination  -->
     <div class="pagination-block d-flex justify-content-center mt-5 mb-5">
       <nav aria-label="Page navigation example">
-        <ul class="pagination" :class="{ 'disabled': pageArr.length === 1 }">
+        <ul v-if="currentPage < 3  " class="pagination" :class="{ 'disabled': pageArr.length === 1 }">
           <li
             class="page-item"
             :class="{ 'disabled': currentPage === 1 }"
@@ -110,7 +110,7 @@
           </li>
           <li
             class="page-item"
-            v-for="n in pageArr.slice(currentPage-1, currentPage+5)"
+            v-for="n in pageArr.slice(0, 5)"
             :key="n.index"
             :class="{ 'active': currentPage === n }"
             @click.prevent="setPage(n)"
@@ -125,6 +125,65 @@
             <a class="page-link" href="#"><i class="bi bi-chevron-bar-right"></i></a>
           </li>
         </ul>
+        <ul v-else-if="2 < currentPage < totalPage - 5 " class="pagination" :class="{ 'disabled': pageArr.length === 1 }">
+          <li
+            class="page-item"
+            :class="{ 'disabled': currentPage === 1 }"
+            @click.prevent="setPage(currentPage - 1)"
+          >
+            <a class="page-link" href="#"><i class="bi bi-chevron-bar-left"></i></a>
+          </li>
+          <li
+            class="page-item"
+            v-for="n in pageArr.slice(currentPage-3, currentPage+2)"
+            :key="n.index"
+            :class="{ 'active': currentPage === n }"
+            @click.prevent="setPage(n)"
+          >
+            <a class="page-link" href="#"> {{ n }} </a>
+          </li>
+          <li
+            class="page-item"
+            :class="{ 'disabled': currentPage === pageArr.length }"
+            @click.prevent="setPage(currentPage + 1)"
+          >
+            <a class="page-link" href="#"><i class="bi bi-chevron-bar-right"></i></a>
+          </li>
+        </ul>
+        <ul v-else class="pagination" :class="{ 'disabled': pageArr.length === 1 }">
+          <li
+            class="page-item"
+            :class="{ 'disabled': currentPage === 1 }"
+            @click.prevent="setPage(currentPage - 1)"
+          >
+            <a class="page-link" href="#"><i class="bi bi-chevron-bar-left"></i></a>
+          </li>
+          <li
+            class="page-item"
+            v-for="n in pageArr.slice(totalPage - 5, totalPage)"
+            :key="n.index"
+            :class="{ 'active': currentPage === n }"
+            @click.prevent="setPage(n)"
+          >
+            <a class="page-link" href="#"> {{ n }} </a>
+          </li>
+          <li
+            class="page-item"
+            :class="{ 'disabled': currentPage === pageArr.length }"
+            @click.prevent="setPage(currentPage + 1)"
+          >
+            <a class="page-link" href="#"><i class="bi bi-chevron-bar-right"></i></a>
+          </li>
+        </ul>
+          <!-- <li
+            class="page-item"
+            v-for="n in pageArr.slice(currentPage-1, currentPage+4)"
+            :key="n.index"
+            :class="{ 'active': currentPage === n }"
+            @click.prevent="setPage(n)"
+          >
+            <a class="page-link" href="#"> {{ n }} </a>
+          </li> -->
       </nav>
     </div>
     <!-- [End]Pagination  -->

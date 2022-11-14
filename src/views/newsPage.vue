@@ -35,14 +35,14 @@
           全部
         </li>
         <li
-          :class="{ 'active': currentFilter === 'a' }"
-          @click.prevent="filterCategory('a')"
+          :class="{ 'active': currentFilter === 'b' }"
+          @click.prevent="filterCategory('b')"
         >
           太陽人最新消息
         </li>
         <li
-          :class="{ 'active': currentFilter === 'b' }"
-          @click.prevent="filterCategory('b')"
+          :class="{ 'active': currentFilter === 'a' }"
+          @click.prevent="filterCategory('a')"
         >
           綠能轉型行不行
         </li>
@@ -192,141 +192,128 @@
 </template>
 
 <script>
+import { ref, computed, onMounted, watch } from 'vue'
+import axios from 'axios'
+// import axios from 'axios'
 export default {
   name: 'newsPage',
-  data () {
-    return {
-      search: '',
-      typeFilter: [],
-      imgSrc: require('../../public/images/title/page_here_section_2.jpg'),
-      currentFilter: '',
-      countOfPage: 6,
-      currentPage: 1,
-      isActive: true,
-      error: false,
-      newsData: [],
-      filterData: [],
-      pageArr: []
-    }
-  },
-  methods: {
+  setup () {
+    const imgSrc = ref(require('../../public/images/title/page_here_section_2.jpg'))
+    const countOfPage = 6
+    const currentPage = ref(1)
+    const error = ref(false)
+    const typeFilter = ref([])
+    const newsData = ref([])
+    const filterData = ref([])
+    const pageArr = ref([])
+    const search = ref('')
+    const currentFilter = ref('')
+
     // 列表篩選，利用if else判斷product.type的類型，並使用this.currentFilter = type or ''來改變active的啟動條件
-    filterCategory: function (type) {
-      this.setPage(1)
-      this.currentFilter = type
+    const filterCategory = function (type) {
+      setPage(1)
+      currentFilter.value = type
       if (type === 'all') {
-        this.typeFilter = this.filterData
-        this.currentFilter = ''
+        typeFilter.value = filterData.value
+        currentFilter.value = ''
       } else {
-        this.typeFilter = this.filterData.filter((item) => {
+        typeFilter.value = filterData.value.filter((item) => {
           // 使用includes判斷true or false 篩選 type (news & green)
           return item.category.toLowerCase().includes(type)
         })
-      } ;
-      this.addArrIdx()
-    },
-    // 將參數帶入預設頁面currentPage
-    setPage: function (idx) {
-      if (idx >= 0 || idx < this.totalPage) {
-        this.currentPage = idx
       }
-    },
-    getData () {
+      addArrIdx()
+    }
+
+    // 取得axios資料
+    const getData = function () {
       const web = 'https://www.hellosolarman.com'
       const url = 'https://solardata.hellosolarman.com/api/data/news'
-      this.$http.get(url).then((res) => {
-        this.newsData = res.data.filter((item) => {
+      axios.get(url).then((res) => {
+        newsData.value = res.data.filter((item) => {
           if (item.img.match('http') === null) {
             item.img = web + item.img
           }
-          return this.newsData
+          return newsData.value
         })
-        console.log(this.newsData)
       })
-        .then(() => this.changeCategory())
-        .then(() => this.addArrIdx())
-        .then(() => this.changeDate())
+        .then(() => changeCategory())
+        .then(() => addArrIdx())
+        .then(() => changeDate())
         .catch((err) => {
           console.log(err, 'getError')
         })
-    },
-    changeCategory () {
-      for (let num = 1; num <= this.totalPage; num++) {
-        this.filterData.push(num)
+    }
+
+    // 將參數帶入預設頁面currentPage
+    const setPage = function (idx) {
+      if (idx >= 0 || idx < totalPage.value) {
+        currentPage.value = idx
       }
-      this.newsData.forEach((item) => {
+    }
+    const changeCategory = function () {
+      for (let num = 1; num <= totalPage.value; num++) {
+        filterData.value.push(num)
+      }
+      newsData.value.forEach((item) => {
         if (item.category === 'A') {
-          this.filterData.push({ ...item, newsCategory: '太陽人最新消息' })
+          filterData.value.push({ ...item, newsCategory: '太陽人最新消息' })
         } else {
-          this.filterData.push({ ...item, newsCategory: '綠能轉型行不行' })
+          filterData.value.push({ ...item, newsCategory: '綠能轉型行不行' })
         }
       })
-    },
-    changeDate () {
+    }
+
+    // 日期降序排列&格式調整
+    const changeDate = function () {
       // 升序排列
-      this.filterData.sort(function (a, b) {
+      filterData.value.sort(function (a, b) {
         return new Date(b.create_date) - new Date(a.create_date)
       })
       // 篩選字串
-      this.filterData.forEach((item) => {
+      filterData.value.forEach((item) => {
         item.create_date = new Date(item.create_date).toLocaleDateString()
       })
-      console.log(this.filterData)
-    },
-    addArrIdx () {
-      this.pageArr = []
-      const allPage = Math.ceil(this.filterProduct.length / this.countOfPage)
-      for (let newsIdx = 1; newsIdx <= allPage; newsIdx++) {
-        this.pageArr.push(newsIdx)
-      }
-      console.log(this.pageArr.length)
     }
-  },
-  computed: {
+
+    // 頁數代號關聯顯示
+    const addArrIdx = function () {
+      pageArr.value = []
+      const allPage = Math.ceil(filterProduct.value.length / countOfPage)
+      for (let newsIdx = 1; newsIdx <= allPage; newsIdx++) {
+        pageArr.value.push(newsIdx)
+      }
+    }
+
     // 搜尋功能
-    filterProduct () {
-      return this.typeFilter.filter((item) => {
+    const filterProduct = computed(() => {
+      return typeFilter.value.filter((item) => {
         return (
-          item.title.includes(this.search.toLowerCase())
+          item.title.includes(search.value.toLowerCase())
         )
       })
-    },
-    // 起始頁數設定
-    pageStart: function () {
-      return (this.currentPage - 1) * this.countOfPage
-    },
-    // 總頁數公式
-    totalPage: function () {
-      return Math.ceil(this.typeFilter.length / this.countOfPage)
-    }
-  },
-  mounted () {
-    // 渲染全部product資料
-    this.typeFilter = this.filterData
-    console.log(this.filterData.create_date)
-  },
-  created () {
-    // this.paginate_total = this.filterData.length / this.paginate
-    this.getData()
-  },
-  watch: {
+    })
+
     // 監聽事件並將更動後的currentPage，設定回原本預設值，並且觸發addArrIdx函式重新計算頁數
-    search: function () {
-      this.currentPage = 1
-      this.addArrIdx()
-    }
-    // currentPage: function () {
-    //   // 判斷物件長度是否為2(若為2則啟用v-bind屬性，將它改成justify-content-start狀態)，以及是否在頁尾(currentPage===totalPage)
-    //   if (this.filterProduct.length % this.countOfPage === 2 && this.currentPage === this.pageArr.length) {
-    //     this.error = true
-    //     this.isActive = false
-    //   } else {
-    //     this.error = false
-    //     this.isActive = true
-    //   }
-    // }
+    watch(search, () => {
+      currentPage.value = 1
+      addArrIdx()
+    })
+    // 起始頁數設定
+    const pageStart = computed(() => (currentPage.value - 1) * countOfPage)
+
+    // 總頁數公式
+    const totalPage = computed(() => Math.ceil(typeFilter.value.length / countOfPage))
+
+    // 渲染全部product資料
+    onMounted(() => {
+      typeFilter.value = filterData.value
+    })
+
+    // setup沒有created,所以直接呼叫函式
+    getData()
+
+    return { imgSrc, countOfPage, currentPage, error, pageArr, search, currentFilter, setPage, filterProduct, pageStart, totalPage, filterCategory }
   }
 }
 </script>
-
-<style lang="sass"></style>

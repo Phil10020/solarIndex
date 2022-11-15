@@ -85,69 +85,25 @@
 </template>
 
 <script>
+import axios from 'axios'
+import { ref } from 'vue'
 export default {
   name: 'newsDetailPage',
-  components: {
-  },
-  props: {
-    id: {
-      type: String
-    }
-  },
-  data () {
-    return {
-      search: '',
-      typeFilter: [],
-      imgSrc: require('../../public/images/title/page_here_section_2.jpg'),
-      currentFilter: '',
-      countOfPage: 6,
-      currentPage: 1,
-      isActive: true,
-      error: false,
-      newsData: [],
-      axiosStatus: false,
-      imgData: [],
-      slideData: [],
-      clickWait: false,
-      timer: {},
-      topBtn: false,
-      screenWidth: false
-    }
-  },
-  methods: {
-    // 列表篩選，利用if else判斷product.type的類型，並使用this.currentFilter = type or ''來改變active的啟動條件
-    filterCategory: function (type) {
-      this.setPage(1)
-      this.currentFilter = type
-      if (type === 'all') {
-        this.typeFilter = this.product
-        this.currentFilter = ''
-      } else {
-        this.typeFilter = this.product.filter((item) => {
-          // 使用includes判斷true or false 篩選 type (news & green)
-          return item.type.toLowerCase().includes(type)
-        })
-      } ;
-      console.log(this.type)
-    },
-    // 將參數帶入預設頁面currentPage
-    setPage: function (idx) {
-      if (idx >= 0 || idx < this.totalPage) {
-        this.currentPage = idx
-      }
-    },
-    getData () {
+  setup () {
+    const imgSrc = require('../../public/images/title/page_here_section_2.jpg')
+    const newsData = ref([])
+    const getData = function () {
       const web = 'https://www.hellosolarman.com'
       const id = this.id
       const url = `https://solardata.hellosolarman.com/api/data/new?id=${id}`
-      this.$http.get(url)
+      axios.get(url)
         .then((res) => {
-          this.newsData = res.data.filter((item) => {
+          newsData.value = res.data.filter((item) => {
             if (item.img.match('http') === null) {
               item.img = web + item.img
-            } return this.newsData
+            } return newsData
           })
-          this.newsData.forEach((item) => {
+          newsData.value.forEach((item) => {
             if (item.category === 'A') {
               item.category = '太陽人最新消息'
             } else {
@@ -162,23 +118,37 @@ export default {
           console.log(err, 'getError')
           this.axiosStatus = true
         })
-    },
-    getImg () {
+    }
+
+    // 時間格式轉換
+    const changeDate = function () {
+      // 升序排列
+      newsData.value.sort(function (a, b) {
+        return new Date(b.create_date) - new Date(a.create_date)
+      })
+      newsData.value.forEach((item) => {
+        item.create_date = new Date(item.create_date).toLocaleDateString()
+      })
+    }
+
+    // 抓取swiper圖片
+    const imgData = ref([])
+    const getImg = function () {
       const web = 'https://www.hellosolarman.com'
       const url = 'https://solardata.hellosolarman.com/api/data/news'
       console.log('step1')
-      this.$http.get(url)
+      axios.get(url)
         .then((res) => {
           console.log('step2')
           // 陣列日期升序排列、去除時間格式
-          this.imgData = res.data.sort(function (a, b) {
+          imgData.value = res.data.sort(function (a, b) {
             return new Date(b.create_date) - new Date(a.create_date)
           })
-          this.imgData.forEach((item) => {
+          imgData.value.forEach((item) => {
             item.create_date = new Date(item.create_date).toLocaleDateString()
           })
           // 將資料篩選至5筆內
-          this.imgData = res.data.filter((item, index) => {
+          imgData.value = res.data.filter((item, index) => {
             if (item.img.match('http') === null) {
               item.img = web + item.img
             }
@@ -186,75 +156,86 @@ export default {
           })
         })
         .then(() => {
-          this.imgArry()
+          imgArry()
         })
         .catch((err) => {
           console.log(err, 'getError')
         })
       console.log('step3')
-    },
+    }
+
+    // 圖片無限輪播算式
+    const slideData = ref([])
+    const imgArry = function () {
+      for (let i = 0; i < imgData.value.length * 2; i++) {
+        const obj = {}
+        obj.id = i
+        obj.ref = i % imgData.value.length
+        slideData.value.push(obj)
+      }
+    }
+
     // 控制swiper點擊左右
-    slideCtrl (slidesToShow = 1) {
-      if (this.clickWait) {
+    const clickWait = ref(false)
+    const slideCtrl = function (slidesToShow = 1) {
+      if (clickWait.value === ref(true)) {
         return
       }
-      this.stopTime()
-      this.clickWait = true
+      stopTime()
+      clickWait.value = ref(true)
       if (slidesToShow > 0) {
-        const shiftItem = this.slideData.shift()
-        this.slideData.push(shiftItem)
-        console.log(this.slideData, 'l')
-        this.setTime()
+        const shiftItem = slideData.value.shift()
+        slideData.value.push(shiftItem)
+        console.log(slideData.value, 'l')
+        setTime()
         return
       }
       if (slidesToShow < 0) {
-        const shiftItem = this.slideData.pop()
-        this.slideData.unshift(shiftItem)
-        this.setTime()
-        console.log(this.slideData, 'r')
+        const shiftItem = slideData.value.pop()
+        slideData.value.unshift(shiftItem)
+        setTime()
+        console.log(slideData.value, 'r')
       }
-    },
-    // 圖片無限輪播算式
-    imgArry () {
-      for (let i = 0; i < this.imgData.length * 2; i++) {
-        const obj = {}
-        obj.id = i
-        obj.ref = i % this.imgData.length
-        this.slideData.push(obj)
-      }
-    },
-    setTime () {
-      this.timer = setTimeout(() => {
-        this.clickWait = false
+    }
+
+    const timer = ref({})
+    const stopTime = function () {
+      clearInterval(timer.value)
+    }
+
+    const setTime = function () {
+      timer.value = setTimeout(() => {
+        clickWait.value = ref(false)
       }, 500)
-    },
-    stopTime () {
-      clearInterval(this.timer)
-    },
+    }
+    return { getData, changeDate, newsData, getImg, imgData, imgArry, slideData, imgSrc, slideCtrl, clickWait, stopTime, setTime }
+  },
+  props: {
+    id: {
+      type: String
+    }
+  },
+  data () {
+    return {
+      currentFilter: '',
+      axiosStatus: false,
+      topBtn: false,
+      screenWidth: false
+    }
+  },
+  methods: {
     // 監聽滾動值並顯示向上選項
-    myEventHandler (e) {
+    myEventHandler () {
       if (document.body.srcollTop > 100 || document.documentElement.scrollTop > 100) {
         this.topBtn = true
       } else {
         this.topBtn = false
       }
     },
-    // 時間格式轉換
-    changeDate () {
-      // 升序排列
-      this.newsData.sort(function (a, b) {
-        return new Date(b.create_date) - new Date(a.create_date)
-      })
-      this.newsData.forEach((item) => {
-        item.create_date = new Date(item.create_date).toLocaleDateString()
-      })
-    },
     widthEventHandler () {
       window.innerWidth < 768 ? this.screenWidth = true : this.screenWidth = false
       console.log(window.innerWidth)
     }
-  },
-  computed: {
   },
   mounted () {
     // 渲染全部product資料
@@ -272,22 +253,6 @@ export default {
     // 銷毀組件
     window.removeEventListener('scroll', this.myEventHandler)
     window.removeEventListener('resize', this.widthEventHandler)
-  },
-  watch: {
-    // 監聽事件並將更動後的currentPage，設定回原本預設值
-    search: function () {
-      this.currentPage = 1
-    },
-    currentPage: function () {
-      // 判斷物件長度是否為2(若為2則啟用v-bind屬性，將它改成justify-content-start狀態)，以及是否在頁尾(currentPage===totalPage)
-      if (this.typeFilter.length % this.countOfPage === 2 && this.currentPage === this.totalPage) {
-        this.error = true
-        this.isActive = false
-      } else {
-        this.error = false
-        this.isActive = true
-      }
-    }
   }
 }
 </script>

@@ -1,33 +1,55 @@
 <template>
   <div><a href="https://icons.getbootstrap.com/">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta tenetur vel, dolores modi numquam ipsa.</a></div>
 	<div><a href="https://icons.getbootstrap.com/">test1</a></div>
-  <h1></h1>
-  <h5></h5>
+  <h1>{{ testString }}</h1>
+  <h5 v-for=" item in newsData.list " :key="item.id">{{ item.id }}</h5>
 </template>
 
 <script>
-
+import { reactive, onMounted } from 'vue'
+import axios from 'axios'
 export default {
-  name: 'testPage',
-  data () {
-    return {
-      data: []
-    }
-  },
-  methods: {
-    getData () {
-      const url = 'http://solar.ablerex.com.tw/datacenter/rest/PV/PSData?uid=0158g1tebv8jwqv4&act=PD-2832-20221003'
-      this.$http.get(url)
+  setup () {
+    const testString = reactive('test123')
+    const url = 'https://solardata.hellosolarman.com/api/data/news'
+    const newsData = reactive({ list: [] })
+    onMounted(() => {
+      axios.get(url)
         .then((res) => {
-          this.data = res.data
-          console.log(this.data, 'success!')
-        }).catch((err) => {
-          console.log(err)
+          newsData.list = res.data
         })
-    }
+        .catch((err) => {
+          console.log(err, 'error')
+        })
+    })
+    return { newsData, testString }
   },
-  created () {
-    this.getData()
-  }
+  name: 'testPage'
+  // data () {
+  //   return {
+  //     data: [],
+  //   }
+  // },
+  // methods: {
+  //   getData () {
+  //     const web = 'https://www.hellosolarman.com'
+  //     const url = 'https://solardata.hellosolarman.com/api/data/news'
+  //     this.$http.get(url).then((res) => {
+  //       this.newsData = res.data.filter((item) => {
+  //         if (item.img.match('http') === null) {
+  //           item.img = web + item.img
+  //         }
+  //         return this.newsData
+  //       })
+  //       console.log(this.newsData)
+  //     })
+  //       .catch((err) => {
+  //         console.log(err, 'getError')
+  //       })
+  //   }
+  // },
+  // created () {
+  //   this.getData()
+  // }
 }
 </script>

@@ -17,9 +17,7 @@
       <i class="bi bi-chevron-double-right"></i>
       <router-link :to="'/news'" >太陽人快報</router-link>
       <i class="bi bi-chevron-double-right"></i>
-      <a :class="{ 'active': currentFilter === 'green' }" v-if="currentFilter === 'green'">綠能轉型行不行</a>
-      <a :class="{ 'active': currentFilter === 'news' }" v-else-if="currentFilter === 'news'">太陽人最新消息</a>
-      <a :class="{ 'active':currentFilter === '' }" v-else>{{ newsData[0].title }}</a>
+      <a :class="{ 'active':currentFilter === '' }" >{{ newsData[0].title }}</a>
     </nav>
   </section>
   <!-- [End]Breadcrumb  -->
@@ -86,39 +84,37 @@
 
 <script>
 import axios from 'axios'
-import { ref } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 export default {
   name: 'newsDetailPage',
-  setup () {
+  setup (props) {
     const imgSrc = require('../../public/images/title/page_here_section_2.jpg')
+    const currentFilter = ref('')
     const newsData = ref([])
-    const getData = function () {
-      const web = 'https://www.hellosolarman.com'
-      const id = this.id
-      const url = `https://solardata.hellosolarman.com/api/data/new?id=${id}`
-      axios.get(url)
-        .then((res) => {
-          newsData.value = res.data.filter((item) => {
-            if (item.img.match('http') === null) {
-              item.img = web + item.img
-            } return newsData
-          })
-          newsData.value.forEach((item) => {
-            if (item.category === 'A') {
-              item.category = '太陽人最新消息'
-            } else {
-              item.category = '綠能轉型行不行'
-            }
-          })
+    const axiosStatus = ref(false)
+    const url = `https://solardata.hellosolarman.com/api/data/new?id=${props.id}`
+    axios.get(url)
+      .then((res) => {
+        newsData.value = res.data.filter((item) => {
+          if (item.img.match('http') === null) {
+            item.img = web + item.img
+          } return newsData
         })
-        .then(() => {
-          this.changeDate()
+        newsData.value.forEach((item) => {
+          if (item.category === 'A') {
+            item.category = '太陽人最新消息'
+          } else {
+            item.category = '綠能轉型行不行'
+          }
         })
-        .catch((err) => {
-          console.log(err, 'getError')
-          this.axiosStatus = true
-        })
-    }
+      })
+      .then(() => {
+        changeDate()
+      })
+      .catch((err) => {
+        console.log(err, 'getError')
+        axiosStatus.value = ref(true)
+      })
 
     // 時間格式轉換
     const changeDate = function () {
@@ -133,36 +129,31 @@ export default {
 
     // 抓取swiper圖片
     const imgData = ref([])
-    const getImg = function () {
-      const web = 'https://www.hellosolarman.com'
-      const url = 'https://solardata.hellosolarman.com/api/data/news'
-      console.log('step1')
-      axios.get(url)
-        .then((res) => {
-          console.log('step2')
-          // 陣列日期升序排列、去除時間格式
-          imgData.value = res.data.sort(function (a, b) {
-            return new Date(b.create_date) - new Date(a.create_date)
-          })
-          imgData.value.forEach((item) => {
-            item.create_date = new Date(item.create_date).toLocaleDateString()
-          })
-          // 將資料篩選至5筆內
-          imgData.value = res.data.filter((item, index) => {
-            if (item.img.match('http') === null) {
-              item.img = web + item.img
-            }
-            return index < 5
-          })
+    const web = 'https://www.hellosolarman.com'
+    const imgUrl = 'https://solardata.hellosolarman.com/api/data/news'
+    axios.get(imgUrl)
+      .then((res) => {
+        // 陣列日期升序排列、去除時間格式
+        imgData.value = res.data.sort(function (a, b) {
+          return new Date(b.create_date) - new Date(a.create_date)
         })
-        .then(() => {
-          imgArry()
+        imgData.value.forEach((item) => {
+          item.create_date = new Date(item.create_date).toLocaleDateString()
         })
-        .catch((err) => {
-          console.log(err, 'getError')
+        // 將資料篩選至5筆內
+        imgData.value = res.data.filter((item, index) => {
+          if (item.img.match('http') === null) {
+            item.img = web + item.img
+          }
+          return index < 5
         })
-      console.log('step3')
-    }
+      })
+      .then(() => {
+        imgArry()
+      })
+      .catch((err) => {
+        console.log(err, 'getError')
+      })
 
     // 圖片無限輪播算式
     const slideData = ref([])
@@ -178,7 +169,8 @@ export default {
     // 控制swiper點擊左右
     const clickWait = ref(false)
     const slideCtrl = function (slidesToShow = 1) {
-      if (clickWait.value === ref(true)) {
+      if (clickWait.value === ref(false)) {
+        console.log('111')
         return
       }
       stopTime()
@@ -201,58 +193,54 @@ export default {
     const timer = ref({})
     const stopTime = function () {
       clearInterval(timer.value)
+      console.log('stop time')
     }
 
     const setTime = function () {
       timer.value = setTimeout(() => {
+        console.log('setTime')
         clickWait.value = ref(false)
       }, 500)
     }
-    return { getData, changeDate, newsData, getImg, imgData, imgArry, slideData, imgSrc, slideCtrl, clickWait, stopTime, setTime }
+
+    // 監聽畫面寬度調整版型
+    const screenWidth = ref(false)
+    const widthEventHandler = function () {
+      window.innerWidth < 768 ? screenWidth.value = true : screenWidth.value = false
+      console.log(window.innerWidth)
+    }
+
+    // 渲染全部product資料
+    onMounted(() => {
+      window.addEventListener('resize', widthEventHandler)
+      widthEventHandler()
+      imgArry()
+    })
+
+    // 銷毀組件
+    onUnmounted(() => {
+      window.removeEventListener('scroll', myEventHandler)
+      window.removeEventListener('resize', widthEventHandler)
+    })
+
+    // 監聽滾動值並顯示向上選項
+    const topBtn = ref(false)
+    const myEventHandler = function () {
+      if (document.body.srcollTop > 100 || document.documentElement.scrollTop > 100) {
+        topBtn.value = true
+      } else {
+        topBtn.value = false
+      }
+    }
+
+    // 監聽滑鼠滾動
+    window.addEventListener('scroll', myEventHandler)
+    return { props, changeDate, newsData, imgData, imgArry, slideData, imgSrc, slideCtrl, clickWait, setTime, screenWidth, topBtn, currentFilter }
   },
   props: {
     id: {
       type: String
     }
-  },
-  data () {
-    return {
-      currentFilter: '',
-      axiosStatus: false,
-      topBtn: false,
-      screenWidth: false
-    }
-  },
-  methods: {
-    // 監聽滾動值並顯示向上選項
-    myEventHandler () {
-      if (document.body.srcollTop > 100 || document.documentElement.scrollTop > 100) {
-        this.topBtn = true
-      } else {
-        this.topBtn = false
-      }
-    },
-    widthEventHandler () {
-      window.innerWidth < 768 ? this.screenWidth = true : this.screenWidth = false
-      console.log(window.innerWidth)
-    }
-  },
-  mounted () {
-    // 渲染全部product資料
-    this.imgArry()
-    window.addEventListener('resize', this.widthEventHandler)
-    this.widthEventHandler()
-  },
-  created () {
-    // 監聽滑鼠滾動
-    window.addEventListener('scroll', this.myEventHandler)
-    this.getData()
-    this.getImg()
-  },
-  unmounted () {
-    // 銷毀組件
-    window.removeEventListener('scroll', this.myEventHandler)
-    window.removeEventListener('resize', this.widthEventHandler)
   }
 }
 </script>

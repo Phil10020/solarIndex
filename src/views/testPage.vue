@@ -2,7 +2,8 @@
   <div><a href="https://icons.getbootstrap.com/">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta tenetur vel, dolores modi numquam ipsa.</a></div>
 	<div><a href="https://icons.getbootstrap.com/">test1</a></div>
   <h1>{{ testString }}</h1>
-  <h5 v-for=" item in newsData.list " :key="item.id">{{ item.id }}</h5>
+  <div class="bg-img"></div>
+  <div class="position-relative" style="width:200px; height:200px; background-color:green">test1<div class="position-absolute" style="width:100px;top:-10% ; height:100px; background-color:red">test2</div></div>
 </template>
 
 <script>
@@ -53,3 +54,11 @@ export default {
   // }
 }
 </script>
+
+<style scoped>
+ .bg-img {
+  background: url('../../../../public/images/social/goalsWrap/Our.png');
+  width: 200px;
+  height: 200px;
+ }
+</style>

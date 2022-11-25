@@ -315,7 +315,7 @@
                 </p>
             </div>
             <div class="bg  d-flex flex-column justify-content-center align-items-center item-center item-right position-relative z-green mobile-padding" style=" width: 50%; height: auto;">
-                <img class="img-fluid" src="../../../../public/images/social/sdgs" runat="server" alt="sdg-img"/>
+                <img class="img-fluid" src="../../../../public/images/social/sdgs_sun.png" runat="server" alt="sdg-img"/>
             </div>
         </div>
     </section>
@@ -361,7 +361,7 @@
                             </div>
                         </div>
                         <div class="position-absolute" style="top:40%; left:40%;">
-                            <img src="../../../../public/images/social/partnerImg/partnerLogo4.png" runat="server" alt="" />
+                            <img src="../../../../public/images/social/partnerLogo4.png" runat="server" alt="" />
                         </div>
                         <div class="d-flex justify-content-between">
                             <div class="d-flex flex-column justify-content-between mobile-relative">

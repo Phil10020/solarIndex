@@ -1,10 +1,11 @@
 <template>
  <section id="social">
     <!-- [Start]banner  -->
-    <section class="banner" :style="{ background: 'url(' + banner + ')' }">
-        <div class="mt-5 text-white d-flex flex-column align-items-center justify-content-center banner-column">
+    <section class="social-banner d-flex justify-content-end align-items-end" :style="{ background: 'url(' + banner + ')' }">
+        <div class="mt-5 text-white d-flex flex-column banner-column">
             <h1 class="mb-3 text-letter-3">社會影響力</h1>
-            <h3 class="text-white text-letter-3">SOCIAL IMOACT</h3>
+            <h3 class="text-white text-letter-3 mb-30">SOCIAL IMOACT</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam quidem vero accusantium, non aspernatur consequatur nulla ab delectus adipisci sapiente aut incidunt, quaerat nihil!</p>
         </div>
     </section>
     <!-- [End]banner  -->
@@ -47,7 +48,7 @@
                     <h3 class="text-center">Civil Power</h3>
                 </div>
             </div>
-            <div class=" mb-100">
+            <div class=" mb-50">
                 <div class="d-flex flex-wrap card-mobil">
                     <div class="card shadow rounded border-0 card-padding m-1" :style="{ background: 'url(' + see.logo + ')' }">
                         <div class="d-flex mobile-imgWrap-1433 mb-4">
@@ -163,17 +164,17 @@
     <!-- [End]See  -->
 
     <!-- [Start]intention  -->
-    <section class="intention mobile-mb-30 mb-82 intention-padding">
+    <section class="intention mobile-mb-30 mb-50 intention-padding">
         <div class="intention-bg" :style="{ background: 'url(' + intention.intentionBg + ')' }">
             <div class="d-flex justify-content-center mobile-content">
                 <div class="mobile-center z-3 d-flex flex-column align-items-center ">
                     <h2 class="english-title mb-3 title-break">太陽人全民電廠<span>初心與理念</span></h2>
                     <h3 class="mb-100 sub-title">Our Original Intention</h3>
-                    <p class="mb-95 mobile-padding sub-text text-center">2011年，311 東日本大地震與福島核災，徹底改寫了我們對能源安全的認知，我們也因此認知到：環境和文明的永續及平衡，是這世代人類都必須面對的共同課題。</p>
+                    <p class="mb-80 mobile-padding sub-text text-center">2011年，311 東日本大地震與福島核災，徹底改寫了我們對能源安全的認知，我們也因此認知到：環境和文明的永續及平衡，是這世代人類都必須面對的共同課題。</p>
                     <div class="intention-text">
                         <div class="mb-100  d-flex mobile-wrap-768">
-                            <div style="width: 100%" class="d-flex flex-column justify-content-center pr-5">
-                                <h4 class="mb-20 h4 mobile-padding ">綠能共享經濟的源起</h4>
+                            <div style="width: 100%" class="d-flex flex-column justify-content-center pe-48">
+                                <h4 class="mb-30 h4 mobile-padding ">綠能共享經濟的源起</h4>
                                 <p class="mobile-padding">
                                     節能減碳，能源轉型已是世界趨勢，但礙於資金或資訊通路門檻過高，一般社會
                                     大眾的力量無法順暢而有效地參與其中，使得能源轉型之路窒礙難行。
@@ -186,8 +187,8 @@
                             <!-- [End] Youtube影片嵌入 -->
                         </div>
                         <div class="d-flex flex-row-reverse mobile-wrap-768 mb-100">
-                            <div style="width: 100%" class="d-flex flex-column justify-content-center pl-5">
-                                <h4 class="h4 mobile-padding">民間力量 能源轉型 </h4>
+                            <div style="width: 100%" class="d-flex flex-column justify-content-center ps-48">
+                                <h4 class="h4 mobile-padding mb-30">民間力量 能源轉型 </h4>
                                 <p class="mobile-padding ">
                                     太陽人自 2013 年開始提供以太陽能板為單位的電廠分割認購平台服務，以綠能
                                 的共享經濟為主軸，大幅降低了民眾參與的門檻，每一個人都能夠輕鬆地成為
@@ -221,7 +222,7 @@
                             <p class="text-end mb-0"><small class="intro-text">—— 太陽人的核心價值，創始至今</small></p>
                         </div>
                     </div>
-                    <div class="ml-70 d-flex align-items-end">
+                    <div class="ml-1 d-flex align-items-end">
                         <img src="../../../../public/images/social/intro_outline_right.png" runat="server" alt="">
                     </div>
                 </div>

@@ -15,8 +15,8 @@
     }
 
     h4 {
-        font-size: 2.25rem;
-        font-weight: 900;
+        font-size: 1.5rem;
+        font-weight: 700;
 
         @media screen and (max-width:992px) {
             font-size: 1.125rem;
@@ -49,7 +49,7 @@
 
     p {
         color: #515C5C;
-
+        font-size: 22px;
         @media screen and (max-width: 992px) {
             font-size: 14px;
         }
@@ -116,7 +116,6 @@
         }
 
         .mobile-font-22 {
-            font-size: 22px;
             line-height: 40px;
         }
 
@@ -151,7 +150,7 @@
         }
 
         &-title {
-            font-size: 55px;
+            font-size: 54px;
             font-family: 'Noto Serif TC';
             color: #333333;
             margin-bottom: 18px;
@@ -189,9 +188,19 @@
         }
     }
 
+    .mb-50 {
+        margin-bottom: 50px;
+    }
+
     .mb-60 {
         margin-bottom: 60px;
     }
+
+    
+    .mb-80 {
+        margin-bottom: 80px;
+    }
+
 
     .mb-115 {
         margin-bottom: 115px;
@@ -210,14 +219,6 @@
     }
 
 
-    .mb-82 {
-        margin-bottom: 82px;
-
-        @media screen and (max-width:992px) {
-            margin-bottom: 15%;
-        }
-    }
-
     .mb-79 {
         margin-bottom: 79px;
     }
@@ -232,6 +233,14 @@
 
     .pb-82 {
         padding-bottom: 82px;
+    }
+
+    .pe-48 {
+        padding-right: 48px;
+    }
+
+    .ps-48 {
+        padding-left: 48px;
     }
 
     .sub-title {
@@ -256,30 +265,32 @@
         right: 0;
         top: 40%;
         text-align: center;
-        font-size: 1.5rem;
+        font-size: 18px;
         border-radius: 20px 0% 0% 20px;
         z-index: 100;
         opacity: 0.9;
         letter-spacing:2px;
     }
 
-    .banner {
-        height: 446px;
+    .social-banner {
+        height: 100vh;
         overflow: hidden;
         background-size: cover !important;
         position: relative;
-        padding: 0 16.66%;
-        display: flex;
-        flex-direction: column;
+        padding: 0 5% 5%;
         color: #fff;
-        justify-content: center;
-        margin-bottom: 94px;
-        background-position: 5% 50%;
+        margin-bottom: 90px;
+        background-position: 0% 40% !important;
         background-repeat: no-repeat;
+
+        div {
+            width: 35%;
+        }
 
         h1, h3 {
             text-shadow: 5px 0px 5px black;
         }
+
 
         @media screen and (max-width: 992px) {
             background-position: 0% 50% !important;
@@ -384,12 +395,12 @@
 
         small {
             display: block;
-            font-size: 24px;
+            font-size: 22px;
         }
 
         p {
+            font-family: 'Noto Sans TC';
             font-size: 32px;
-
             &:first-child:first-letter {
                 font-size: 50px;
                 font-weight: bold;
@@ -420,6 +431,11 @@
             h4, p {
                 letter-spacing: 1px;
             }
+        }
+
+        h4, p {
+            font-family: 'Noto Sans TC';
+            letter-spacing: 2px;
         }
 
         .mobile-content {
@@ -559,12 +575,8 @@
             }
         }
 
-        .mb-95 {
-            margin-bottom: 95px;
-        }
-
         p {
-            font-size: 24px;
+            font-size: 22px;
             line-height: 32px;
             color: #515C5C;
         }
@@ -693,7 +705,6 @@
         &-bg {
             background-repeat: no-repeat !important;
             background-position: 0% 50% !important;
-            background: require('../../../../public/images/social/Section_tracking.png');
         }
 
         &-card {
@@ -764,6 +775,11 @@
             }
         }
 
+        h4 {
+            font-family: 'Noto Sans TC';
+            letter-spacing: 2px;
+        }
+
         h5 {
             line-height: 32px;
             font-family: 'Noto Sans TC', sans-serif;
@@ -771,11 +787,10 @@
 
 
         p {
-            font-size: 20px;
+            font-size: 18px;
             line-height: 32px;
             font-weight: 300;
             font-family: 'Noto Sans TC', sans-serif;
-            margin-bottom: 0;
         }
 
         .card-wrap {
@@ -795,6 +810,7 @@
                 right: 0%;
                 width: 521px;
                 height: 380px;
+                box-shadow: 5px -2px 15px rgb(170, 167, 167);
             }
         }
 
@@ -833,13 +849,14 @@
             width: 100%;
 
             img {
-                top: -20%;
+                top: -30%;
+                border-radius: 15px;
             }
 
-            p:nth-child(3) {
+            p {
                 letter-spacing: 1px;
                 color: rgba(81, 92, 92, 1);
-                font-size: 24px;
+                font-size: 22px;
                 font-weight: 400;
             }
         }
@@ -1132,8 +1149,9 @@
         }
 
         p {
-            font-size: 24px;
+            font-size: 22px;
             line-height: 34.75px;
+            font-family: 'Noto Sans TC';
         }
     }
 
@@ -1152,12 +1170,12 @@
 
     .partner {
         // background-repeat: no-repeat !important;
-        padding: 100px 16.66%;
+        padding: 140px 16.66% 100px;
         flex-direction: column-reverse;
 
         &-text {
             margin: 60px 0;
-            font-size: 24px;
+            font-size: 22px;
         }
 
         h4 {
@@ -1408,7 +1426,7 @@
 
         p {
             letter-spacing: 1px;
-            font-size: 20px;
+            font-size: 22px;
         }
 
         @media screen and (max-width:1433px) and (min-width:993px) {
@@ -1516,6 +1534,7 @@
             background-position: 100% 100% !important;
             font-family: 'Noto Sans TC', sans-serif;
             width: 32%;
+            letter-spacing: 1px;
             /*width: 413px;*/
 
             &-relative {
@@ -1567,7 +1586,6 @@
                 border-radius: 50%;
                 width: 97px;
                 height: 97px;
-                background: require('../../../../public/images/social/see/avatarWong.jpg');
             }
 
             &-Fan {
@@ -1587,7 +1605,6 @@
                 border-radius: 50%;
                 width: 97px;
                 height: 97px;
-                background: require('../../../../public/images/social/see/rice.jpg');
             }
 
             &-Ni {
@@ -1597,7 +1614,6 @@
                 border-radius: 50%;
                 width: 97px;
                 height: 97px;
-                background: require('../../../../public/images/social/see/avatarNi.jpg');
             }
 
             &-Ray {
@@ -1607,7 +1623,6 @@
                 border-radius: 50%;
                 width: 97px;
                 height: 97px;
-                background: require('../../../../public/images/social/see/avatarRay.jpg');
             }
 
             &-Du {
@@ -1617,7 +1632,6 @@
                 border-radius: 50%;
                 width: 97px;
                 height: 97px;
-                background: require('../../../../public/images/social/see/avatarDu.jpg');
             }
 
             &-Shan {
@@ -1627,7 +1641,6 @@
                 border-radius: 50%;
                 width: 97px;
                 height: 97px;
-                background: require('../../../../public/images/social/see/avatarShan.png');
             }
 
             h4 {
@@ -1638,6 +1651,7 @@
                     font-size: 20px;
                     line-height: 28.96px;
                     color: #999999;
+                    letter-spacing: 1px;
                 }
             }
 
@@ -1648,6 +1662,7 @@
             p {
                 font-weight: 300;
                 line-height: 2rem;
+                letter-spacing: 1px;
             }
         }
 
@@ -1702,13 +1717,6 @@
         }
     }
 
-    .seeImg {
-        background: require('../../../../public/images/social/Section_see.png');
-    }
-
-    .cardImg {
-        background: require('../../../../public/images/social/card_logo.png');
-    }
     //youtube
     // footer
     footer {

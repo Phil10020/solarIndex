@@ -5,7 +5,7 @@
         <div class="mt-5 text-white d-flex flex-column banner-column">
             <h1 class="mb-3 text-letter-3">社會影響力</h1>
             <h3 class="text-white text-letter-3 mb-30">SOCIAL IMOACT</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam quidem vero accusantium, non aspernatur consequatur nulla ab delectus adipisci sapiente aut incidunt, quaerat nihil!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam quidem </p>
         </div>
     </section>
     <!-- [End]banner  -->
@@ -16,7 +16,7 @@
 
     <!-- [Start]intro  -->
     <section >
-        <div class="intro introImg d-flex align-items-end justify-content-center">
+        <div class="intro d-flex align-items-end justify-content-center" :style="{ background: 'url(' + social.introImg+ ')' }">
             <div class="intro-m174 d-flex justify-content-center">
                 <div class="d-flex justify-content-center">
                     <div class="mr-1">
@@ -69,7 +69,7 @@
                                 <span>現代婦女基金會<br/>執行長</span></h4>
                         </div>
                         <p class="mb-0">參與日光循環公益的計畫，讓我們以更嶄新的方式，持續不間斷的獲得支持。
-                            30多年來，我們提供受遭受性別暴力者的服務，每一步前行，都依賴著每一個善的信念。<br/>
+                            30多年來，我們提供受遭受性別暴力者的服務，每一步前行，都依賴著每一個善的信念。
                             感謝每個參與人不僅僅在環境的能源上響應，更在公益支持上不遺餘力，選擇提撥給現代婦女基金會。
                             一起為創造「性別平等、身心安全、人權尊嚴、資源永續」的社會努力。
 
@@ -239,7 +239,7 @@
                     <div class="d-flex justify-content-center flex-column mobile-relative">
                         <div class="z-22 d-flex flex-column align-items-center">
                             <h2 class="english-title">公民電廠歷程</h2>
-                            <h3 class="sub-title text-center mb-0">Citizen power plants story</h3>
+                            <h3 class="sub-title text-center mb-0">Citizen Power Plants Story</h3>
                         </div>
                     </div>
                 </div>
@@ -247,7 +247,7 @@
                     <div class="tracking-card card-padding mb-126 shadow-lg rounded align-items-end">
                         <div class="d-flex mobile-column flex-row-reverse">
                             <div class="content-width ">
-                                <p class="mb-24"><small class="heighlight">2013&ensp;至&ensp;2016</small></p>
+                                <p class="mb-20"><small class="heighlight">2013&ensp;至&ensp;2016</small></p>
                                 <h4 class="mb-30">跨國綠電共享經濟：<br/>全民電廠的先驅者</h4>
                                 <p>
                                     「鹿兒島本名一號」是太陽人全民電廠 於 2013 年推出的第一座，日台全民皆可參與的綠能 電廠專案。開啟了綠電共享經濟的先河。<br />
@@ -263,7 +263,7 @@
                     <div class="tracking-card card-padding-reverse mb-126 shadow-lg rounded align-items-end">
                         <div class="d-flex tracking-reverse mobile-column">
                             <div class="content-width me-65">
-                                <p class="mb-24"><small class="heighlight">2017&ensp;至&ensp;2019</small></p>
+                                <p class="mb-20"><small class="heighlight">2017&ensp;至&ensp;2019</small></p>
                                 <h4 class="mb-30">校園與全民的能源革命：<br/>綠能的共享經濟</h4>
                                 <p>於 2018 年募資完成的太陽人龍肚光電球場專案共有 45 人參與太陽能板的認購，共 835 片太陽能板構成面積近 500 坪的光電球場，不但能夠讓學生們及地方居民不受天氣影響盡情活動身體，未來 20 年還能夠創造近 683 萬度的再生能源，減少二氧化碳排放量近 3,760,425 kg。</p>
                             </div>
@@ -276,7 +276,7 @@
                     <div class="tracking-card card-padding-reverse mb-126 shadow-lg rounded align-items-end">
                         <div class="d-flex tracking-reverse mobile-column flex-row-reverse">
                             <div class="content-width">
-                                <p class="mb-24"><small class="heighlight">2020&ensp;至&ensp;2021</small></p>
+                                <p class="mb-20"><small class="heighlight">2020&ensp;至&ensp;2021</small></p>
                                 <h4 class="mb-30">提升偏鄉能源自給率與就業率：<br/>花東子弟返鄉就業</h4>
                                 <p>太陽人全民電廠的「點亮花東計畫」，透過在花東地區太陽能電廠的建置，有效地創造了大量且長期的工作機會，使花東偏鄉子弟不但能夠返鄉，還能夠獲得長期穩健的工作機會。</p>
                             </div>
@@ -289,7 +289,7 @@
                     <div class="tracking-card card-padding shadow-lg rounded align-items-end">
                         <div class="d-flex mobile-column tracking-reverse">
                             <div class="content-width me-65">
-                                <p class="mb-24"><small class="heighlight">2022&ensp;至&ensp;未來</small></p>
+                                <p class="mb-20"><small class="heighlight">2022&ensp;至&ensp;未來</small></p>
                                 <h4 class="mb-30">日光公益愛心永續：<br/>日光循環公益創能計畫</h4>
                                 <p>太陽人全民電廠透過日光公益模式，為社福機構或弱勢族群提供長期間的被動收益，以太陽的能量為他們帶來永續的溫暖。期待您也能一起參與，在參與氣候行動的同時不但能夠創造個人的經濟價值，也能讓您的愛心同步放大，達成環境、理財、公益的共贏。</p>
                             </div>
@@ -329,7 +329,7 @@
                 <div class="d-flex flex-column justify-content-center partner-right mt-202 mobile-relative mobile-column-relative">
                     <div class="d-flex mobile-center-1820">
                         <div class="z-55 d-flex flex-column align-items-start">
-                            <h2 class="english-title">影響力夥伴</h2>
+                            <h2 class="english-title mb-30">影響力夥伴</h2>
                             <h3 class="sub-title mb-26">Our Partner</h3>
                         </div>
                     </div>
@@ -406,7 +406,8 @@ export default {
         introLeft: require('../../public/images/social/intro_outline_left.png'),
         introRight: require('../../public/images/social/intro_outline_right.png'),
         introText: require('../../public/images/social/Social_Impact.png'),
-        introYourself: require('../../public/images/social/Yourself.png')
+        introYourself: require('../../public/images/social/Yourself.png'),
+        introImg: require('../../../../public/images/social/Section_intro.png')
       },
       intention: {
         intentionText: require('../../public/images/social/Spare.png'),

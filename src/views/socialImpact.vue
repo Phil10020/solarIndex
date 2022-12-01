@@ -40,7 +40,7 @@
     </section>
     <!-- [End]intro  -->
     <!-- [Start]See  -->
-    <section class="see-padding">
+    <section class="see-padding mb-30">
         <div class="see" :style="{ background: 'url(' + see.seeBg+ ')' }">
             <div class="title-wrap d-flex justify-content-center mb-115 position-relative">
                 <div class="">
@@ -50,7 +50,7 @@
             </div>
             <div class=" mb-50">
                 <div class="d-flex flex-wrap card-mobil">
-                    <div class="card shadow rounded border-0 card-padding m-1" :style="{ background: 'url(' + see.logo + ')' }">
+                    <div class="card rounded border-0 card-padding m-1" :style="{ background: 'url(' + see.logo + ')' }">
                         <div class="d-flex mobile-imgWrap-1433 mb-4">
                             <div class="me-3 mb-2">
                                 <div class=" card-Yung" :style="{ background: 'url(' + see.Yung + ')' }"></div>
@@ -60,7 +60,7 @@
                         </div>
                         <p class="mb-0">謝謝日光循環公益計畫，以綠能不間斷地支持我們，持續提供0~12歲不分國籍兒童的全日型照顧服務。</p>
                     </div>
-                    <div class="card shadow rounded border-0 card-padding  m-1" :style="{ background: 'url(' + see.logo + ')' }">
+                    <div class="card rounded border-0 card-padding  m-1" :style="{ background: 'url(' + see.logo + ')' }">
                         <div class="d-flex mobile-imgWrap-1433 mb-4">
                             <div class="me-3 mb-2">
                                 <div class=" card-Fan" :style="{ background: 'url(' + see.Fan + ')' }"></div>
@@ -75,7 +75,7 @@
 
                         </p>
                     </div>
-                    <div class="card shadow rounded border-0 card-padding m-1" :style="{ background: 'url(' + see.logo + ')' }">
+                    <div class="card rounded border-0 card-padding m-1" :style="{ background: 'url(' + see.logo + ')' }">
                         <div class="d-flex mobile-imgWrap-1433 mb-4">
                             <div class="me-3 mb-2">
                                 <div class=" card-Ni" :style="{ background: 'url(' + see.Ni + ')' }"></div>
@@ -86,7 +86,7 @@
                         <p class="mb-0">謝謝日光循環公益專案，不但能讓社會大眾一起參與營救生命的任務，更能同時達成節能減碳與能源轉型，甚至共創經濟與公益雙贏，朝向環境永續的目標一同努力。
                         </p>
                     </div>
-                    <div class="card shadow rounded border-0 card-padding m-1" :style="{ background: 'url(' + see.logo + ')' }">
+                    <div class="card rounded border-0 card-padding m-1" :style="{ background: 'url(' + see.logo + ')' }">
                         <div class="d-flex mobile-imgWrap-1433 mb-4">
                             <div class="me-3 mb-2">
                                 <div class=" card-Wong" :style="{ background: 'url(' + see.Wong + ')' }"></div>
@@ -96,7 +96,7 @@
                         </div>
                         <p class="mb-0">日光循環公益專案圓滿達成，感謝太陽人全民電廠及參與日光循環計畫之人士的愛心善舉。日光循環公益專案不僅達成環境、經濟、能源、公益的共贏，民眾認購電廠後，不但可獲得收益，也可選擇提撥部分收益續捐贈給勵馨基金會，成為弱勢婦幼長達20年的溫暖守護。</p>
                     </div>
-                    <div class="card shadow rounded border-0 card-padding m-1" :style="{ background: 'url(' + see.logo + ')' }">
+                    <div class="card rounded border-0 card-padding m-1" :style="{ background: 'url(' + see.logo + ')' }">
                         <div class="d-flex mobile-imgWrap-1433 mb-4">
                             <div class="me-3 mb-2">
                                 <div class="card-Ceng" :style="{ background: 'url(' + see.Ceng + ')' }"></div>
@@ -106,7 +106,7 @@
                         </div>
                         <p class="mb-0">在臺灣能源轉型的過程中，「太陽人」建立了一個整合公民力量、以社區為主體及務實推動低碳永續的發展典範！</p>
                     </div>
-                    <div class="card shadow rounded border-0 card-padding m-1" :style="{ background: 'url(' + see.logo + ')' }">
+                    <div class="card rounded border-0 card-padding m-1" :style="{ background: 'url(' + see.logo + ')' }">
                         <div class="d-flex  mobile-imgWrap-1433 mb-4">
                             <div class="me-3 mb-2">
                                 <div class="card-relative card-Wu" :style="{ background: 'url(' + see.Wu + ')' }"></div>
@@ -116,7 +116,7 @@
                         </div>
                         <p class="mb-0">太陽光電，風力發電，強強聯手，節能省碳，環保愛地球，為台灣共創能源永續經營新里程。</p>
                     </div>
-                    <div class="card shadow rounded border-0 card-padding m-1" :style="{ background: 'url(' + see.logo + ')' }">
+                    <div class="card rounded border-0 card-padding m-1" :style="{ background: 'url(' + see.logo + ')' }">
                         <div class="d-flex  mobile-imgWrap-1433 mb-4">
                             <div class="me-3 mb-2">
                                 <div class="card-relative card-rice" :style="{ background: 'url(' + see.rice + ')' }"></div>
@@ -126,7 +126,7 @@
                         </div>
                         <p class="mb-0">日光循環公益專案是環境永續上重要的一環，而願從收益中提撥部分捐贈大米缸，支持友善耕作米糧與公益助糧行動，更是體現了對環境與人的永續關懷。</p>
                     </div>
-                    <div class="card shadow rounded border-0 card-padding m-1" :style="{ background: 'url(' + see.logo + ')' }">
+                    <div class="card rounded border-0 card-padding m-1" :style="{ background: 'url(' + see.logo + ')' }">
                         <div class="d-flex  mobile-imgWrap-1433 mb-4">
                             <div class="me-3 mb-2">
                                 <div class="card-relative card-Ray" :style="{ background: 'url(' + see.Ray + ')' }"></div>
@@ -136,7 +136,7 @@
                         </div>
                         <p class="mb-0">推動城市屋頂型光電，是艱難的用電正義之路。日光循環公益計畫，還導引認購人將收益捐給環境資訊協會。這真是個充滿善與感謝的日光循環啊！</p>
                     </div>
-                    <div class="card shadow rounded border-0 card-padding m-1" :style="{ background: 'url(' + see.logo + ')' }">
+                    <div class="card rounded border-0 card-padding m-1" :style="{ background: 'url(' + see.logo + ')' }">
                         <div class="d-flex  mobile-imgWrap-1433 mb-4">
                             <div class="me-3 mb-2">
                                 <div class="card-relative card-Du" :style="{ background: 'url(' + see.Du + ')' }"></div>
@@ -146,7 +146,7 @@
                         </div>
                         <p class="mb-0">2022法鼓山關懷生命獎「慈悲獎」 感謝太陽人與日光循環公益計畫落實用愛發電，助台灣更美麗 ，並選擇捐贈部分收益守護無依老憨兒。</p>
                     </div>
-                    <div class="card shadow rounded border-0 card-padding m-1" :style="{ background: 'url(' + see.logo + ')' }">
+                    <div class="card rounded border-0 card-padding m-1" :style="{ background: 'url(' + see.logo + ')' }">
                         <div class="d-flex  mobile-imgWrap-1433 mb-4">
                             <div class="me-3 mb-2">
                                 <div class="card-relative card-Shan" :style="{ background: 'url(' + see.Shan + ')' }"></div>
@@ -247,10 +247,10 @@
                     <div class="tracking-card card-padding mb-126 shadow-lg rounded align-items-end">
                         <div class="d-flex mobile-column flex-row-reverse">
                             <div class="content-width ">
-                                <p class="mb-20"><small class="heighlight">2013&ensp;至&ensp;2016</small></p>
+                                <p class="mb-20"><small class="heighlight">2013&thinsp;至&thinsp;2016</small></p>
                                 <h4 class="mb-30">跨國綠電共享經濟：<br/>全民電廠的先驅者</h4>
                                 <p>
-                                    「鹿兒島本名一號」是太陽人全民電廠 於 2013 年推出的第一座，日台全民皆可參與的綠能 電廠專案。開啟了綠電共享經濟的先河。<br />
+                                    「鹿兒島本名一號」是太陽人全民電廠 於 2013 年推出的第一座，日台全民皆可參與的綠能 電廠專案。開啟了綠電共享經濟的先河。
                                     佐賀、長崎、大分等地的日本綠能電廠亦先後完工 掛表，共 35 位一般社會大眾一同參與並證明了民間 力量落實能源轉型的可行性與價值性。
                                 </p>
                             </div>
@@ -263,7 +263,7 @@
                     <div class="tracking-card card-padding-reverse mb-126 shadow-lg rounded align-items-end">
                         <div class="d-flex tracking-reverse mobile-column">
                             <div class="content-width me-65">
-                                <p class="mb-20"><small class="heighlight">2017&ensp;至&ensp;2019</small></p>
+                                <p class="mb-20"><small class="heighlight">2017&thinsp;至&thinsp;2019</small></p>
                                 <h4 class="mb-30">校園與全民的能源革命：<br/>綠能的共享經濟</h4>
                                 <p>於 2018 年募資完成的太陽人龍肚光電球場專案共有 45 人參與太陽能板的認購，共 835 片太陽能板構成面積近 500 坪的光電球場，不但能夠讓學生們及地方居民不受天氣影響盡情活動身體，未來 20 年還能夠創造近 683 萬度的再生能源，減少二氧化碳排放量近 3,760,425 kg。</p>
                             </div>
@@ -276,7 +276,7 @@
                     <div class="tracking-card card-padding-reverse mb-126 shadow-lg rounded align-items-end">
                         <div class="d-flex tracking-reverse mobile-column flex-row-reverse">
                             <div class="content-width">
-                                <p class="mb-20"><small class="heighlight">2020&ensp;至&ensp;2021</small></p>
+                                <p class="mb-20"><small class="heighlight">2020&thinsp;至&thinsp;2021</small></p>
                                 <h4 class="mb-30">提升偏鄉能源自給率與就業率：<br/>花東子弟返鄉就業</h4>
                                 <p>太陽人全民電廠的「點亮花東計畫」，透過在花東地區太陽能電廠的建置，有效地創造了大量且長期的工作機會，使花東偏鄉子弟不但能夠返鄉，還能夠獲得長期穩健的工作機會。</p>
                             </div>
@@ -289,7 +289,7 @@
                     <div class="tracking-card card-padding shadow-lg rounded align-items-end">
                         <div class="d-flex mobile-column tracking-reverse">
                             <div class="content-width me-65">
-                                <p class="mb-20"><small class="heighlight">2022&ensp;至&ensp;未來</small></p>
+                                <p class="mb-20"><small class="heighlight">2022&thinsp;至&thinsp;未來</small></p>
                                 <h4 class="mb-30">日光公益愛心永續：<br/>日光循環公益創能計畫</h4>
                                 <p>太陽人全民電廠透過日光公益模式，為社福機構或弱勢族群提供長期間的被動收益，以太陽的能量為他們帶來永續的溫暖。期待您也能一起參與，在參與氣候行動的同時不但能夠創造個人的經濟價值，也能讓您的愛心同步放大，達成環境、理財、公益的共贏。</p>
                             </div>
@@ -329,7 +329,7 @@
                 <div class="d-flex flex-column justify-content-center partner-right mt-202 mobile-relative mobile-column-relative">
                     <div class="d-flex mobile-center-1820">
                         <div class="z-55 d-flex flex-column align-items-start">
-                            <h2 class="english-title mb-30">影響力夥伴</h2>
+                            <h2 class="english-title mb-20">影響力夥伴</h2>
                             <h3 class="sub-title mb-26">Our Partner</h3>
                         </div>
                     </div>
@@ -337,15 +337,15 @@
                         太陽人全民電廠結合來自企業、民間團體及公益單位夥伴的力量及特別的商業模式，一齊打造不一樣且更加多元的綠色架構，加強對整體社會及世界環境的正面影響力。
                     </p>
                     <div class="d-flex justify-content-center">
-                        <div class="bg-circle shadow-sm">
+                        <div class="bg-circle">
                             <div>媒體報導</div>
                             <div>30+</div>
                         </div>
-                        <div class="bg-circle shadow-sm">
+                        <div class="bg-circle">
                             <div>策略聯盟</div>
                             <div>20+</div>
                         </div>
-                        <div class="bg-circle shadow-sm">
+                        <div class="bg-circle">
                             <div>公益夥伴</div>
                             <div>15+</div>
                         </div>
@@ -353,7 +353,7 @@
                 </div>
                 <div class="logo-wrap mobile-center-1820 ">
                     <div class="logo-wrap-bg logo-wrap-mobil position-relative d-flex flex-column  pb-84" :style="{ background: 'url(' + partner.partner4 + ')' }">
-                        <div class="d-flex flex-column mb-173 justify-content-between position-relative">
+                        <div class="d-flex flex-column logo-wrap-margin justify-content-between position-relative">
                             <h5 class="text-center mb-4 color-g mt-5 mobile-absolute">媒體報導</h5>
                             <div class="d-flex align-items-center justify-content-center">
                                 <div class="mx-2 d-flex justify-content-center report-width">
@@ -361,11 +361,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="position-absolute" style="top:40%; left:40%;">
+                        <div class="position-absolute" style="top:44%; left:41%;">
                             <img src="../../public/images/social/partnerLogo4.png" runat="server" alt="" />
                         </div>
                         <div class="d-flex justify-content-between">
-                            <div class="d-flex flex-column justify-content-between mobile-relative">
+                            <div class="d-flex flex-column mobile-relative">
                                 <h5 class="text-center mb-4 color-b ">公益夥伴</h5>
                                 <div class="d-flex align-items-center justify-content-center">
                                     <div class="mx-2 d-flex justify-content-center">
@@ -373,7 +373,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="d-flex flex-column justify-content-between mobile-relative">
+                            <div class="d-flex flex-column mobile-relative">
                                 <h5 class="text-center mb-4 color-y">政府機關</h5>
                                 <div class="d-flex align-items-center justify-content-center ">
                                     <div class="mx-2 d-flex justify-content-center">

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC&family=Noto+Serif+TC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;500;700&family=Noto+Serif+TC&display=swap');
 /** {
     border:1px solid red;
 }*/
@@ -153,9 +153,9 @@
             font-size: 54px;
             font-family: 'Noto Serif TC';
             color: #333333;
-            margin-bottom: 18px;
+            margin-bottom: 13px;
             font-weight: 700;
-            line-height: 65px;
+            line-height: 80px;
             white-space: nowrap;
 
             span {
@@ -245,7 +245,7 @@
 
     .sub-title {
         color: #333333;
-        line-height: 40px;
+        line-height: 51.73px;
 
         @media screen and (max-width:992px) {
             font-size: 22px;
@@ -258,12 +258,12 @@
         background-color: #2AA19C;
         writing-mode: vertical-rl;
         width: 60px;
-        height: 236px;
+        height: 188px;
         text-decoration: none;
         color: white;
         position: fixed;
         right: 0;
-        top: 40%;
+        top: 28%;
         text-align: center;
         font-size: 18px;
         border-radius: 20px 0% 0% 20px;
@@ -285,6 +285,7 @@
 
         div {
             width: 35%;
+            padding-right: 2%;
         }
 
         h1, h3 {
@@ -412,9 +413,13 @@
         p {
             font-family: 'Noto Sans TC';
             font-size: 32px;
+            font-weight: 500;
             &:first-child:first-letter {
                 font-size: 50px;
                 font-weight: bold;
+            }
+            small {
+                font-weight: 400;
             }
         }
 
@@ -837,9 +842,14 @@
                 z-index: -1;
                 position: absolute;
                 height: 9px;
-                top: 0.7rem;
+                top: 15px;
+                left: -8%;
                 background: #FFEB93;
-                width: 100%;
+                width: 115%;
+            }
+
+            small {
+                letter-spacing: 0;
             }
         }
 
@@ -859,15 +869,17 @@
             width: 100%;
 
             img {
-                top: -23%;
+                top: -20%;
                 border-radius: 15px;
             }
 
             p {
-                letter-spacing: 1px;
+                font-family: 'Noto Sans TC';
+                letter-spacing: 0.9px;
                 color: rgba(81, 92, 92, 1);
-                font-size: 22px;
-                font-weight: 400;
+                font-size: 18px;
+                font-weight: 350;
+                line-height: 36px;
             }
         }
     }
@@ -1160,9 +1172,9 @@
 
         p {
             font-size: 22px;
-            line-height: 34.75px;
+            line-height: 40px;
             font-family: 'Noto Sans TC';
-            letter-spacing: 1px;
+            letter-spacing: 2px;
         }
     }
 
@@ -1185,7 +1197,7 @@
         flex-direction: column-reverse;
 
         &-text {
-            margin: 60px 0;
+            margin: 42px 0 60px;
             font-size: 22px;
             font-family: 'Noto Sans TC';
             font-weight: 400;
@@ -1298,7 +1310,7 @@
                 position: relative !important;
             }
 
-            .mb-173 {
+            .logo-wrap-margin {
                 margin-bottom: 10%;
             }
         }
@@ -1307,8 +1319,8 @@
             margin-right: 53px;
         }
 
-        .mb-173 {
-            margin-bottom: 30%;
+        .logo-wrap-margin {
+            margin: 2% 0 26%;
         }
 
         &-right {
@@ -1400,12 +1412,12 @@
 
         &-bg {
             height: 679px;
-            width: 641px;
+            width: 800px;
             background-size: contain !important;
             background-repeat: no-repeat !important;
-            background: require('../../../../public/images/social/partnerImg/L_circle3.png');
+            background-position: 50% 50% !important;
             div:nth-child(3) {
-                padding: 0 10%;
+                padding: 0 16%;
             }
         }
 
@@ -1448,6 +1460,9 @@
 
         h4 {
             font-size: 32px;
+            span {
+                margin-top: 6px;
+            }
         }
 
         p {
@@ -1563,8 +1578,11 @@
             background-repeat: no-repeat !important;
             background-position: 100% 100% !important;
             font-family: 'Noto Sans TC', sans-serif;
+            background-color: rgba(238, 238, 238, 0.15) !important;
             width: 32%;
+            height: 540px;
             letter-spacing: 1px;
+            box-shadow: 6px 12px 12px rgba(0, 0, 0, 5%);
             /*width: 413px;*/
 
             &-relative {
@@ -1584,8 +1602,8 @@
                 background-size: 200% !important;
                 background-position: 60% 50% !important;
                 border-radius: 50%;
-                width: 97px;
-                height: 97px;
+                width: 110px;
+                height: 110px;
                 background: require('../../../../public/images/social/see/avatarWu.jpg');
             }
 
@@ -1594,8 +1612,8 @@
                 background-size: 200% !important;
                 background-position: 60% 50% !important;
                 border-radius: 50%;
-                width: 97px;
-                height: 97px;
+                width: 110px;
+                height: 110px;
                 background: require('../../../../public/images/social/see/avatarCeng.jpg');
             }
 
@@ -1604,8 +1622,8 @@
                 background-size: 200% !important;
                 background-position: 90% 30% !important;
                 border-radius: 50%;
-                width: 97px;
-                height: 97px;
+                width: 110px;
+                height: 110px;
                 background: require('../../../../public/images/social/see/avatarYung.jpg');
             }
 
@@ -1614,8 +1632,8 @@
                 background-size: 150% !important;
                 background-position: 60% 20% !important;
                 border-radius: 50%;
-                width: 97px;
-                height: 97px;
+                width: 110px;
+                height: 110px;
             }
 
             &-Fan {
@@ -1623,8 +1641,8 @@
                 background-size: 150% !important;
                 background-position: 90% 20% !important;
                 border-radius: 50%;
-                width: 97px;
-                height: 97px;
+                width: 110px;
+                height: 110px;
                 background: require('../../../../public/images/social/see/avatarFan.jpg');
             }
 
@@ -1633,8 +1651,8 @@
                 background-size: 100% !important;
                 background-position: 50% 20% !important;
                 border-radius: 50%;
-                width: 97px;
-                height: 97px;
+                width: 110px;
+                height: 110px;
             }
 
             &-Ni {
@@ -1642,8 +1660,8 @@
                 background-size: 100% !important;
                 background-position: 50% 20% !important;
                 border-radius: 50%;
-                width: 97px;
-                height: 97px;
+                width: 110px;
+                height: 110px;
             }
 
             &-Ray {
@@ -1651,8 +1669,8 @@
                 background-size: 200% !important;
                 background-position: 30% 50% !important;
                 border-radius: 50%;
-                width: 97px;
-                height: 97px;
+                width: 110px;
+                height: 110px;
             }
 
             &-Du {
@@ -1660,8 +1678,8 @@
                 background-size: 200% !important;
                 background-position: 40% 30% !important;
                 border-radius: 50%;
-                width: 97px;
-                height: 97px;
+                width: 110px;
+                height: 110px;
             }
 
             &-Shan {
@@ -1669,8 +1687,8 @@
                 background-size: 100% !important;
                 background-position: 40% 30% !important;
                 border-radius: 50%;
-                width: 97px;
-                height: 97px;
+                width: 110px;
+                height: 110px;
             }
 
             h4 {
@@ -1693,6 +1711,8 @@
                 font-weight: 300;
                 line-height: 2rem;
                 letter-spacing: 1px;
+                padding: 0 6%;
+                color: rgba(81, 92, 92, 1);
             }
         }
 
@@ -1701,7 +1721,7 @@
         }
 
         .card-padding {
-            padding: 2%;
+            padding: 3% 2% 5%;
 
             @media screen and (max-width:1433px) and (min-width:993px) {
                 padding: 1.5%;

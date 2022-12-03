@@ -20,7 +20,7 @@
             <div class="intro-m174 d-flex justify-content-center">
                 <div class="d-flex justify-content-center">
                     <div class="mr-1">
-                        <img class="brackets" src="~@/../public/images/social/intro_outline_left.png" runat="server" alt="">
+                        <img class="brackets" :src="social.introLeft" runat="server" alt="">
                     </div>
                     <div class="d-flex justify-content-center">
                         <div class="m-55">
@@ -32,7 +32,7 @@
                         </div>
                     </div>
                     <div class="ml-1 d-flex align-items-end">
-                        <img src="~@/../public/images/social/intro_outline_right.png" runat="server" alt="" />
+                        <img :src="social.introRight" runat="server" alt="" />
                     </div>
                 </div>
             </div>
@@ -214,7 +214,7 @@
             <div class="intro-m174 ">
                 <div class="d-flex justify-content-center">
                     <div class="mr-1">
-                        <img src="../../../../public/images/social/intro_outline_left.png" runat="server" alt="">
+                        <img :src="social.introLeft" runat="server" alt="">
                     </div>
                     <div class="d-flex justify-content-center">
                         <div class="m-55">
@@ -223,7 +223,7 @@
                         </div>
                     </div>
                     <div class="ml-1 d-flex align-items-end">
-                        <img src="../../../../public/images/social/intro_outline_right.png" runat="server" alt="">
+                        <img :src="social.introRight" runat="server" alt="">
                     </div>
                 </div>
             </div>
@@ -255,7 +255,7 @@
                                 </p>
                             </div>
                             <div class="content-width position-relative me-65">
-                                <img class="img-fluid position-absolute img-1-width" src="../../../../public/images/social/tracking1.png" runat="server" alt="" />
+                                <img class="img-fluid position-absolute img-1-width" :src="tracking.tracking1" runat="server" alt="" />
                             </div>
                         </div>
                     </div>
@@ -268,7 +268,7 @@
                                 <p>於 2018 年募資完成的太陽人龍肚光電球場專案共有 45 人參與太陽能板的認購，共 835 片太陽能板構成面積近 500 坪的光電球場，不但能夠讓學生們及地方居民不受天氣影響盡情活動身體，未來 20 年還能夠創造近 683 萬度的再生能源，減少二氧化碳排放量近 3,760,425 kg。</p>
                             </div>
                             <div class="content-width position-relative ">
-                                <img class="img-fluid position-absolute img-1-width  me-65" src="../../../../public/images/social/tracking2.png" runat="server" alt="" />
+                                <img class="img-fluid position-absolute img-1-width  me-65" :src="tracking.tracking2" runat="server" alt="" />
                             </div>
                         </div>
                     </div>
@@ -281,7 +281,7 @@
                                 <p>太陽人全民電廠的「點亮花東計畫」，透過在花東地區太陽能電廠的建置，有效地創造了大量且長期的工作機會，使花東偏鄉子弟不但能夠返鄉，還能夠獲得長期穩健的工作機會。</p>
                             </div>
                             <div class="content-width position-relative me-65">
-                                <img class="img-fluid position-absolute img-1-width" src="../../../../public/images/social/tracking3.png" runat="server" alt=""/>
+                                <img class="img-fluid position-absolute img-1-width" :src="tracking.tracking3" runat="server" alt=""/>
                             </div>
                         </div>
                     </div>
@@ -294,7 +294,7 @@
                                 <p>太陽人全民電廠透過日光公益模式，為社福機構或弱勢族群提供長期間的被動收益，以太陽的能量為他們帶來永續的溫暖。期待您也能一起參與，在參與氣候行動的同時不但能夠創造個人的經濟價值，也能讓您的愛心同步放大，達成環境、理財、公益的共贏。</p>
                             </div>
                             <div class="content-width position-relative">
-                                <img class="img-fluid position-absolute  img-1-width" src="../../../../public/images/social/tracking4.png" runat="server" alt=""/>
+                                <img class="img-fluid position-absolute  img-1-width" :src="tracking.tracking4" runat="server" alt=""/>
                             </div>
                         </div>
                     </div>
@@ -340,19 +340,19 @@
                             <h5 class="text-center mb-4 color-g mt-5 mobile-absolute">媒體報導</h5>
                             <div class="d-flex align-items-center justify-content-center">
                                 <div class="mx-2 d-flex justify-content-center report-width">
-                                    <img src="../../../../public/images/social/partnerImg/partner1.png" runat="server" alt="" />
+                                    <img src="../../public/images/social/partnerImg/partner1.png" runat="server" alt="" />
                                 </div>
                             </div>
                         </div>
                         <div class="position-absolute" style="top:44%; left:41%;">
-                            <img src="../../public/images/social/partnerLogo4.png" runat="server" alt="" />
+                            <img :src="partner.partnerLogo" runat="server" alt="" />
                         </div>
                         <div class="d-flex justify-content-between">
                             <div class="d-flex flex-column mobile-relative">
                                 <h5 class="text-center mb-4 color-b ">公益夥伴</h5>
                                 <div class="d-flex align-items-center justify-content-center">
                                     <div class="mx-2 d-flex justify-content-center">
-                                        <img src="../../../../public/images/social/partnerImg/partner2.png" runat="server" alt="" />
+                                        <img :src="partner.partner2" runat="server" alt="" />
                                     </div>
                                 </div>
                             </div>
@@ -360,7 +360,7 @@
                                 <h5 class="text-center mb-4 color-y">政府機關</h5>
                                 <div class="d-flex align-items-center justify-content-center ">
                                     <div class="mx-2 d-flex justify-content-center">
-                                        <img src="../../../../public/images/social/partnerImg/partner3.png" runat="server" alt="" />
+                                        <img src="../../public/images/social/partnerImg/partner3.png" runat="server" alt="" />
                                     </div>
                                 </div>
                             </div>
@@ -392,7 +392,7 @@
                             <h5 class="text-center mb-4 color-g mt-5 mobile-absolute">媒體報導</h5>
                             <div class="d-flex align-items-center justify-content-center">
                                 <div class="mx-2 d-flex justify-content-center report-width">
-                                    <img src="../../../../public/images/social/partnerImg/partner1.png" runat="server" alt="" />
+                                    <img :src="partner.partner1" runat="server" alt="" />
                                 </div>
                             </div>
                         </div>
@@ -404,7 +404,7 @@
                                 <h5 class="text-center mb-4 color-b ">公益夥伴</h5>
                                 <div class="d-flex align-items-center justify-content-center">
                                     <div class="mx-2 d-flex justify-content-center">
-                                        <img src="../../../../public/images/social/partnerImg/partner2.png" runat="server" alt="" />
+                                        <img :src="partner.partner2" runat="server" alt="" />
                                     </div>
                                 </div>
                             </div>
@@ -412,7 +412,7 @@
                                 <h5 class="text-center mb-4 color-y">政府機關</h5>
                                 <div class="d-flex align-items-center justify-content-center ">
                                     <div class="mx-2 d-flex justify-content-center">
-                                        <img src="../../../../public/images/social/partnerImg/partner3.png" runat="server" alt="" />
+                                        <img :src="partner.partner3" runat="server" alt="" />
                                     </div>
                                 </div>
                             </div>
@@ -443,7 +443,7 @@ export default {
         introRight: require('../../public/images/social/intro_outline_right.png'),
         introText: require('../../public/images/social/Social_Impact.png'),
         introYourself: require('../../public/images/social/Yourself.png'),
-        introImg: require('../../../../public/images/social/Section_intro.png')
+        introImg: require('../../public/images/social/Section_intro.png')
       },
       intention: {
         intentionText: require('../../public/images/social/Spare.png'),
@@ -477,7 +477,8 @@ export default {
         partner1: require('../../public/images/social/partnerImg/partner1.png'),
         partner2: require('../../public/images/social/partnerImg/partner2.png'),
         partner3: require('../../public/images/social/partnerImg/partner3.png'),
-        partner4: require('../../public/images/social/partnerImg/partner4.png')
+        partner4: require('../../public/images/social/partnerImg/partner4.png'),
+        partnerLogo: require('../../public/images/social/partnerLogo4.png')
       },
       see: {
         logo: require('../../public/images/social/card_logo.png'),

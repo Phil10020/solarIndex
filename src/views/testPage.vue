@@ -57,7 +57,7 @@ export default {
 
 <style scoped>
  .bg-img {
-  background: url('../../../../public/images/social/goalsWrap/Our.png');
+  background: url('../../public/images/social/goalsWrap/Our.png');
   width: 200px;
   height: 200px;
  }

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;500;700&family=Noto+Serif+TC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;500;700&family=Noto+Serif+TC:wght@300;500;700;900&display=swap');
 #social {
     font-family: 'Noto Serif TC', serif, 'Noto Sans TC', sans-serif;
     // *{
@@ -81,15 +81,6 @@
     }
 
     .english {
-        @media screen and (max-width:992px) {
-            &-title {
-                font-size: 42px !important;
-                line-height: 56px !important;
-                text-align: center !important;
-                white-space: normal !important;
-            }
-        }
-
         &-title {
             font-size: 54px;
             font-family: 'Noto Serif TC';
@@ -220,6 +211,15 @@
         z-index: 100;
         opacity: 0.9;
         letter-spacing:2px;
+
+        @media screen and (max-width: 768px) {
+            width: 28px;
+            height: 128px;
+            font-size: 12px;
+            border-radius: 10px 0% 0% 10px;
+            top: 15%;
+
+        }
     }
 
     .social-banner {
@@ -1228,11 +1228,22 @@
             .logo-wrap {
                 display: none;
                 max-width: 100%;
+                h5 {
+                    font-size: 16px;
+                    line-height: 23.17px;
+                }
 
                 &-bg {
-                    height: auto;
+                    height: 297px;
                     max-width: 100%;
                     background-position: 50% 50% !important;
+                    div:nth-child(3) {
+                        padding: 0 4%;
+                    }
+                }
+
+                &-sun {
+                    width: 33%;
                 }
 
                 .mobil-d-none {
@@ -1244,7 +1255,7 @@
                 }
 
                 img {
-                    width: 50%;
+                    width: 47%;
                 }
             }
 
@@ -1274,6 +1285,7 @@
                 max-width: 100% !important;
                 width: 93.96px !important;
                 height: 93.96px !important;
+                margin-right: 4.5%;
 
                 div:nth-child(1) {
                     line-height: 1.5rem;
@@ -1296,7 +1308,7 @@
             }
 
             .logo-wrap-margin {
-                margin-bottom: 10%;
+               margin: 3% 0 22%;
             }
         }
     }
@@ -1851,6 +1863,47 @@
     }
 
     @media screen and (max-width: 768px) {
+        h3 {
+            font-weight: 900;
+            letter-spacing: 1px;
+        }
+
+        .mb-20 {
+            margin-bottom: 10px;
+        }
+
+        .mb-26 {
+            margin-bottom: 30px;
+        }
+
+        .english {
+            &-title {
+                font-size: 30px;
+                font-family: 'Noto Serif TC';
+                color: #333333;
+
+                font-weight: 900;
+                line-height: 40px;
+                white-space: nowrap;
+    
+                span {
+                    font-family: 'Noto Serif TC';
+                }
+            }
+    
+            &-content {
+                font-size: 96px;
+            }
+    
+            &-small {
+                font-size: 40px;
+            }
+        }
+
+        .goals-d-none {
+            display: none!important;
+        }
+
         .title-break {
             display: flex;
             flex-direction: column;
@@ -1866,6 +1919,11 @@
 
         .mb-21 {
             margin-bottom: 0;
+        }
+
+        .sub-title {
+            font-size: 20px;
+            line-height: 28.74px;
         }
     }
 }

@@ -310,12 +310,17 @@
             <div class="z-55 d-flex flex-column justify-content-center ms-16 mt-center mobile-padding">
                 <h3 class="english-title">太陽人的SDGs<br/> 永續發展目標</h3>
                 <h3 class="sub-title mb-60">Our SDGS Goals</h3>
+                <!-- SDGS RWD-IMG  -->
+                <div class="bg  d-flex flex-column justify-content-center align-items-center item-center item-right position-relative z-green mobile-padding" style=" width: 50%; height: auto;">
+                    <img class="img-fluid" src="../../public/images/social/sdgs_sun.png" runat="server" alt="sdg-img"/>
+                </div>
+                <!-- ************  -->
                 <p class="mb-4">
                     太陽人全民電廠致力於同步達成：<br />
                     氣候行動、永續城鄉、潔淨能源等多元價值。
                 </p>
             </div>
-            <div class="bg  d-flex flex-column justify-content-center align-items-center item-center item-right position-relative z-green mobile-padding" style=" width: 50%; height: auto;">
+            <div class="bg d-flex flex-column justify-content-center align-items-center item-center item-right position-relative z-green mobile-padding" style=" width: 50%; height: auto;">
                 <img class="img-fluid" src="../../public/images/social/sdgs_sun.png" runat="server" alt="sdg-img"/>
             </div>
         </div>
@@ -327,8 +332,8 @@
         <div class="partner position-relative partner-bg mb-21">
             <div class="d-flex justify-content-between partner-mobile">
                 <div class="d-flex flex-column justify-content-center partner-right mt-202 mobile-relative mobile-column-relative">
-                    <div class="d-flex mobile-center-1820">
-                        <div class="z-55 d-flex flex-column align-items-start">
+                    <div class="d-flex justify-content-center justify-content-md-start mobile-center-1820">
+                        <div class="z-55 d-flex flex-column align-items-md-start">
                             <h2 class="english-title mb-20">影響力夥伴</h2>
                             <h3 class="sub-title mb-26">Our Partner</h3>
                         </div>
@@ -337,19 +342,19 @@
                     <div class="web-none logo-wrap mobile-center-1820 ">
                     <div class="logo-wrap-bg logo-wrap-mobil position-relative d-flex flex-column  pb-84" :style="{ background: 'url(' + partner.partner4 + ')' }">
                         <div class="d-flex flex-column logo-wrap-margin justify-content-between position-relative">
-                            <h5 class="text-center mb-4 color-g mt-5 mobile-absolute">媒體報導</h5>
+                            <h5 class="text-center mb-2 mb-md-4 color-g mt-3 mt-md-5 mobile-absolute">媒體報導</h5>
                             <div class="d-flex align-items-center justify-content-center">
                                 <div class="mx-2 d-flex justify-content-center report-width">
                                     <img src="../../public/images/social/partnerImg/partner1.png" runat="server" alt="" />
                                 </div>
                             </div>
                         </div>
-                        <div class="position-absolute" style="top:44%; left:41%;">
+                        <div class="position-absolute logo-wrap-sun" style="top:44%; left:43%;">
                             <img :src="partner.partnerLogo" runat="server" alt="" />
                         </div>
                         <div class="d-flex justify-content-between">
                             <div class="d-flex flex-column mobile-relative">
-                                <h5 class="text-center mb-4 color-b ">公益夥伴</h5>
+                                <h5 class="text-center mb-md-4 mb-1  color-b ">公益夥伴</h5>
                                 <div class="d-flex align-items-center justify-content-center">
                                     <div class="mx-2 d-flex justify-content-center">
                                         <img :src="partner.partner2" runat="server" alt="" />
@@ -357,7 +362,7 @@
                                 </div>
                             </div>
                             <div class="d-flex flex-column mobile-relative">
-                                <h5 class="text-center mb-4 color-y">政府機關</h5>
+                                <h5 class="text-center mb-1 mb-md-4 color-y">政府機關</h5>
                                 <div class="d-flex align-items-center justify-content-center ">
                                     <div class="mx-2 d-flex justify-content-center">
                                         <img src="../../public/images/social/partnerImg/partner3.png" runat="server" alt="" />
@@ -477,7 +482,7 @@ export default {
         partner1: require('../../public/images/social/partnerImg/partner1.png'),
         partner2: require('../../public/images/social/partnerImg/partner2.png'),
         partner3: require('../../public/images/social/partnerImg/partner3.png'),
-        partner4: require('../../public/images/social/partnerImg/partner4.png'),
+        partner4: require('../../public/images/social/partnerImg/partner-circle.png'),
         partnerLogo: require('../../public/images/social/partnerLogo4.png')
       },
       see: {

@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&family=Noto+Sans+TC&display=swap');
+// css reset 
+@import "./helpers/cssreset" ;
+// 自訂bootstrap參數 Exp:primary:公司主要色系
+@import "~bootstrap/scss/functions";
+@import "./helpers/variables" ;
+@import "~bootstrap/scss/bootstrap";
+// 全域基本設定
+@import "./helpers/base" ;
+// 通用(共用)版型
+@import "./helpers/layout" ;
+
+
+
+// 頁面
+@import "./helpers/coupon" ;
+@import "./helpers/newsPage" ;
+@import "./helpers/poblicWelfare" ;
+@import "./helpers/poblicWelfareId" ;
+@import "./helpers/social" ;
+@import "./helpers/about" ;
+@import "./helpers/performance" ;
+@import "./helpers/newsPageDetail"

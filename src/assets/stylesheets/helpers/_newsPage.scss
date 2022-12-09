@@ -1,0 +1,129 @@
+.section-operation {
+  padding: 65px 16.66% 0 16.66%;
+  @media screen and (max-width:767px) {
+    padding: 0 8.33%;
+  }
+
+  .operation-block {
+    display: flex;
+    justify-content: space-between;
+
+    .line {
+      color:$secondary , 60% ;
+      margin: 0 15px;
+    }
+    
+    @media screen and (max-width:1024px) {
+      padding: 10px 16.66% 20px 16.66%;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .welfare-type {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 20px 0;
+        display: flex;
+        flex-flow: wrap;
+        @media screen and (max-width:767px) {
+            display: none;
+          }
+
+        li {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+
+            &:not(:first-child) {
+                &:before {
+                    content: "";
+                    width: 1px;
+                    height: 10px;
+                    background-color: rgba(0,0,0,0.3);
+                    margin: 0 20px;
+                }
+            }
+
+            &.active {
+                font-weight: bold;
+                color: $primary;
+            }
+        }
+    }
+
+    .search-block {
+      @media screen and (max-width:767px) {
+        margin-top: 1rem ;
+      }
+    }
+  }
+}
+
+.news-section-papers{
+    padding: 0 16.66% 0 16.66%;
+    @media screen and (max-width:1024px) {
+      padding: 0 10%;
+    }
+    @media screen and (max-width:767px) {
+      padding: 0 5%;
+    }
+
+    i {
+      color: $primary;
+    }
+
+    .news-card {
+      //筆電間距問題
+      width: 30%;
+      background-color: #f7f7f7;
+      @media screen and (max-width:1024px) {
+        margin: 0 10px;
+      }
+      @media screen and (max-width:768px) {
+        width: 100%;
+      }
+
+      .item-hover {
+        position: absolute;
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        display: flex;
+        transition: 0.3s ease-in-out;
+        &:hover {
+            position: absolute;
+            background: rgb(32, 28, 28);
+            opacity: 0.8;
+        }
+        .link-icon {
+            width: 45px;
+            height: 45px;
+            background-color: #A71E38;
+            color: #fff;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 45px;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+      }
+    }
+
+    // .item-width {
+    //   justify-content: space-between;
+    //   @media screen and (max-width:1024px) {
+    //     justify-content: center;
+    //   }
+    // }
+
+    .card-img-style {
+      width: 100%;
+      height: 100%;
+      background-size: cover !important;
+      background-repeat: no-repeat !important;
+      background-position: 50% 50% !important;
+    }
+
+}

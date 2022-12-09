@@ -1,0 +1,201 @@
+.swiper {
+  margin: 0% 5% ;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction
+  {
+    bottom: 0%;
+  }
+}
+
+.swiper-pagination {
+    .swiper-pagination-bullet {
+        opacity: 1;
+
+        background-color: white;
+        &-active {
+          background-color: #A8263C;
+        }
+    }
+}
+
+.swiper-button-next {
+  right: 0% !important;
+  left: auto !important;
+  z-index: 10;
+  &:after {
+    font-size: 13px !important;
+    font-weight: bolder;
+  }
+
+}
+.swiper-button-prev{
+    right: auto !important;
+    left: 0px !important;
+    z-index: 10;
+    &:after {
+        font-size: 13px !important;
+        font-weight: bolder;
+      }
+}
+.swiper-pagination {
+    position: relative !important ;
+}
+.swiper-button-next, .swiper-button-prev {
+  position: absolute;
+  top: 50%;
+  background-color: white;
+  border-radius: 50%;
+  width: var(--swiper-navigation-size) !important;
+  height: var(--swiper-navigation-size);
+  margin-top: calc(0px - (var(--swiper-navigation-size)/ 2));
+  z-index: 10;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--swiper-navigation-color,var(--swiper-theme-color));
+}
+swiper-slide {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+}
+.join {
+  span {
+    border-bottom: 2px solid #fff;
+    padding-bottom: 1px;
+  }
+}
+
+:root {
+  --swiper-theme-color: gray !important;
+}
+
+:root {
+  --swiper-navigation-size: 44px;
+}
+
+.about {
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    font-family: 'Noto Sans TC', sans-serif;
+    padding: 0% 15% 30px;
+    .card-body {
+      padding: 1rem 0.6rem 0.5rem;
+      p {
+        font-size: 14px;
+      }
+    }
+    .content-down {
+      bottom: 17%;
+    }
+    @media screen and (max-width:992px) {
+      padding: 0% 10%; 
+    }
+    @media screen and (max-width:767px) {
+      height: auto !important;
+      padding: 0% 10% 5%;
+      &-card {
+        width: auto !important;
+        // height:374px ;
+      }
+      .card-body {
+        padding: 1rem 1rem 0.5rem;
+        p {
+          padding-left: 10px;
+        }
+      }
+      .content-down {
+        bottom: 12%;
+      }
+    }
+    h2 {
+        font-size: 40px !important;
+        line-height: 40px;
+        position:relative;
+        &:after {
+            content: "";
+            position: absolute;
+            right: 43%;
+            left: 43%;
+            bottom: -20px;
+            border-bottom: 4px solid #fff;
+        }
+    }
+    h5 {
+        z-index: 5;
+        left: 8%;
+        top: 17px;
+        
+    }
+    &-card {
+        position: relative;
+        min-width: 0;
+        word-wrap: break-word;
+        background-clip: border-box;
+        border: none;
+        border-radius: 0.25rem;
+        &-body {
+            padding: 0% 5%;
+        }
+    }
+    .card-text {
+        font-size: 12px;
+        line-height: 17.38px;
+        margin-bottom: 5px ;
+    }
+    .card-title {
+        color: white;
+        &:before {
+            content: '';
+            /* 用伪元素来生成一个矩形 */
+            max-width: 150px;
+            height: 41px;
+            position: absolute;
+            top: 40%;
+            z-index: 1;
+            right: 0;
+            bottom: 0;
+            left: 3%;
+            background-color: #414853;
+            transform: skew(-20deg);
+            
+          }
+
+    }
+    .card-red-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #A8263C;
+      padding: 5% 3%;
+      text-align: center;
+      opacity: 0.9;
+      height: 71px;
+      width: 94%;
+      left: 3%;
+      p {
+        margin-bottom: 0px;
+      }
+    }
+    .text-white {
+      text-shadow: 4px 2px 4px black;
+    }
+    
+
+}
+.mb-116 {
+    margin-bottom: 10%;
+}
+.pt-100 {
+    padding-top: 100px;
+}
+.card-img-top {
+  max-width: 100%;
+  width: auto;
+  height: auto;
+}

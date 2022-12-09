@@ -1,0 +1,468 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC&family=Noto+Serif+TC&display=swap');
+#performance {
+    // *{
+    //     border: 2px solid red;
+    // }
+    font-family: 'Noto Sans TC', sans-serif, 'Noto Serif TC', serif;
+    //[Start] font-size 
+    h6 {
+        font-size: 1rem;
+        color: #515C5C;
+    }
+    h5 {
+       font-size: 1.125rem; 
+    }
+    h4 {
+        font-size: 1.5rem;
+        font-weight: 500;
+        @media screen and (max-width:992px) {
+          font-size: 1.125rem;
+        }
+    }
+    h3 {
+        font-size: 2.25rem;
+    }
+    h2 {
+        font-size: 3rem;
+    }
+    h1 {
+        font-size: 4rem;
+        font-weight: 400;
+        @media screen and (max-width: 992px) {
+          font-size: 42px;
+          line-height: 42px;
+        }
+    }
+    p {
+      color: #515C5C;
+      @media screen and (max-width: 992px) {
+        font-size: 14px;
+      }
+    }
+    .box-padding {
+        padding: 3%;
+    }
+
+    .mb-30 {
+        margin-bottom: 30px;
+    }
+
+    .text-end {
+        text-align: end !important;
+    }
+    .me-3 {
+    margin-right: 1rem;
+    }
+    .mapHide {
+        display: none !important;
+    }
+
+    .web-d-none {
+    display: none;
+    color: #000 ;
+    @media screen and (max-width:992px) {
+        display: block;
+    }
+    }
+    @media screen and (max-width: 992px) {
+    .mobile-img {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+    .mobile-relative {
+        position: relative !important;
+    }
+    .mobile-absolute {
+        position: absolute !important;
+    }
+    .mobile-center {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .mobile-padding {
+        padding: 0 5%;
+    }
+
+    .mobile-column {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .mobile-bottom-70 {
+        bottom: 70%;
+    }
+
+    .mobile-font-22 {
+        font-size: 22px;
+        line-height: 40px;
+    }
+
+    .mobile-items-start {
+        align-items: flex-start !important;
+    }
+    
+    }
+  
+    .english {
+        @media screen and (max-width:992px) {
+        &-title {
+            font-size: 42px !important;
+            line-height: 56px !important;
+            text-align: center !important;
+        }
+        }
+        &-title {
+        font-size: 55px;
+        font-family: 'Noto Sans TC', sans-serif;
+        color: #333333;
+        margin-bottom: 15px;
+        font-weight: 500;
+        line-height: 65px;
+        }
+        &-content {
+        font-size: 96px;
+        }
+        &-small {
+        font-size: 40px;
+        }
+    }
+    .banner {
+        p {
+            color: #fff;
+        }
+        @media screen and (max-width: 992px) {
+          background-position: 0% 50% !important;
+          align-items: center;
+          h1 {
+            margin-bottom: 20px;
+          }
+          p {
+            display: block;
+            color: #fff;
+            text-align: center;
+            line-height: 14px;
+          }
+        }
+        @media(max-width: 768px) {
+            padding-left: 8.33%;
+            padding-right: 8.33%;
+        }
+    }
+    .banner-column {
+        align-items: center;
+        flex-direction: column;
+      }
+    button {
+        border: none;
+        background: none;
+    }
+
+    .button_style {
+        background-color: #2AA19C;
+        color: #fff;
+        border-radius: 5px;
+        width: 106px;
+        height: 36px;
+    }
+
+    .img-fluid {
+        height: 100%;
+    }
+    .tab {
+        margin-top: 3.5%;
+        &-choose {
+            background-color: white;
+            width: 368px;
+            height: 75px;
+            border-radius: 12px;
+            padding: 20px 64px;
+            z-index: 5;
+            h4 {
+                color: rgba(81, 92, 92, 1);
+            }
+        }
+        &-shadow {
+            box-shadow: 0px 4px rgba(0, 0, 0, 0.25);
+        }
+        button {
+            z-index: 10;
+        }
+        .heighlight {
+            position: relative;
+            &:before {
+              content: "";
+              z-index: -1;
+              position: absolute;
+              height: 9px;
+              bottom: 0;
+              background: #93DBD8;
+              width: 100%;
+            }
+          }
+        li {
+            display: flex;
+            align-items: center;
+            &:not(:first-child) {
+                &:before {
+                    content: "";
+                    width: 1px;
+                    height: 10px;
+                    background-color: rgba(0,0,0,0.9);
+                    margin: 0 15px;
+                }
+            }
+            &.active {
+                button {
+                    color: rgba(252, 183, 18, 1);
+                    font-weight: bold;
+                    // color: rgba(252, 183, 18, 1);
+                    border-bottom: 2px solid rgba(252, 183, 18, 1);
+                    padding-bottom: 5px;
+                }
+            }
+        }
+        @media screen and (max-width:767px) {
+            &-relative {
+                position: relative;
+            }
+            &-absolute {
+                position: absolute;
+            }
+            &-bottom {
+                bottom: 70%;
+            }
+            &-choose {
+                width: 80%;
+            }
+
+            ul {
+                margin-top: 10%;
+            }
+
+        }
+    }
+
+    .solar {
+        width: 45%;
+        @media screen and (max-width: 768px) {
+            width: 100%;
+        }
+        &-card {
+            position: relative;
+            min-width: 0;
+            word-wrap: break-word;
+            background-clip: border-box;
+            border: 1px solid #fff ;
+            border-radius: 1rem;
+          }
+        &-bg {
+            background-image: url('/public/images/performance/sun_bg.png');
+            background-size: 15% !important;
+            background-color: rgba(238, 238, 238, 0.15);
+            background-repeat: no-repeat !important;
+            background-position: 100% 100% !important;
+            &:hover {
+                background-image: url('/public/images/performance/sun_bg_light.png');
+                background-size: 17% !important;
+                background-repeat: no-repeat !important;
+                background-position: 100% 100% !important;
+                box-shadow: 7px 9px 5px rgb(236, 235, 235);
+                transition-delay: 0ms;
+                transition-duration: 0.5s;
+                transition-property: box-shadow ,background-image;
+            }
+        }
+        .card {
+            z-index: 5;
+        }
+        .card-scrollBar {
+            height: 100vh;
+            overflow: scroll;
+            border: 1px solid #fff;
+            padding: 5%;
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+            @media screen and (max-width:768px) {
+                height: 60vh;
+            }
+        }
+        ::-webkit-scrollbar {
+            display: none;
+        }
+        // .card-body {
+        //     z-index: 10;
+        //     &-heighlight {
+        //         position: relative;
+        //         &:before {
+        //           content: "";
+        //           z-index: -1;
+        //           position: absolute;
+        //           height: 9px;
+        //           bottom: 0;
+        //           background: rgba(255, 235, 147, 1);
+        //           width: 100%;
+        //         }
+        //     }
+        // }
+        .btn-center {
+            bottom: 10%;
+            left: 30% ;
+            right:30%;
+        }
+    }
+    .pstLine {
+        &:before {
+            content: "|";
+            margin: 0 5px;
+        }
+    }
+    .card-body {
+        z-index: 10;
+        &-heighlight {
+            position: relative;
+            &:before {
+              content: "";
+              z-index: -1;
+              position: absolute;
+              height: 9px;
+              bottom: 0;
+              background: rgba(255, 235, 147, 1);
+              width: 100%;
+            }
+        }
+    }
+    .map {
+        width: 45%;
+        @media screen and (max-width: 768px) {
+            display: none;
+            width: 100%;
+        }
+        &-position {
+            top: 2%;
+            right: 2%;
+        }
+        .bi-geo-alt-fill {
+            color: #000;
+        }
+        .mapActive {
+            color: rgb(172, 39, 39) !important;
+        }
+
+        .mapShow {
+            display: block !important;
+        }
+        &-height {
+            height: 100vh-tab;
+            .z-1 {
+                z-index: 1;
+            }
+            
+            .z-20 {
+                z-index: 20;
+            }
+            
+            .mapWidth {
+                width: 100vw;
+            }
+        }
+        
+    }
+
+    .mapOn {
+        display: block;
+        @media screen and (max-width:768px) {
+            display: block;
+        }
+    }
+
+    .cardOn {
+        display: block;
+        @media screen and (max-width:768px) {
+            display: none;
+        }
+    }
+
+    .btnShow {
+        display: block !important;
+    }
+
+    .tabBtn {
+        width: 50px;
+        height: 50px;
+        position: fixed;
+        bottom: 5%;
+        right: 5%;
+        z-index: 10;
+        padding: 0;
+        background-color: #2AA19C;
+        border-radius: 50%;
+        .bi {
+            color: #fff;
+            font-size: 40px;
+        }
+    }
+
+    .powerPlant {
+        background: #FFEB93;
+        color: #000;
+        font-size: 24px;
+        display: flex;
+        align-items: center;
+        padding: 3% 8%;
+        p {
+            margin-bottom: 0;
+            font-weight: 600;
+        }
+        border-radius: 10px 10px;
+        bottom: 8%;
+        @media screen and (max-width: 768px) {
+            display: none;
+        }
+    }
+
+    .swiperPosition {
+        display: none;
+        bottom: 0%;
+        @media screen and (max-width: 768px) {
+            display: block;
+        }
+    }
+
+    .swiper-card {
+        background: white;
+        border-radius: 20px 20px;
+        .card-title {
+            margin-bottom: 0;
+        }
+        p {
+            font-size: 12px;
+            margin-bottom: 0;
+            line-height: 1.2;
+        }
+    }
+
+    .swiper-heighlight {
+        z-index: 10;
+        position: relative;
+        &:before {
+          content: "";
+          z-index: -1;
+          position: absolute;
+          height: 9px;
+          bottom: 0;
+          background: rgba(255, 235, 147, 1);
+          width: 100%;
+        }
+    }
+
+    .infoImg {
+        width: 6rem;
+        height: 5rem;
+        @media screen and (max-width:768px) {
+            width: 100%;
+        }
+    }
+}
+

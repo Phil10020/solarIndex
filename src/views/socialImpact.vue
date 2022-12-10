@@ -5,14 +5,14 @@
         <div class="mt-5 text-white d-flex flex-column banner-column">
             <h1 class="mb-3 text-letter-3">社會影響力</h1>
             <h3 class="text-white text-letter-3 mb-30">SOCIAL IMOACT</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam quidem </p>
+            <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam quidem </p> -->
         </div>
     </section>
     <!-- [End]banner  -->
 
-    <a href="couponSharing.aspx" class="fixed-link d-flex align-items-center justify-content-center" >
+    <router-link to="/coupon" href="couponSharing.aspx" class="fixed-link d-flex align-items-center justify-content-center" >
         邀請好友拿獎勵
-    </a>
+    </router-link>
 
     <!-- [Start]intro  -->
     <section >
@@ -311,9 +311,9 @@
                 <h3 class="english-title">太陽人的SDGs<br/> 永續發展目標</h3>
                 <h3 class="sub-title mb-60">Our SDGS Goals</h3>
                 <!-- SDGS RWD-IMG  -->
-                <div class="bg  d-flex flex-column justify-content-center align-items-center item-center item-right position-relative z-green mobile-padding" style=" width: 50%; height: auto;">
+                <!-- <div class="bg  d-flex flex-column justify-content-center align-items-center item-center item-right position-relative z-green mobile-padding" style=" width: 50%; height: auto;">
                     <img class="img-fluid" src="../../public/images/social/sdgs_sun.png" runat="server" alt="sdg-img"/>
-                </div>
+                </div> -->
                 <!-- ************  -->
                 <p class="mb-4">
                     太陽人全民電廠致力於同步達成：<br />

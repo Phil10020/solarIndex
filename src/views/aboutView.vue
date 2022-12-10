@@ -420,7 +420,7 @@
 </template>
 
 <script>
-import swiper from '../component/swiperView.vue'
+import swiper from '../components/swiperView.vue'
 export default {
   name: 'socialImpact',
   components: {

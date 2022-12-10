@@ -60,11 +60,6 @@ const routes = [
         component: () => import('../views/performance.vue')
       }
     ]
-  },
-  {
-    path: '/testPage',
-    name: 'testPage',
-    component: () => import('../views/testPage.vue')
   }
 ]
 

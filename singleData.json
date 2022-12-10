@@ -1,0 +1,12 @@
+{
+    "data" : [
+        {
+            "testImg": "https://www.hellosolarman.com/assets/welfare/80326560-d31e-4cad-b0a6-fdf68d34c496/imgs/imgCharity.jpg",
+            "title": "台灣關愛基金會",
+            "price": "15000",
+            "content": "透過經濟部能源局與台電的20年再生能源躉購制度，我們可以集合眾人之力，建置起一座日光循環電廠，在銷售電力獲得穩健收益的同時，也能夠為台灣的能源轉型、環境永續提供一份助力。",
+            "type": "I",
+            "post_id": "1"
+          }
+    ]
+}

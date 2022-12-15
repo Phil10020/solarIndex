@@ -29,7 +29,7 @@ app.use(VueAxios, axios)
 app.component('font-awesome-icon', FontAwesomeIcon)
 app.use(VueGoogleMaps, {
   load: {
-    key: 'AIzaSyDY-TLsDy3imgioimj8-oFolszY4AfYDAk'
+    key: 'AIzaSyC6QsRH82dayJTyOlweBCSoessS8Ty5yUU'
   },
   autobindAllEvents: true
 })

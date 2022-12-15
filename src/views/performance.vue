@@ -127,7 +127,7 @@
               </li>
             </ul>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" href="https://www.hellosolarman.com/newsPage.aspx">太陽人快報</a>
             <span class="nav-link">太陽人快報</span>
             <ul class="menuBar-item">
@@ -138,7 +138,7 @@
                 <a href="https://www.hellosolarman.com/newsPage.aspx">綠能轉型行不行</a>
               </li>
             </ul>
-          </li>
+          </li> -->
           <li class="nav-item">
             <a class="nav-link" href="https://www.hellosolarman.com/qa.aspx">常見問答</a>
           </li>
@@ -487,9 +487,9 @@
       :style="{ background: 'url(' + banner + ')' }"
       :class="{ mapHide: mapClick === true }"
     >
-      <div class="text-white d-flex justify-content-center banner-column">
+      <div class="text-white banner-text d-flex justify-content-center banner-column">
         <h1>太陽人實績</h1>
-        <p>company performance</p>
+        <h3>COMPANY PERFORMANCE</h3>
       </div>
     </section>
     <!-- [End]banner  -->
@@ -747,8 +747,9 @@
                             </div>
                           </div>
                           <div class="col-md-2 d-flex align-items-center">
+                            <!-- map放大鏡連結  -->
                             <a
-                              href="https://www.managertoday.com.tw/articles/view/65714"
+                              href=""
                             >
                               <button type="button">
                                 <img :src="mapImg.vector" alt="vector" />

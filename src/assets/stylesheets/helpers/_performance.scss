@@ -40,6 +40,9 @@
         font-size: 14px;
       }
     }
+
+
+
     .box-padding {
         padding: 3%;
     }
@@ -150,6 +153,16 @@
             padding-right: 8.33%;
         }
     }
+
+    .banner-text {
+      h1 {
+        font-size: 96px;
+      }
+      h3 {
+        font-size: 48px;
+      }
+    }
+
     .banner-column {
         align-items: center;
         flex-direction: column;
@@ -517,7 +530,7 @@
   }
   
   .font-color-hs-red {
-    color: red($color: #000000) !important;
+    color: #A7243C !important;
   }
   
   @mixin flex-center {
@@ -666,7 +679,7 @@
               color: black;
   
               &:hover {
-                color: red;
+                color: #A7243C;
               }
             }
           }
@@ -682,7 +695,7 @@
   
           .register:hover,
           .login:hover {
-            color: red;
+            color: #A7243C;
           }
         }
       }
@@ -775,16 +788,16 @@
               }
   
               &:hover {
-                background-color: gray;
+                background-color: #eee;
   
                 a {
-                  color: red;
+                  color: #A7243C;
                 }
               }
   
               &:first-child {
                 border-top-style: solid;
-                border-top-color: red;
+                border-top-color: #A7243C;
               }
             }
           }
@@ -817,7 +830,7 @@
           &.active {
             .nav-item-title {
               * {
-                color: red;
+                color: #A7243C;
               }
             }
   
@@ -840,7 +853,7 @@
                 }
   
                 &:hover {
-                  color: red;
+                  color: #A7243C;
                 }
               }
             }
@@ -922,7 +935,7 @@
       .menu {
         background: white;
         border-top-style: solid;
-        border-top-color: red;
+        border-top-color: #A7243C;
         color: black;
         display: none;
         list-style: none;
@@ -939,7 +952,7 @@
             cursor: pointer;
   
             &:hover {
-              background-color: gray;
+              background-color: #eee;
             }
           }
         }
@@ -1104,7 +1117,7 @@
         }
   
         &.instagram:hover {
-          background-color: red;
+          background-color: #A7243C;
         }
   
         &.blog:hover {

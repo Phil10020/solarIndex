@@ -426,7 +426,7 @@
                 style="width: 45px; height: 45px; border-radius: 50%"
               >
                 <i class="icon icon-6" style="width: 100%; height: 100%"></i>
-                <img src="<%=member.photo %>" />
+                <img src="" />
               </div>
               <span style="white-space: nowrap"></span>
               <span style="white-space: nowrap"></span>
